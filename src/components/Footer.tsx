@@ -8,7 +8,7 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-4">
             <Link href="/" className="inline-block">
-              <span className="font-display text-2xl font-bold tracking-tight text-fg">GES</span>
+              <span className="font-display text-2xl font-semibold tracking-tight text-fg">GES</span>
             </Link>
             <p className="mt-4 text-sm text-fg-muted leading-relaxed max-w-xs">
               Custom AI-powered business systems engineered from scratch.

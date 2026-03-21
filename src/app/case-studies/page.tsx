@@ -21,7 +21,7 @@ export default function CaseStudies() {
             </Link>
           </RevealSection>
           <RevealSection delay={0.1}>
-            <h1 className="font-display text-5xl md:text-6xl font-bold tracking-tight">Case Studies</h1>
+            <h1 className="font-display text-5xl md:text-6xl font-semibold tracking-tight">Case Studies</h1>
           </RevealSection>
           <RevealSection delay={0.2}>
             <p className="mt-6 text-lg text-fg-muted leading-relaxed max-w-2xl">
@@ -44,7 +44,7 @@ export default function CaseStudies() {
                 </p>
               </RevealSection>
               <RevealSection delay={0.1}>
-                <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">{cs.title}</h2>
+                <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">{cs.title}</h2>
                 <p className="text-lg text-fg-muted mt-3">{cs.subtitle}</p>
               </RevealSection>
 
@@ -74,7 +74,7 @@ export default function CaseStudies() {
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                   {cs.results.map((r, i) => (
                     <div key={i} className="flex items-start gap-3 card-glass rounded-sm p-4">
-                      <span className="text-accent font-bold shrink-0 mt-0.5">+</span>
+                      <span className="text-accent font-semibold shrink-0 mt-0.5">+</span>
                       <span className="text-sm text-fg-muted">{r}</span>
                     </div>
                   ))}
@@ -102,7 +102,7 @@ export default function CaseStudies() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
         <div className="relative mx-auto max-w-5xl px-6 lg:px-12">
           <RevealSection>
-            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+            <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
               Your project could be <span className="text-gradient">next.</span>
             </h2>
             <p className="mt-6 text-lg text-fg-muted max-w-lg mx-auto">

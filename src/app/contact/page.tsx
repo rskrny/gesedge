@@ -11,7 +11,7 @@ export default function Contact() {
           {/* Left */}
           <div className="lg:col-span-2">
             <RevealSection>
-              <h1 className="font-display text-5xl md:text-6xl font-bold tracking-tight">
+              <h1 className="font-display text-5xl md:text-6xl font-semibold tracking-tight">
                 Start a <span className="text-gradient">project</span>
               </h1>
             </RevealSection>
@@ -46,7 +46,7 @@ export default function Contact() {
             </RevealSection>
           </div>
 
-          {/* Right — Form */}
+          {/* Form */}
           <div className="lg:col-span-3">
             <RevealSection delay={0.3}>
               <ContactForm />

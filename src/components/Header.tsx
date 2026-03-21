@@ -42,7 +42,7 @@ export default function Header() {
       <nav className="mx-auto max-w-7xl px-6 lg:px-12 h-18 flex items-center justify-between">
         {/* Logo */}
         <Link href="/" className="relative group">
-          <span className="font-display text-xl font-bold tracking-tight text-fg">
+          <span className="font-display text-xl font-semibold tracking-tight text-fg">
             GES
           </span>
           <span className="ml-2 text-xs font-mono text-fg-dim hidden sm:inline tracking-wider">

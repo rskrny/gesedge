@@ -3,14 +3,14 @@ import type { Metadata } from "next";
 const SITE_URL = "https://gesedge.com";
 const SITE_NAME = "Global Edge Strategies";
 const SITE_DESCRIPTION =
-  "We build custom AI-powered business systems. From booking platforms to intelligent product catalogs, we create the technology that runs your business — across the US, China, and UK.";
+  "We build custom AI-powered business systems. From booking platforms to intelligent product catalogs, we create the technology that runs your business. Operating across the US, China, and UK.";
 
 export function createMetadata(overrides: Partial<Metadata> & { path?: string } = {}): Metadata {
   const { path = "", ...rest } = overrides;
   const url = `${SITE_URL}${path}`;
   const title = rest.title
     ? `${rest.title} | ${SITE_NAME}`
-    : `${SITE_NAME} — Custom AI-Powered Business Systems`;
+    : `${SITE_NAME} | Custom AI-Powered Business Systems`;
 
   return {
     title,

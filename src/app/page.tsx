@@ -15,12 +15,9 @@ const HeroScene = dynamic(() => import("@/components/HeroScene"), {
 export default function Home() {
   return (
     <>
-      {/* ── Hero ──────────────────────────────────────────── */}
+      {/* ── Hero ──────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
-        {/* 3D Background */}
         <HeroScene />
-
-        {/* Gradient overlays for readability */}
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-bg/40 via-transparent to-bg pointer-events-none" />
         <div className="absolute inset-0 z-[1] bg-gradient-to-r from-bg/60 via-transparent to-transparent pointer-events-none" />
 
@@ -32,7 +29,7 @@ export default function Home() {
           </RevealSection>
 
           <RevealSection delay={0.4}>
-            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[0.95]">
+            <h1 className="font-display text-5xl md:text-7xl lg:text-8xl font-semibold tracking-tight leading-[0.95]">
               We build the
               <br />
               systems that
@@ -43,8 +40,8 @@ export default function Home() {
 
           <RevealSection delay={0.7}>
             <p className="mt-8 text-lg md:text-xl text-fg-muted leading-relaxed max-w-xl">
-              Custom platforms, AI-powered tools, and cross-border infrastructure
-              — engineered from scratch for companies that need more than a template.
+              Custom platforms, AI-powered tools, and cross-border infrastructure,
+              engineered from scratch for companies that outgrow off-the-shelf solutions.
             </p>
           </RevealSection>
 
@@ -63,13 +60,12 @@ export default function Home() {
           </RevealSection>
         </div>
 
-        {/* Scroll indicator */}
         <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10">
           <div className="w-px h-12 bg-gradient-to-b from-transparent to-accent/50 animate-pulse" />
         </div>
       </section>
 
-      {/* ── Stats ─────────────────────────────────────────── */}
+      {/* ── Stats ─────────────────────────────── */}
       <section className="relative py-20 border-y border-border">
         <div className="absolute inset-0 bg-grid bg-radial-fade pointer-events-none" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
@@ -79,7 +75,7 @@ export default function Home() {
                 <div className="text-center">
                   <AnimatedCounter
                     value={s.value}
-                    className="font-display text-5xl md:text-6xl font-bold text-gradient"
+                    className="font-display text-5xl md:text-6xl font-semibold text-gradient"
                   />
                   <p className="mt-3 text-xs font-mono uppercase tracking-widest text-fg-dim">
                     {s.label}
@@ -91,7 +87,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Services ──────────────────────────────────────── */}
+      {/* ── Services ──────────────────────────── */}
       <section className="py-28 md:py-36 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <RevealSection>
@@ -99,12 +95,12 @@ export default function Home() {
               <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">
                 What We Build
               </p>
-              <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+              <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
                 Three disciplines.{" "}
                 <span className="text-fg-muted">One philosophy.</span>
               </h2>
               <p className="mt-6 text-lg text-fg-muted leading-relaxed">
-                Build real systems that solve real problems and run without babysitting.
+                Real systems that solve real problems and run without babysitting.
               </p>
             </div>
           </RevealSection>
@@ -119,7 +115,7 @@ export default function Home() {
                   <span className="font-mono text-xs tracking-widest text-accent block mb-6">
                     0{i + 1}
                   </span>
-                  <h3 className="font-display text-2xl font-semibold mb-4 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-display text-2xl font-medium mb-4 group-hover:text-accent transition-colors duration-300">
                     {s.title}
                   </h3>
                   <p className="text-sm text-fg-muted leading-relaxed">{s.short}</p>
@@ -136,10 +132,9 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Divider ───────────────────────────────────────── */}
       <div className="divider-accent mx-6 lg:mx-12" />
 
-      {/* ── Case Studies ──────────────────────────────────── */}
+      {/* ── Case Studies ──────────────────────── */}
       <section className="py-28 md:py-36 relative">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <RevealSection>
@@ -147,7 +142,7 @@ export default function Home() {
               <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">
                 Selected Work
               </p>
-              <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+              <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
                 Production systems.{" "}
                 <span className="text-fg-muted">Real results.</span>
               </h2>
@@ -164,16 +159,13 @@ export default function Home() {
                   <p className="font-mono text-xs tracking-widest text-accent mb-4 uppercase">
                     {cs.industry}
                   </p>
-                  <h3 className="font-display text-2xl font-semibold mb-2 group-hover:text-accent transition-colors duration-300">
+                  <h3 className="font-display text-2xl font-medium mb-2 group-hover:text-accent transition-colors duration-300">
                     {cs.title}
                   </h3>
                   <p className="text-sm text-fg-muted mb-6">{cs.subtitle}</p>
                   <div className="flex flex-wrap gap-2">
                     {cs.tech.slice(0, 4).map((t) => (
-                      <span
-                        key={t}
-                        className="text-xs font-mono px-3 py-1 rounded-sm bg-accent-dim text-accent"
-                      >
+                      <span key={t} className="text-xs font-mono px-3 py-1 rounded-sm bg-accent-dim text-accent">
                         {t}
                       </span>
                     ))}
@@ -184,10 +176,7 @@ export default function Home() {
           </RevealStagger>
 
           <RevealSection delay={0.3} className="mt-12 text-center">
-            <Link
-              href="/case-studies"
-              className="text-sm font-display text-fg-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2"
-            >
+            <Link href="/case-studies" className="text-sm font-display text-fg-muted hover:text-accent transition-colors duration-200 inline-flex items-center gap-2">
               View all case studies
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                 <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
@@ -197,7 +186,7 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Tech Stack ────────────────────────────────────── */}
+      {/* ── Tech Stack ────────────────────────── */}
       <section className="py-20 border-y border-border relative">
         <div className="absolute inset-0 bg-grid bg-radial-fade pointer-events-none" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
@@ -218,15 +207,14 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA ───────────────────────────────────────────── */}
+      {/* ── CTA ───────────────────────────────── */}
       <section className="relative py-32 md:py-40 overflow-hidden">
         <div className="absolute inset-0 bg-grid bg-radial-fade pointer-events-none" />
-        {/* Accent glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full bg-accent/5 blur-[120px] pointer-events-none" />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-12 text-center">
           <RevealSection>
-            <h2 className="font-display text-4xl md:text-6xl font-bold tracking-tight">
+            <h2 className="font-display text-4xl md:text-6xl font-semibold tracking-tight">
               Ready to build
               <br />
               <span className="text-gradient">something real?</span>

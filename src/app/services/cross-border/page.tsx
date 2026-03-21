@@ -25,7 +25,7 @@ export default function CrossBorder() {
             <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">Services / 03</p>
           </RevealSection>
           <RevealSection delay={0.2}>
-            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-tight">
+            <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight leading-tight">
               {service.title}
             </h1>
           </RevealSection>
@@ -40,7 +40,7 @@ export default function CrossBorder() {
       <section className="py-24 md:py-32">
         <div className="mx-auto max-w-5xl px-6 lg:px-12">
           <RevealSection>
-            <h2 className="font-display text-3xl font-bold tracking-tight mb-12">
+            <h2 className="font-display text-3xl font-semibold tracking-tight mb-12">
               What we <span className="text-gradient">deliver</span>
             </h2>
           </RevealSection>
@@ -84,7 +84,7 @@ export default function CrossBorder() {
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
         <div className="relative mx-auto max-w-5xl px-6 lg:px-12">
           <RevealSection>
-            <h2 className="font-display text-3xl md:text-5xl font-bold tracking-tight">
+            <h2 className="font-display text-3xl md:text-5xl font-semibold tracking-tight">
               Operating <span className="text-gradient">across borders?</span>
             </h2>
             <p className="mt-6 text-lg text-fg-muted max-w-lg mx-auto">

@@ -28,7 +28,7 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="card-glass rounded-sm p-8 text-center glow-accent">
-        <h3 className="font-display text-2xl font-bold tracking-tight mb-4">Message ready to send</h3>
+        <h3 className="font-display text-2xl font-semibold tracking-tight mb-4">Message ready to send</h3>
         <p className="text-fg-muted">
           Your email client should have opened with your message. If it didn&apos;t, email us directly at{" "}
           <a href="mailto:ryan@gesedge.com" className="text-accent hover:text-accent-hover transition-colors">
