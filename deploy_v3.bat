@@ -5,7 +5,7 @@ cd /d "%PROJECT%"
 echo === Git Add ===
 "%GIT%" add -A
 echo === Git Commit ===
-"%GIT%" commit -m "v3 redesign: Clash Display + Satoshi fonts, Midnight Sapphire palette, enhanced particle hero, banned pattern cleanup"
+"%GIT%" commit -m "v3.1: asymmetric layouts, real imagery, psychology-driven content placement"
 echo === Git Status ===
 "%GIT%" status
-echo === DONE ===
+echo === DONE GIT ===
