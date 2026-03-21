@@ -52,16 +52,16 @@ const modules = [
 export default function Training() {
   return (
     <>
-      <section className="py-20 md:py-28">
+      <section className="py-20 md:py-28 bg-bg text-fg">
         <div className="mx-auto max-w-4xl px-6">
-          <Link href="/" className="text-sm text-edge hover:text-edge-dark mb-8 inline-block">
+          <Link href="/" className="font-mono text-xs uppercase tracking-widest text-fg mb-8 inline-block hover:text-muted-fg">
             &larr; Back to home
           </Link>
-          <p className="text-sm font-medium text-edge uppercase tracking-wider mb-3">Training</p>
-          <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-ink leading-tight">
+          <p className="font-mono text-xs uppercase tracking-widest mb-4 font-bold">Training</p>
+          <h1 className="font-display text-5xl md:text-6xl tracking-tight leading-tight">
             AI for the Rest of Us
           </h1>
-          <p className="mt-6 text-lg text-stone leading-relaxed max-w-2xl">
+          <p className="font-body mt-8 text-lg leading-relaxed max-w-2xl">
             Practical AI training designed for business owners and their teams. Not a lecture
             on machine learning theory — a hands-on course that gets you using AI in your
             actual work within the first session.
@@ -69,11 +69,13 @@ export default function Training() {
         </div>
       </section>
 
-      <section className="pb-20 md:pb-28">
+      <hr className="section-rule" />
+
+      <section className="py-20 md:py-28 bg-bg text-fg">
         <div className="mx-auto max-w-4xl px-6">
-          <div className="bg-warm rounded-xl p-8 md:p-10 mb-12">
-            <h2 className="text-xl font-bold text-ink mb-3">Who this is for</h2>
-            <p className="text-base text-stone leading-relaxed">
+          <div className="border-2 border-fg p-8 md:p-10 mb-16">
+            <h2 className="font-display text-3xl tracking-tight mb-4">Who this is for</h2>
+            <p className="font-body text-lg leading-relaxed">
               Small business owners, team leads, and professionals who know AI matters but
               aren&apos;t sure where to start. You don&apos;t need a technical background.
               You need practical skills you can apply tomorrow. 88% of marketers use AI daily,
@@ -81,20 +83,18 @@ export default function Training() {
             </p>
           </div>
 
-          <div className="space-y-8">
+          <div className="space-y-10">
             {modules.map((m) => (
-              <div key={m.number} className="p-8 rounded-xl border border-border bg-white">
-                <div className="flex items-start gap-5">
-                  <span className="text-3xl font-bold text-edge/20">{m.number}</span>
+              <div key={m.number} className="border-2 border-fg p-8 md:p-10">
+                <div className="flex items-start gap-8">
+                  <span className="font-display text-6xl font-bold opacity-20 shrink-0">{m.number}</span>
                   <div className="flex-1">
-                    <h3 className="text-xl font-semibold text-ink">{m.title}</h3>
-                    <p className="mt-2 text-base text-stone leading-relaxed">{m.description}</p>
-                    <ul className="mt-4 space-y-2">
+                    <h3 className="font-display text-3xl tracking-tight mb-4">{m.title}</h3>
+                    <p className="font-body text-base leading-relaxed mb-6">{m.description}</p>
+                    <ul className="space-y-3">
                       {m.topics.map((t, i) => (
-                        <li key={i} className="flex items-start gap-2 text-sm text-stone">
-                          <svg className="w-4 h-4 text-edge mt-0.5 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}>
-                            <path strokeLinecap="round" strokeLinejoin="round" d="M4.5 12.75l6 6 9-13.5" />
-                          </svg>
+                        <li key={i} className="flex items-start gap-3 font-body text-base">
+                          <span className="font-mono font-bold opacity-50 mt-1 shrink-0">·</span>
                           {t}
                         </li>
                       ))}
@@ -107,28 +107,30 @@ export default function Training() {
         </div>
       </section>
 
-      <section className="pb-20 md:pb-28">
+      <hr className="section-rule" />
+
+      <section className="py-20 md:py-28 bg-bg text-fg">
         <div className="mx-auto max-w-4xl px-6">
-          <h2 className="text-2xl font-bold text-ink mb-8">How it works</h2>
+          <h2 className="font-display text-4xl tracking-tight mb-12">How it works</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 rounded-xl border border-border bg-white text-center">
-              <p className="text-3xl font-bold text-edge mb-3">1</p>
-              <h3 className="font-semibold text-ink mb-2">Discovery Call</h3>
-              <p className="text-sm text-stone">
+            <div className="border-2 border-fg p-8 text-center">
+              <p className="font-display text-5xl font-bold mb-4">1</p>
+              <h3 className="font-display text-2xl tracking-tight mb-3">Discovery Call</h3>
+              <p className="font-body text-base">
                 We learn about your business, your team, and what you&apos;re trying to accomplish with AI.
               </p>
             </div>
-            <div className="p-6 rounded-xl border border-border bg-white text-center">
-              <p className="text-3xl font-bold text-edge mb-3">2</p>
-              <h3 className="font-semibold text-ink mb-2">Customized Training</h3>
-              <p className="text-sm text-stone">
+            <div className="border-2 border-fg p-8 text-center">
+              <p className="font-display text-5xl font-bold mb-4">2</p>
+              <h3 className="font-display text-2xl tracking-tight mb-3">Customized Training</h3>
+              <p className="font-body text-base">
                 Module 3 is tailored to your industry. You learn on your own data, with your own tools.
               </p>
             </div>
-            <div className="p-6 rounded-xl border border-border bg-white text-center">
-              <p className="text-3xl font-bold text-edge mb-3">3</p>
-              <h3 className="font-semibold text-ink mb-2">Ongoing Support</h3>
-              <p className="text-sm text-stone">
+            <div className="border-2 border-fg p-8 text-center">
+              <p className="font-display text-5xl font-bold mb-4">3</p>
+              <h3 className="font-display text-2xl tracking-tight mb-3">Ongoing Support</h3>
+              <p className="font-body text-base">
                 30 days of email support after training. Questions, troubleshooting, and guidance as you apply what you learned.
               </p>
             </div>
@@ -136,13 +138,15 @@ export default function Training() {
         </div>
       </section>
 
-      <section className="py-20 md:py-28 bg-ink">
+      <hr className="section-rule" />
+
+      <section className="py-20 md:py-28 bg-fg text-bg">
         <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="text-3xl font-bold text-paper">Ready to train your team on AI?</h2>
-          <p className="mt-4 text-stone max-w-lg mx-auto">
+          <h2 className="font-display text-5xl tracking-tight">Ready to train your team on AI?</h2>
+          <p className="font-body mt-8 text-lg max-w-lg mx-auto opacity-85">
             Get in touch and we&apos;ll put together a training plan customized for your business.
           </p>
-          <Link href="/contact" className="inline-flex items-center justify-center mt-8 bg-edge text-paper font-medium px-8 py-3.5 rounded-lg hover:bg-edge-dark transition-colors text-sm">
+          <Link href="/contact" className="inline-block mt-10 bg-bg text-fg border-2 border-bg px-8 py-4 font-mono text-sm uppercase tracking-widest hover:bg-fg hover:text-bg hover:border-bg transition-all">
             Book a Discovery Call
           </Link>
         </div>

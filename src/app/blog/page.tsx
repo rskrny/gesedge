@@ -36,42 +36,44 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section className="py-20 md:py-28">
+    <section className="py-20 md:py-28 bg-bg text-fg">
       <div className="mx-auto max-w-4xl px-6">
-        <Link href="/" className="text-sm text-edge hover:text-edge-dark mb-8 inline-block">
+        <Link href="/" className="font-mono text-xs uppercase tracking-widest text-fg mb-8 inline-block hover:text-muted-fg">
           &larr; Back to home
         </Link>
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight text-ink">
+        <h1 className="font-display text-5xl md:text-6xl tracking-tight">
           Blog
         </h1>
-        <p className="mt-4 text-lg text-stone leading-relaxed max-w-2xl">
+        <p className="font-body mt-8 text-lg leading-relaxed max-w-2xl">
           Notes on building AI systems, running cross-border operations, and the things
           we learn shipping production software.
         </p>
 
-        <div className="mt-14 space-y-8">
+        <div className="mt-16 space-y-6">
           {posts.map((post) => (
             <article
               key={post.slug}
-              className="p-8 rounded-xl border border-border bg-white"
+              className="border-2 border-fg p-8 hover:bg-fg hover:text-bg transition-colors"
             >
-              <div className="flex items-center gap-3 mb-3">
-                <span className="text-xs font-medium text-edge uppercase tracking-wider">
+              <div className="flex items-center gap-4 mb-4">
+                <span className="font-mono text-xs uppercase tracking-widest font-bold">
                   {post.category}
                 </span>
-                <span className="text-xs text-stone">{post.date}</span>
+                <span className="font-mono text-xs opacity-60">{post.date}</span>
               </div>
-              <h2 className="text-xl font-semibold text-ink">{post.title}</h2>
-              <p className="mt-2 text-base text-stone leading-relaxed">{post.excerpt}</p>
+              <h2 className="font-display text-2xl tracking-tight">{post.title}</h2>
+              <p className="font-body mt-3 text-base leading-relaxed opacity-80">{post.excerpt}</p>
             </article>
           ))}
         </div>
 
-        <div className="mt-12 p-8 rounded-xl bg-warm text-center">
-          <h3 className="text-lg font-semibold text-ink">Blog launching soon</h3>
-          <p className="mt-2 text-sm text-stone">
+        <hr className="section-rule my-16" />
+
+        <div className="border-2 border-fg p-8 text-center">
+          <h3 className="font-display text-2xl tracking-tight mb-3">Blog launching soon</h3>
+          <p className="font-body text-base opacity-80">
             We&apos;re putting the finishing touches on our first posts. In the meantime,{" "}
-            <a href="mailto:ryan@gesedge.com" className="text-edge font-medium">
+            <a href="mailto:ryan@gesedge.com" className="font-mono text-xs uppercase tracking-widest font-bold hover:opacity-60">
               reach out directly
             </a>{" "}
             if you have questions about AI systems, cross-border operations, or anything
