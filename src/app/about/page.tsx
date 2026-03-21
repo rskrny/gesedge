@@ -1,63 +1,88 @@
-import Link from "next/link";
-import { createMetadata } from "@/lib/seo";
+"use client";
 
-export const metadata = createMetadata({
-  title: "About",
-  description: "Global Edge Strategies is a technical consultancy that builds custom AI-powered business systems, operating across the US, China, and UK.",
-  path: "/about",
-});
+import Link from "next/link";
+import RevealSection, { RevealStagger, RevealItem } from "@/components/RevealSection";
+import MagneticButton from "@/components/MagneticButton";
+
+const locations = [
+  { country: "United States", entity: "Global Edge Strategies LLC", city: "Wyoming" },
+  { country: "China", entity: "Chengdu HuanQiao", city: "Chengdu, Sichuan" },
+  { country: "United Kingdom", entity: "C14-Space LTD", city: "London (CTO / Co-founder)" },
+];
 
 export default function About() {
   return (
     <>
-      <section className="py-20 md:py-28 bg-bg text-fg">
-        <div className="mx-auto max-w-4xl px-6">
-          <Link href="/" className="font-mono text-xs uppercase tracking-widest text-fg mb-8 inline-block hover:text-muted-fg">
-            &larr; Back to home
-          </Link>
-          <h1 className="font-display text-5xl md:text-6xl tracking-tight text-fg">
-            About Global Edge Strategies
-          </h1>
+      {/* Hero */}
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative">
+        <div className="absolute inset-0 bg-grid bg-radial-fade pointer-events-none" />
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealSection>
+            <Link href="/" className="inline-flex items-center gap-2 text-sm text-fg-dim hover:text-accent transition-colors mb-8">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+              Back to home
+            </Link>
+          </RevealSection>
+          <RevealSection delay={0.1}>
+            <h1 className="font-display text-5xl md:text-6xl font-bold tracking-tight">
+              About Global Edge Strategies
+            </h1>
+          </RevealSection>
         </div>
       </section>
 
-      <hr className="section-rule" />
+      <div className="divider-accent mx-6 lg:mx-12" />
 
-      <section className="py-20 md:py-28 bg-bg text-fg">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="space-y-8">
-            <p className="font-body text-lg leading-relaxed">
-              Global Edge Strategies is a technical consultancy that builds custom
-              business systems powered by AI. We don&apos;t sell strategy decks or
-              implementation plans — we build the actual platforms, tools, and infrastructure
-              that our clients use every day.
-            </p>
-
-            <p className="font-body text-lg leading-relaxed">
-              Founded by Ryan Kearney, GES operates across three countries: a Wyoming LLC
-              in the United States, a wholly foreign-owned enterprise (WFOE) in Chengdu,
-              China, and ongoing work with UK-incorporated ventures. This isn&apos;t a
-              marketing line — it&apos;s the daily reality of managing entities, contracts,
-              and compliance across jurisdictions with fundamentally different legal systems,
-              business cultures, and technical ecosystems.
-            </p>
+      {/* Story */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 lg:px-12">
+          <div className="max-w-3xl space-y-8">
+            <RevealSection>
+              <p className="text-lg text-fg-muted leading-relaxed">
+                Global Edge Strategies is a technical consultancy that builds custom
+                business systems powered by AI. We don&apos;t sell strategy decks or
+                implementation plans — we build the actual platforms, tools, and infrastructure
+                that our clients use every day.
+              </p>
+            </RevealSection>
+            <RevealSection delay={0.1}>
+              <p className="text-lg text-fg-muted leading-relaxed">
+                Founded by Ryan Kearney, GES operates across three countries: a Wyoming LLC
+                in the United States, a wholly foreign-owned enterprise (WFOE) in Chengdu,
+                China, and ongoing work with UK-incorporated ventures. This isn&apos;t a
+                marketing line — it&apos;s the daily reality of managing entities, contracts,
+                and compliance across jurisdictions with fundamentally different legal systems,
+                business cultures, and technical ecosystems.
+              </p>
+            </RevealSection>
           </div>
+        </div>
+      </section>
 
-          <hr className="section-rule my-16" />
+      <div className="divider mx-6 lg:mx-12" />
 
-          <div className="space-y-8">
-            <div>
-              <h2 className="font-display text-4xl tracking-tight mb-8">How we work</h2>
-
-              <p className="font-body text-lg leading-relaxed mb-6">
+      {/* How we work */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealSection>
+            <h2 className="font-display text-4xl font-bold tracking-tight mb-10">
+              How we <span className="text-gradient">work</span>
+            </h2>
+          </RevealSection>
+          <div className="max-w-3xl space-y-6">
+            <RevealSection delay={0.1}>
+              <p className="text-lg text-fg-muted leading-relaxed">
                 Every project starts with a real problem. A charter captain drowning in manual
                 booking management. A B2B supplier whose international buyers can&apos;t find
                 the right product. A furniture startup that needs AR visualization to close the
                 confidence gap in online shopping. We listen, then we build — from database
                 design to deployment.
               </p>
-
-              <p className="font-body text-lg leading-relaxed">
+            </RevealSection>
+            <RevealSection delay={0.15}>
+              <p className="text-lg text-fg-muted leading-relaxed">
                 We&apos;re a full-stack operation. That means we handle the frontend your
                 customers see, the backend that powers it, the AI that makes it intelligent,
                 the infrastructure that keeps it running, and the SEO that helps people find
@@ -65,16 +90,24 @@ export default function About() {
                 developer, a data scientist, and an ops team. You&apos;re working with one team
                 that does all of it.
               </p>
-            </div>
+            </RevealSection>
           </div>
+        </div>
+      </section>
 
-          <hr className="section-rule my-16" />
+      <div className="divider mx-6 lg:mx-12" />
 
-          <div className="space-y-8">
-            <div>
-              <h2 className="font-display text-4xl tracking-tight mb-8">What we believe</h2>
-
-              <p className="font-body text-lg leading-relaxed mb-6">
+      {/* What we believe */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealSection>
+            <h2 className="font-display text-4xl font-bold tracking-tight mb-10">
+              What we <span className="text-gradient">believe</span>
+            </h2>
+          </RevealSection>
+          <div className="max-w-3xl space-y-6">
+            <RevealSection delay={0.1}>
+              <p className="text-lg text-fg-muted leading-relaxed">
                 80% of AI projects fail to deliver measurable results. That&apos;s not because
                 the technology is bad — it&apos;s because most implementations start with the
                 technology instead of the problem. We start with what your business actually
@@ -83,50 +116,60 @@ export default function About() {
                 form with tide integration. The technology serves the outcome, not the other
                 way around.
               </p>
-
-              <p className="font-body text-lg leading-relaxed">
+            </RevealSection>
+            <RevealSection delay={0.15}>
+              <p className="text-lg text-fg-muted leading-relaxed">
                 We also believe in shipping. Our case studies aren&apos;t concepts or prototypes.
                 They&apos;re production systems with automated health checks, comprehensive
                 test suites, and real users relying on them daily.
               </p>
-            </div>
-          </div>
-
-          <hr className="section-rule my-16" />
-
-          {/* Locations */}
-          <div className="mt-16 grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="p-6 border-2 border-fg bg-bg group hover:bg-fg hover:text-bg transition-colors">
-              <p className="font-mono text-xs uppercase tracking-widest mb-2 font-bold">United States</p>
-              <p className="font-display text-lg tracking-tight">Global Edge Strategies LLC</p>
-              <p className="font-body text-sm mt-2 opacity-75">Wyoming</p>
-            </div>
-            <div className="p-6 border-2 border-fg bg-bg group hover:bg-fg hover:text-bg transition-colors">
-              <p className="font-mono text-xs uppercase tracking-widest mb-2 font-bold">China</p>
-              <p className="font-display text-lg tracking-tight">Chengdu HuanQiao</p>
-              <p className="font-body text-sm mt-2 opacity-75">Chengdu, Sichuan</p>
-            </div>
-            <div className="p-6 border-2 border-fg bg-bg group hover:bg-fg hover:text-bg transition-colors">
-              <p className="font-mono text-xs uppercase tracking-widest mb-2 font-bold">United Kingdom</p>
-              <p className="font-display text-lg tracking-tight">C14-Space LTD</p>
-              <p className="font-body text-sm mt-2 opacity-75">London (CTO / Co-founder)</p>
-            </div>
+            </RevealSection>
           </div>
         </div>
       </section>
 
-      <hr className="section-rule" />
+      <div className="divider-accent mx-6 lg:mx-12" />
 
-      <section className="py-20 md:py-28 bg-fg text-bg">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="font-display text-5xl tracking-tight">Let&apos;s build something together.</h2>
-          <p className="mt-6 font-body text-lg max-w-lg mx-auto opacity-85">
-            We&apos;re selective about the projects we take on — but if you have a real problem
-            that needs a real system, we want to hear about it.
-          </p>
-          <Link href="/contact" className="inline-block mt-10 bg-bg text-fg border-2 border-bg px-8 py-4 font-mono text-sm uppercase tracking-widest hover:bg-fg hover:text-bg hover:border-bg transition-all">
-            Get in Touch
-          </Link>
+      {/* Locations */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealSection>
+            <p className="font-mono text-xs tracking-widest text-accent uppercase mb-10">Our Presence</p>
+          </RevealSection>
+          <RevealStagger className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
+            {locations.map((loc) => (
+              <RevealItem key={loc.country}>
+                <div className="card-glass rounded-sm p-6 h-full group hover:border-accent/30 transition-all duration-300">
+                  <p className="font-mono text-xs tracking-widest text-accent mb-3 uppercase">{loc.country}</p>
+                  <p className="font-display text-lg font-semibold text-fg">{loc.entity}</p>
+                  <p className="text-sm text-fg-dim mt-2">{loc.city}</p>
+                </div>
+              </RevealItem>
+            ))}
+          </RevealStagger>
+        </div>
+      </section>
+
+      <div className="divider-accent mx-6 lg:mx-12" />
+
+      {/* CTA */}
+      <section className="py-28 md:py-36 relative text-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealSection>
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+              Let&apos;s build something <span className="text-gradient">together.</span>
+            </h2>
+            <p className="mt-6 text-lg text-fg-muted max-w-lg mx-auto">
+              We&apos;re selective about the projects we take on — but if you have a real problem
+              that needs a real system, we want to hear about it.
+            </p>
+          </RevealSection>
+          <RevealSection delay={0.2}>
+            <div className="mt-10">
+              <MagneticButton href="/contact" variant="primary">Get in Touch</MagneticButton>
+            </div>
+          </RevealSection>
         </div>
       </section>
     </>

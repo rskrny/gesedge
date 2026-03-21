@@ -1,7 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
 
 const navLinks = [
   { href: "/services/business-platforms", label: "Services", hasDropdown: true },
@@ -19,17 +20,39 @@ const serviceLinks = [
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [servicesOpen, setServicesOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => setScrolled(window.scrollY > 20);
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
-    <header className="fixed top-0 left-0 right-0 z-50 bg-bg border-b-2 border-fg">
-      <nav className="mx-auto max-w-6xl px-6 lg:px-12 h-16 flex items-center justify-between">
+    <motion.header
+      initial={{ y: -20, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.6, ease: [0.16, 1, 0.3, 1] }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled
+          ? "bg-bg/80 backdrop-blur-xl border-b border-border"
+          : "bg-transparent border-b border-transparent"
+      }`}
+    >
+      <nav className="mx-auto max-w-7xl px-6 lg:px-12 h-18 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="font-display text-xl tracking-tight font-bold uppercase">
-          GES
+        <Link href="/" className="relative group">
+          <span className="font-display text-xl font-bold tracking-tight text-fg">
+            GES
+          </span>
+          <span className="ml-2 text-xs font-mono text-fg-dim hidden sm:inline tracking-wider">
+            Global Edge Strategies
+          </span>
+          <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center gap-10">
+        <div className="hidden md:flex items-center gap-1">
           {navLinks.map((link) =>
             link.hasDropdown ? (
               <div
@@ -40,31 +63,39 @@ export default function Header() {
               >
                 <Link
                   href={link.href}
-                  className="text-sm uppercase tracking-widest font-medium text-muted-fg hover:text-fg transition-colors duration-100 py-2"
+                  className="px-4 py-2 text-sm text-fg-muted hover:text-fg transition-colors duration-200 font-display tracking-wide"
                 >
                   {link.label}
                 </Link>
-                {servicesOpen && (
-                  <div className="absolute top-full left-0 pt-2">
-                    <div className="bg-bg border-2 border-fg py-2 min-w-[280px]">
-                      {serviceLinks.map((sl) => (
-                        <Link
-                          key={sl.href}
-                          href={sl.href}
-                          className="block px-6 py-3 text-sm tracking-wide text-muted-fg hover:bg-fg hover:text-bg transition-colors duration-100"
-                        >
-                          {sl.label}
-                        </Link>
-                      ))}
-                    </div>
-                  </div>
-                )}
+                <AnimatePresence>
+                  {servicesOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: 8, scale: 0.96 }}
+                      animate={{ opacity: 1, y: 0, scale: 1 }}
+                      exit={{ opacity: 0, y: 8, scale: 0.96 }}
+                      transition={{ duration: 0.2, ease: "easeOut" }}
+                      className="absolute top-full left-0 pt-2"
+                    >
+                      <div className="bg-bg-elevated/95 backdrop-blur-xl border border-border rounded-sm py-2 min-w-[260px] shadow-xl shadow-black/20">
+                        {serviceLinks.map((sl) => (
+                          <Link
+                            key={sl.href}
+                            href={sl.href}
+                            className="block px-5 py-3 text-sm text-fg-muted hover:text-accent hover:bg-accent-dim transition-colors duration-200"
+                          >
+                            {sl.label}
+                          </Link>
+                        ))}
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
               </div>
             ) : (
               <Link
                 key={link.href}
                 href={link.href}
-                className="text-sm uppercase tracking-widest font-medium text-muted-fg hover:text-fg transition-colors duration-100"
+                className="px-4 py-2 text-sm text-fg-muted hover:text-fg transition-colors duration-200 font-display tracking-wide"
               >
                 {link.label}
               </Link>
@@ -72,9 +103,9 @@ export default function Header() {
           )}
           <Link
             href="/contact"
-            className="text-sm uppercase tracking-widest font-medium bg-fg text-bg px-6 py-2.5 hover:bg-bg hover:text-fg border-2 border-fg transition-colors duration-100"
+            className="ml-4 px-6 py-2.5 text-sm font-display font-semibold bg-accent text-bg rounded-sm hover:bg-accent-hover transition-colors duration-200"
           >
-            Contact
+            Start a Project
           </Link>
         </div>
 
@@ -84,53 +115,91 @@ export default function Header() {
           className="md:hidden p-2 text-fg"
           aria-label="Toggle menu"
         >
-          {mobileOpen ? (
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M6 6l12 12M6 18L18 6" />
-            </svg>
-          ) : (
-            <svg width="24" height="24" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M4 8h16M4 16h16" />
-            </svg>
-          )}
+          <div className="w-6 h-4 relative flex flex-col justify-between">
+            <motion.span
+              animate={mobileOpen ? { rotate: 45, y: 7 } : { rotate: 0, y: 0 }}
+              className="block w-full h-px bg-fg origin-center"
+              transition={{ duration: 0.2 }}
+            />
+            <motion.span
+              animate={mobileOpen ? { opacity: 0 } : { opacity: 1 }}
+              className="block w-full h-px bg-fg"
+              transition={{ duration: 0.1 }}
+            />
+            <motion.span
+              animate={mobileOpen ? { rotate: -45, y: -7 } : { rotate: 0, y: 0 }}
+              className="block w-full h-px bg-fg origin-center"
+              transition={{ duration: 0.2 }}
+            />
+          </div>
         </button>
       </nav>
 
       {/* Mobile Nav */}
-      {mobileOpen && (
-        <div className="md:hidden border-t-2 border-fg bg-bg px-6 py-6 space-y-4">
-          {serviceLinks.map((sl) => (
-            <Link
-              key={sl.href}
-              href={sl.href}
-              className="block text-sm uppercase tracking-widest text-muted-fg hover:text-fg"
-              onClick={() => setMobileOpen(false)}
-            >
-              {sl.label}
-            </Link>
-          ))}
-          <hr className="border-t border-border-light" />
-          {navLinks
-            .filter((l) => !l.hasDropdown)
-            .map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="block text-sm uppercase tracking-widest text-muted-fg hover:text-fg"
-                onClick={() => setMobileOpen(false)}
-              >
-                {link.label}
-              </Link>
-            ))}
-          <Link
-            href="/contact"
-            className="block text-sm uppercase tracking-widest font-medium bg-fg text-bg px-6 py-3 text-center mt-4 border-2 border-fg"
-            onClick={() => setMobileOpen(false)}
+      <AnimatePresence>
+        {mobileOpen && (
+          <motion.div
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3, ease: [0.16, 1, 0.3, 1] }}
+            className="md:hidden overflow-hidden bg-bg-elevated/95 backdrop-blur-xl border-t border-border"
           >
-            Contact
-          </Link>
-        </div>
-      )}
-    </header>
+            <div className="px-6 py-8 space-y-1">
+              <p className="text-xs font-mono text-fg-dim tracking-wider mb-3 uppercase">Services</p>
+              {serviceLinks.map((sl, i) => (
+                <motion.div
+                  key={sl.href}
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: i * 0.05 }}
+                >
+                  <Link
+                    href={sl.href}
+                    className="block py-2 text-sm text-fg-muted hover:text-accent transition-colors"
+                    onClick={() => setMobileOpen(false)}
+                  >
+                    {sl.label}
+                  </Link>
+                </motion.div>
+              ))}
+              <div className="h-px bg-border my-4" />
+              {navLinks
+                .filter((l) => !l.hasDropdown)
+                .map((link, i) => (
+                  <motion.div
+                    key={link.href}
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: (i + 3) * 0.05 }}
+                  >
+                    <Link
+                      href={link.href}
+                      className="block py-2 text-sm text-fg-muted hover:text-fg transition-colors"
+                      onClick={() => setMobileOpen(false)}
+                    >
+                      {link.label}
+                    </Link>
+                  </motion.div>
+                ))}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="pt-4"
+              >
+                <Link
+                  href="/contact"
+                  className="block w-full text-center py-3 bg-accent text-bg text-sm font-display font-semibold rounded-sm"
+                  onClick={() => setMobileOpen(false)}
+                >
+                  Start a Project
+                </Link>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.header>
   );
 }

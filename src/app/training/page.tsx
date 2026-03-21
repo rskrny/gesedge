@@ -1,11 +1,8 @@
-import Link from "next/link";
-import { createMetadata } from "@/lib/seo";
+"use client";
 
-export const metadata = createMetadata({
-  title: "AI Training",
-  description: "Practical AI training for teams and business owners. Learn to integrate AI into your workflows — not just chat with it.",
-  path: "/training",
-});
+import Link from "next/link";
+import RevealSection, { RevealStagger, RevealItem } from "@/components/RevealSection";
+import MagneticButton from "@/components/MagneticButton";
 
 const modules = [
   {
@@ -49,106 +46,138 @@ const modules = [
   },
 ];
 
+const steps = [
+  { num: "1", title: "Discovery Call", desc: "We learn about your business, your team, and what you're trying to accomplish with AI." },
+  { num: "2", title: "Customized Training", desc: "Module 3 is tailored to your industry. You learn on your own data, with your own tools." },
+  { num: "3", title: "Ongoing Support", desc: "30 days of email support after training. Questions, troubleshooting, and guidance as you apply what you learned." },
+];
+
 export default function Training() {
   return (
     <>
-      <section className="py-20 md:py-28 bg-bg text-fg">
-        <div className="mx-auto max-w-4xl px-6">
-          <Link href="/" className="font-mono text-xs uppercase tracking-widest text-fg mb-8 inline-block hover:text-muted-fg">
-            &larr; Back to home
-          </Link>
-          <p className="font-mono text-xs uppercase tracking-widest mb-4 font-bold">Training</p>
-          <h1 className="font-display text-5xl md:text-6xl tracking-tight leading-tight">
-            AI for the Rest of Us
-          </h1>
-          <p className="font-body mt-8 text-lg leading-relaxed max-w-2xl">
-            Practical AI training designed for business owners and their teams. Not a lecture
-            on machine learning theory — a hands-on course that gets you using AI in your
-            actual work within the first session.
-          </p>
+      {/* Hero */}
+      <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative">
+        <div className="absolute inset-0 bg-grid bg-radial-fade pointer-events-none" />
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealSection>
+            <Link href="/" className="inline-flex items-center gap-2 text-sm text-fg-dim hover:text-accent transition-colors mb-8">
+              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+              </svg>
+              Back to home
+            </Link>
+          </RevealSection>
+          <RevealSection delay={0.1}>
+            <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">Training</p>
+          </RevealSection>
+          <RevealSection delay={0.2}>
+            <h1 className="font-display text-5xl md:text-6xl font-bold tracking-tight leading-tight">
+              AI for the <span className="text-gradient">Rest of Us</span>
+            </h1>
+          </RevealSection>
+          <RevealSection delay={0.3}>
+            <p className="mt-8 text-lg text-fg-muted leading-relaxed max-w-2xl">
+              Practical AI training designed for business owners and their teams. Not a lecture
+              on machine learning theory — a hands-on course that gets you using AI in your
+              actual work within the first session.
+            </p>
+          </RevealSection>
         </div>
       </section>
 
-      <hr className="section-rule" />
+      <div className="divider-accent mx-6 lg:mx-12" />
 
-      <section className="py-20 md:py-28 bg-bg text-fg">
-        <div className="mx-auto max-w-4xl px-6">
-          <div className="border-2 border-fg p-8 md:p-10 mb-16">
-            <h2 className="font-display text-3xl tracking-tight mb-4">Who this is for</h2>
-            <p className="font-body text-lg leading-relaxed">
-              Small business owners, team leads, and professionals who know AI matters but
-              aren&apos;t sure where to start. You don&apos;t need a technical background.
-              You need practical skills you can apply tomorrow. 88% of marketers use AI daily,
-              but only 1% use it maturely. This course closes that gap.
-            </p>
-          </div>
+      {/* Who this is for */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealSection>
+            <div className="card-glass rounded-sm p-8 md:p-12 border-accent/20 glow-accent">
+              <h2 className="font-display text-3xl font-bold tracking-tight mb-4">Who this is for</h2>
+              <p className="text-lg text-fg-muted leading-relaxed">
+                Small business owners, team leads, and professionals who know AI matters but
+                aren&apos;t sure where to start. You don&apos;t need a technical background.
+                You need practical skills you can apply tomorrow. 88% of marketers use AI daily,
+                but only 1% use it maturely. This course closes that gap.
+              </p>
+            </div>
+          </RevealSection>
+        </div>
+      </section>
 
-          <div className="space-y-10">
+      {/* Modules */}
+      <section className="py-10 md:py-16">
+        <div className="mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealStagger className="space-y-6" staggerDelay={0.12}>
             {modules.map((m) => (
-              <div key={m.number} className="border-2 border-fg p-8 md:p-10">
-                <div className="flex items-start gap-8">
-                  <span className="font-display text-6xl font-bold opacity-20 shrink-0">{m.number}</span>
-                  <div className="flex-1">
-                    <h3 className="font-display text-3xl tracking-tight mb-4">{m.title}</h3>
-                    <p className="font-body text-base leading-relaxed mb-6">{m.description}</p>
-                    <ul className="space-y-3">
-                      {m.topics.map((t, i) => (
-                        <li key={i} className="flex items-start gap-3 font-body text-base">
-                          <span className="font-mono font-bold opacity-50 mt-1 shrink-0">·</span>
-                          {t}
-                        </li>
-                      ))}
-                    </ul>
+              <RevealItem key={m.number}>
+                <div className="card-glass rounded-sm p-8 md:p-10 group hover:border-accent/30 transition-all duration-300">
+                  <div className="flex items-start gap-8">
+                    <span className="font-display text-6xl font-bold text-accent/20 shrink-0 group-hover:text-accent/40 transition-colors duration-300">
+                      {m.number}
+                    </span>
+                    <div className="flex-1">
+                      <h3 className="font-display text-2xl font-bold tracking-tight mb-4">{m.title}</h3>
+                      <p className="text-fg-muted leading-relaxed mb-6">{m.description}</p>
+                      <ul className="space-y-3">
+                        {m.topics.map((t, i) => (
+                          <li key={i} className="flex items-start gap-3 text-sm text-fg-muted">
+                            <span className="text-accent mt-0.5 shrink-0">+</span>
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
                   </div>
                 </div>
-              </div>
+              </RevealItem>
             ))}
-          </div>
+          </RevealStagger>
         </div>
       </section>
 
-      <hr className="section-rule" />
+      <div className="divider mx-6 lg:mx-12" />
 
-      <section className="py-20 md:py-28 bg-bg text-fg">
-        <div className="mx-auto max-w-4xl px-6">
-          <h2 className="font-display text-4xl tracking-tight mb-12">How it works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="border-2 border-fg p-8 text-center">
-              <p className="font-display text-5xl font-bold mb-4">1</p>
-              <h3 className="font-display text-2xl tracking-tight mb-3">Discovery Call</h3>
-              <p className="font-body text-base">
-                We learn about your business, your team, and what you&apos;re trying to accomplish with AI.
-              </p>
-            </div>
-            <div className="border-2 border-fg p-8 text-center">
-              <p className="font-display text-5xl font-bold mb-4">2</p>
-              <h3 className="font-display text-2xl tracking-tight mb-3">Customized Training</h3>
-              <p className="font-body text-base">
-                Module 3 is tailored to your industry. You learn on your own data, with your own tools.
-              </p>
-            </div>
-            <div className="border-2 border-fg p-8 text-center">
-              <p className="font-display text-5xl font-bold mb-4">3</p>
-              <h3 className="font-display text-2xl tracking-tight mb-3">Ongoing Support</h3>
-              <p className="font-body text-base">
-                30 days of email support after training. Questions, troubleshooting, and guidance as you apply what you learned.
-              </p>
-            </div>
-          </div>
+      {/* How it works */}
+      <section className="py-20 md:py-28">
+        <div className="mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealSection>
+            <h2 className="font-display text-4xl font-bold tracking-tight mb-12">
+              How it <span className="text-gradient">works</span>
+            </h2>
+          </RevealSection>
+          <RevealStagger className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
+            {steps.map((step) => (
+              <RevealItem key={step.num}>
+                <div className="card-glass rounded-sm p-8 text-center h-full group hover:border-accent/30 transition-all duration-300">
+                  <span className="font-display text-5xl font-bold text-gradient">{step.num}</span>
+                  <h3 className="font-display text-xl font-semibold mt-4 mb-3">{step.title}</h3>
+                  <p className="text-sm text-fg-muted">{step.desc}</p>
+                </div>
+              </RevealItem>
+            ))}
+          </RevealStagger>
         </div>
       </section>
 
-      <hr className="section-rule" />
+      <div className="divider-accent mx-6 lg:mx-12" />
 
-      <section className="py-20 md:py-28 bg-fg text-bg">
-        <div className="mx-auto max-w-4xl px-6 text-center">
-          <h2 className="font-display text-5xl tracking-tight">Ready to train your team on AI?</h2>
-          <p className="font-body mt-8 text-lg max-w-lg mx-auto opacity-85">
-            Get in touch and we&apos;ll put together a training plan customized for your business.
-          </p>
-          <Link href="/contact" className="inline-block mt-10 bg-bg text-fg border-2 border-bg px-8 py-4 font-mono text-sm uppercase tracking-widest hover:bg-fg hover:text-bg hover:border-bg transition-all">
-            Book a Discovery Call
-          </Link>
+      {/* CTA */}
+      <section className="py-28 md:py-36 relative text-center">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[400px] h-[400px] rounded-full bg-accent/5 blur-[100px] pointer-events-none" />
+        <div className="relative mx-auto max-w-5xl px-6 lg:px-12">
+          <RevealSection>
+            <h2 className="font-display text-4xl md:text-5xl font-bold tracking-tight">
+              Ready to train your team <span className="text-gradient">on AI?</span>
+            </h2>
+            <p className="mt-8 text-lg text-fg-muted max-w-lg mx-auto">
+              Get in touch and we&apos;ll put together a training plan customized for your business.
+            </p>
+          </RevealSection>
+          <RevealSection delay={0.2}>
+            <div className="mt-10">
+              <MagneticButton href="/contact" variant="primary">Book a Discovery Call</MagneticButton>
+            </div>
+          </RevealSection>
         </div>
       </section>
     </>

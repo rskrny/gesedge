@@ -1,11 +1,7 @@
-import Link from "next/link";
-import { createMetadata } from "@/lib/seo";
+"use client";
 
-export const metadata = createMetadata({
-  title: "Blog",
-  description: "Insights on AI systems, business automation, and cross-border operations from Global Edge Strategies.",
-  path: "/blog",
-});
+import Link from "next/link";
+import RevealSection, { RevealStagger, RevealItem } from "@/components/RevealSection";
 
 const posts = [
   {
@@ -36,50 +32,59 @@ const posts = [
 
 export default function Blog() {
   return (
-    <section className="py-20 md:py-28 bg-bg text-fg">
-      <div className="mx-auto max-w-4xl px-6">
-        <Link href="/" className="font-mono text-xs uppercase tracking-widest text-fg mb-8 inline-block hover:text-muted-fg">
-          &larr; Back to home
-        </Link>
-        <h1 className="font-display text-5xl md:text-6xl tracking-tight">
-          Blog
-        </h1>
-        <p className="font-body mt-8 text-lg leading-relaxed max-w-2xl">
-          Notes on building AI systems, running cross-border operations, and the things
-          we learn shipping production software.
-        </p>
-
-        <div className="mt-16 space-y-6">
-          {posts.map((post) => (
-            <article
-              key={post.slug}
-              className="border-2 border-fg p-8 hover:bg-fg hover:text-bg transition-colors"
-            >
-              <div className="flex items-center gap-4 mb-4">
-                <span className="font-mono text-xs uppercase tracking-widest font-bold">
-                  {post.category}
-                </span>
-                <span className="font-mono text-xs opacity-60">{post.date}</span>
-              </div>
-              <h2 className="font-display text-2xl tracking-tight">{post.title}</h2>
-              <p className="font-body mt-3 text-base leading-relaxed opacity-80">{post.excerpt}</p>
-            </article>
-          ))}
-        </div>
-
-        <hr className="section-rule my-16" />
-
-        <div className="border-2 border-fg p-8 text-center">
-          <h3 className="font-display text-2xl tracking-tight mb-3">Blog launching soon</h3>
-          <p className="font-body text-base opacity-80">
-            We&apos;re putting the finishing touches on our first posts. In the meantime,{" "}
-            <a href="mailto:ryan@gesedge.com" className="font-mono text-xs uppercase tracking-widest font-bold hover:opacity-60">
-              reach out directly
-            </a>{" "}
-            if you have questions about AI systems, cross-border operations, or anything
-            else we work on.
+    <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="mx-auto max-w-5xl px-6 lg:px-12">
+        <RevealSection>
+          <Link href="/" className="inline-flex items-center gap-2 text-sm text-fg-dim hover:text-accent transition-colors mb-8">
+            <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+              <path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" />
+            </svg>
+            Back to home
+          </Link>
+        </RevealSection>
+        <RevealSection delay={0.1}>
+          <h1 className="font-display text-5xl md:text-6xl font-bold tracking-tight">Blog</h1>
+        </RevealSection>
+        <RevealSection delay={0.2}>
+          <p className="mt-8 text-lg text-fg-muted leading-relaxed max-w-2xl">
+            Notes on building AI systems, running cross-border operations, and the things
+            we learn shipping production software.
           </p>
-        </div>
+        </RevealSection>
+
+        <RevealStagger className="mt-16 space-y-6" staggerDelay={0.1}>
+          {posts.map((post) => (
+            <RevealItem key={post.slug}>
+              <article className="card-glass rounded-sm p-8 group hover:border-accent/30 transition-all duration-300">
+                <div className="flex items-center gap-4 mb-4">
+                  <span className="font-mono text-xs tracking-widest text-accent uppercase">
+                    {post.category}
+                  </span>
+                  <span className="font-mono text-xs text-fg-dim">{post.date}</span>
+                </div>
+                <h2 className="font-display text-2xl font-semibold tracking-tight group-hover:text-accent transition-colors duration-300">
+                  {post.title}
+                </h2>
+                <p className="mt-3 text-fg-muted leading-relaxed">{post.excerpt}</p>
+              </article>
+            </RevealItem>
+          ))}
+        </RevealStagger>
+
+        <RevealSection delay={0.4} className="mt-16">
+          <div className="divider-accent mb-16" />
+          <div className="card-glass rounded-sm p-8 text-center glow-accent">
+            <h3 className="font-display text-2xl font-bold tracking-tight mb-3">Blog launching soon</h3>
+            <p className="text-fg-muted">
+              We&apos;re putting the finishing touches on our first posts. In the meantime,{" "}
+              <a href="mailto:ryan@gesedge.com" className="text-accent hover:text-accent-hover transition-colors">
+                reach out directly
+              </a>{" "}
+              if you have questions about AI systems, cross-border operations, or anything
+              else we work on.
+            </p>
+          </div>
+        </RevealSection>
       </div>
     </section>
   );

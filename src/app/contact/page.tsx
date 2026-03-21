@@ -1,52 +1,56 @@
-import ContactForm from "@/components/ContactForm";
-import { createMetadata } from "@/lib/seo";
+"use client";
 
-export const metadata = createMetadata({
-  title: "Contact",
-  description: "Tell us what you need built. We'll tell you how we'd approach it.",
-  path: "/contact",
-});
+import RevealSection from "@/components/RevealSection";
+import ContactForm from "@/components/ContactForm";
 
 export default function Contact() {
   return (
-    <section className="py-20 md:py-28 bg-bg text-fg">
-      <div className="mx-auto max-w-4xl px-6">
+    <section className="pt-32 pb-20 md:pt-40 md:pb-28">
+      <div className="mx-auto max-w-5xl px-6 lg:px-12">
         <div className="grid grid-cols-1 lg:grid-cols-5 gap-16">
-          {/* Left — Context */}
+          {/* Left */}
           <div className="lg:col-span-2">
-            <h1 className="font-display text-5xl md:text-6xl tracking-tight">
-              Start a project
-            </h1>
-            <p className="font-body mt-6 text-lg leading-relaxed">
-              Tell us what you&apos;re trying to build or solve. We&apos;ll get back to you
-              within 24 hours with our initial thoughts.
-            </p>
+            <RevealSection>
+              <h1 className="font-display text-5xl md:text-6xl font-bold tracking-tight">
+                Start a <span className="text-gradient">project</span>
+              </h1>
+            </RevealSection>
+            <RevealSection delay={0.1}>
+              <p className="mt-6 text-lg text-fg-muted leading-relaxed">
+                Tell us what you&apos;re trying to build or solve. We&apos;ll get back to you
+                within 24 hours with our initial thoughts.
+              </p>
+            </RevealSection>
 
-            <div className="mt-12 space-y-8">
-              <div>
-                <h3 className="font-mono text-xs uppercase tracking-widest font-bold mb-2">Email</h3>
-                <a href="mailto:ryan@gesedge.com" className="font-body text-base hover:opacity-60">
-                  ryan@gesedge.com
-                </a>
+            <RevealSection delay={0.2}>
+              <div className="mt-12 space-y-8">
+                <div>
+                  <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">Email</h3>
+                  <a href="mailto:ryan@gesedge.com" className="text-fg-muted hover:text-fg transition-colors link-underline">
+                    ryan@gesedge.com
+                  </a>
+                </div>
+                <div>
+                  <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">Response Time</h3>
+                  <p className="text-fg-muted">Usually within 24 hours</p>
+                </div>
+                <div>
+                  <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">Locations</h3>
+                  <p className="text-fg-muted">
+                    Wyoming, USA<br />
+                    Chengdu, China<br />
+                    London, UK
+                  </p>
+                </div>
               </div>
-              <div>
-                <h3 className="font-mono text-xs uppercase tracking-widest font-bold mb-2">Response time</h3>
-                <p className="font-body text-base">Usually within 24 hours</p>
-              </div>
-              <div>
-                <h3 className="font-mono text-xs uppercase tracking-widest font-bold mb-2">Locations</h3>
-                <p className="font-body text-base">
-                  Wyoming, USA<br />
-                  Chengdu, China<br />
-                  London, UK
-                </p>
-              </div>
-            </div>
+            </RevealSection>
           </div>
 
           {/* Right — Form */}
           <div className="lg:col-span-3">
-            <ContactForm />
+            <RevealSection delay={0.3}>
+              <ContactForm />
+            </RevealSection>
           </div>
         </div>
       </div>
