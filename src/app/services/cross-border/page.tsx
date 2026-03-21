@@ -11,7 +11,7 @@ const service = services[2];
 const presenceCards = [
   { label: "Wyoming, USA", tag: "GES LLC", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=400&q=80&auto=format" },
   { label: "Chengdu, China", tag: "HuanQiao WFOE", image: "https://images.unsplash.com/photo-1589650600625-5dec675eb3f6?w=400&q=80&auto=format" },
-  { label: "London, UK", tag: "C14-Space LTD", image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=80&auto=format" },
+  { label: "London, UK", tag: "UK Operations", image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=400&q=80&auto=format" },
 ];
 
 export default function CrossBorder() {
@@ -135,7 +135,7 @@ export default function CrossBorder() {
             <div className="card-glass rounded-sm p-8 md:p-12 border-accent/20 glow-accent max-w-4xl">
               <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">How We Know This</p>
               <p className="text-fg-muted leading-relaxed text-lg mb-6">{service.proof}</p>
-              <Link href="/case-studies#ar-ecommerce-platform" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-2">
+              <Link href="/case-studies#trilingual-product-intelligence" className="text-sm text-accent hover:text-accent-hover transition-colors inline-flex items-center gap-2">
                 Read the full case study
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />

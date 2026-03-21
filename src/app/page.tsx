@@ -132,7 +132,7 @@ export default function Home() {
                 Delivering for
               </span>
               <div className="flex flex-wrap gap-3">
-                {["Marine Services", "B2B Construction", "E-Commerce", "Developer Tools", "Interior Design"].map((industry) => (
+                {["Marine Services", "B2B Construction", "E-Commerce", "Developer Tools", "Professional Services"].map((industry) => (
                   <span
                     key={industry}
                     className="text-xs font-mono px-3 py-1.5 rounded-sm border border-border text-fg-muted hover:border-accent/40 hover:text-accent transition-all duration-300"

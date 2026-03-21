@@ -96,26 +96,6 @@ export const caseStudies = [
     tech: ["FastAPI", "Python", "ChromaDB", "BM25", "Railway"],
   },
   {
-    slug: "ar-ecommerce-platform",
-    title: "AR E-Commerce Platform",
-    subtitle: "AI meets augmented reality for furniture shopping",
-    industry: "E-Commerce / Interior Design",
-    services: ["Custom Business Platform", "AI-Powered Tools"],
-    challenge:
-      "Online furniture shopping has a fundamental confidence problem: customers struggle to tell if a piece will fit their room, match their style, or look right in their space. Return rates are high and conversion rates are low because the gap between seeing a product photo and imagining it in your home is too wide.",
-    solution:
-      "As CTO and co-founder (20% equity), we are building an AI design concierge platform: upload a room photo, get AI-powered scene analysis (room type, lighting, spatial mapping), receive curated product recommendations matched to your space, and preview furniture in AR at true scale. The platform bridges mobile and desktop with a PWA architecture, QR-code handoff between devices, and affiliate commerce integration.",
-    results: [
-      "AI scene parsing: room type, floor planes, lighting analysis",
-      "AR viewer for true-to-scale furniture visualization",
-      "Affiliate commerce integration (Amazon, Awin, others)",
-      "PWA with mobile-first design and desktop bridge",
-      "Product-to-room matching using AI curation",
-      "GPU infrastructure planning for production ML workloads",
-    ],
-    tech: ["Next.js", "React", "Tailwind CSS", "AR Kit", "AI/ML"],
-  },
-  {
     slug: "document-processing-toolkit",
     title: "Document Processing Toolkit",
     subtitle: "18 pipelines, AI chat, and zero cloud dependency",

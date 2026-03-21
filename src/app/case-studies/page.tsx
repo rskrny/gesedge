@@ -9,7 +9,6 @@ import MagneticButton from "@/components/MagneticButton";
 const caseStudyImages: Record<string, string> = {
   "charter-operations-platform": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80&auto=format",
   "trilingual-product-intelligence": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format",
-  "ar-ecommerce-platform": "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=800&q=80&auto=format",
   "document-processing-toolkit": "https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80&auto=format",
 };
 
@@ -45,11 +44,11 @@ export default function CaseStudies() {
               <RevealSection delay={0.3}>
                 <div className="space-y-3">
                   <div className="card-glass rounded-sm p-4">
-                    <p className="font-display text-2xl font-semibold text-gradient">4</p>
+                    <p className="font-display text-2xl font-semibold text-gradient">3</p>
                     <p className="text-xs font-mono text-fg-dim mt-1">Production systems shipped</p>
                   </div>
                   <div className="card-glass rounded-sm p-4">
-                    <p className="font-display text-2xl font-semibold text-gradient">5</p>
+                    <p className="font-display text-2xl font-semibold text-gradient">4</p>
                     <p className="text-xs font-mono text-fg-dim mt-1">Industries served</p>
                   </div>
                 </div>

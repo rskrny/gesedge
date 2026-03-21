@@ -8,7 +8,7 @@ import MagneticButton from "@/components/MagneticButton";
 const locations = [
   { country: "United States", entity: "Global Edge Strategies LLC", city: "Wyoming", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format" },
   { country: "China", entity: "Chengdu HuanQiao", city: "Chengdu, Sichuan", image: "https://images.unsplash.com/photo-1589650600625-5dec675eb3f6?w=600&q=80&auto=format" },
-  { country: "United Kingdom", entity: "C14-Space LTD", city: "London (CTO / Co-founder)", image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80&auto=format" },
+  { country: "United Kingdom", entity: "UK Operations", city: "London", image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80&auto=format" },
 ];
 
 export default function About() {
@@ -89,7 +89,7 @@ export default function About() {
                 <p className="text-lg text-fg-muted leading-relaxed">
                   Founded by Ryan Kearney, GES operates across three countries: a Wyoming LLC
                   in the United States, a wholly foreign-owned enterprise (WFOE) in Chengdu,
-                  China, and ongoing work with UK-incorporated ventures. This is the daily reality of managing entities, contracts,
+                  China, and operations supporting UK-based clients. This is the daily reality of managing entities, contracts,
                   and compliance across jurisdictions with fundamentally different legal systems,
                   business cultures, and technical ecosystems.
                 </p>
@@ -98,8 +98,8 @@ export default function About() {
                 <p className="text-lg text-fg-muted leading-relaxed">
                   Every project starts with a real problem. A charter captain drowning in manual
                   booking management. A B2B supplier whose international buyers can&apos;t find
-                  the right product. A furniture startup that needs AR visualization to close the
-                  confidence gap in online shopping. We listen, then we build, from database
+                  the right product. A business that needs document processing without
+                  uploading sensitive files to the cloud. We listen, then we build, from database
                   design to deployment.
                 </p>
               </RevealSection>
