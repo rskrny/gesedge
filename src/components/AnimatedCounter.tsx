@@ -11,7 +11,7 @@ interface AnimatedCounterProps {
 
 export default function AnimatedCounter({ value, className = "", duration = 2000 }: AnimatedCounterProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-40px" });
+  const isInView = useInView(ref, { once: true, amount: 0.1 });
   const [display, setDisplay] = useState("0");
 
   // Extract numeric part and suffix (e.g., "100+" -> 100 and "+")

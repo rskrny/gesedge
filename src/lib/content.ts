@@ -62,6 +62,7 @@ export const caseStudies = [
     industry: "Marine Services",
     services: ["Custom Business Platform", "SEO & Analytics"],
     liveUrl: "https://fishingbloodline.com",
+    githubUrl: null,
     challenge:
       "A Cape Cod charter fishing captain was managing his entire operation through phone calls, text messages, and a basic website builder. During peak season, he was losing bookings to scheduling conflicts, spending hours on admin instead of the water, and had zero visibility into his business performance.",
     solution:
@@ -127,7 +128,7 @@ export const stats = [
   { value: "3", label: "Projects Shipped" },
   { value: "3", label: "Languages" },
   { value: "248+", label: "Tests Written" },
-  { value: "2", label: "Countries" },
+  { value: "3", label: "Countries" },
 ];
 
 export const techStack = [

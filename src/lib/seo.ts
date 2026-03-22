@@ -8,8 +8,9 @@ const SITE_DESCRIPTION =
 export function createMetadata(overrides: Partial<Metadata> & { path?: string } = {}): Metadata {
   const { path = "", ...rest } = overrides;
   const url = `${SITE_URL}${path}`;
-  const title = rest.title
-    ? `${rest.title} | ${SITE_NAME}`
+  const rawTitle = rest.title as string | undefined;
+  const title = rawTitle
+    ? (rawTitle.includes(SITE_NAME) ? rawTitle : `${rawTitle} | ${SITE_NAME}`)
     : `${SITE_NAME} | Custom AI-Powered Business Systems`;
 
   return {

@@ -1,4 +1,4 @@
-@import url('https://api.fontshare.com/v2/css?f[]=clash-display@200,300,400,500,600,700&f[]=satoshi@300,400,500,700,900,300i,400i&f[]=jet-brains-mono@400,500&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Space+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@400;500&display=swap');
 @import "tailwindcss";
 
 @theme {
@@ -9,8 +9,8 @@
 
   /* ── Foregrounds ───────────────────────────── */
   --color-fg: #E6E4DF;
-  --color-fg-muted: #8B92A5;
-  --color-fg-dim: #515973;
+  --color-fg-muted: #A8B2C8;
+  --color-fg-dim: #7D8BA8;
 
   /* ── Accents ───────────────────────────────── */
   --color-accent: #E91E8C;               /* Electric magenta */
@@ -29,9 +29,9 @@
   --color-border-hover: #252B40;
 
   /* ── Typography ─────────────────────────────── */
-  --font-display: "Clash Display", system-ui, sans-serif;
-  --font-body: "Satoshi", system-ui, sans-serif;
-  --font-mono: "JetBrains Mono", monospace;
+  --font-display: "Cormorant Garamond", Georgia, serif;
+  --font-body: "Space Grotesk", system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", "Courier New", monospace;
 }
 
 /* ── Base ──────────────────────────────────────── */
@@ -49,6 +49,15 @@ body {
   font-size: 16px;
   line-height: 1.6;
   overflow-x: hidden;
+  font-weight: 300;
+}
+
+/* Cormorant Garamond display typography */
+.font-display,
+h1, h2, h3, h4, h5, h6 {
+  font-optical-sizing: auto;
+  font-feature-settings: "kern" 1, "liga" 1, "calt" 1;
+  letter-spacing: 0.01em;
 }
 
 ::selection {

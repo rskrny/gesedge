@@ -3,23 +3,15 @@
 import Link from "next/link";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
+// AnimatePresence kept for mobile menu
 
 const navLinks = [
-  { href: "/services/business-platforms", label: "Services", hasDropdown: true },
   { href: "/case-studies", label: "Work" },
-  { href: "/training", label: "Training" },
   { href: "/about", label: "About" },
-];
-
-const serviceLinks = [
-  { href: "/services/business-platforms", label: "Custom Business Platforms" },
-  { href: "/services/ai-tools", label: "AI-Powered Tools" },
-  { href: "/services/cross-border", label: "Cross-Border Operations" },
 ];
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
-  const [servicesOpen, setServicesOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -53,54 +45,15 @@ export default function Header() {
 
         {/* Desktop Nav */}
         <div className="hidden md:flex items-center gap-1">
-          {navLinks.map((link) =>
-            link.hasDropdown ? (
-              <div
-                key={link.href}
-                className="relative"
-                onMouseEnter={() => setServicesOpen(true)}
-                onMouseLeave={() => setServicesOpen(false)}
-              >
-                <Link
-                  href={link.href}
-                  className="px-4 py-2 text-sm text-fg-muted hover:text-fg transition-colors duration-200 font-display tracking-wide"
-                >
-                  {link.label}
-                </Link>
-                <AnimatePresence>
-                  {servicesOpen && (
-                    <motion.div
-                      initial={{ opacity: 0, y: 8, scale: 0.96 }}
-                      animate={{ opacity: 1, y: 0, scale: 1 }}
-                      exit={{ opacity: 0, y: 8, scale: 0.96 }}
-                      transition={{ duration: 0.2, ease: "easeOut" }}
-                      className="absolute top-full left-0 pt-2"
-                    >
-                      <div className="bg-bg-elevated/95 backdrop-blur-xl border border-border rounded-sm py-2 min-w-[260px] shadow-xl shadow-black/20">
-                        {serviceLinks.map((sl) => (
-                          <Link
-                            key={sl.href}
-                            href={sl.href}
-                            className="block px-5 py-3 text-sm text-fg-muted hover:text-accent hover:bg-accent-dim transition-colors duration-200"
-                          >
-                            {sl.label}
-                          </Link>
-                        ))}
-                      </div>
-                    </motion.div>
-                  )}
-                </AnimatePresence>
-              </div>
-            ) : (
-              <Link
-                key={link.href}
-                href={link.href}
-                className="px-4 py-2 text-sm text-fg-muted hover:text-fg transition-colors duration-200 font-display tracking-wide"
-              >
-                {link.label}
-              </Link>
-            )
-          )}
+          {navLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="px-4 py-2 text-sm text-fg-muted hover:text-fg transition-colors duration-200 font-display tracking-wide"
+            >
+              {link.label}
+            </Link>
+          ))}
           <Link
             href="/contact"
             className="ml-4 px-6 py-2.5 text-sm font-display font-semibold bg-accent text-bg rounded-sm hover:bg-accent-hover transition-colors duration-200"
@@ -146,46 +99,26 @@ export default function Header() {
             className="md:hidden overflow-hidden bg-bg-elevated/95 backdrop-blur-xl border-t border-border"
           >
             <div className="px-6 py-8 space-y-1">
-              <p className="text-xs font-mono text-fg-dim tracking-wider mb-3 uppercase">Services</p>
-              {serviceLinks.map((sl, i) => (
+              {navLinks.map((link, i) => (
                 <motion.div
-                  key={sl.href}
+                  key={link.href}
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: i * 0.05 }}
                 >
                   <Link
-                    href={sl.href}
-                    className="block py-2 text-sm text-fg-muted hover:text-accent transition-colors"
+                    href={link.href}
+                    className="block py-2 text-sm text-fg-muted hover:text-fg transition-colors"
                     onClick={() => setMobileOpen(false)}
                   >
-                    {sl.label}
+                    {link.label}
                   </Link>
                 </motion.div>
               ))}
-              <div className="h-px bg-border my-4" />
-              {navLinks
-                .filter((l) => !l.hasDropdown)
-                .map((link, i) => (
-                  <motion.div
-                    key={link.href}
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: (i + 3) * 0.05 }}
-                  >
-                    <Link
-                      href={link.href}
-                      className="block py-2 text-sm text-fg-muted hover:text-fg transition-colors"
-                      onClick={() => setMobileOpen(false)}
-                    >
-                      {link.label}
-                    </Link>
-                  </motion.div>
-                ))}
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 }}
+                transition={{ delay: 0.2 }}
                 className="pt-4"
               >
                 <Link

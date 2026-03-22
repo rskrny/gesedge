@@ -26,7 +26,7 @@ export default function RevealSection({
   once = true,
 }: RevealSectionProps) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once, margin: "-80px" });
+  const isInView = useInView(ref, { once, amount: 0 });
   const offset = directionMap[direction];
 
   return (
@@ -57,7 +57,7 @@ export function RevealStagger({
   staggerDelay?: number;
 }) {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, margin: "-60px" });
+  const isInView = useInView(ref, { once: true, amount: 0 });
 
   return (
     <motion.div

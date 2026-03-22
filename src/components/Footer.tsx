@@ -23,25 +23,30 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Services */}
+          {/* Work */}
           <div className="md:col-span-2 md:col-start-6">
             <h4 className="text-xs font-mono text-accent tracking-wider uppercase mb-5">
-              Services
+              Work
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/services/business-platforms" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
-                  Business Platforms
+                <Link href="/case-studies" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
+                  Case Studies
                 </Link>
               </li>
               <li>
-                <Link href="/services/ai-tools" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
-                  AI-Powered Tools
+                <Link href="/case-studies/bloodline-charters" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
+                  Bloodline Charters
                 </Link>
               </li>
               <li>
-                <Link href="/services/cross-border" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
-                  Cross-Border Ops
+                <Link href="/case-studies/pjcs-rag" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
+                  PJCS RAG System
+                </Link>
+              </li>
+              <li>
+                <Link href="/case-studies/docproc" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
+                  DocProc PDF Toolkit
                 </Link>
               </li>
             </ul>
@@ -54,24 +59,14 @@ export default function Footer() {
             </h4>
             <ul className="space-y-3">
               <li>
-                <Link href="/case-studies" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
-                  Case Studies
-                </Link>
-              </li>
-              <li>
-                <Link href="/training" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
-                  AI Training
-                </Link>
-              </li>
-              <li>
                 <Link href="/about" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
                   About
                 </Link>
               </li>
               <li>
-                <Link href="/blog" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
-                  Blog
-                </Link>
+                <a href="https://github.com/rskrny/docproc-pdfcompressor" target="_blank" rel="noopener noreferrer" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
+                  GitHub
+                </a>
               </li>
             </ul>
           </div>
