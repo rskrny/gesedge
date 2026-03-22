@@ -56,72 +56,78 @@ export const services = [
 
 export const caseStudies = [
   {
-    slug: "charter-operations-platform",
-    title: "Charter Operations Platform",
-    subtitle: "From phone calls to a full-stack booking system",
+    slug: "bloodline-charters",
+    title: "Bloodline Charters",
+    subtitle: "Full-stack booking platform for a Cape Cod charter fishing operation",
     industry: "Marine Services",
     services: ["Custom Business Platform", "SEO & Analytics"],
+    liveUrl: "https://fishingbloodline.com",
     challenge:
       "A Cape Cod charter fishing captain was managing his entire operation through phone calls, text messages, and a basic website builder. During peak season, he was losing bookings to scheduling conflicts, spending hours on admin instead of the water, and had zero visibility into his business performance.",
     solution:
-      "We built a complete operations platform from scratch: a public-facing site with trip information, real-time availability calendar, and inquiry forms, all backed by an admin dashboard with a full booking pipeline, automated email notifications, gallery management, and business analytics. The system integrates NOAA tide data and weather APIs to provide cancellation probability predictions and optimal trip timing recommendations.",
+      "We built a complete operations platform from scratch: a public-facing site with trip information, real-time availability calendar, and inquiry forms, all backed by an admin dashboard with a full booking pipeline, automated email notifications, gallery management, and business analytics. The system integrates NOAA tide data and weather APIs for cancellation predictions and optimal trip timing.",
     results: [
-      "39 API endpoints powering the entire operation",
-      "Automated booking pipeline: inquiry to discussion to deposit to confirmed",
+      "Increased traffic and click-through rates within one week of launch",
+      "39 API endpoints powering the full operation end-to-end",
+      "Automated booking pipeline: inquiry → deposit → confirmed",
       "Tide and weather integration for trip planning",
-      "Admin dashboard replacing all manual tracking",
-      "Full SEO implementation with structured data",
-      "Automated health monitoring and maintenance",
+      "Admin dashboard replacing all manual phone/notebook tracking",
+      "Full SEO implementation with structured data markup",
     ],
     tech: ["Next.js", "TypeScript", "Supabase", "NOAA API", "Resend"],
   },
   {
-    slug: "trilingual-product-intelligence",
-    title: "Trilingual Product Intelligence",
-    subtitle: "84 products, 3 languages, one AI-powered catalog",
+    slug: "pjcs-rag",
+    title: "PJCS RAG System",
+    subtitle: "Trilingual AI product advisor bridging Chinese manufacturing and Latin American construction",
     industry: "B2B Construction Materials",
     services: ["AI-Powered Tools", "Cross-Border"],
+    liveUrl: "https://pjcsrag-production.up.railway.app/",
+    githubUrl: null,
     challenge:
-      "A waterproofing materials supplier needed their B2B buyers across English, Chinese, and Spanish-speaking markets to find the right product for their specific application, substrate, and budget. Traditional catalog browsing meant buyers either called a rep or guessed wrong.",
+      "A Chinese waterproofing materials manufacturer needed to help Latin American contractors find the right product for their specific application, substrate, and budget — across three languages, without calling a rep.",
     solution:
-      "We built a RAG-powered product intelligence system: an AI chat that answers natural-language questions about 84 waterproofing products, a 5-step guided product finder wizard (application to substrate to scale to budget to recommendation), and a filterable product catalog. The system uses hybrid search combining vector embeddings with BM25 keyword matching and reciprocal rank fusion for high-precision results across all three languages.",
+      "We built a RAG-powered product intelligence system: an AI chat that answers natural-language questions about 84 waterproofing products, a 5-step guided product finder (application → substrate → scale → budget → recommendation), and a filterable catalog. The system uses hybrid search combining ChromaDB vector embeddings with BM25 keyword matching and reciprocal rank fusion across all three languages.",
     results: [
-      "Hybrid RAG search with vector + keyword fusion",
-      "Trilingual support across UI, backend, and documents",
-      "5-step guided product recommendation wizard",
-      "248+ automated tests ensuring reliability",
+      "Trilingual support across UI, backend, and documents (EN/ZH/ES)",
+      "Hybrid search: ChromaDB + BM25 + Reciprocal Rank Fusion",
+      "5-step guided product wizard with smart recommendations",
+      "Audience modes: buyer vs. professional installer",
+      "Graceful degradation when AI is unavailable",
       "Deployed on Railway with auto-deploy from GitHub",
-      "Full API with structured product data",
     ],
-    tech: ["FastAPI", "Python", "ChromaDB", "BM25", "Railway"],
+    tech: ["Python", "FastAPI", "ChromaDB", "GPT-4o-mini", "Railway"],
   },
   {
-    slug: "document-processing-toolkit",
-    title: "Document Processing Toolkit",
-    subtitle: "18 pipelines, AI chat, and zero cloud dependency",
-    industry: "Developer Tools / Productivity",
+    slug: "docproc",
+    title: "DocProc PDF Toolkit",
+    subtitle: "18-pipeline document processing suite with RAG-powered assistant and 248 automated tests",
+    industry: "Developer Tools",
     services: ["AI-Powered Tools"],
+    liveUrl: null,
+    githubUrl: "https://github.com/rskrny/docproc-pdfcompressor",
     challenge:
-      "Document processing is fragmented: one tool for PDF compression, another for image conversion, another for merging, another for OCR. Each requires uploading sensitive files to a third-party server. Businesses dealing with confidential documents need processing power without the privacy risk.",
+      "Document processing is fragmented across dozens of tools, each requiring you to upload sensitive files to a third-party server. Businesses handling confidential documents need processing power without the privacy exposure.",
     solution:
-      "We built a comprehensive, privacy-first document processing suite with 18 registered pipelines, all running locally. PDF operations (compress, merge, split, rotate, watermark, protect), image operations (resize, convert, background removal via AI), and an AI chat assistant where you describe what you need in natural language and the system generates and executes deterministic processing plans. Includes a RAG document engine for querying uploaded documents with hybrid BM25 + TF-IDF retrieval.",
+      "A privacy-first document processing suite with 18 registered pipelines, all running locally. PDF operations (compress, merge, split, rotate, watermark, protect), image operations (resize, convert, AI background removal), and a RAG-powered AI chat where you describe what you need in natural language and the system generates and executes deterministic processing plans.",
     results: [
-      "18 document processing pipelines",
+      "18 document processing pipelines in a single suite",
+      "248 automated tests ensuring reliability across all pipelines",
       "AI chat: describe tasks, auto-generated execution plans",
-      "RAG engine for document Q&A with hybrid retrieval",
+      "RAG engine for document Q&A with hybrid BM25 + TF-IDF",
       "Privacy-first: everything runs locally, zero cloud uploads",
-      "Recipe system for chainable multi-step workflows",
-      "Packaged as standalone .exe for end users",
+      "Packaged as standalone .exe for non-technical end users",
     ],
-    tech: ["Python", "Flask", "PyPDF2", "OpenCV", "ONNX", "SQLite"],
+    tech: ["Python", "Flask", "ChromaDB", "OpenCV", "ONNX", "SQLite"],
   },
 ];
 
+/* Honest stats — only what we can verify */
 export const stats = [
-  { value: "3", label: "Countries" },
-  { value: "6+", label: "Production Systems" },
-  { value: "100+", label: "API Endpoints Built" },
-  { value: "3", label: "Languages Supported" },
+  { value: "3", label: "Projects Shipped" },
+  { value: "3", label: "Languages" },
+  { value: "248+", label: "Tests Written" },
+  { value: "2", label: "Countries" },
 ];
 
 export const techStack = [
