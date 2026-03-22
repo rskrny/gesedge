@@ -1,13 +1,14 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-// AnimatePresence kept for mobile menu
 
 const navLinks = [
   { href: "/case-studies", label: "Work" },
   { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
 ];
 
 export default function Header() {
@@ -33,11 +34,19 @@ export default function Header() {
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-12 h-18 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="relative group">
+        <Link href="/" className="relative group flex items-center gap-3">
+          <Image
+            src="/logo.png"
+            alt="Global Edge Strategies"
+            width={36}
+            height={36}
+            className="w-9 h-9 object-contain"
+            priority
+          />
           <span className="font-display text-xl font-semibold tracking-tight text-fg">
             GES
           </span>
-          <span className="ml-2 text-xs font-mono text-fg-dim hidden sm:inline tracking-wider">
+          <span className="text-xs font-mono text-fg-dim hidden sm:inline tracking-wider">
             Global Edge Strategies
           </span>
           <span className="absolute -bottom-1 left-0 w-0 h-px bg-accent group-hover:w-full transition-all duration-300" />

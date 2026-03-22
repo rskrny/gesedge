@@ -1,10 +1,13 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { caseStudies, stats, techStack } from "@/lib/content";
 import RevealSection, { RevealStagger, RevealItem } from "@/components/RevealSection";
 import AnimatedCounter from "@/components/AnimatedCounter";
 import MagneticButton from "@/components/MagneticButton";
 import HeroBackground from "@/components/HeroBackground";
+import HeroWordReveal from "@/components/HeroWordReveal";
+import SpotlightCard from "@/components/SpotlightCard";
 import { createMetadata } from "@/lib/seo";
 
 export const metadata: Metadata = createMetadata({
@@ -32,6 +35,17 @@ export default function Home() {
     <>
       {/* ── Hero ──────────────────────────────── */}
       <section className="relative min-h-screen flex items-center overflow-hidden">
+        {/* Hero image — base layer */}
+        <div className="absolute inset-0 z-0">
+          <Image
+            src="/images/hero-home.png"
+            alt=""
+            fill
+            className="object-cover opacity-20"
+            priority
+          />
+          <div className="absolute inset-0 bg-bg/60" />
+        </div>
         <HeroBackground />
 
         {/* Bottom gradient fade */}
@@ -44,16 +58,17 @@ export default function Home() {
             </p>
           </RevealSection>
 
-          <RevealSection delay={0.1}>
-            <h1 className="font-display text-6xl md:text-8xl lg:text-[7rem] font-semibold leading-[0.88] max-w-5xl" style={{ letterSpacing: "0.02em" }}>
-              Technology
-              <br />
-              That{" "}
-              <span className="text-gradient italic">Bridges</span>
-              <br />
-              Markets.
-            </h1>
-          </RevealSection>
+          <h1 className="font-display text-6xl md:text-8xl lg:text-[7rem] font-semibold leading-[0.9] max-w-5xl" style={{ letterSpacing: "0.02em" }}>
+            <HeroWordReveal text="Technology" delay={0.1} className="block" />
+            <span className="block">
+              <HeroWordReveal text="That" delay={0.25} />
+              {" "}
+              <span className="text-gradient italic">
+                <HeroWordReveal text="Bridges" delay={0.32} />
+              </span>
+            </span>
+            <HeroWordReveal text="Markets." delay={0.46} className="block" />
+          </h1>
 
           <RevealSection delay={0.2}>
             <p className="mt-8 text-lg md:text-xl text-fg-muted leading-relaxed max-w-2xl font-light">
@@ -100,82 +115,83 @@ export default function Home() {
           <RevealStagger className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
             {caseStudies.map((cs, i) => (
               <RevealItem key={cs.slug}>
-                <Link
-                  href={`/case-studies/${cs.slug}`}
-                  className="group block card-glass rounded-sm overflow-hidden h-full transition-all duration-500 hover:border-border-hover hover:-translate-y-1 hover:shadow-2xl"
-                  style={{ boxShadow: "0 0 0 0 transparent" }}
+                <SpotlightCard
+                  className="group card-glass rounded-sm overflow-hidden h-full"
+                  spotlightColor={`${projectAccents[i].primary}10`}
                 >
-                  {/* Card header gradient */}
-                  <div
-                    className={`relative h-[160px] bg-gradient-to-br ${projectGradients[i]} overflow-hidden`}
+                  <Link
+                    href={`/case-studies/${cs.slug}`}
+                    className="block h-full"
                   >
-                    {/* Accent glow spot */}
+                    {/* Card header gradient */}
                     <div
-                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
-                      style={{
-                        background: `radial-gradient(ellipse at 30% 50%, ${projectAccents[i].primary}22 0%, transparent 70%)`,
-                      }}
-                    />
-                    {/* Top-left label */}
-                    <span
-                      className="absolute top-5 left-5 text-xs font-mono tracking-wider uppercase px-3 py-1.5 rounded-sm border"
-                      style={{
-                        color: projectAccents[i].primary,
-                        borderColor: `${projectAccents[i].primary}33`,
-                        background: `${projectAccents[i].primary}0D`,
-                      }}
+                      className={`relative h-[160px] bg-gradient-to-br ${projectGradients[i]} overflow-hidden`}
                     >
-                      {projectAccents[i].label}
-                    </span>
-                    {/* Live/GitHub badge */}
-                    {cs.liveUrl ? (
-                      <span className="absolute bottom-5 right-5 flex items-center gap-1.5 text-xs font-mono text-fg-dim">
-                        <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                        Live
+                      {/* Accent glow spot */}
+                      <div
+                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                        style={{
+                          background: `radial-gradient(ellipse at 30% 50%, ${projectAccents[i].primary}22 0%, transparent 70%)`,
+                        }}
+                      />
+                      {/* Top-left label */}
+                      <span
+                        className="absolute top-5 left-5 text-xs font-mono tracking-wider uppercase px-3 py-1.5 rounded-sm border"
+                        style={{
+                          color: projectAccents[i].primary,
+                          borderColor: `${projectAccents[i].primary}33`,
+                          background: `${projectAccents[i].primary}0D`,
+                        }}
+                      >
+                        {projectAccents[i].label}
                       </span>
-                    ) : cs.githubUrl ? (
-                      <span className="absolute bottom-5 right-5 flex items-center gap-1.5 text-xs font-mono text-fg-dim">
-                        <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
-                        </svg>
-                        Open Source
-                      </span>
-                    ) : null}
-                  </div>
-
-                  <div className="p-6 md:p-8 flex flex-col gap-3">
-                    <h3
-                      className="font-display text-xl md:text-2xl font-semibold transition-colors duration-300"
-                      style={{ ["--tw-text-opacity" as string]: 1 }}
-                    >
-                      <span className="group-hover:text-transparent group-hover:bg-clip-text group-hover:[background-image:linear-gradient(135deg,var(--color-accent),var(--color-accent-2))] transition-all duration-300">
-                        {cs.title}
-                      </span>
-                    </h3>
-                    <p className="text-sm text-fg-muted leading-relaxed">
-                      {cs.subtitle}
-                    </p>
-                    <div className="flex flex-wrap gap-1.5 mt-2">
-                      {cs.tech.slice(0, 4).map((t) => (
-                        <span
-                          key={t}
-                          className="text-xs font-mono px-2 py-0.5 rounded-sm border border-border text-fg-dim"
-                        >
-                          {t}
+                      {/* Live/GitHub badge */}
+                      {cs.liveUrl ? (
+                        <span className="absolute bottom-5 right-5 flex items-center gap-1.5 text-xs font-mono text-fg-dim">
+                          <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
+                          Live
                         </span>
-                      ))}
+                      ) : cs.githubUrl ? (
+                        <span className="absolute bottom-5 right-5 flex items-center gap-1.5 text-xs font-mono text-fg-dim">
+                          <svg className="w-3 h-3" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 0C5.374 0 0 5.373 0 12c0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23A11.509 11.509 0 0 1 12 5.803c1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576C20.566 21.797 24 17.3 24 12c0-6.627-5.373-12-12-12z" />
+                          </svg>
+                          Open Source
+                        </span>
+                      ) : null}
                     </div>
-                    <span
-                      className="inline-flex items-center gap-2 mt-2 text-sm font-display text-fg-dim group-hover:gap-3 transition-all duration-300"
-                      style={{ color: projectAccents[i].primary + "99" }}
-                    >
-                      Read case study
-                      <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
-                        <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                      </svg>
-                    </span>
-                  </div>
-                </Link>
+
+                    <div className="p-6 md:p-8 flex flex-col gap-3">
+                      <h3 className="font-display text-xl md:text-2xl font-semibold transition-colors duration-300">
+                        <span className="group-hover:text-transparent group-hover:bg-clip-text group-hover:[background-image:linear-gradient(135deg,var(--color-accent),var(--color-accent-2))] transition-all duration-300">
+                          {cs.title}
+                        </span>
+                      </h3>
+                      <p className="text-sm text-fg-muted leading-relaxed">
+                        {cs.subtitle}
+                      </p>
+                      <div className="flex flex-wrap gap-1.5 mt-2">
+                        {cs.tech.slice(0, 4).map((t) => (
+                          <span
+                            key={t}
+                            className="text-xs font-mono px-2 py-0.5 rounded-sm border border-border text-fg-dim"
+                          >
+                            {t}
+                          </span>
+                        ))}
+                      </div>
+                      <span
+                        className="inline-flex items-center gap-2 mt-2 text-sm font-display group-hover:gap-3 transition-all duration-300"
+                        style={{ color: projectAccents[i].primary + "99" }}
+                      >
+                        Read case study
+                        <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                        </svg>
+                      </span>
+                    </div>
+                  </Link>
+                </SpotlightCard>
               </RevealItem>
             ))}
           </RevealStagger>

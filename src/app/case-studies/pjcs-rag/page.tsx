@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import RevealSection, { RevealStagger, RevealItem } from "@/components/RevealSection";
 import MagneticButton from "@/components/MagneticButton";
 import { createMetadata } from "@/lib/seo";
@@ -48,6 +49,13 @@ export default function PjcsRagPage() {
       {/* ── Hero ───────────────────────────── */}
       <section className="relative min-h-[70vh] flex items-end overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 bg-bg">
+          <Image
+            src="/images/hero-pjcs.png"
+            alt=""
+            fill
+            className="object-cover opacity-15"
+            priority
+          />
           <div
             className="absolute inset-0"
             style={{

@@ -1,14 +1,34 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import RevealSection, { RevealStagger, RevealItem } from "@/components/RevealSection";
 import MagneticButton from "@/components/MagneticButton";
 
 const locations = [
-  { country: "United States", entity: "Global Edge Strategies LLC", city: "Wyoming", image: "https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=600&q=80&auto=format" },
-  { country: "China", entity: "Chengdu HuanQiao", city: "Chengdu, Sichuan", image: "https://images.unsplash.com/photo-1589650600625-5dec675eb3f6?w=600&q=80&auto=format" },
-  { country: "United Kingdom", entity: "UK Operations", city: "London", image: "https://images.unsplash.com/photo-1513635269975-59663e0ac1ad?w=600&q=80&auto=format" },
+  {
+    country: "United States",
+    entity: "Global Edge Strategies LLC",
+    city: "Wyoming",
+    gradient: "from-[#1a0d1a] via-[#0D1117] to-[#0A0E1A]",
+    accent: "#E91E8C",
+    icon: "🏔️",
+  },
+  {
+    country: "China",
+    entity: "Chengdu HuanQiao",
+    city: "Chengdu, Sichuan",
+    gradient: "from-[#0d1a1a] via-[#0D1117] to-[#0A0E1A]",
+    accent: "#00D4FF",
+    icon: "🐼",
+  },
+  {
+    country: "United Kingdom",
+    entity: "UK Operations",
+    city: "London",
+    gradient: "from-[#110d1a] via-[#0D1117] to-[#0A0E1A]",
+    accent: "#B794F6",
+    icon: "🏛️",
+  },
 ];
 
 export default function About() {
@@ -45,14 +65,13 @@ export default function About() {
             </div>
             <div className="hidden lg:block lg:col-span-5">
               <RevealSection delay={0.3}>
-                <div className="relative overflow-hidden rounded-sm border border-border/50 h-[300px]">
-                  <Image
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format"
-                    alt="Modern workspace representing global operations"
-                    fill
-                    className="object-cover opacity-70"
-                    priority
-                  />
+                <div className="relative overflow-hidden rounded-sm border border-border/50 h-[300px] bg-gradient-to-br from-[#1a0d1a] via-[#0D1117] to-[#0A0E1A]">
+                  {/* Animated orbs */}
+                  <div className="absolute w-48 h-48 rounded-full top-[-40px] right-[-40px]" style={{ background: "radial-gradient(circle, rgba(233,30,140,0.18) 0%, transparent 70%)", filter: "blur(30px)" }} />
+                  <div className="absolute w-40 h-40 rounded-full bottom-0 left-10" style={{ background: "radial-gradient(circle, rgba(0,212,255,0.14) 0%, transparent 70%)", filter: "blur(30px)" }} />
+                  <div className="absolute w-32 h-32 rounded-full top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2" style={{ background: "radial-gradient(circle, rgba(183,148,246,0.10) 0%, transparent 70%)", filter: "blur(30px)" }} />
+                  {/* Grid overlay */}
+                  <div className="absolute inset-0 opacity-30" style={{ backgroundImage: "linear-gradient(rgba(233,30,140,0.05) 1px, transparent 1px), linear-gradient(90deg, rgba(233,30,140,0.05) 1px, transparent 1px)", backgroundSize: "40px 40px" }} />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg/70 to-transparent" />
                   <div className="absolute bottom-4 left-4">
                     <div className="flex gap-2">
@@ -180,17 +199,15 @@ export default function About() {
             {locations.map((loc) => (
               <RevealItem key={loc.country}>
                 <div className="card-glass rounded-sm overflow-hidden h-full group hover:border-accent/30 transition-all duration-300">
-                  <div className="relative h-[180px]">
-                    <Image
-                      src={loc.image}
-                      alt={`${loc.city} landscape`}
-                      fill
-                      className="object-cover opacity-60 group-hover:opacity-80 transition-opacity duration-500"
-                    />
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg-card via-bg-card/40 to-transparent" />
+                  <div className={`relative h-[180px] bg-gradient-to-br ${loc.gradient} flex items-center justify-center overflow-hidden`}>
+                    {/* Gradient orb */}
+                    <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 50%, ${loc.accent}18 0%, transparent 65%)` }} />
+                    <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
+                    <span className="text-5xl relative z-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">{loc.icon}</span>
+                    <div className="absolute inset-0 bg-gradient-to-t from-bg-card/80 to-transparent" />
                   </div>
                   <div className="p-6">
-                    <p className="font-mono text-xs tracking-widest text-accent mb-3 uppercase">{loc.country}</p>
+                    <p className="font-mono text-xs tracking-widest mb-3 uppercase" style={{ color: loc.accent }}>{loc.country}</p>
                     <p className="font-display text-lg font-medium text-fg">{loc.entity}</p>
                     <p className="text-sm text-fg-dim mt-2">{loc.city}</p>
                   </div>

@@ -1,14 +1,13 @@
 import type { NextConfig } from "next";
+import path from "path";
 
 const nextConfig: NextConfig = {
   output: "standalone",
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "images.unsplash.com",
-      },
-    ],
+    // All images served from local public/ folder — no external sources
+  },
+  turbopack: {
+    root: path.resolve(__dirname),
   },
 };
 

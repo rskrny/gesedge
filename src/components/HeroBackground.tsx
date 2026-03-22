@@ -29,6 +29,10 @@ const PARTICLES = [
 export default function HeroBackground() {
   return (
     <div className="absolute inset-0 overflow-hidden pointer-events-none" aria-hidden="true">
+      {/* Animated gradient mesh — Stripe-style shifting layers */}
+      <div className="hero-mesh" />
+      <div className="hero-mesh-2" />
+
       {/* Primary gradient orbs — larger, more saturated */}
       <div className="hero-orb hero-orb-magenta" />
       <div className="hero-orb hero-orb-cyan" />
