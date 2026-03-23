@@ -41,10 +41,10 @@ export default function Home() {
             src="/images/hero-home.png"
             alt=""
             fill
-            className="object-cover opacity-20"
+            className="object-cover opacity-45"
             priority
           />
-          <div className="absolute inset-0 bg-bg/60" />
+          <div className="absolute inset-0 bg-bg/30" />
         </div>
         <HeroBackground />
 
@@ -63,9 +63,7 @@ export default function Home() {
             <span className="block">
               <HeroWordReveal text="That" delay={0.25} />
               {" "}
-              <span className="text-gradient italic">
-                <HeroWordReveal text="Bridges" delay={0.32} />
-              </span>
+              <HeroWordReveal text="Bridges" delay={0.32} className="text-gradient italic" />
             </span>
             <HeroWordReveal text="Markets." delay={0.46} className="block" />
           </h1>

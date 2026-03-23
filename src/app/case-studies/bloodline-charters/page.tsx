@@ -33,7 +33,7 @@ export default function BloodlineChartersPage() {
             src="/images/hero-bloodline.png"
             alt=""
             fill
-            className="object-cover opacity-15"
+            className="object-cover opacity-50"
             priority
           />
           <div

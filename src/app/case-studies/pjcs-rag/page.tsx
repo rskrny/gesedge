@@ -53,7 +53,7 @@ export default function PjcsRagPage() {
             src="/images/hero-pjcs.png"
             alt=""
             fill
-            className="object-cover opacity-15"
+            className="object-cover opacity-50"
             priority
           />
           <div

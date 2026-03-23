@@ -38,9 +38,9 @@ export default function Header() {
           <Image
             src="/logo.png"
             alt="Global Edge Strategies"
-            width={36}
-            height={36}
-            className="w-9 h-9 object-contain"
+            width={48}
+            height={48}
+            className="w-12 h-12 object-contain"
             priority
           />
           <span className="font-display text-xl font-semibold tracking-tight text-fg">
