@@ -30,7 +30,7 @@ export default function BloodlineChartersPage() {
         {/* Background */}
         <div className="absolute inset-0 bg-bg">
           <Image
-            src="/images/hero-bloodline.png"
+            src="/images/hero-bloodline.jpg"
             alt=""
             fill
             className="object-cover opacity-50"

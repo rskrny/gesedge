@@ -1,7 +1,12 @@
+"use client";
+
 import Link from "next/link";
 import Image from "next/image";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Footer() {
+  const { t } = useLanguage();
+
   return (
     <footer className="bg-bg-elevated border-t border-border">
       <div className="mx-auto max-w-7xl px-6 lg:px-12 py-20">
@@ -19,8 +24,7 @@ export default function Footer() {
               <span className="font-display text-2xl font-semibold tracking-tight text-fg">GES</span>
             </Link>
             <p className="mt-4 text-sm text-fg-muted leading-relaxed max-w-xs">
-              Custom AI-powered business systems engineered from scratch.
-              Operating across the US, China, and UK.
+              {t("footer.tagline")}
             </p>
             <div className="flex gap-4 mt-6">
               <span className="text-xs font-mono text-fg-dim tracking-wider">Wyoming</span>
@@ -34,12 +38,12 @@ export default function Footer() {
           {/* Work */}
           <div className="md:col-span-2 md:col-start-6">
             <h4 className="text-xs font-mono text-accent tracking-wider uppercase mb-5">
-              Work
+              {t("footer.work")}
             </h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/case-studies" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
-                  Case Studies
+                  {t("footer.caseStudies")}
                 </Link>
               </li>
               <li>
@@ -63,12 +67,17 @@ export default function Footer() {
           {/* Company */}
           <div className="md:col-span-2">
             <h4 className="text-xs font-mono text-accent tracking-wider uppercase mb-5">
-              Company
+              {t("footer.company")}
             </h4>
             <ul className="space-y-3">
               <li>
                 <Link href="/about" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
-                  About
+                  {t("nav.about")}
+                </Link>
+              </li>
+              <li>
+                <Link href="/blog" className="text-sm text-fg-muted hover:text-fg transition-colors duration-200 link-underline">
+                  {t("nav.blog")}
                 </Link>
               </li>
               <li>
@@ -82,7 +91,7 @@ export default function Footer() {
           {/* Contact */}
           <div className="md:col-span-2">
             <h4 className="text-xs font-mono text-accent tracking-wider uppercase mb-5">
-              Contact
+              {t("footer.contact")}
             </h4>
             <ul className="space-y-3">
               <li>
@@ -92,7 +101,7 @@ export default function Footer() {
               </li>
               <li>
                 <Link href="/contact" className="text-sm text-fg-muted hover:text-accent transition-colors duration-200">
-                  Start a Project &rarr;
+                  {t("footer.startProject")} &rarr;
                 </Link>
               </li>
             </ul>
@@ -102,10 +111,10 @@ export default function Footer() {
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
           <p className="text-xs text-fg-dim font-mono tracking-wide">
-            &copy; {new Date().getFullYear()} Global Edge Strategies LLC
+            &copy; {new Date().getFullYear()} {t("footer.copyright")}
           </p>
           <p className="text-xs text-fg-dim font-mono tracking-wide">
-            Engineered with precision.
+            {t("footer.engineered")}
           </p>
         </div>
       </div>

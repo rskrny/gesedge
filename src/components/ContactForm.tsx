@@ -1,9 +1,11 @@
 "use client";
 
 import { useState, type FormEvent } from "react";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const { t } = useLanguage();
 
   function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -28,9 +30,9 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="card-glass rounded-sm p-8 text-center glow-accent">
-        <h3 className="font-display text-2xl font-semibold tracking-tight mb-4">Message ready to send</h3>
+        <h3 className="font-display text-2xl font-semibold tracking-tight mb-4">{t("form.successTitle")}</h3>
         <p className="text-fg-muted">
-          Your email client should have opened with your message. If it didn&apos;t, email us directly at{" "}
+          {t("form.successBody")}{" "}
           <a href="mailto:ryan@gesedge.com" className="text-accent hover:text-accent-hover transition-colors">
             ryan@gesedge.com
           </a>
@@ -39,7 +41,7 @@ export default function ContactForm() {
           onClick={() => setSubmitted(false)}
           className="mt-6 text-sm text-accent hover:text-accent-hover transition-colors"
         >
-          Send another message
+          {t("form.sendAnother")}
         </button>
       </div>
     );
@@ -53,41 +55,40 @@ export default function ContactForm() {
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="name" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
-            Name *
+            {t("form.name")} *
           </label>
-          <input type="text" id="name" name="name" required className={inputClasses} placeholder="Your name" />
+          <input type="text" id="name" name="name" required className={inputClasses} placeholder={t("form.namePlaceholder")} />
         </div>
         <div>
           <label htmlFor="email" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
-            Email *
+            {t("form.email")} *
           </label>
-          <input type="email" id="email" name="email" required className={inputClasses} placeholder="you@company.com" />
+          <input type="email" id="email" name="email" required className={inputClasses} placeholder={t("form.emailPlaceholder")} />
         </div>
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
           <label htmlFor="company" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
-            Company
+            {t("form.company")}
           </label>
-          <input type="text" id="company" name="company" className={inputClasses} placeholder="Your company (optional)" />
+          <input type="text" id="company" name="company" className={inputClasses} placeholder={t("form.companyPlaceholder")} />
         </div>
         <div>
           <label htmlFor="service" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
-            What do you need? *
+            {t("form.service")} *
           </label>
           <select id="service" name="service" required className={inputClasses}>
-            <option value="">Select a service</option>
-            <option value="business-platform">Custom Business Platform</option>
-            <option value="ai-tools">AI-Powered Tools</option>
-            <option value="cross-border">Cross-Border Operations</option>
-            <option value="training">AI Training</option>
-            <option value="other">Something else</option>
+            <option value="">{t("form.serviceSelect")}</option>
+            <option value="website-platform">{t("form.serviceWebsite")}</option>
+            <option value="ai-tools">{t("form.serviceAI")}</option>
+            <option value="cross-border">{t("form.serviceCrossBorder")}</option>
+            <option value="other">{t("form.serviceOther")}</option>
           </select>
         </div>
       </div>
       <div>
         <label htmlFor="message" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
-          Tell us about your project *
+          {t("form.message")} *
         </label>
         <textarea
           id="message"
@@ -95,14 +96,14 @@ export default function ContactForm() {
           required
           rows={6}
           className={`${inputClasses} resize-none`}
-          placeholder="What are you trying to build or solve? The more context, the better."
+          placeholder={t("form.messagePlaceholder")}
         />
       </div>
       <button
         type="submit"
         className="w-full bg-accent text-bg font-display font-semibold px-8 py-4 rounded-sm text-sm hover:bg-accent-hover transition-colors duration-200"
       >
-        Send Message
+        {t("form.submit")}
       </button>
     </form>
   );

@@ -4,16 +4,19 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-
-const navLinks = [
-  { href: "/case-studies", label: "Work" },
-  { href: "/about", label: "About" },
-  { href: "/contact", label: "Contact" },
-];
+import LanguageToggle from "@/components/LanguageToggle";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { href: "/case-studies", label: t("nav.work") },
+    { href: "/about", label: t("nav.about") },
+    { href: "/contact", label: t("nav.contact") },
+  ];
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 20);
@@ -63,11 +66,12 @@ export default function Header() {
               {link.label}
             </Link>
           ))}
+          <LanguageToggle />
           <Link
             href="/contact"
             className="ml-4 px-6 py-2.5 text-sm font-display font-semibold bg-accent text-bg rounded-sm hover:bg-accent-hover transition-colors duration-200"
           >
-            Start a Project
+            {t("nav.startProject")}
           </Link>
         </div>
 
@@ -127,6 +131,14 @@ export default function Header() {
               <motion.div
                 initial={{ opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.15 }}
+                className="pt-3 flex items-center gap-3"
+              >
+                <LanguageToggle />
+              </motion.div>
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.2 }}
                 className="pt-4"
               >
@@ -135,7 +147,7 @@ export default function Header() {
                   className="block w-full text-center py-3 bg-accent text-bg text-sm font-display font-semibold rounded-sm"
                   onClick={() => setMobileOpen(false)}
                 >
-                  Start a Project
+                  {t("nav.startProject")}
                 </Link>
               </motion.div>
             </div>

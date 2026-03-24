@@ -29,7 +29,7 @@ export default function DocprocPage() {
       <section className="relative min-h-[70vh] flex items-end overflow-hidden pt-32 pb-20">
         <div className="absolute inset-0 bg-bg">
           <Image
-            src="/images/hero-docproc.png"
+            src="/images/hero-docproc.jpg"
             alt=""
             fill
             className="object-cover opacity-50"

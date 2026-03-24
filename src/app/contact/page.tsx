@@ -3,11 +3,13 @@
 import Image from "next/image";
 import RevealSection from "@/components/RevealSection";
 import ContactForm from "@/components/ContactForm";
+import { useLanguage } from "@/components/LanguageProvider";
 
 export default function Contact() {
+  const { t } = useLanguage();
+
   return (
     <>
-      {/* Hero split */}
       <section className="pt-32 pb-20 md:pt-40 md:pb-28 relative">
         <div className="absolute inset-0 bg-grid bg-radial-fade pointer-events-none" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
@@ -15,32 +17,31 @@ export default function Contact() {
             {/* Left info */}
             <div className="lg:col-span-5">
               <RevealSection>
-                <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">Contact</p>
+                <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">{t("contact.badge")}</p>
                 <h1 className="font-display text-5xl md:text-6xl font-semibold tracking-tight leading-[0.95]">
-                  Start a <span className="text-gradient">project</span>
+                  {t("contact.title")} <span className="text-gradient">{t("contact.titleGrad")}</span>
                 </h1>
               </RevealSection>
               <RevealSection delay={0.1}>
                 <p className="mt-6 text-lg text-fg-muted leading-relaxed">
-                  Tell us what you&apos;re trying to build or solve. We&apos;ll get back to you
-                  within 24 hours with our initial thoughts.
+                  {t("contact.sub")}
                 </p>
               </RevealSection>
 
               <RevealSection delay={0.2}>
                 <div className="mt-12 space-y-8">
                   <div>
-                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">Email</h3>
+                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">{t("contact.email")}</h3>
                     <a href="mailto:ryan@gesedge.com" className="text-fg-muted hover:text-fg transition-colors link-underline">
                       ryan@gesedge.com
                     </a>
                   </div>
                   <div>
-                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">Response Time</h3>
-                    <p className="text-fg-muted">Usually within 24 hours</p>
+                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">{t("contact.responseTime")}</h3>
+                    <p className="text-fg-muted">{t("contact.responseValue")}</p>
                   </div>
                   <div>
-                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">Locations</h3>
+                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">{t("contact.locations")}</h3>
                     <p className="text-fg-muted">
                       Wyoming, USA<br />
                       Chengdu, China<br />
@@ -50,12 +51,11 @@ export default function Contact() {
                 </div>
               </RevealSection>
 
-              {/* Small location image */}
               <RevealSection delay={0.3}>
                 <div className="mt-10 relative overflow-hidden rounded-sm border border-border/50 h-[160px] hidden lg:block">
                   <Image
-                    src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&q=80&auto=format"
-                    alt="Modern workspace"
+                    src="/images/hero-home.jpg"
+                    alt="Global Edge Strategies workspace"
                     fill
                     className="object-cover opacity-50"
                   />

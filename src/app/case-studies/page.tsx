@@ -5,14 +5,37 @@ import Image from "next/image";
 import { caseStudies } from "@/lib/content";
 import RevealSection, { RevealStagger, RevealItem } from "@/components/RevealSection";
 import MagneticButton from "@/components/MagneticButton";
+import { useLanguage } from "@/components/LanguageProvider";
+import type { TranslationKey } from "@/lib/i18n";
 
 const caseStudyImages: Record<string, string> = {
-  "charter-operations-platform": "https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&q=80&auto=format",
-  "trilingual-product-intelligence": "https://images.unsplash.com/photo-1504307651254-35680f356dfd?w=800&q=80&auto=format",
-  "document-processing-toolkit": "https://images.unsplash.com/photo-1568667256549-094345857637?w=800&q=80&auto=format",
+  "bloodline-charters": "/images/hero-bloodline.jpg",
+  "pjcs-rag": "/images/hero-pjcs.jpg",
+  "docproc": "/images/hero-docproc.jpg",
+};
+
+/* Map slug → i18n key prefixes */
+const csKeyMap: Record<string, string> = {
+  "bloodline-charters": "cs.bloodline",
+  "pjcs-rag": "cs.pjcs",
+  "docproc": "cs.docproc",
 };
 
 export default function CaseStudies() {
+  const { t, locale } = useLanguage();
+
+  function csT(slug: string, field: string): string {
+    const prefix = csKeyMap[slug];
+    if (!prefix) return "";
+    return t(`${prefix}.${field}` as TranslationKey);
+  }
+
+  function csResults(slug: string): string[] {
+    const prefix = csKeyMap[slug];
+    if (!prefix) return [];
+    return [1, 2, 3, 4, 5, 6].map((i) => t(`${prefix}.r${i}` as TranslationKey));
+  }
+
   return (
     <>
       {/* Hero: asymmetric */}
@@ -22,21 +45,20 @@ export default function CaseStudies() {
           <RevealSection>
             <Link href="/" className="inline-flex items-center gap-2 text-sm text-fg-dim hover:text-accent transition-colors mb-8">
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}><path strokeLinecap="round" strokeLinejoin="round" d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18" /></svg>
-              Back to home
+              {t("nav.backHome")}
             </Link>
           </RevealSection>
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-7">
               <RevealSection delay={0.1}>
-                <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">Our Work</p>
+                <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">{t("cases.badge")}</p>
                 <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[0.95]">
-                  Case <span className="text-gradient">Studies</span>
+                  {t("cases.title")} <span className="text-gradient">{t("cases.titleGrad")}</span>
                 </h1>
               </RevealSection>
               <RevealSection delay={0.2}>
                 <p className="mt-6 text-lg text-fg-muted leading-relaxed max-w-xl">
-                  Every project below is in production, handling real users and real transactions.
-                  These are systems we designed, built, and shipped.
+                  {t("cases.sub")}
                 </p>
               </RevealSection>
             </div>
@@ -45,11 +67,11 @@ export default function CaseStudies() {
                 <div className="space-y-3">
                   <div className="card-glass rounded-sm p-4">
                     <p className="font-display text-2xl font-semibold text-gradient">3</p>
-                    <p className="text-xs font-mono text-fg-dim mt-1">Production systems shipped</p>
+                    <p className="text-xs font-mono text-fg-dim mt-1">{t("cases.statSystems")}</p>
                   </div>
                   <div className="card-glass rounded-sm p-4">
                     <p className="font-display text-2xl font-semibold text-gradient">4</p>
-                    <p className="text-xs font-mono text-fg-dim mt-1">Industries served</p>
+                    <p className="text-xs font-mono text-fg-dim mt-1">{t("cases.statIndustries")}</p>
                   </div>
                 </div>
               </RevealSection>
@@ -69,27 +91,31 @@ export default function CaseStudies() {
                 <div className={idx % 2 === 0 ? "lg:col-span-7" : "lg:col-span-5 lg:order-2"}>
                   <RevealSection>
                     <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">
-                      {cs.industry} / {cs.services.join(" + ")}
+                      {csT(cs.slug, "industry")} / {cs.services.join(" + ")}
                     </p>
                   </RevealSection>
                   <RevealSection delay={0.1}>
-                    <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">{cs.title}</h2>
-                    <p className="text-lg text-fg-muted mt-3">{cs.subtitle}</p>
+                    <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
+                      {locale === "zh" ? csT(cs.slug, "title") : cs.title}
+                    </h2>
+                    <p className="text-lg text-fg-muted mt-3">
+                      {locale === "zh" ? csT(cs.slug, "subtitle") : cs.subtitle}
+                    </p>
                   </RevealSection>
                 </div>
                 <div className={idx % 2 === 0 ? "lg:col-span-5" : "lg:col-span-7 lg:order-1"}>
                   <RevealSection delay={0.15}>
                     <div className="relative overflow-hidden rounded-sm border border-border/50 h-[240px]">
                       <Image
-                        src={caseStudyImages[cs.slug] || "https://images.unsplash.com/photo-1497366216548-37526070297c?w=800&q=80&auto=format"}
+                        src={caseStudyImages[cs.slug] || "/images/hero-home.jpg"}
                         alt={cs.title}
                         fill
                         className="object-cover opacity-60"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-bg/80 to-transparent" />
                       <div className="absolute bottom-4 left-4 flex gap-2 flex-wrap">
-                        {cs.tech.slice(0, 3).map((t) => (
-                          <span key={t} className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">{t}</span>
+                        {cs.tech.slice(0, 3).map((tech) => (
+                          <span key={tech} className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">{tech}</span>
                         ))}
                       </div>
                     </div>
@@ -102,17 +128,21 @@ export default function CaseStudies() {
                 <div className="lg:col-span-5">
                   <RevealSection delay={0.2}>
                     <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-4 font-semibold">
-                      The Challenge
+                      {t("cases.challenge")}
                     </h3>
-                    <p className="text-fg-muted leading-relaxed">{cs.challenge}</p>
+                    <p className="text-fg-muted leading-relaxed">
+                      {locale === "zh" ? csT(cs.slug, "challenge") : cs.challenge}
+                    </p>
                   </RevealSection>
                 </div>
                 <div className="lg:col-span-7">
                   <RevealSection delay={0.25}>
                     <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-4 font-semibold">
-                      What We Built
+                      {t("cases.solution")}
                     </h3>
-                    <p className="text-fg-muted leading-relaxed">{cs.solution}</p>
+                    <p className="text-fg-muted leading-relaxed">
+                      {locale === "zh" ? csT(cs.slug, "solution") : cs.solution}
+                    </p>
                   </RevealSection>
                 </div>
               </div>
@@ -120,10 +150,10 @@ export default function CaseStudies() {
               {/* Results */}
               <RevealSection delay={0.3} className="mt-12">
                 <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-6 font-semibold">
-                  Key Deliverables
+                  {t("cases.deliverables")}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {cs.results.map((r, i) => (
+                  {(locale === "zh" ? csResults(cs.slug) : cs.results).map((r, i) => (
                     <div key={i} className="flex items-start gap-3 card-glass rounded-sm p-4">
                       <span className="text-accent font-semibold shrink-0 mt-0.5">+</span>
                       <span className="text-sm text-fg-muted">{r}</span>
@@ -134,10 +164,8 @@ export default function CaseStudies() {
 
               <RevealSection delay={0.35} className="mt-8">
                 <div className="flex flex-wrap gap-2">
-                  {cs.tech.map((t) => (
-                    <span key={t} className="text-xs font-mono px-3 py-1 rounded-sm bg-accent-dim text-accent">
-                      {t}
-                    </span>
+                  {cs.tech.map((tech) => (
+                    <span key={tech} className="text-xs font-mono px-3 py-1 rounded-sm bg-accent-dim text-accent">{tech}</span>
                   ))}
                 </div>
               </RevealSection>
@@ -154,15 +182,15 @@ export default function CaseStudies() {
         <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
           <RevealSection>
             <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
-              Your project could be <span className="text-gradient">next.</span>
+              {t("cases.cta.title")} <span className="text-gradient">{t("cases.cta.titleGrad")}</span>
             </h2>
             <p className="mt-6 text-lg text-fg-muted max-w-xl">
-              Tell us what you need built. We&apos;ll tell you how we&apos;d approach it.
+              {t("cases.cta.sub")}
             </p>
           </RevealSection>
           <RevealSection delay={0.2}>
             <div className="mt-10">
-              <MagneticButton href="/contact" variant="primary">Start a Conversation</MagneticButton>
+              <MagneticButton href="/contact" variant="primary">{t("cases.cta.button")}</MagneticButton>
             </div>
           </RevealSection>
         </div>
