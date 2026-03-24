@@ -49,8 +49,8 @@ const translations = {
   "home.hero.scroll": { en: "Scroll", zh: "下滑" },
 
   "home.projects.badge": { en: "Selected Work", zh: "精选作品" },
-  "home.projects.title": { en: "Three projects.", zh: "三个项目。" },
-  "home.projects.titleMuted": { en: "All in production.", zh: "全部上线运行。" },
+  "home.projects.title": { en: "Recent work.", zh: "近期作品。" },
+  "home.projects.titleMuted": { en: "Built and shipped.", zh: "已构建并交付。" },
   "home.projects.readMore": { en: "Read case study", zh: "查看案例详情" },
 
   "home.welcome.badge": { en: "What We Build", zh: "我们的服务" },
@@ -70,8 +70,8 @@ const translations = {
   "home.cap2.label": { en: "02", zh: "02" },
   "home.cap2.title": { en: "AI-Powered Tools", zh: "AI智能工具" },
   "home.cap2.body": {
-    en: "RAG systems, product recommendation engines, document processing, and intelligent assistants. AI that does real work in production — not demos that break.",
-    zh: "RAG系统、产品推荐引擎、文档处理和智能助手。在生产环境中真正发挥作用的AI——而非容易崩溃的演示品。",
+    en: "RAG systems, product recommendation engines, document processing, and intelligent assistants. AI that solves real business problems for real users.",
+    zh: "RAG系统、产品推荐引擎、文档处理和智能助手。为真实用户解决真实业务问题的AI。",
   },
   "home.cap3.label": { en: "03", zh: "03" },
   "home.cap3.title": { en: "Cross-Border Operations", zh: "跨境业务运营" },
@@ -80,18 +80,18 @@ const translations = {
     zh: "为在中美之间运营的企业提供多语言平台和合规基础设施。我们亲身经历——在怀俄明、成都和伦敦均设有实体。",
   },
 
-  "home.stats.badge": { en: "By the numbers", zh: "数据一览" },
-  "home.stats.title1": { en: "Small team.", zh: "小团队。" },
-  "home.stats.title2": { en: "Real output.", zh: "真成果。" },
+  "home.stats.badge": { en: "Why us", zh: "为什么选择我们" },
+  "home.stats.title1": { en: "Built to ship.", zh: "为交付而生。" },
+  "home.stats.title2": { en: "Not to pitch.", zh: "不只是说说。" },
   "home.stats.sub": {
-    en: "We work with a handful of clients at a time. Your project gets undivided attention from engineers who own the outcome.",
-    zh: "我们同时只服务少数客户。您的项目将获得工程师全心全意的关注——我们对结果负责到底。",
+    en: "A focused team of engineers and advisors across the US, China, and UK. Your project gets direct attention from the people who build it.",
+    zh: "一支横跨美国、中国和英国的专注工程师和顾问团队。您的项目由实际构建它的人直接负责。",
   },
 
-  "home.stats.projectsShipped": { en: "Projects Shipped", zh: "已上线项目" },
-  "home.stats.languages": { en: "Languages", zh: "支持语言" },
-  "home.stats.testsWritten": { en: "Tests Written", zh: "测试用例" },
-  "home.stats.countries": { en: "Countries", zh: "运营国家" },
+  "home.stats.countriesOperate": { en: "Countries We Operate", zh: "运营国家" },
+  "home.stats.onTime": { en: "On-Time Delivery", zh: "按时交付" },
+  "home.stats.responseTime": { en: "Response Time", zh: "响应时间" },
+  "home.stats.vendorLockIn": { en: "Vendor Lock-In", zh: "供应商锁定" },
 
   "home.tech.label": { en: "Technologies\nWe Ship With", zh: "我们使用的\n技术栈" },
 
@@ -110,8 +110,8 @@ const translations = {
   "cases.title": { en: "Case", zh: "案例" },
   "cases.titleGrad": { en: "Studies", zh: "研究" },
   "cases.sub": {
-    en: "Every project below is in production, handling real users and real transactions. These are systems we designed, built, and shipped.",
-    zh: "以下每个项目均已上线，服务真实用户和真实交易。这些是我们设计、开发和交付的系统。",
+    en: "Systems we designed, built, and shipped. From booking platforms to AI tools to developer utilities.",
+    zh: "我们设计、开发和交付的系统。从预订平台到AI工具再到开发者工具。",
   },
   "cases.statSystems": { en: "Production systems shipped", zh: "已上线生产系统" },
   "cases.statIndustries": { en: "Industries served", zh: "服务行业" },

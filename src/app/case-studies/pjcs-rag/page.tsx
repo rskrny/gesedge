@@ -108,8 +108,8 @@ export default function PjcsRagPage() {
           <RevealSection delay={0.55}>
             <p className="mt-6 text-xl text-fg-muted max-w-2xl leading-relaxed">
               Trilingual AI product advisor bridging a Chinese manufacturer and
-              Latin American contractors — across three languages, 84 products,
-              and zero language barrier.
+              Latin American contractors across three languages and zero
+              language barrier.
             </p>
           </RevealSection>
 
@@ -120,8 +120,8 @@ export default function PjcsRagPage() {
                 variant="outline"
                 external
               >
-                <span className="w-2 h-2 rounded-full bg-green-400 animate-pulse" />
-                Live Demo
+                <span className="w-2 h-2 rounded-full bg-yellow-400 animate-pulse" />
+                Demo
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={1.5}>
                   <path strokeLinecap="round" strokeLinejoin="round" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
                 </svg>
@@ -161,7 +161,7 @@ export default function PjcsRagPage() {
                 </span>
               ))}
               <span className="text-xs font-mono text-fg-dim ml-auto">
-                84 products indexed
+                Full catalog indexed
               </span>
             </div>
           </RevealSection>
@@ -328,7 +328,7 @@ export default function PjcsRagPage() {
                     03 / Results
                   </span>
                   <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-8">
-                    Deployed on Railway, serving three markets
+                    What we built
                   </h2>
                   <RevealStagger className="grid grid-cols-1 md:grid-cols-2 gap-4" staggerDelay={0.08}>
                     {[
@@ -353,8 +353,8 @@ export default function PjcsRagPage() {
                         body: "Deployed on Railway with continuous deployment from GitHub. Zero-downtime updates.",
                       },
                       {
-                        title: "84 products indexed",
-                        body: "Complete product catalog embedded, chunked, and searchable with full spec data and application guidance.",
+                        title: "Full catalog indexed",
+                        body: "Product catalog embedded, chunked, and searchable with spec data and application guidance across all three languages.",
                       },
                     ].map((item) => (
                       <RevealItem key={item.title}>

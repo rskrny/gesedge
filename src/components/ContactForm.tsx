@@ -5,26 +5,43 @@ import { useLanguage } from "@/components/LanguageProvider";
 
 export default function ContactForm() {
   const [submitted, setSubmitted] = useState(false);
+  const [sending, setSending] = useState(false);
+  const [error, setError] = useState(false);
   const { t } = useLanguage();
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
+    setSending(true);
+    setError(false);
+
     const form = e.currentTarget;
     const data = new FormData(form);
 
-    const name = data.get("name") as string;
-    const email = data.get("email") as string;
-    const company = data.get("company") as string;
-    const service = data.get("service") as string;
-    const message = data.get("message") as string;
+    const payload = {
+      name: data.get("name") as string,
+      email: data.get("email") as string,
+      company: data.get("company") as string,
+      service: data.get("service") as string,
+      message: data.get("message") as string,
+    };
 
-    const subject = encodeURIComponent(`New inquiry from ${name}${company ? ` at ${company}` : ""}`);
-    const body = encodeURIComponent(
-      `Name: ${name}\nEmail: ${email}\nCompany: ${company || "N/A"}\nService: ${service}\n\n${message}`
-    );
+    try {
+      const res = await fetch("/api/contact", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload),
+      });
 
-    window.location.href = `mailto:ryan@gesedge.com?subject=${subject}&body=${body}`;
-    setSubmitted(true);
+      if (res.ok) {
+        setSubmitted(true);
+      } else {
+        setError(true);
+      }
+    } catch {
+      setError(true);
+    } finally {
+      setSending(false);
+    }
   }
 
   if (submitted) {
@@ -99,11 +116,18 @@ export default function ContactForm() {
           placeholder={t("form.messagePlaceholder")}
         />
       </div>
+      {error && (
+        <p className="text-red-400 text-sm">
+          Something went wrong. You can also reach us directly at{" "}
+          <a href="mailto:ryan@gesedge.com" className="text-accent hover:text-accent-hover transition-colors">ryan@gesedge.com</a>
+        </p>
+      )}
       <button
         type="submit"
-        className="w-full bg-accent text-bg font-display font-semibold px-8 py-4 rounded-sm text-sm hover:bg-accent-hover transition-colors duration-200"
+        disabled={sending}
+        className="w-full bg-accent text-bg font-display font-semibold px-8 py-4 rounded-sm text-sm hover:bg-accent-hover transition-colors duration-200 disabled:opacity-50 disabled:cursor-not-allowed"
       >
-        {t("form.submit")}
+        {sending ? "Sending..." : t("form.submit")}
       </button>
     </form>
   );

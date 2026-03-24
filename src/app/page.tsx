@@ -29,10 +29,10 @@ export default function Home() {
 
   /* Localized stat labels */
   const statLabels: Record<string, string> = {
-    "Projects Shipped": t("home.stats.projectsShipped"),
-    "Languages": t("home.stats.languages"),
-    "Tests Written": t("home.stats.testsWritten"),
-    "Countries": t("home.stats.countries"),
+    "Countries We Operate": t("home.stats.countriesOperate"),
+    "On-Time Delivery": t("home.stats.onTime"),
+    "Response Time": t("home.stats.responseTime"),
+    "Vendor Lock-In": t("home.stats.vendorLockIn"),
   };
 
   return (
@@ -195,8 +195,8 @@ export default function Home() {
                       </span>
                       {cs.liveUrl ? (
                         <span className="absolute bottom-5 right-5 flex items-center gap-1.5 text-xs font-mono text-fg-dim">
-                          <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" />
-                          {t("label.live")}
+                          <span className={`w-1.5 h-1.5 rounded-full ${cs.slug === "pjcs-rag" ? "bg-yellow-400" : "bg-green-400"} animate-pulse`} />
+                          {cs.slug === "pjcs-rag" ? "Demo" : t("label.live")}
                         </span>
                       ) : cs.githubUrl ? (
                         <span className="absolute bottom-5 right-5 flex items-center gap-1.5 text-xs font-mono text-fg-dim">

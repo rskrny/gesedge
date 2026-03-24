@@ -40,9 +40,9 @@ Each of these problems has a clear before and after. You can measure the improve
 
 The second killer is data readiness. AI systems need clean, structured, accessible data. Most companies do not have this. They have data spread across spreadsheets, legacy databases, email threads, and the institutional knowledge of employees who have been there for fifteen years.
 
-When we built a trilingual product recommendation system for a waterproofing materials supplier, the first three weeks were not spent on embeddings or vector databases. They were spent on data. We cataloged 84 products across English, Chinese, and Spanish. We standardized specifications, application types, substrate compatibility, and pricing tiers. We built a structured product database from scattered PDFs and sales sheets.
+When we built a trilingual product recommendation system for a waterproofing materials supplier, the first weeks were not spent on embeddings or vector databases. They were spent on data. We cataloged products across English, Chinese, and Spanish. We standardized specifications, application types, substrate compatibility, and pricing tiers. We built a structured product database from scattered PDFs and sales sheets.
 
-That data work was not glamorous. Nobody puts "we cleaned a spreadsheet" in a press release. But without it, the RAG system would have returned garbage. Vector search over messy data produces messy results, regardless of how sophisticated your embedding model is.
+That data work was not glamorous. But without it, the RAG system would have returned garbage. Vector search over messy data produces messy results, regardless of how sophisticated your embedding model is.
 
 ## Building for the demo instead of production
 
@@ -83,7 +83,7 @@ The AI is the engine. The problem definition is the steering wheel. Without both
 
 The concept is simple. Making it work well in production is not.
 
-We built a RAG-powered product intelligence system for a B2B waterproofing materials supplier. 84 products across English, Chinese, and Spanish. An AI chat interface for technical questions. A guided product finder wizard. And a filterable catalog. Here is what we learned about building RAG systems that actually deliver useful results.
+We built a RAG-powered product intelligence system for a B2B waterproofing materials supplier. A full product catalog across English, Chinese, and Spanish. An AI chat interface for technical questions. A guided product finder wizard. And a filterable catalog. Here is what we learned about building RAG systems that deliver useful results.
 
 ## Why pure vector search falls short
 

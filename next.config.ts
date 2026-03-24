@@ -4,7 +4,12 @@ import path from "path";
 const nextConfig: NextConfig = {
   output: "standalone",
   images: {
-    // All images served from local public/ folder — no external sources
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "images.unsplash.com",
+      },
+    ],
   },
   turbopack: {
     root: path.resolve(__dirname),

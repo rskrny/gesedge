@@ -33,7 +33,7 @@ export const services = [
       "Custom chatbots trained on your business knowledge",
       "AI workflow automation with deterministic execution",
     ],
-    proof: "We built a trilingual product recommendation system for a waterproofing materials supplier: 84 products across English, Chinese, and Spanish, with hybrid vector + keyword search, a guided product finder wizard, and an AI chat that answers technical specification questions. Deployed and running in production.",
+    proof: "We built a trilingual product recommendation system for a waterproofing materials supplier: hybrid vector + keyword search, a guided product finder wizard, and an AI chat that answers technical specification questions across English, Chinese, and Spanish.",
   },
   {
     slug: "cross-border",
@@ -86,9 +86,9 @@ export const caseStudies = [
     liveUrl: "https://pjcsrag-production.up.railway.app/",
     githubUrl: null,
     challenge:
-      "A Chinese waterproofing materials manufacturer needed to help Latin American contractors find the right product for their specific application, substrate, and budget — across three languages, without calling a rep.",
+      "A Chinese waterproofing materials manufacturer needed to help Latin American contractors find the right product for their specific application, substrate, and budget across three languages, without calling a rep.",
     solution:
-      "We built a RAG-powered product intelligence system: an AI chat that answers natural-language questions about 84 waterproofing products, a 5-step guided product finder (application → substrate → scale → budget → recommendation), and a filterable catalog. The system uses hybrid search combining ChromaDB vector embeddings with BM25 keyword matching and reciprocal rank fusion across all three languages.",
+      "We built a RAG-powered product intelligence system: an AI chat that answers natural-language questions about the full waterproofing catalog, a 5-step guided product finder (application, substrate, scale, budget, recommendation), and a filterable catalog. The system uses hybrid search combining ChromaDB vector embeddings with BM25 keyword matching and reciprocal rank fusion across all three languages.",
     results: [
       "Trilingual support across UI, backend, and documents (EN/ZH/ES)",
       "Hybrid search: ChromaDB + BM25 + Reciprocal Rank Fusion",
@@ -108,9 +108,9 @@ export const caseStudies = [
     liveUrl: null,
     githubUrl: "https://github.com/rskrny/docproc-pdfcompressor",
     challenge:
-      "Document processing is fragmented across dozens of tools, each requiring you to upload sensitive files to a third-party server. Businesses handling confidential documents need processing power without the privacy exposure.",
+      "Document processing is fragmented across dozens of tools, each requiring you to upload sensitive files to a third-party server. We needed processing power without the privacy exposure.",
     solution:
-      "A privacy-first document processing suite with 18 registered pipelines, all running locally. PDF operations (compress, merge, split, rotate, watermark, protect), image operations (resize, convert, AI background removal), and a RAG-powered AI chat where you describe what you need in natural language and the system generates and executes deterministic processing plans.",
+      "A privacy-first document processing suite with 18 registered pipelines, all running locally. PDF operations (compress, merge, split, rotate, watermark, protect), image operations (resize, convert, AI background removal), and a RAG-powered AI chat where you describe what you need in natural language and the system generates and executes deterministic processing plans. Built as an internal tool with potential for client customization.",
     results: [
       "18 document processing pipelines in a single suite",
       "248 automated tests ensuring reliability across all pipelines",
@@ -123,12 +123,12 @@ export const caseStudies = [
   },
 ];
 
-/* Honest stats — only what we can verify */
+/* Value props — what clients actually care about */
 export const stats = [
-  { value: "3", label: "Projects Shipped" },
-  { value: "3", label: "Languages" },
-  { value: "248+", label: "Tests Written" },
-  { value: "3", label: "Countries" },
+  { value: "3", label: "Countries We Operate In" },
+  { value: "3", label: "Languages We Build In" },
+  { value: "Full-Stack", label: "Design to Deploy" },
+  { value: "Your Code", label: "Zero Vendor Lock-In" },
 ];
 
 export const techStack = [
