@@ -20,7 +20,7 @@ export default function HeroWordReveal({
   return (
     <span className={`inline-flex flex-wrap gap-x-[0.25em] ${className}`}>
       {words.map((word, i) => (
-        <span key={i} className="overflow-hidden inline-block" style={{ verticalAlign: "bottom" }}>
+        <span key={i} className="overflow-hidden inline-block pb-[0.15em]" style={{ verticalAlign: "bottom" }}>
           <motion.span
             className="inline-block"
             initial={{ y: "110%", opacity: 0 }}

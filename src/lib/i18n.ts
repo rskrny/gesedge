@@ -225,6 +225,33 @@ const translations = {
   },
   "form.sendAnother": { en: "Send another message", zh: "发送另一条消息" },
 
+  /* ── Blog Page ─────────────────────────────────────────── */
+  "blog.backToBlog": { en: "Back to blog", zh: "返回博客" },
+  "blog.previous": { en: "Previous", zh: "上一篇" },
+  "blog.next": { en: "Next", zh: "下一篇" },
+  "blog.ctaTitle": { en: "Have a project in mind?", zh: "有项目想法？" },
+  "blog.ctaSub": {
+    en: "We build custom AI-powered systems for businesses that need real solutions. If something here resonated, let's talk.",
+    zh: "我们为需要真实解决方案的企业构建定制AI系统。如果您有共鸣，聊聊吧。",
+  },
+  "blog.ctaButton": { en: "Get in Touch", zh: "联系我们" },
+
+  /* ── Case Study Detail Pages ──────────────────────────── */
+  "csDetail.backToStudies": { en: "Back to case studies", zh: "返回案例研究" },
+  "csDetail.challenge": { en: "The Challenge", zh: "项目挑战" },
+  "csDetail.solution": { en: "What We Built", zh: "我们的方案" },
+  "csDetail.keyFeatures": { en: "Key Features", zh: "核心功能" },
+  "csDetail.results": { en: "Results", zh: "成果" },
+  "csDetail.techStack": { en: "Tech Stack", zh: "技术栈" },
+  "csDetail.visitSite": { en: "Visit Live Site", zh: "访问网站" },
+  "csDetail.viewCode": { en: "View Source", zh: "查看源码" },
+  "csDetail.ctaTitle": { en: "Want something like this?", zh: "想要类似的方案？" },
+  "csDetail.ctaSub": {
+    en: "Every project starts with a conversation about what you need built.",
+    zh: "每个项目都始于一次关于您需求的对话。",
+  },
+  "csDetail.ctaButton": { en: "Start a Project", zh: "开始项目" },
+
   /* ── 404 Page ────────────────────────────────────────────── */
   "404.title": { en: "Page not found", zh: "页面未找到" },
   "404.sub": {
@@ -299,6 +326,381 @@ const translations = {
   "cs.docproc.r4": { en: "RAG engine for document Q&A with hybrid BM25 + TF-IDF", zh: "文档问答RAG引擎，混合BM25 + TF-IDF" },
   "cs.docproc.r5": { en: "Privacy-first: everything runs locally, zero cloud uploads", zh: "隐私优先：一切本地运行，零云端上传" },
   "cs.docproc.r6": { en: "Packaged as standalone .exe for non-technical end users", zh: "打包为独立.exe，面向非技术终端用户" },
+
+  /* ── Case Study Detail — Shared Keys ─────────────────────── */
+  "csDetail.allWork": { en: "All Work", zh: "所有作品" },
+  "csDetail.client": { en: "Client", zh: "客户" },
+  "csDetail.services": { en: "Services", zh: "服务" },
+  "csDetail.stack": { en: "Stack", zh: "技术栈" },
+  "csDetail.nextProject": { en: "Next Project", zh: "下一个项目" },
+  "csDetail.startProject": { en: "Start a Project", zh: "开始项目" },
+  "csDetail.backToTop": { en: "Back to the top", zh: "回到首个" },
+  "csDetail.section01": { en: "01 / Problem", zh: "01 / 问题" },
+  "csDetail.section02": { en: "02 / Approach", zh: "02 / 方案" },
+  "csDetail.nextBloodline": { en: "PJCS RAG System", zh: "PJCS RAG智能系统" },
+  "csDetail.nextPjcs": { en: "DocProc PDF Toolkit", zh: "DocProc PDF工具套件" },
+  "csDetail.nextDocproc": { en: "Bloodline Charters", zh: "Bloodline Charters" },
+
+  /* ── Bloodline Charters — Detail Page ──────────────────── */
+  "csBloodline.hero.badge": { en: "Marine Services", zh: "海洋服务" },
+  "csBloodline.hero.subtitle": {
+    en: "Full-stack booking platform and operations dashboard for a Cape Cod charter fishing business — from zero to live in under a week.",
+    zh: "为科德角包船钓鱼企业打造的全栈预订平台和运营后台——从零到上线不到一周。",
+  },
+  "csBloodline.hero.viewSite": { en: "View Live Site", zh: "访问线上网站" },
+
+  "csBloodline.results.metric1Label": { en: "From zero to live production site", zh: "从零到上线生产环境" },
+  "csBloodline.results.metric2Label": { en: "API endpoints powering the full operation", zh: "个API端点驱动全部运营" },
+  "csBloodline.results.metric3Label": { en: "Increased click-through rates post-launch", zh: "上线后点击率提升" },
+  "csBloodline.results.metric4Label": { en: "Admin operations replaced from phone/notebook", zh: "管理操作从电话/笔记本全面替代" },
+
+  "csBloodline.sidebar.location": { en: "Cape Cod, Massachusetts", zh: "马萨诸塞州科德角" },
+  "csBloodline.sidebar.service1": { en: "Custom Business Platform", zh: "定制商业平台" },
+  "csBloodline.sidebar.service2": { en: "SEO & Analytics", zh: "SEO与数据分析" },
+  "csBloodline.sidebar.service3": { en: "API Integrations", zh: "API集成" },
+
+  "csBloodline.problem.title": {
+    en: "A captain running a business with a notebook and phone calls",
+    zh: "一位用笔记本和电话经营生意的船长",
+  },
+  "csBloodline.problem.p1": {
+    en: "A Cape Cod charter fishing captain was managing his entire operation through phone calls, text messages, and a basic website builder. During peak season, he was losing bookings to scheduling conflicts — two parties calling about the same date, no way to track who had priority.",
+    zh: "一位科德角包船钓鱼船长通过电话、短信和一个基础建站工具管理全部运营。在旺季，他因排期冲突丢失订单——两组客人同时问询同一日期，却没有任何方式追踪谁优先。",
+  },
+  "csBloodline.problem.p2": {
+    en: "He was spending hours on admin instead of on the water: manually tracking inquiries in spreadsheets, sending deposit requests by hand, calling back every person who filled out a contact form. He had zero visibility into his business performance — no idea which months were most profitable, which trips were most popular, or how his website was performing.",
+    zh: "他把大量时间花在行政事务而非出海上：在表格里手动追踪咨询、手动发送订金请求、逐一回电给每个填写联系表单的人。他对业务表现毫无可视性——不知道哪个月利润最高、哪种航程最受欢迎，也不了解网站的表现如何。",
+  },
+  "csBloodline.problem.p3": {
+    en: "He needed a complete replacement, not a plugin or a template. He needed something that could run his entire season.",
+    zh: "他需要的是一套完整的替代方案，而非插件或模板。他需要一个能运行整个旺季的系统。",
+  },
+
+  "csBloodline.approach.title": {
+    en: "A full-stack operations platform, built from scratch",
+    zh: "从零构建的全栈运营平台",
+  },
+  "csBloodline.approach.p1": {
+    en: "We built two interconnected systems: a public-facing website optimized for search and conversion, and a private admin dashboard that runs the entire operation behind it.",
+    zh: "我们构建了两个互联系统：一个针对搜索和转化优化的面向公众的网站，以及一个运行全部后台业务的私有管理后台。",
+  },
+  "csBloodline.approach.p2": {
+    en: "The public site features trip details, real-time availability, photo gallery, and inquiry forms that flow directly into the booking pipeline. The admin dashboard gives the captain a bird\u2019s-eye view of his business: all active inquiries, bookings in progress, confirmed trips, and deposits received.",
+    zh: "公众网站包含航程详情、实时可用日历、照片图库和直接汇入预订管道的咨询表单。管理后台为船长提供业务全景：所有活跃咨询、进行中的预订、已确认航程和已收订金。",
+  },
+  "csBloodline.approach.card1Title": { en: "Booking Pipeline", zh: "预订管道" },
+  "csBloodline.approach.card1Body": {
+    en: "Inquiry \u2192 Discussion \u2192 Deposit Request \u2192 Confirmed. Every stage tracked, automated email notifications sent at each step.",
+    zh: "咨询 \u2192 沟通 \u2192 订金请求 \u2192 确认。每个阶段全程跟踪，每一步自动发送邮件通知。",
+  },
+  "csBloodline.approach.card2Title": { en: "NOAA API Integration", zh: "NOAA API集成" },
+  "csBloodline.approach.card2Body": {
+    en: "Real tide data and weather forecasts integrated into the scheduling system. Trip planning recommendations based on actual conditions.",
+    zh: "将真实潮汐数据和天气预报集成到排期系统中，基于实际天气条件提供航程规划建议。",
+  },
+  "csBloodline.approach.card3Title": { en: "Admin Dashboard", zh: "管理后台" },
+  "csBloodline.approach.card3Body": {
+    en: "Full business visibility: booking pipeline, gallery management, analytics. Everything the captain needs in one place.",
+    zh: "完整的业务可视化：预订管道、图库管理、数据分析。船长所需的一切，尽在一处。",
+  },
+  "csBloodline.approach.card4Title": { en: "SEO Foundation", zh: "SEO基础" },
+  "csBloodline.approach.card4Body": {
+    en: "Structured data markup, semantic HTML, optimized meta tags, and a sitemap. Built for search from day one.",
+    zh: "结构化数据标记、语义化HTML、优化的meta标签和站点地图。从第一天起就为搜索引擎优化而构建。",
+  },
+
+  "csBloodline.preview.label": { en: "03 / Live Preview", zh: "03 / 在线预览" },
+  "csBloodline.preview.title": { en: "See it in the wild", zh: "查看线上实况" },
+  "csBloodline.preview.desc": {
+    en: "The site is live and running at",
+    zh: "网站已上线运行于",
+  },
+  "csBloodline.preview.descSuffix": {
+    en: ". Below is an embedded preview.",
+    zh: "。以下为嵌入式预览。",
+  },
+
+  "csBloodline.resultsSection.label": { en: "04 / Results", zh: "04 / 成果" },
+  "csBloodline.resultsSection.title": {
+    en: "Live in under a week, running the whole season",
+    zh: "不到一周上线，支撑整个旺季运营",
+  },
+  "csBloodline.resultsList.r1": {
+    en: "Increased traffic and click-through rates within one week of launch",
+    zh: "上线一周内流量和点击率即有提升",
+  },
+  "csBloodline.resultsList.r2": {
+    en: "39 API endpoints powering booking, admin, gallery, analytics, and weather data",
+    zh: "39个API端点驱动预订、管理、图库、分析和天气数据",
+  },
+  "csBloodline.resultsList.r3": {
+    en: "Fully automated booking pipeline replacing manual phone tracking",
+    zh: "全自动预订管道，取代手动电话跟踪",
+  },
+  "csBloodline.resultsList.r4": {
+    en: "Admin dashboard replacing all phone calls, notebooks, and spreadsheets",
+    zh: "管理后台取代所有电话、笔记本和电子表格",
+  },
+  "csBloodline.resultsList.r5": {
+    en: "NOAA tide and weather integration for smart trip scheduling",
+    zh: "NOAA潮汐和天气集成，实现智能航程排期",
+  },
+  "csBloodline.resultsList.r6": {
+    en: "Full SEO implementation with structured data and optimized sitemap",
+    zh: "完整SEO实现，包含结构化数据和优化的站点地图",
+  },
+
+  /* ── PJCS RAG — Detail Page ────────────────────────────── */
+  "csPjcs.hero.badge": { en: "B2B Construction Materials \u2014 AI Tools", zh: "B2B建筑材料 \u2014 AI工具" },
+  "csPjcs.hero.subtitle": {
+    en: "Trilingual AI product advisor bridging a Chinese manufacturer and Latin American contractors across three languages and zero language barrier.",
+    zh: "三语AI产品顾问，连接中国制造商与拉美承包商，跨越三种语言，消除语言壁垒。",
+  },
+  "csPjcs.hero.demo": { en: "Demo", zh: "演示" },
+
+  "csPjcs.langSupported": { en: "Languages supported:", zh: "支持语言：" },
+  "csPjcs.lang.en": { en: "English", zh: "English" },
+  "csPjcs.lang.zh": { en: "\u4E2D\u6587", zh: "\u4E2D\u6587" },
+  "csPjcs.lang.es": { en: "Espa\u00F1ol", zh: "Espa\u00F1ol" },
+  "csPjcs.fullCatalog": { en: "Full catalog indexed", zh: "全目录已索引" },
+
+  "csPjcs.sidebar.clientName": { en: "PJCS Waterproofing", zh: "PJCS防水材料" },
+  "csPjcs.sidebar.clientRoute": { en: "China \u2192 Latin America", zh: "中国 \u2192 拉丁美洲" },
+  "csPjcs.sidebar.service1": { en: "RAG System Architecture", zh: "RAG系统架构" },
+  "csPjcs.sidebar.service2": { en: "Multilingual NLP", zh: "多语言自然语言处理" },
+  "csPjcs.sidebar.service3": { en: "Cross-Border Infrastructure", zh: "跨境基础设施" },
+  "csPjcs.sidebar.liveDemo": { en: "Live Demo", zh: "在线演示" },
+
+  "csPjcs.problem.title": {
+    en: "A Chinese manufacturer, Latin American contractors, and a catalog no one could navigate",
+    zh: "一家中国制造商、拉美承包商，以及一本无人能查阅的产品目录",
+  },
+  "csPjcs.problem.p1": {
+    en: "PJCS makes industrial waterproofing materials in China. Their customers are professional contractors across Mexico, Colombia, Peru, and other Latin American markets \u2014 many of whom speak only Spanish and have highly specific technical requirements: the right product for a specific substrate, application environment, and budget.",
+    zh: "PJCS在中国生产工业防水材料。他们的客户是遍布墨西哥、哥伦比亚、秘鲁等拉美市场的专业承包商——其中许多人只说西班牙语，且有非常具体的技术需求：针对特定基材、应用环境和预算选择合适的产品。",
+  },
+  "csPjcs.problem.p2": {
+    en: "With 84 products across categories ranging from roof coatings to foundation membranes, finding the right product meant calling a rep, digging through a PDF catalog, or guessing. The language barrier between Mandarin-speaking product managers and Spanish-speaking contractors made this even harder.",
+    zh: "84种产品横跨屋面涂料到基础防水膜等多个品类，找到合适的产品意味着要打电话给销售代表、翻阅PDF目录或凭猜测。说普通话的产品经理与说西班牙语的承包商之间的语言障碍让这一切更加困难。",
+  },
+  "csPjcs.problem.p3": {
+    en: "They needed a system that could answer \u201CWhich product works for an exposed rooftop in a high-UV environment with a $500 budget?\u201D \u2014 in Spanish, English, or Chinese \u2014 without requiring a human in the loop.",
+    zh: "他们需要一个系统，能回答\u201C在高紫外线环境的露天屋顶，预算500美元，哪种产品合适？\u201D——用西班牙语、英语或中文回答——无需人工介入。",
+  },
+
+  "csPjcs.archSection.label": { en: "02 / Architecture", zh: "02 / 系统架构" },
+  "csPjcs.archSection.title": {
+    en: "Hybrid search + LLM synthesis, built for three languages",
+    zh: "混合搜索 + LLM合成，为三种语言而构建",
+  },
+  "csPjcs.archSection.p1": {
+    en: "The core insight: pure vector search misses exact specification matches (e.g., a specific product code or chemical name), while pure keyword search misses semantic intent (\u201Csomething waterproof for basements\u201D). We combined both with Reciprocal Rank Fusion to get the benefits of each.",
+    zh: "核心思路：纯向量搜索会遗漏精确规格匹配（如特定产品编码或化学名称），而纯关键词搜索会遗漏语义意图（\u201C适合地下室的防水产品\u201D）。我们通过倒数排名融合将两者结合，兼得其利。",
+  },
+  "csPjcs.archSection.p2": {
+    en: "Beyond the chat interface, we built a 5-step guided product finder wizard: users select their application type, substrate, scale, and budget, and the system narrows to a curated recommendation. Two audience modes \u2014 buyer and professional installer \u2014 surface different levels of technical detail.",
+    zh: "除了聊天界面，我们还构建了5步引导式产品查找向导：用户选择应用类型、基材、规模和预算，系统会缩小范围给出精选推荐。两种受众模式——买家和专业安装工——呈现不同层次的技术细节。",
+  },
+  "csPjcs.archSection.p3": {
+    en: "The system degrades gracefully: if the AI layer is unavailable, the hybrid search results are shown directly. Nothing breaks silently.",
+    zh: "系统可优雅降级：如果AI层不可用，直接展示混合搜索结果。不会出现静默故障。",
+  },
+
+  "csPjcs.arch.step1Title": { en: "Query received", zh: "接收查询" },
+  "csPjcs.arch.step1Body": {
+    en: "User submits natural-language question in English, Chinese, or Spanish.",
+    zh: "用户以英语、中文或西班牙语提交自然语言问题。",
+  },
+  "csPjcs.arch.step2Title": { en: "Hybrid retrieval", zh: "混合检索" },
+  "csPjcs.arch.step2Body": {
+    en: "Query runs in parallel through ChromaDB (vector embeddings) and BM25 (keyword matching).",
+    zh: "查询同时通过ChromaDB（向量嵌入）和BM25（关键词匹配）并行运行。",
+  },
+  "csPjcs.arch.step3Title": { en: "Reciprocal Rank Fusion", zh: "倒数排名融合" },
+  "csPjcs.arch.step3Body": {
+    en: "RRF merges and re-ranks both result sets for higher-precision candidate selection.",
+    zh: "RRF将两组结果合并并重新排名，实现更高精度的候选项筛选。",
+  },
+  "csPjcs.arch.step4Title": { en: "GPT-4o-mini synthesis", zh: "GPT-4o-mini合成" },
+  "csPjcs.arch.step4Body": {
+    en: "Top candidates passed to the language model with product specs as grounding context.",
+    zh: "将排名靠前的候选项连同产品规格作为依据上下文传递给语言模型。",
+  },
+  "csPjcs.arch.step5Title": { en: "Response delivered", zh: "返回回答" },
+  "csPjcs.arch.step5Body": {
+    en: "Answer returned in the user\u2019s language with product names, specs, and application guidance.",
+    zh: "以用户的语言返回回答，包含产品名称、规格和应用指导。",
+  },
+
+  "csPjcs.resultsSection.label": { en: "03 / Results", zh: "03 / 成果" },
+  "csPjcs.resultsSection.title": { en: "What we built", zh: "我们构建了什么" },
+  "csPjcs.results.card1Title": { en: "Trilingual coverage", zh: "三语覆盖" },
+  "csPjcs.results.card1Body": {
+    en: "Full support across English, Chinese (Simplified), and Spanish \u2014 UI, AI responses, and product data.",
+    zh: "全面支持英语、简体中文和西班牙语——覆盖UI、AI回复和产品数据。",
+  },
+  "csPjcs.results.card2Title": { en: "Hybrid RAG pipeline", zh: "混合RAG管道" },
+  "csPjcs.results.card2Body": {
+    en: "ChromaDB vector search + BM25 keyword matching merged via Reciprocal Rank Fusion for higher-precision results.",
+    zh: "ChromaDB向量搜索 + BM25关键词匹配通过倒数排名融合，实现更高精度的搜索结果。",
+  },
+  "csPjcs.results.card3Title": { en: "5-step product wizard", zh: "5步产品向导" },
+  "csPjcs.results.card3Body": {
+    en: "Guided discovery from application type to final recommendation, with audience mode switching.",
+    zh: "从应用类型到最终推荐的引导式发现流程，支持受众模式切换。",
+  },
+  "csPjcs.results.card4Title": { en: "Graceful degradation", zh: "优雅降级" },
+  "csPjcs.results.card4Body": {
+    en: "Full functionality even when the AI layer is unavailable. No silent failures, no broken UX.",
+    zh: "即使AI层不可用也能保持完整功能。无静默故障，无损坏的用户体验。",
+  },
+  "csPjcs.results.card5Title": { en: "Auto-deploy pipeline", zh: "自动部署管道" },
+  "csPjcs.results.card5Body": {
+    en: "Deployed on Railway with continuous deployment from GitHub. Zero-downtime updates.",
+    zh: "部署在Railway上，从GitHub持续部署。零停机更新。",
+  },
+  "csPjcs.results.card6Title": { en: "Full catalog indexed", zh: "全目录已索引" },
+  "csPjcs.results.card6Body": {
+    en: "Product catalog embedded, chunked, and searchable with spec data and application guidance across all three languages.",
+    zh: "产品目录已嵌入、分块并可搜索，包含三种语言的规格数据和应用指导。",
+  },
+
+  /* ── DocProc — Detail Page ─────────────────────────────── */
+  "csDocproc.hero.badge": { en: "Developer Tools", zh: "开发工具" },
+  "csDocproc.hero.subtitle": {
+    en: "18-pipeline document processing suite with a RAG-powered AI assistant, 248 automated tests, and zero cloud dependency. Privacy-first by design.",
+    zh: "18条管道文档处理套件，配备RAG驱动的AI助手、248个自动化测试，零云端依赖。隐私优先设计。",
+  },
+  "csDocproc.hero.viewGithub": { en: "View on GitHub", zh: "在GitHub查看" },
+
+  "csDocproc.metrics.pipelines": { en: "Processing pipelines", zh: "条处理管道" },
+  "csDocproc.metrics.tests": { en: "Automated tests", zh: "个自动化测试" },
+  "csDocproc.metrics.cloud": { en: "Cloud uploads required", zh: "次云端上传" },
+  "csDocproc.metrics.exe": { en: "Standalone .exe package", zh: "个独立.exe安装包" },
+
+  "csDocproc.sidebar.typeLabel": { en: "Project Type", zh: "项目类型" },
+  "csDocproc.sidebar.typeName": { en: "Open Source Tool", zh: "开源工具" },
+  "csDocproc.sidebar.typeCategory": { en: "Developer Tools / Productivity", zh: "开发工具 / 效率工具" },
+  "csDocproc.sidebar.service1": { en: "AI-Powered Tools", zh: "AI智能工具" },
+  "csDocproc.sidebar.service2": { en: "RAG Architecture", zh: "RAG架构" },
+  "csDocproc.sidebar.service3": { en: "Local ML Inference", zh: "本地ML推理" },
+
+  "csDocproc.problem.title": {
+    en: "Document processing is fragmented \u2014 and it leaks your data",
+    zh: "文档处理工具四分五裂——而且会泄露你的数据",
+  },
+  "csDocproc.problem.p1": {
+    en: "Compressing a PDF means uploading it to one tool. Merging PDFs means a different tool. Removing a background from an image means a third tool. Each requires uploading files \u2014 often sensitive ones \u2014 to a third-party server you don\u2019t control and can\u2019t audit.",
+    zh: "压缩PDF要上传到一个工具，合并PDF要用另一个，图片去背景又要第三个。每个工具都要求上传文件——往往是敏感文件——到你无法控制也无法审计的第三方服务器。",
+  },
+  "csDocproc.problem.p2": {
+    en: "Businesses handling contracts, medical records, financial documents, or proprietary engineering drawings can\u2019t afford that exposure. They need processing power without the privacy trade-off.",
+    zh: "处理合同、病历、财务文件或专有工程图纸的企业承受不起这种暴露。他们需要处理能力，但不能以牺牲隐私为代价。",
+  },
+  "csDocproc.problem.p3": {
+    en: "Beyond privacy: the fragmentation itself is a productivity problem. Switching between tools, re-uploading files, reconfiguring settings \u2014 it adds up. A single coherent suite with a natural language interface would save hours per week.",
+    zh: "隐私之外，工具碎片化本身就是效率问题。在工具间切换、重新上传文件、重新配置设置——日积月累消耗大量时间。一套连贯的工具加上自然语言界面，每周能节省数小时。",
+  },
+
+  "csDocproc.approachSection.label": { en: "02 / Approach", zh: "02 / 方案" },
+  "csDocproc.approachSection.title": {
+    en: "18 pipelines, one interface, zero cloud",
+    zh: "18条管道，一个界面，零云端",
+  },
+  "csDocproc.approachSection.p1": {
+    en: "We built a unified document processing suite where every operation runs locally. No API keys for processing. No uploads. No account required. Everything executes on the user\u2019s machine, and the results stay there.",
+    zh: "我们构建了一套统一的文档处理套件，所有操作均在本地运行。处理无需API密钥，无需上传，无需注册账户。一切在用户本机执行，结果留在本地。",
+  },
+  "csDocproc.approachSection.p2": {
+    en: "The AI chat assistant doesn\u2019t require describing operations in technical terms. A user can say \u201Ccompress this PDF and make it under 2MB without losing too much quality\u201D and the system generates and executes the correct processing plan automatically. The RAG engine answers questions about uploaded documents using hybrid BM25 + TF-IDF retrieval.",
+    zh: "AI聊天助手不需要用技术术语描述操作。用户可以说\u201C压缩这个PDF，控制在2MB以内，别损失太多质量\u201D，系统会自动生成并执行正确的处理方案。RAG引擎使用混合BM25 + TF-IDF检索来回答关于已上传文档的问题。",
+  },
+
+  "csDocproc.pipeline.cat1": { en: "PDF Operations", zh: "PDF操作" },
+  "csDocproc.pipeline.cat1i1": { en: "Compress", zh: "压缩" },
+  "csDocproc.pipeline.cat1i2": { en: "Merge", zh: "合并" },
+  "csDocproc.pipeline.cat1i3": { en: "Split", zh: "拆分" },
+  "csDocproc.pipeline.cat1i4": { en: "Rotate", zh: "旋转" },
+  "csDocproc.pipeline.cat1i5": { en: "Watermark", zh: "水印" },
+  "csDocproc.pipeline.cat1i6": { en: "Password protect", zh: "密码保护" },
+  "csDocproc.pipeline.cat1i7": { en: "Unlock", zh: "解锁" },
+  "csDocproc.pipeline.cat2": { en: "Image Operations", zh: "图像操作" },
+  "csDocproc.pipeline.cat2i1": { en: "Resize", zh: "调整大小" },
+  "csDocproc.pipeline.cat2i2": { en: "Convert format", zh: "格式转换" },
+  "csDocproc.pipeline.cat2i3": { en: "AI background removal", zh: "AI背景移除" },
+  "csDocproc.pipeline.cat2i4": { en: "Bulk export", zh: "批量导出" },
+  "csDocproc.pipeline.cat3": { en: "AI Assistant", zh: "AI助手" },
+  "csDocproc.pipeline.cat3i1": { en: "Natural language task description", zh: "自然语言任务描述" },
+  "csDocproc.pipeline.cat3i2": { en: "Auto-generated execution plans", zh: "自动生成执行方案" },
+  "csDocproc.pipeline.cat3i3": { en: "RAG document Q&A", zh: "RAG文档问答" },
+  "csDocproc.pipeline.cat4": { en: "Workflow", zh: "工作流" },
+  "csDocproc.pipeline.cat4i1": { en: "Recipe system", zh: "配方系统" },
+  "csDocproc.pipeline.cat4i2": { en: "Multi-step chaining", zh: "多步骤链式处理" },
+  "csDocproc.pipeline.cat4i3": { en: "Batch processing", zh: "批量处理" },
+  "csDocproc.pipeline.cat4i4": { en: "Export as .exe", zh: "导出为.exe" },
+
+  "csDocproc.engSection.label": { en: "03 / Engineering Quality", zh: "03 / 工程质量" },
+  "csDocproc.engSection.title": {
+    en: "248 tests. Clean architecture. Ships as a single .exe.",
+    zh: "248个测试，简洁架构，打包为单个.exe发布。",
+  },
+  "csDocproc.engSection.p1": {
+    en: "The test suite covers every pipeline, the AI chat execution flow, the RAG retrieval engine, the recipe chaining system, and the API layer. 248 automated tests that run before every release.",
+    zh: "测试套件覆盖每条管道、AI聊天执行流程、RAG检索引擎、配方链式系统和API层。248个自动化测试在每次发布前运行。",
+  },
+  "csDocproc.engSection.p2": {
+    en: "The recipe system allows users to chain operations: \u201Ccompress this PDF, then merge it with these three others, then add a watermark.\u201D Each step is deterministic and individually tested. The final .exe package bundles the entire suite \u2014 Python runtime, all dependencies, ML models \u2014 into a single executable that non-technical users can run without installing anything.",
+    zh: "配方系统允许用户链式操作：\u201C压缩这个PDF，然后与其他三个合并，再加上水印。\u201D每个步骤都是确定性的并经过单独测试。最终的.exe包将整个套件——Python运行时、所有依赖、ML模型——打包为一个可执行文件，非技术用户无需安装任何东西即可运行。",
+  },
+  "csDocproc.eng.card1Title": { en: "248 automated tests", zh: "248个自动化测试" },
+  "csDocproc.eng.card1Body": {
+    en: "Full test coverage across all 18 pipelines, the AI chat layer, and the RAG retrieval engine.",
+    zh: "全部18条管道、AI聊天层和RAG检索引擎的完整测试覆盖。",
+  },
+  "csDocproc.eng.card2Title": { en: "Recipe chaining", zh: "配方链式处理" },
+  "csDocproc.eng.card2Body": {
+    en: "Multi-step workflows defined as reusable recipes. Chain compress \u2192 merge \u2192 watermark in a single run.",
+    zh: "多步骤工作流定义为可复用配方。一次运行即可完成压缩 \u2192 合并 \u2192 水印。",
+  },
+  "csDocproc.eng.card3Title": { en: "Local ML inference", zh: "本地ML推理" },
+  "csDocproc.eng.card3Body": {
+    en: "AI background removal and document analysis run via ONNX models locally. No API calls for core operations.",
+    zh: "AI背景移除和文档分析通过ONNX模型在本地运行。核心操作无需API调用。",
+  },
+
+  "csDocproc.resultsSection.label": { en: "04 / What Was Shipped", zh: "04 / 交付成果" },
+  "csDocproc.resultsSection.title": {
+    en: "A complete, production-quality document processing suite",
+    zh: "一套完整的、生产级文档处理套件",
+  },
+  "csDocproc.resultsList.r1": {
+    en: "18 document processing pipelines covering PDF and image operations",
+    zh: "18条文档处理管道，覆盖PDF和图像操作",
+  },
+  "csDocproc.resultsList.r2": {
+    en: "248 automated tests with full coverage across all pipelines and AI layers",
+    zh: "248个自动化测试，全面覆盖所有管道和AI层",
+  },
+  "csDocproc.resultsList.r3": {
+    en: "Natural language AI chat: describe what you need, system executes it",
+    zh: "自然语言AI聊天：描述你的需求，系统自动执行",
+  },
+  "csDocproc.resultsList.r4": {
+    en: "RAG document Q&A engine with hybrid BM25 + TF-IDF retrieval",
+    zh: "文档问答RAG引擎，采用混合BM25 + TF-IDF检索",
+  },
+  "csDocproc.resultsList.r5": {
+    en: "Privacy-first: all processing runs locally, nothing leaves the machine",
+    zh: "隐私优先：所有处理在本地运行，数据不出本机",
+  },
+  "csDocproc.resultsList.r6": {
+    en: "Recipe system for composable multi-step processing workflows",
+    zh: "配方系统支持可组合的多步骤处理工作流",
+  },
+  "csDocproc.resultsList.r7": {
+    en: "Standalone .exe packaging for non-technical end users",
+    zh: "独立.exe打包，面向非技术终端用户",
+  },
 
   /* ── Industry labels ─────────────────────────────────────── */
   "label.marineServices": { en: "Marine Services", zh: "海洋服务" },

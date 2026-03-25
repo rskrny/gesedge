@@ -13,25 +13,19 @@ export default function About() {
       country: t("about.loc.us"),
       entity: t("about.loc.usEntity"),
       city: t("about.loc.usCity"),
-      gradient: "from-[#1a0d1a] via-[#0D1117] to-[#0A0E1A]",
       accent: "#E91E8C",
-      icon: "\u{1F3D4}\u{FE0F}",
     },
     {
       country: t("about.loc.cn"),
       entity: t("about.loc.cnEntity"),
       city: t("about.loc.cnCity"),
-      gradient: "from-[#0d1a1a] via-[#0D1117] to-[#0A0E1A]",
       accent: "#00D4FF",
-      icon: "\u{1F43C}",
     },
     {
       country: t("about.loc.uk"),
       entity: t("about.loc.ukEntity"),
       city: t("about.loc.ukCity"),
-      gradient: "from-[#110d1a] via-[#0D1117] to-[#0A0E1A]",
       accent: "#B794F6",
-      icon: "\u{1F3DB}\u{FE0F}",
     },
   ];
 
@@ -167,21 +161,18 @@ export default function About() {
           <RevealSection>
             <p className="font-mono text-xs tracking-widest text-accent uppercase mb-10">{t("about.locations.badge")}</p>
           </RevealSection>
-          <RevealStagger className="grid grid-cols-1 md:grid-cols-3 gap-6" staggerDelay={0.1}>
+          <RevealStagger className="max-w-2xl space-y-0 divide-y divide-border/40" staggerDelay={0.08}>
             {locations.map((loc) => (
               <RevealItem key={loc.country}>
-                <div className="card-glass rounded-sm overflow-hidden h-full group hover:border-accent/30 transition-all duration-300">
-                  <div className={`relative h-[180px] bg-gradient-to-br ${loc.gradient} flex items-center justify-center overflow-hidden`}>
-                    <div className="absolute inset-0" style={{ background: `radial-gradient(ellipse at 30% 50%, ${loc.accent}18 0%, transparent 65%)` }} />
-                    <div className="absolute inset-0 opacity-20" style={{ backgroundImage: "linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px)", backgroundSize: "30px 30px" }} />
-                    <span className="text-5xl relative z-10 opacity-70 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500">{loc.icon}</span>
-                    <div className="absolute inset-0 bg-gradient-to-t from-bg-card/80 to-transparent" />
+                <div className="flex items-baseline justify-between py-5 group">
+                  <div className="flex items-baseline gap-4">
+                    <span className="w-2 h-2 rounded-full shrink-0 translate-y-[-1px]" style={{ backgroundColor: loc.accent }} />
+                    <div>
+                      <p className="font-display text-lg font-medium text-fg group-hover:text-accent transition-colors">{loc.entity}</p>
+                      <p className="text-sm text-fg-dim mt-0.5">{loc.city}</p>
+                    </div>
                   </div>
-                  <div className="p-6">
-                    <p className="font-mono text-xs tracking-widest mb-3 uppercase" style={{ color: loc.accent }}>{loc.country}</p>
-                    <p className="font-display text-lg font-medium text-fg">{loc.entity}</p>
-                    <p className="text-sm text-fg-dim mt-2">{loc.city}</p>
-                  </div>
+                  <p className="font-mono text-xs tracking-widest uppercase shrink-0 ml-4" style={{ color: loc.accent }}>{loc.country}</p>
                 </div>
               </RevealItem>
             ))}

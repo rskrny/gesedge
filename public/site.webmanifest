@@ -1,0 +1,17 @@
+{
+  "name": "Global Edge Strategies",
+  "short_name": "GES",
+  "description": "Custom AI-powered business systems",
+  "start_url": "/",
+  "display": "browser",
+  "background_color": "#0A0E1A",
+  "theme_color": "#E91E8C",
+  "icons": [
+    {
+      "src": "/logo.png",
+      "sizes": "532x553",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ]
+}

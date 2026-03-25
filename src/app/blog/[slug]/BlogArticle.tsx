@@ -4,11 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import RevealSection from "@/components/RevealSection";
 import MagneticButton from "@/components/MagneticButton";
+import { useLanguage } from "@/components/LanguageProvider";
 import type { BlogPost } from "@/lib/blog-posts";
 
-function formatDate(dateString: string): string {
+function formatDate(dateString: string, locale: string): string {
   const date = new Date(dateString + "T00:00:00");
-  return date.toLocaleDateString("en-US", {
+  return date.toLocaleDateString(locale === "zh" ? "zh-CN" : "en-US", {
     year: "numeric",
     month: "long",
     day: "numeric",
@@ -56,6 +57,7 @@ export default function BlogArticle({
   prevPost: BlogPost | null;
   nextPost: BlogPost | null;
 }) {
+  const { t, locale } = useLanguage();
   return (
     <>
       {/* Hero */}
@@ -80,7 +82,7 @@ export default function BlogArticle({
                   d="M10.5 19.5L3 12m0 0l7.5-7.5M3 12h18"
                 />
               </svg>
-              Back to blog
+              {t("blog.backToBlog")}
             </Link>
           </RevealSection>
 
@@ -91,7 +93,7 @@ export default function BlogArticle({
                   {post.category}
                 </span>
                 <span className="font-mono text-xs text-fg-dim">
-                  {formatDate(post.date)}
+                  {formatDate(post.date, locale)}
                 </span>
                 <span className="font-mono text-xs text-fg-dim">
                   {post.readingTime}
@@ -162,7 +164,7 @@ export default function BlogArticle({
                   className="card-glass rounded-sm p-6 group hover:border-accent/30 transition-all duration-300"
                 >
                   <p className="font-mono text-xs text-fg-dim mb-2">
-                    Previous
+                    {t("blog.previous")}
                   </p>
                   <p className="font-display text-lg font-medium tracking-tight group-hover:text-accent transition-colors duration-300 line-clamp-2">
                     {prevPost.title}
@@ -177,7 +179,7 @@ export default function BlogArticle({
                   }`}
                 >
                   <p className="font-mono text-xs text-fg-dim mb-2 md:text-right">
-                    Next
+                    {t("blog.next")}
                   </p>
                   <p className="font-display text-lg font-medium tracking-tight group-hover:text-accent transition-colors duration-300 md:text-right line-clamp-2">
                     {nextPost.title}
@@ -197,17 +199,16 @@ export default function BlogArticle({
         <div className="relative mx-auto max-w-7xl px-6 lg:px-12">
           <RevealSection>
             <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
-              Have a project in mind?
+              {t("blog.ctaTitle")}
             </h2>
             <p className="mt-6 text-lg text-fg-muted max-w-xl">
-              We build custom AI-powered systems for businesses that need real
-              solutions. If something here resonated, let&apos;s talk.
+              {t("blog.ctaSub")}
             </p>
           </RevealSection>
           <RevealSection delay={0.2}>
             <div className="mt-10">
               <MagneticButton href="/contact" variant="primary">
-                Get in Touch
+                {t("blog.ctaButton")}
               </MagneticButton>
             </div>
           </RevealSection>

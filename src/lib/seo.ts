@@ -24,12 +24,21 @@ export function createMetadata(overrides: Partial<Metadata> & { path?: string } 
       siteName: SITE_NAME,
       locale: "en_US",
       type: "website",
+      images: [
+        {
+          url: `${SITE_URL}/opengraph-image`,
+          width: 1200,
+          height: 630,
+          alt: `${SITE_NAME} — Custom AI-Powered Business Systems`,
+        },
+      ],
       ...(rest.openGraph || {}),
     },
     twitter: {
       card: "summary_large_image",
       title: title as string,
       description: (rest.description as string) || SITE_DESCRIPTION,
+      images: [`${SITE_URL}/opengraph-image`],
       ...(rest.twitter || {}),
     },
     alternates: {

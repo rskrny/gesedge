@@ -14,8 +14,10 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
       <head>
         <link rel="preconnect" href="https://fonts.googleapis.com" />
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-        <link rel="icon" href="/logo.png" type="image/png" />
+        <link rel="icon" href="/logo.png" type="image/png" sizes="532x553" />
         <link rel="apple-touch-icon" href="/logo.png" />
+        <link rel="manifest" href="/site.webmanifest" />
+        <meta name="theme-color" content="#0A0E1A" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={jsonLd(organizationJsonLd)}
