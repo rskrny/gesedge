@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import { getSupabase } from "@/lib/supabase";
 
 export async function POST(request: Request) {
   try {
@@ -9,12 +10,23 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
     }
 
-    // Log to server console (visible in Vercel logs)
+    // Log to server console (visible in Vercel logs as backup)
     console.log("=== NEW CONTACT FORM SUBMISSION ===");
     console.log(JSON.stringify({ name, email, company, service, message, timestamp: new Date().toISOString() }, null, 2));
-    console.log("===================================");
 
-    // If RESEND_API_KEY is configured, send email notification
+    // Store in Supabase
+    const supabase = getSupabase();
+    if (supabase) {
+      const { error: dbError } = await supabase
+        .from("ges_contact_submissions")
+        .insert({ name, email, company: company || null, service, message });
+
+      if (dbError) {
+        console.error("Supabase insert error:", dbError);
+      }
+    }
+
+    // If RESEND_API_KEY is configured, also send email notification
     if (process.env.RESEND_API_KEY) {
       await fetch("https://api.resend.com/emails", {
         method: "POST",

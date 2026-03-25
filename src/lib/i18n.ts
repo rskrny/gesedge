@@ -41,7 +41,7 @@ const translations = {
   "home.hero.line2b": { en: "Bridges", zh: "全球" },
   "home.hero.line3": { en: "Markets.", zh: "市场。" },
   "home.hero.sub": {
-    en: "Custom AI systems, web platforms, and digital tools engineered for businesses operating between cultures — US, China, and beyond.",
+    en: "Custom AI systems, web platforms, and digital tools engineered for businesses operating across the US, China, and beyond.",
     zh: "为跨文化运营的企业量身打造AI系统、Web平台和数字工具——连接美国、中国及更广阔的市场。",
   },
   "home.hero.cta1": { en: "View Our Work", zh: "查看我们的作品" },
@@ -56,7 +56,7 @@ const translations = {
   "home.welcome.badge": { en: "What We Build", zh: "我们的服务" },
   "home.welcome.title": { en: "Looking for a website, an AI tool, or something more?", zh: "需要网站、AI工具，还是更多？" },
   "home.welcome.sub": {
-    en: "Whether you found us through a client project, a referral, or a search — here's what we build for businesses like yours.",
+    en: "Whether you found us through a client project, a referral, or a search, here's what we build for businesses like yours.",
     zh: "无论您是通过客户项目、推荐还是搜索找到我们——以下是我们为您这样的企业打造的解决方案。",
   },
   "home.welcome.cta": { en: "Tell us what you're solving", zh: "告诉我们您要解决的问题" },
@@ -76,7 +76,7 @@ const translations = {
   "home.cap3.label": { en: "03", zh: "03" },
   "home.cap3.title": { en: "Cross-Border Operations", zh: "跨境业务运营" },
   "home.cap3.body": {
-    en: "Multilingual platforms and compliance-aware infrastructure for businesses operating between the US, China, and beyond. We live this — with entities in Wyoming, Chengdu, and London.",
+    en: "Multilingual platforms and compliance-aware infrastructure for businesses operating between the US, China, and beyond. We run entities in Wyoming, Chengdu, and London.",
     zh: "为在中美之间运营的企业提供多语言平台和合规基础设施。我们亲身经历——在怀俄明、成都和伦敦均设有实体。",
   },
 
@@ -283,7 +283,7 @@ const translations = {
   },
   "cs.pjcs.industry": { en: "B2B Construction Materials", zh: "B2B建筑材料" },
   "cs.pjcs.challenge": {
-    en: "A Chinese waterproofing materials manufacturer needed to help Latin American contractors find the right product for their specific application, substrate, and budget — across three languages, without calling a rep.",
+    en: "A Chinese waterproofing materials manufacturer needed to help Latin American contractors find the right product for their specific application, substrate, and budget. Three languages, no sales rep required.",
     zh: "一家中国防水材料制造商需要帮助拉美承包商根据具体应用场景、基材和预算找到合适的产品——跨越三种语言，无需致电销售代表。",
   },
   "cs.pjcs.solution": {
@@ -344,7 +344,7 @@ const translations = {
   /* ── Bloodline Charters — Detail Page ──────────────────── */
   "csBloodline.hero.badge": { en: "Marine Services", zh: "海洋服务" },
   "csBloodline.hero.subtitle": {
-    en: "Full-stack booking platform and operations dashboard for a Cape Cod charter fishing business — from zero to live in under a week.",
+    en: "Full-stack booking platform and operations dashboard for a Cape Cod charter fishing business. Zero to live in under a week.",
     zh: "为科德角包船钓鱼企业打造的全栈预订平台和运营后台——从零到上线不到一周。",
   },
   "csBloodline.hero.viewSite": { en: "View Live Site", zh: "访问线上网站" },
@@ -364,11 +364,11 @@ const translations = {
     zh: "一位用笔记本和电话经营生意的船长",
   },
   "csBloodline.problem.p1": {
-    en: "A Cape Cod charter fishing captain was managing his entire operation through phone calls, text messages, and a basic website builder. During peak season, he was losing bookings to scheduling conflicts — two parties calling about the same date, no way to track who had priority.",
+    en: "A Cape Cod charter fishing captain was managing his entire operation through phone calls, text messages, and a basic website builder. During peak season, he was losing bookings to scheduling conflicts. Two parties calling about the same date, no way to track who had priority.",
     zh: "一位科德角包船钓鱼船长通过电话、短信和一个基础建站工具管理全部运营。在旺季，他因排期冲突丢失订单——两组客人同时问询同一日期，却没有任何方式追踪谁优先。",
   },
   "csBloodline.problem.p2": {
-    en: "He was spending hours on admin instead of on the water: manually tracking inquiries in spreadsheets, sending deposit requests by hand, calling back every person who filled out a contact form. He had zero visibility into his business performance — no idea which months were most profitable, which trips were most popular, or how his website was performing.",
+    en: "He was spending hours on admin instead of on the water: manually tracking inquiries in spreadsheets, sending deposit requests by hand, calling back every person who filled out a contact form. He had zero visibility into his business performance. No idea which months were most profitable, which trips were most popular, or how his website was performing.",
     zh: "他把大量时间花在行政事务而非出海上：在表格里手动追踪咨询、手动发送订金请求、逐一回电给每个填写联系表单的人。他对业务表现毫无可视性——不知道哪个月利润最高、哪种航程最受欢迎，也不了解网站的表现如何。",
   },
   "csBloodline.problem.p3": {

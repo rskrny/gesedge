@@ -60,7 +60,7 @@ export default function Home() {
           </RevealSection>
 
           {locale === "en" ? (
-            <h1 className="font-display text-6xl md:text-8xl lg:text-[7rem] font-semibold leading-[0.9] max-w-5xl" style={{ letterSpacing: "0.02em" }}>
+            <h1 className="font-display text-6xl md:text-8xl lg:text-[7rem] font-semibold leading-[0.95] max-w-5xl" style={{ letterSpacing: "0.02em" }}>
               <HeroWordReveal text="Technology" delay={0.1} className="block" />
               <span className="block">
                 <HeroWordReveal text="That" delay={0.25} />

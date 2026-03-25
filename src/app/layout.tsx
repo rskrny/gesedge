@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import SmoothScroll from "@/components/SmoothScroll";
 import { LanguageProvider } from "@/components/LanguageProvider";
+import Analytics from "@/components/Analytics";
 import { createMetadata, jsonLd, organizationJsonLd } from "@/lib/seo";
 import "./globals.css";
 
@@ -30,6 +31,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <main className="flex-1">{children}</main>
             <Footer />
           </SmoothScroll>
+          <Analytics />
         </LanguageProvider>
       </body>
     </html>
