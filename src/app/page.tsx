@@ -44,10 +44,10 @@ export default function Home() {
             src="/images/hero-home.jpg"
             alt=""
             fill
-            className="object-cover opacity-45"
+            className="object-cover opacity-55"
             priority
           />
-          <div className="absolute inset-0 bg-bg/30" />
+          <div className="absolute inset-0 bg-bg/20" />
         </div>
         <HeroBackground />
         <div className="absolute inset-0 z-[1] bg-gradient-to-b from-transparent via-transparent to-bg pointer-events-none" />

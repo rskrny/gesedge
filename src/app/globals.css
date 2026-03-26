@@ -3,30 +3,30 @@
 
 @theme {
   /* ── Backgrounds ───────────────────────────── */
-  --color-bg: #111318;
-  --color-bg-elevated: #181B22;
-  --color-bg-card: #1E222B;
+  --color-bg: #1C1F2A;
+  --color-bg-elevated: #242836;
+  --color-bg-card: #2A2F3E;
 
   /* ── Foregrounds ───────────────────────────── */
-  --color-fg: #EDECE8;
-  --color-fg-muted: #B8BFCC;
-  --color-fg-dim: #8B95A8;
+  --color-fg: #F0EFE9;
+  --color-fg-muted: #C2C9D6;
+  --color-fg-dim: #9AA3B8;
 
   /* ── Accents ───────────────────────────────── */
   --color-accent: #D4467A;               /* Warm rose */
   --color-accent-2: #4A9EBF;             /* Muted teal */
   --color-accent-3: #9B85C4;             /* Soft lavender */
   --color-accent-hover: #E05A8E;
-  --color-accent-dim: rgba(212, 70, 122, 0.08);
-  --color-accent-2-dim: rgba(74, 158, 191, 0.08);
+  --color-accent-dim: rgba(212, 70, 122, 0.10);
+  --color-accent-2-dim: rgba(74, 158, 191, 0.10);
 
   /* ── Sunset palette (East↔West bridge) ─────── */
   --color-sunset-orange: #D4834A;
   --color-deep-purple: #6B4FA0;
 
   /* ── Borders ───────────────────────────────── */
-  --color-border: #252830;
-  --color-border-hover: #353842;
+  --color-border: #353A4A;
+  --color-border-hover: #454B5E;
 
   /* ── Typography ─────────────────────────────── */
   --font-display: "Cormorant Garamond", "Noto Serif SC", Georgia, serif;
@@ -122,7 +122,7 @@ body::before {
 /* ── Glass cards ──────────────────────────────── */
 
 .card-glass {
-  background: rgba(30, 34, 43, 0.5);
+  background: rgba(42, 47, 62, 0.55);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
   border: 1px solid var(--color-border);
@@ -130,7 +130,7 @@ body::before {
 
 .card-glass:hover {
   border-color: var(--color-border-hover);
-  background: rgba(30, 34, 43, 0.7);
+  background: rgba(42, 47, 62, 0.75);
 }
 
 /* ── Background patterns ──────────────────────── */
