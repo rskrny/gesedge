@@ -71,13 +71,13 @@ export default function ContactForm() {
     <form onSubmit={handleSubmit} className="space-y-5">
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="name" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
+          <label htmlFor="name" className="block text-xs font-medium tracking-[0.15em] text-fg-dim uppercase mb-2">
             {t("form.name")} *
           </label>
           <input type="text" id="name" name="name" required className={inputClasses} placeholder={t("form.namePlaceholder")} />
         </div>
         <div>
-          <label htmlFor="email" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
+          <label htmlFor="email" className="block text-xs font-medium tracking-[0.15em] text-fg-dim uppercase mb-2">
             {t("form.email")} *
           </label>
           <input type="email" id="email" name="email" required className={inputClasses} placeholder={t("form.emailPlaceholder")} />
@@ -85,13 +85,13 @@ export default function ContactForm() {
       </div>
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
         <div>
-          <label htmlFor="company" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
+          <label htmlFor="company" className="block text-xs font-medium tracking-[0.15em] text-fg-dim uppercase mb-2">
             {t("form.company")}
           </label>
           <input type="text" id="company" name="company" className={inputClasses} placeholder={t("form.companyPlaceholder")} />
         </div>
         <div>
-          <label htmlFor="service" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
+          <label htmlFor="service" className="block text-xs font-medium tracking-[0.15em] text-fg-dim uppercase mb-2">
             {t("form.service")} *
           </label>
           <select id="service" name="service" required className={inputClasses}>
@@ -104,7 +104,7 @@ export default function ContactForm() {
         </div>
       </div>
       <div>
-        <label htmlFor="message" className="block font-mono text-xs tracking-widest text-fg-dim uppercase mb-2">
+        <label htmlFor="message" className="block text-xs font-medium tracking-[0.15em] text-fg-dim uppercase mb-2">
           {t("form.message")} *
         </label>
         <textarea

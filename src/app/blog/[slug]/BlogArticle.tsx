@@ -89,7 +89,7 @@ export default function BlogArticle({
           <div className="max-w-3xl">
             <RevealSection delay={0.1}>
               <div className="flex items-center gap-4 mb-6">
-                <span className="font-mono text-xs tracking-widest text-accent uppercase">
+                <span className="text-xs font-medium tracking-[0.15em] text-accent uppercase">
                   {post.category}
                 </span>
                 <span className="font-mono text-xs text-fg-dim">

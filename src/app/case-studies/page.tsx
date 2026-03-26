@@ -51,7 +51,7 @@ export default function CaseStudies() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-7">
               <RevealSection delay={0.1}>
-                <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">{t("cases.badge")}</p>
+                <p className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-4">{t("cases.badge")}</p>
                 <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[0.95]">
                   {t("cases.title")} <span className="text-gradient">{t("cases.titleGrad")}</span>
                 </h1>
@@ -90,7 +90,7 @@ export default function CaseStudies() {
               <div className={`grid grid-cols-1 lg:grid-cols-12 gap-12 items-center ${idx % 2 === 1 ? "lg:flex-row-reverse" : ""}`}>
                 <div className={idx % 2 === 0 ? "lg:col-span-7" : "lg:col-span-5 lg:order-2"}>
                   <RevealSection>
-                    <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">
+                    <p className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-4">
                       {csT(cs.slug, "industry")} / {cs.services.join(" + ")}
                     </p>
                   </RevealSection>
@@ -127,7 +127,7 @@ export default function CaseStudies() {
               <div className="mt-14 grid grid-cols-1 lg:grid-cols-12 gap-12">
                 <div className="lg:col-span-5">
                   <RevealSection delay={0.2}>
-                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-4 font-semibold">
+                    <h3 className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-4 font-semibold">
                       {t("cases.challenge")}
                     </h3>
                     <p className="text-fg-muted leading-relaxed">
@@ -137,7 +137,7 @@ export default function CaseStudies() {
                 </div>
                 <div className="lg:col-span-7">
                   <RevealSection delay={0.25}>
-                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-4 font-semibold">
+                    <h3 className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-4 font-semibold">
                       {t("cases.solution")}
                     </h3>
                     <p className="text-fg-muted leading-relaxed">
@@ -149,7 +149,7 @@ export default function CaseStudies() {
 
               {/* Results */}
               <RevealSection delay={0.3} className="mt-12">
-                <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-6 font-semibold">
+                <h3 className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-6 font-semibold">
                   {t("cases.deliverables")}
                 </h3>
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">

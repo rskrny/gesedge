@@ -68,22 +68,7 @@ export default function GlobeSVG({
         opacity,
       }}
     >
-      {/* Outer circle — the globe silhouette */}
-      <circle
-        cx={100}
-        cy={100}
-        r={80}
-        fill="none"
-        stroke="var(--globe-stroke, #4A4D5A)"
-        strokeWidth={1.2}
-        vectorEffect="non-scaling-stroke"
-        strokeDasharray="12 6 20 8 15 5"
-        strokeDashoffset={(rotationOffset * 0.3) % 200}
-        strokeLinecap="round"
-        opacity={0.4}
-      />
-
-      {/* Globe wireframe paths */}
+      {/* Globe arc paths */}
       {globePaths.map((p) => (
         <GlobePathElement key={p.id} path={p} rotationOffset={rotationOffset} />
       ))}

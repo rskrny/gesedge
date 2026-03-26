@@ -13,19 +13,19 @@ export default function About() {
       country: t("about.loc.us"),
       entity: t("about.loc.usEntity"),
       city: t("about.loc.usCity"),
-      accent: "#E91E8C",
+      accent: "#E8836B",
     },
     {
       country: t("about.loc.cn"),
       entity: t("about.loc.cnEntity"),
       city: t("about.loc.cnCity"),
-      accent: "#00D4FF",
+      accent: "#E8836B",
     },
     {
       country: t("about.loc.uk"),
       entity: t("about.loc.ukEntity"),
       city: t("about.loc.ukCity"),
-      accent: "#B794F6",
+      accent: "#E8836B",
     },
   ];
 
@@ -45,7 +45,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-end">
             <div className="lg:col-span-7">
               <RevealSection delay={0.1}>
-                <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">{t("about.badge")}</p>
+                <p className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-4">{t("about.badge")}</p>
                 <h1 className="font-display text-5xl md:text-6xl lg:text-7xl font-semibold tracking-tight leading-[0.95]">
                   {t("about.title1")}
                   <br />
@@ -89,7 +89,7 @@ export default function About() {
             <div className="lg:col-span-4">
               <RevealSection>
                 <div className="sticky top-32">
-                  <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">{t("about.story.badge")}</p>
+                  <p className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-4">{t("about.story.badge")}</p>
                   <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight">
                     {t("about.story.title")} <span className="text-gradient">{t("about.story.titleGrad")}</span>
                   </h2>
@@ -119,7 +119,7 @@ export default function About() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
             <div className="lg:col-span-8 space-y-6">
               <RevealSection>
-                <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">{t("about.philosophy.badge")}</p>
+                <p className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-4">{t("about.philosophy.badge")}</p>
                 <h2 className="font-display text-3xl md:text-4xl font-semibold tracking-tight mb-8">
                   {t("about.philosophy.title")} <span className="text-gradient">{t("about.philosophy.titleGrad")}</span>
                 </h2>
@@ -156,7 +156,7 @@ export default function About() {
       <section className="py-20 md:py-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <RevealSection>
-            <p className="font-mono text-xs tracking-widest text-accent uppercase mb-10">{t("about.locations.badge")}</p>
+            <p className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-10">{t("about.locations.badge")}</p>
           </RevealSection>
           <RevealStagger className="max-w-2xl space-y-0 divide-y divide-border/40" staggerDelay={0.08}>
             {locations.map((loc) => (
@@ -169,7 +169,7 @@ export default function About() {
                       <p className="text-sm text-fg-dim mt-0.5">{loc.city}</p>
                     </div>
                   </div>
-                  <p className="font-mono text-xs tracking-widest uppercase shrink-0 ml-4" style={{ color: loc.accent }}>{loc.country}</p>
+                  <p className="text-xs font-medium tracking-[0.15em] uppercase shrink-0 ml-4" style={{ color: loc.accent }}>{loc.country}</p>
                 </div>
               </RevealItem>
             ))}

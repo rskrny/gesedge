@@ -1,8 +1,8 @@
 "use client";
 
-import { useEffect, useRef, useState, useCallback } from "react";
+import { useEffect, useState, useCallback, useRef } from "react";
 import { usePathname } from "next/navigation";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useMotionValue, useTransform, useMotionValueEvent } from "framer-motion";
 import GlobeSVG from "./GlobeSVG";
 import useGlobeAnimation from "./useGlobeAnimation";
 
@@ -21,7 +21,12 @@ export default function WireframeGlobe() {
   const [vpWidth, setVpWidth] = useState(1200);
   const [vpHeight, setVpHeight] = useState(800);
 
-  useEffect(() => { setMounted(true); }, []);
+  // Manual scroll progress (0-1) — avoids useScroll target ref issues
+  const scrollProgress = useMotionValue(0);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
   const measure = useCallback(() => {
     const slot = document.querySelector("[data-globe-slot]");
@@ -43,29 +48,33 @@ export default function WireframeGlobe() {
     return () => window.removeEventListener("resize", measure);
   }, [measure, pathname]);
 
-  const heroRef = useRef<HTMLElement | null>(null);
+  // Manual scroll listener for homepage (safer than useScroll with target ref)
   useEffect(() => {
-    heroRef.current = isHome ? document.getElementById("hero-section") : null;
-  }, [isHome]);
+    if (!isHome || !mounted) return;
 
-  const { scrollYProgress } = useScroll(
-    isHome && heroRef.current
-      ? { target: heroRef as React.RefObject<HTMLElement>, offset: ["start start", "end start"] }
-      : undefined
-  );
+    function onScroll() {
+      const heroEl = document.getElementById("hero-section");
+      if (!heroEl) return;
+      const rect = heroEl.getBoundingClientRect();
+      const total = heroEl.offsetHeight;
+      const scrolled = -rect.top;
+      const progress = Math.max(0, Math.min(1, scrolled / total));
+      scrollProgress.set(progress);
+    }
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    onScroll(); // initial
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [isHome, mounted, scrollProgress]);
 
   const heroSize = isMobile ? HERO_SIZE_MOBILE : HERO_SIZE;
+  const heroX = isMobile ? vpWidth / 2 - heroSize / 2 : vpWidth * 0.58;
+  const heroY = vpHeight / 2 - heroSize / 2;
 
-  // Position globe in the open right side of the hero (text is left-aligned)
-  const heroX = isMobile
-    ? vpWidth / 2 - heroSize / 2          // centered on mobile
-    : vpWidth * 0.58;                       // right side on desktop
-  const heroY = vpHeight / 2 - heroSize / 2; // vertically centered in viewport
-
-  const size = useTransform(scrollYProgress, [0, 0.35], [heroSize, HEADER_SIZE]);
-  const x = useTransform(scrollYProgress, [0, 0.35], [heroX, slotPos.x]);
-  const y = useTransform(scrollYProgress, [0, 0.35], [heroY, slotPos.y]);
-  const globeOpacity = useTransform(scrollYProgress, [0, 0.3], [0.25, 0.9]);
+  const size = useTransform(scrollProgress, [0, 0.35], [heroSize, HEADER_SIZE]);
+  const x = useTransform(scrollProgress, [0, 0.35], [heroX, slotPos.x]);
+  const y = useTransform(scrollProgress, [0, 0.35], [heroY, slotPos.y]);
+  const globeOpacity = useTransform(scrollProgress, [0, 0.3], [0.3, 0.9]);
 
   if (!mounted) return null;
 

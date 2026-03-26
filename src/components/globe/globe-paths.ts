@@ -1,9 +1,11 @@
 /**
- * Simplified globe wireframe.
+ * Globe logo: bold swoosh arcs implying a sphere.
  *
- * ViewBox: 200×200, center (100,100), radius 80.
- * Fewer lines = cleaner read at all sizes.
- * Just 3 latitude rings, 2 meridians, and 1 accent arc.
+ * Inspired by orbital ring aesthetics. 2 bold arcs + 1 accent arc
+ * sweep around a center to create a globe impression.
+ * Thick strokes, confident, reads at any size.
+ *
+ * ViewBox: 200×200, center (100,100).
  */
 
 export interface GlobePath {
@@ -20,68 +22,37 @@ export interface GlobePath {
   rotationFactor?: number;
 }
 
-const latitudes: GlobePath[] = [
+const arcs: GlobePath[] = [
+  // Primary arc — wide horizontal orbit (equator-like)
   {
-    id: "lat-n",
+    id: "orbit-main",
     type: "ellipse",
-    cx: 100, cy: 60, rx: 66, ry: 16,
-    dashArray: "40 22 50 20",
-    color: "stroke",
-    rotationFactor: 0.9,
-  },
-  {
-    id: "lat-eq",
-    type: "ellipse",
-    cx: 100, cy: 100, rx: 80, ry: 22,
-    dashArray: "60 24 48 22",
-    color: "accent",
-    strokeWidth: 1.8,
+    cx: 100, cy: 100, rx: 82, ry: 28,
+    dashArray: "120 40 80 30",
+    color: "highlight",
+    strokeWidth: 2.5,
     rotationFactor: 1.0,
   },
+  // Secondary arc — tilted, wraps top-to-bottom
   {
-    id: "lat-s",
-    type: "ellipse",
-    cx: 100, cy: 140, rx: 66, ry: 16,
-    dashArray: "45 20 38 24",
-    color: "stroke",
-    rotationFactor: 0.9,
-  },
-];
-
-const meridians: GlobePath[] = [
-  {
-    id: "mer-main",
+    id: "orbit-tilt",
     type: "path",
-    d: "M100,20 C140,22 158,58 158,100 C158,142 140,178 100,180",
-    dashArray: "50 20 45 22",
-    color: "highlight",
-    strokeWidth: 1.4,
+    d: "M55,28 C20,65 18,135 55,172 C92,209 160,180 175,130 C190,80 155,20 110,18 C80,17 62,22 55,28",
+    dashArray: "100 35 70 40",
+    color: "stroke",
+    strokeWidth: 2.2,
+    rotationFactor: 0.8,
+  },
+  // Salmon accent arc — crossing arc that "bridges" the other two
+  {
+    id: "orbit-accent",
+    type: "path",
+    d: "M145,28 C180,65 182,135 145,172 C108,209 40,180 25,130 C10,80 45,20 90,18 C120,17 138,22 145,28",
+    dashArray: "90 45 60 35",
+    color: "accent",
+    strokeWidth: 2.8,
     rotationFactor: 1.2,
   },
-  {
-    id: "mer-side",
-    type: "path",
-    d: "M100,20 C65,24 48,58 46,100 C48,142 65,176 100,180",
-    dashArray: "42 24 52 18",
-    color: "stroke",
-    rotationFactor: 1.0,
-  },
 ];
 
-const accents: GlobePath[] = [
-  {
-    id: "arc-bridge",
-    type: "path",
-    d: "M42,62 C72,82 100,100 130,120 C150,134 162,148 168,158",
-    dashArray: "44 18 36 20",
-    color: "accent",
-    strokeWidth: 1.4,
-    rotationFactor: 0.7,
-  },
-];
-
-export const globePaths: GlobePath[] = [
-  ...latitudes,
-  ...meridians,
-  ...accents,
-];
+export const globePaths: GlobePath[] = arcs;

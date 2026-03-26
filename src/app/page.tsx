@@ -54,7 +54,7 @@ export default function Home() {
 
         <div className="relative z-10 mx-auto max-w-7xl w-full px-6 lg:px-12 pt-28 pb-20 md:pt-36 md:pb-28">
           <RevealSection delay={0}>
-            <p className="font-mono text-xs tracking-[0.3em] text-accent uppercase mb-6">
+            <p className="text-xs font-medium tracking-[0.2em] text-accent uppercase mb-6">
               {t("home.hero.badge")}
             </p>
           </RevealSection>
@@ -103,7 +103,7 @@ export default function Home() {
         </div>
 
         <div className="absolute bottom-10 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-2">
-          <span className="text-xs font-mono tracking-widest text-fg-dim uppercase">{t("home.hero.scroll")}</span>
+          <span className="text-xs font-medium tracking-[0.15em] text-fg-dim uppercase">{t("home.hero.scroll")}</span>
           <div className="w-px h-10 bg-gradient-to-b from-accent/60 to-transparent animate-pulse" />
         </div>
       </section>
@@ -111,13 +111,13 @@ export default function Home() {
       {/* ── What We Build (Services-Forward Welcome) ─────── */}
       <section className="py-28 md:py-36 relative">
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(circle, rgba(0, 212, 255, 0.05) 0%, transparent 70%)" }} />
+          style={{ background: "radial-gradient(circle, rgba(232, 131, 107, 0.04) 0%, transparent 70%)" }} />
 
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
             <div className="lg:col-span-5">
               <RevealSection>
-                <p className="font-mono text-xs tracking-[0.3em] text-accent uppercase mb-6">
+                <p className="text-xs font-medium tracking-[0.2em] text-accent uppercase mb-6">
                   {t("home.welcome.badge")}
                 </p>
                 <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight leading-tight">
@@ -165,7 +165,7 @@ export default function Home() {
       <section className="py-28 md:py-36">
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <RevealSection>
-            <p className="font-mono text-xs tracking-[0.3em] text-accent uppercase mb-4">
+            <p className="text-xs font-medium tracking-[0.2em] text-accent uppercase mb-4">
               {t("home.projects.badge")}
             </p>
             <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight mb-16">
@@ -252,7 +252,7 @@ export default function Home() {
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-center">
             <div className="lg:col-span-4">
               <RevealSection>
-                <p className="font-mono text-xs tracking-[0.3em] text-accent uppercase mb-4">
+                <p className="text-xs font-medium tracking-[0.2em] text-accent uppercase mb-4">
                   {t("home.stats.badge")}
                 </p>
                 <h2 className="font-display text-4xl md:text-5xl font-semibold tracking-tight">
@@ -316,12 +316,12 @@ export default function Home() {
         <div className="absolute inset-0 bg-grid pointer-events-none opacity-50" />
         <div
           className="absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] rounded-full pointer-events-none"
-          style={{ background: "radial-gradient(ellipse, rgba(233, 30, 140, 0.07) 0%, transparent 70%)" }}
+          style={{ background: "radial-gradient(ellipse, rgba(232, 131, 107, 0.05) 0%, transparent 70%)" }}
         />
 
         <div className="relative mx-auto max-w-7xl px-6 lg:px-12 text-center">
           <RevealSection>
-            <p className="font-mono text-xs tracking-[0.3em] text-accent uppercase mb-6">
+            <p className="text-xs font-medium tracking-[0.2em] text-accent uppercase mb-6">
               {t("home.cta.badge")}
             </p>
             <h2 className="font-display text-5xl md:text-7xl font-semibold tracking-wide leading-tight">

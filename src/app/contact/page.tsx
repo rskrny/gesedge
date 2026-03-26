@@ -17,7 +17,7 @@ export default function Contact() {
             {/* Left info */}
             <div className="lg:col-span-5">
               <RevealSection>
-                <p className="font-mono text-xs tracking-widest text-accent uppercase mb-4">{t("contact.badge")}</p>
+                <p className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-4">{t("contact.badge")}</p>
                 <h1 className="font-display text-5xl md:text-6xl font-semibold tracking-tight leading-[0.95]">
                   {t("contact.title")} <span className="text-gradient">{t("contact.titleGrad")}</span>
                 </h1>
@@ -31,17 +31,17 @@ export default function Contact() {
               <RevealSection delay={0.2}>
                 <div className="mt-12 space-y-8">
                   <div>
-                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">{t("contact.email")}</h3>
+                    <h3 className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-2">{t("contact.email")}</h3>
                     <a href="mailto:ryan@gesedge.com" className="text-fg-muted hover:text-fg transition-colors link-underline">
                       ryan@gesedge.com
                     </a>
                   </div>
                   <div>
-                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">{t("contact.responseTime")}</h3>
+                    <h3 className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-2">{t("contact.responseTime")}</h3>
                     <p className="text-fg-muted">{t("contact.responseValue")}</p>
                   </div>
                   <div>
-                    <h3 className="font-mono text-xs tracking-widest text-accent uppercase mb-2">{t("contact.locations")}</h3>
+                    <h3 className="text-xs font-medium tracking-[0.15em] text-accent uppercase mb-2">{t("contact.locations")}</h3>
                     <p className="text-fg-muted">
                       Wyoming, USA<br />
                       Chengdu, China<br />
