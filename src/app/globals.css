@@ -34,6 +34,14 @@
   --font-mono: "IBM Plex Mono", "Courier New", monospace;
 }
 
+/* ── Globe logo ────────────────────────────────── */
+
+:root {
+  --globe-stroke: #4A4D5A;
+  --globe-accent: #E8836B;
+  --globe-highlight: rgba(255, 255, 255, 0.6);
+}
+
 /* ── Base ──────────────────────────────────────── */
 
 html {

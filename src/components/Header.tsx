@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
@@ -49,14 +48,8 @@ export default function Header() {
             }
           }}
         >
-          <Image
-            src="/logo.png"
-            alt="Global Edge Strategies"
-            width={48}
-            height={48}
-            className="w-12 h-12 object-contain"
-            priority
-          />
+          {/* Globe logo docks into this slot via WireframeGlobe component */}
+          <div data-globe-slot className="w-12 h-12 shrink-0" />
           <span className="font-display text-xl font-semibold tracking-tight text-fg">
             GES
           </span>

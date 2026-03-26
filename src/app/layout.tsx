@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import WireframeGlobe from "@/components/globe/WireframeGlobe";
 import SmoothScroll from "@/components/SmoothScroll";
 import { LanguageProvider } from "@/components/LanguageProvider";
 import Analytics from "@/components/Analytics";
@@ -28,6 +29,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <LanguageProvider>
           <SmoothScroll>
             <Header />
+            <WireframeGlobe />
             <main className="flex-1">{children}</main>
             <Footer />
           </SmoothScroll>

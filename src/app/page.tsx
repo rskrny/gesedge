@@ -38,7 +38,7 @@ export default function Home() {
   return (
     <>
       {/* ── Hero ──────────────────────────────── */}
-      <section className="relative min-h-screen flex items-center overflow-hidden">
+      <section id="hero-section" className="relative min-h-screen flex items-center overflow-hidden">
         <div className="absolute inset-0 z-0">
           <Image
             src="/images/hero-home.jpg"
