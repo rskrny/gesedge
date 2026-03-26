@@ -159,7 +159,7 @@ export default function BloodlineContent() {
                   >
                     {r.metric}
                   </p>
-                  <p className="text-xs font-mono text-fg-dim leading-relaxed">{r.label}</p>
+                  <p className="text-xs text-fg-dim leading-relaxed">{r.label}</p>
                 </div>
               </RevealItem>
             ))}
@@ -365,7 +365,7 @@ export default function BloodlineContent() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
             <div>
-              <p className="text-xs font-mono text-fg-dim tracking-widest uppercase mb-2">{t("csDetail.nextProject")}</p>
+              <p className="text-xs font-medium text-fg-dim tracking-widest uppercase mb-2">{t("csDetail.nextProject")}</p>
               <Link
                 href="/case-studies/pjcs-rag"
                 className="font-display text-2xl font-semibold hover:text-accent transition-colors duration-200 inline-flex items-center gap-3"

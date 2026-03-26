@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
+  <!-- GES Globe — on dark backgrounds (#1A1C22 or similar) -->
+  <ellipse cx="100" cy="100" rx="80" ry="26" fill="none" stroke="#F2F1ED" stroke-width="2.2" stroke-linecap="round" stroke-dasharray="110 35 75 30" opacity="0.6"/>
+  <path d="M100,18 C60,18 22,55 22,100 C22,145 60,182 100,182 C120,182 135,165 140,145" fill="none" stroke="#888B95" stroke-width="2.0" stroke-linecap="round" stroke-dasharray="95 35 65 35"/>
+  <path d="M100,18 C140,18 178,55 178,100 C178,145 140,182 100,182 C80,182 65,165 60,145" fill="none" stroke="#E8836B" stroke-width="2.5" stroke-linecap="round" stroke-dasharray="95 35 65 35"/>
+</svg>

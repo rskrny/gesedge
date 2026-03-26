@@ -176,7 +176,7 @@ export default function PjcsContent() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <RevealSection>
             <div className="flex flex-wrap items-center gap-4">
-              <span className="text-xs font-mono text-fg-dim tracking-widest uppercase">
+              <span className="text-xs font-medium text-fg-dim tracking-widest uppercase">
                 {t("csPjcs.langSupported")}
               </span>
               {languages.map(({ lang, flag }) => (
@@ -189,7 +189,7 @@ export default function PjcsContent() {
                   {lang}
                 </span>
               ))}
-              <span className="text-xs font-mono text-fg-dim ml-auto">
+              <span className="text-xs text-fg-dim ml-auto">
                 {t("csPjcs.fullCatalog")}
               </span>
             </div>
@@ -288,7 +288,7 @@ export default function PjcsContent() {
                       <RevealSection key={step.step} delay={i * 0.08}>
                         <div className="card-glass rounded-sm p-5 flex items-start gap-5">
                           <span
-                            className="font-mono text-xs tracking-wider shrink-0 mt-0.5"
+                            className="text-xs font-medium tracking-wider shrink-0 mt-0.5"
                             style={{ color: ACCENT }}
                           >
                             {step.step}
@@ -358,7 +358,7 @@ export default function PjcsContent() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
             <div>
-              <p className="text-xs font-mono text-fg-dim tracking-widest uppercase mb-2">{t("csDetail.nextProject")}</p>
+              <p className="text-xs font-medium text-fg-dim tracking-widest uppercase mb-2">{t("csDetail.nextProject")}</p>
               <Link
                 href="/case-studies/docproc"
                 className="font-display text-2xl font-semibold hover:text-accent transition-colors duration-200 inline-flex items-center gap-3"

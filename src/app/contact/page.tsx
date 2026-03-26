@@ -61,9 +61,9 @@ export default function Contact() {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-bg/70 to-transparent" />
                   <div className="absolute bottom-3 left-3 flex gap-2">
-                    <span className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">Wyoming</span>
-                    <span className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">Chengdu</span>
-                    <span className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">London</span>
+                    <span className="text-xs font-medium px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">Wyoming</span>
+                    <span className="text-xs font-medium px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">Chengdu</span>
+                    <span className="text-xs font-medium px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">London</span>
                   </div>
                 </div>
               </RevealSection>

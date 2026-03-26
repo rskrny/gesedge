@@ -67,11 +67,11 @@ export default function CaseStudies() {
                 <div className="space-y-3">
                   <div className="card-glass rounded-sm p-4">
                     <p className="font-display text-2xl font-semibold text-gradient">EN / 中文 / ES</p>
-                    <p className="text-xs font-mono text-fg-dim mt-1">Trilingual delivery</p>
+                    <p className="text-xs text-fg-dim mt-1">Trilingual delivery</p>
                   </div>
                   <div className="card-glass rounded-sm p-4">
                     <p className="font-display text-2xl font-semibold text-gradient">Full-Stack</p>
-                    <p className="text-xs font-mono text-fg-dim mt-1">Design to deploy</p>
+                    <p className="text-xs text-fg-dim mt-1">Design to deploy</p>
                   </div>
                 </div>
               </RevealSection>

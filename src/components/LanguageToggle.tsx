@@ -8,7 +8,7 @@ export default function LanguageToggle() {
   return (
     <button
       onClick={() => setLocale(locale === "en" ? "zh" : "en")}
-      className="relative flex items-center gap-1 px-2.5 py-1.5 text-xs font-mono tracking-wider text-fg-muted hover:text-fg border border-border rounded-sm hover:border-accent/40 transition-all duration-200"
+      className="relative flex items-center gap-1 px-2.5 py-1.5 text-xs font-medium tracking-wider text-fg-muted hover:text-fg border border-border rounded-sm hover:border-accent/40 transition-all duration-200"
       aria-label={locale === "en" ? "Switch to Chinese" : "Switch to English"}
     >
       <span className={locale === "en" ? "text-accent font-semibold" : ""}>EN</span>

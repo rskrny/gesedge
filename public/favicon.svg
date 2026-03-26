@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" fill="none">
-  <!-- Favicon-optimized: solid strokes for legibility at small sizes -->
-  <ellipse cx="100" cy="100" rx="82" ry="28" fill="none" stroke="#F2F1ED" stroke-width="8" stroke-linecap="round" opacity="0.6"/>
-  <path d="M55,28 C20,65 18,135 55,172 C92,209 160,180 175,130 C190,80 155,20 110,18 C80,17 62,22 55,28" fill="none" stroke="#888B95" stroke-width="7" stroke-linecap="round"/>
-  <path d="M145,28 C180,65 182,135 145,172 C108,209 40,180 25,130 C10,80 45,20 90,18 C120,17 138,22 145,28" fill="none" stroke="#E8836B" stroke-width="9" stroke-linecap="round"/>
+  <!-- Favicon: solid strokes for legibility at small sizes, matches globe-paths.ts -->
+  <ellipse cx="100" cy="100" rx="80" ry="26" fill="none" stroke="#F2F1ED" stroke-width="7" stroke-linecap="round" opacity="0.6"/>
+  <path d="M100,18 C60,18 22,55 22,100 C22,145 60,182 100,182 C120,182 135,165 140,145" fill="none" stroke="#888B95" stroke-width="6" stroke-linecap="round"/>
+  <path d="M100,18 C140,18 178,55 178,100 C178,145 140,182 100,182 C80,182 65,165 60,145" fill="none" stroke="#E8836B" stroke-width="8" stroke-linecap="round"/>
 </svg>

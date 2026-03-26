@@ -1,9 +1,13 @@
 /**
- * Globe logo: bold swoosh arcs implying a sphere.
+ * Globe logo: three orbital arcs forming a sphere.
  *
- * Inspired by orbital ring aesthetics. 2 bold arcs + 1 accent arc
- * sweep around a center to create a globe impression.
- * Thick strokes, confident, reads at any size.
+ * All arcs are symmetric about the center (100,100).
+ * - Equator: horizontal ellipse
+ * - Left meridian: vertical ellipse tilted left (via SVG arc)
+ * - Right meridian: vertical ellipse tilted right (via SVG arc), salmon accent
+ *
+ * The two meridian arcs mirror each other across the vertical axis,
+ * creating visual balance. Dashed strokes give the deconstructed feel.
  *
  * ViewBox: 200×200, center (100,100).
  */
@@ -23,34 +27,36 @@ export interface GlobePath {
 }
 
 const arcs: GlobePath[] = [
-  // Primary arc — wide horizontal orbit (equator-like)
+  // Equator — wide horizontal ellipse
   {
-    id: "orbit-main",
+    id: "equator",
     type: "ellipse",
-    cx: 100, cy: 100, rx: 82, ry: 28,
-    dashArray: "120 40 80 30",
+    cx: 100, cy: 100, rx: 80, ry: 26,
+    dashArray: "110 35 75 30",
     color: "highlight",
-    strokeWidth: 2.5,
+    strokeWidth: 2.2,
     rotationFactor: 1.0,
   },
-  // Secondary arc — tilted, wraps top-to-bottom
+  // Left meridian — tilted vertical orbit (grey)
+  // Symmetric path: starts top-center, curves left, comes back
   {
-    id: "orbit-tilt",
+    id: "meridian-left",
     type: "path",
-    d: "M55,28 C20,65 18,135 55,172 C92,209 160,180 175,130 C190,80 155,20 110,18 C80,17 62,22 55,28",
-    dashArray: "100 35 70 40",
+    d: "M100,18 C60,18 22,55 22,100 C22,145 60,182 100,182 C120,182 135,165 140,145",
+    dashArray: "95 35 65 35",
     color: "stroke",
-    strokeWidth: 2.2,
+    strokeWidth: 2.0,
     rotationFactor: 0.8,
   },
-  // Salmon accent arc — crossing arc that "bridges" the other two
+  // Right meridian — tilted vertical orbit (salmon accent)
+  // Mirror of left: starts top-center, curves right, comes back
   {
-    id: "orbit-accent",
+    id: "meridian-right",
     type: "path",
-    d: "M145,28 C180,65 182,135 145,172 C108,209 40,180 25,130 C10,80 45,20 90,18 C120,17 138,22 145,28",
-    dashArray: "90 45 60 35",
+    d: "M100,18 C140,18 178,55 178,100 C178,145 140,182 100,182 C80,182 65,165 60,145",
+    dashArray: "95 35 65 35",
     color: "accent",
-    strokeWidth: 2.8,
+    strokeWidth: 2.5,
     rotationFactor: 1.2,
   },
 ];

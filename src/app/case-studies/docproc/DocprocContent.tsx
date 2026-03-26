@@ -197,7 +197,7 @@ export default function DocprocContent() {
                   >
                     {r.metric}
                   </p>
-                  <p className="text-xs font-mono text-fg-dim leading-relaxed">{r.label}</p>
+                  <p className="text-xs text-fg-dim leading-relaxed">{r.label}</p>
                 </div>
               </RevealItem>
             ))}
@@ -304,7 +304,7 @@ export default function DocprocContent() {
                           </h3>
                           <ul className="space-y-1.5">
                             {cat.items.map((item) => (
-                              <li key={item} className="flex items-center gap-2 text-xs font-mono text-fg-muted">
+                              <li key={item} className="flex items-center gap-2 text-xs text-fg-muted">
                                 <span style={{ color: ACCENT }} className="opacity-60">{"\u2192"}</span>
                                 {item}
                               </li>
@@ -392,7 +392,7 @@ export default function DocprocContent() {
         <div className="mx-auto max-w-7xl px-6 lg:px-12">
           <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-8">
             <div>
-              <p className="text-xs font-mono text-fg-dim tracking-widest uppercase mb-2">{t("csDetail.backToTop")}</p>
+              <p className="text-xs font-medium text-fg-dim tracking-widest uppercase mb-2">{t("csDetail.backToTop")}</p>
               <Link
                 href="/case-studies/bloodline-charters"
                 className="font-display text-2xl font-semibold hover:text-accent transition-colors duration-200 inline-flex items-center gap-3"

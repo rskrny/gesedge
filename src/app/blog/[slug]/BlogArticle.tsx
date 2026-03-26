@@ -92,10 +92,10 @@ export default function BlogArticle({
                 <span className="text-xs font-medium tracking-[0.15em] text-accent uppercase">
                   {post.category}
                 </span>
-                <span className="font-mono text-xs text-fg-dim">
+                <span className="text-xs text-fg-dim">
                   {formatDate(post.date, locale)}
                 </span>
-                <span className="font-mono text-xs text-fg-dim">
+                <span className="text-xs text-fg-dim">
                   {post.readingTime}
                 </span>
               </div>
@@ -109,7 +109,7 @@ export default function BlogArticle({
               </p>
               <div className="mt-6 flex items-center gap-3">
                 <div className="w-8 h-8 rounded-full bg-accent/20 flex items-center justify-center">
-                  <span className="text-xs font-mono text-accent font-medium">
+                  <span className="text-xs text-accent font-medium">
                     RK
                   </span>
                 </div>
@@ -163,7 +163,7 @@ export default function BlogArticle({
                   href={`/blog/${prevPost.slug}`}
                   className="card-glass rounded-sm p-6 group hover:border-accent/30 transition-all duration-300"
                 >
-                  <p className="font-mono text-xs text-fg-dim mb-2">
+                  <p className="text-xs font-medium text-fg-dim mb-2">
                     {t("blog.previous")}
                   </p>
                   <p className="font-display text-lg font-medium tracking-tight group-hover:text-accent transition-colors duration-300 line-clamp-2">
@@ -178,7 +178,7 @@ export default function BlogArticle({
                     !prevPost ? "md:col-start-2" : ""
                   }`}
                 >
-                  <p className="font-mono text-xs text-fg-dim mb-2 md:text-right">
+                  <p className="text-xs font-medium text-fg-dim mb-2 md:text-right">
                     {t("blog.next")}
                   </p>
                   <p className="font-display text-lg font-medium tracking-tight group-hover:text-accent transition-colors duration-300 md:text-right line-clamp-2">

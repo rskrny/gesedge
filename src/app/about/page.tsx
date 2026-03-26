@@ -68,9 +68,9 @@ export default function About() {
                   <div className="absolute inset-0 bg-gradient-to-t from-bg/70 to-transparent" />
                   <div className="absolute bottom-4 left-4">
                     <div className="flex gap-2">
-                      <span className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">Wyoming</span>
-                      <span className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">Chengdu</span>
-                      <span className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">London</span>
+                      <span className="text-xs font-medium px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">Wyoming</span>
+                      <span className="text-xs font-medium px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">Chengdu</span>
+                      <span className="text-xs font-medium px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">London</span>
                     </div>
                   </div>
                 </div>
@@ -133,15 +133,15 @@ export default function About() {
                 <div className="space-y-4 w-full">
                   <div className="card-glass rounded-sm p-5">
                     <p className="font-display text-2xl font-semibold text-gradient">{t("about.philosophy.stat1")}</p>
-                    <p className="text-xs font-mono text-fg-dim mt-1">{t("about.philosophy.stat1sub")}</p>
+                    <p className="text-xs text-fg-dim mt-1">{t("about.philosophy.stat1sub")}</p>
                   </div>
                   <div className="card-glass rounded-sm p-5">
                     <p className="font-display text-2xl font-semibold text-gradient">{t("about.philosophy.stat2")}</p>
-                    <p className="text-xs font-mono text-fg-dim mt-1">{t("about.philosophy.stat2sub")}</p>
+                    <p className="text-xs text-fg-dim mt-1">{t("about.philosophy.stat2sub")}</p>
                   </div>
                   <div className="card-glass rounded-sm p-5">
                     <p className="font-display text-2xl font-semibold text-gradient">{t("about.philosophy.stat3")}</p>
-                    <p className="text-xs font-mono text-fg-dim mt-1">{t("about.philosophy.stat3sub")}</p>
+                    <p className="text-xs text-fg-dim mt-1">{t("about.philosophy.stat3sub")}</p>
                   </div>
                 </div>
               </RevealSection>
