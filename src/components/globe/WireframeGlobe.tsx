@@ -8,7 +8,7 @@ import useGlobeAnimation from "./useGlobeAnimation";
 
 const HERO_SIZE = 380;
 const HERO_SIZE_MOBILE = 240;
-const HEADER_SIZE = 56;
+const HEADER_SIZE = 44;
 
 export default function WireframeGlobe() {
   const pathname = usePathname();
