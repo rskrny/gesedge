@@ -19,7 +19,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <link rel="icon" href="/logo.png" type="image/png" sizes="532x553" />
         <link rel="apple-touch-icon" href="/logo.png" />
         <link rel="manifest" href="/site.webmanifest" />
-        <meta name="theme-color" content="#1C1F2A" />
+        <meta name="theme-color" content="#1A1C22" />
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={jsonLd(organizationJsonLd)}

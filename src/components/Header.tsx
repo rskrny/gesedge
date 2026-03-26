@@ -49,7 +49,7 @@ export default function Header() {
           }}
         >
           {/* Globe logo docks into this slot via WireframeGlobe component */}
-          <div data-globe-slot className="w-12 h-12 shrink-0" />
+          <div data-globe-slot className="w-14 h-14 shrink-0" />
           <span className="font-display text-xl font-semibold tracking-tight text-fg">
             GES
           </span>

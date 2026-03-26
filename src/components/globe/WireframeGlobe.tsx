@@ -2,13 +2,13 @@
 
 import { useEffect, useRef, useState, useCallback } from "react";
 import { usePathname } from "next/navigation";
-import { motion, useScroll, useTransform, useMotionValueEvent } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 import GlobeSVG from "./GlobeSVG";
 import useGlobeAnimation from "./useGlobeAnimation";
 
-const HERO_SIZE = 360;
-const HERO_SIZE_MOBILE = 260;
-const HEADER_SIZE = 44;
+const HERO_SIZE = 380;
+const HERO_SIZE_MOBILE = 240;
+const HEADER_SIZE = 56;
 
 export default function WireframeGlobe() {
   const pathname = usePathname();
@@ -16,24 +16,25 @@ export default function WireframeGlobe() {
   const rotation = useGlobeAnimation(0.15);
   const [mounted, setMounted] = useState(false);
 
-  // Slot position in header + viewport info
-  const [slotPos, setSlotPos] = useState({ x: 24, y: 14 });
+  const [slotPos, setSlotPos] = useState({ x: 24, y: 8 });
   const [isMobile, setIsMobile] = useState(false);
   const [vpWidth, setVpWidth] = useState(1200);
+  const [vpHeight, setVpHeight] = useState(800);
 
-  useEffect(() => {
-    setMounted(true);
-  }, []);
+  useEffect(() => { setMounted(true); }, []);
 
-  // Measure header slot and viewport
   const measure = useCallback(() => {
     const slot = document.querySelector("[data-globe-slot]");
     if (slot) {
       const rect = slot.getBoundingClientRect();
-      setSlotPos({ x: rect.left + (rect.width - HEADER_SIZE) / 2, y: rect.top + (rect.height - HEADER_SIZE) / 2 });
+      setSlotPos({
+        x: rect.left + (rect.width - HEADER_SIZE) / 2,
+        y: rect.top + (rect.height - HEADER_SIZE) / 2,
+      });
     }
     setIsMobile(window.innerWidth < 768);
     setVpWidth(window.innerWidth);
+    setVpHeight(window.innerHeight);
   }, []);
 
   useEffect(() => {
@@ -42,7 +43,6 @@ export default function WireframeGlobe() {
     return () => window.removeEventListener("resize", measure);
   }, [measure, pathname]);
 
-  // Scroll tracking for homepage hero
   const heroRef = useRef<HTMLElement | null>(null);
   useEffect(() => {
     heroRef.current = isHome ? document.getElementById("hero-section") : null;
@@ -55,19 +55,20 @@ export default function WireframeGlobe() {
   );
 
   const heroSize = isMobile ? HERO_SIZE_MOBILE : HERO_SIZE;
-  const heroCenterX = vpWidth / 2 - heroSize / 2;
-  const heroCenterY = isMobile ? 180 : 220;
 
-  // Scroll-driven transforms (homepage only)
+  // Position globe in the open right side of the hero (text is left-aligned)
+  const heroX = isMobile
+    ? vpWidth / 2 - heroSize / 2          // centered on mobile
+    : vpWidth * 0.58;                       // right side on desktop
+  const heroY = vpHeight / 2 - heroSize / 2; // vertically centered in viewport
+
   const size = useTransform(scrollYProgress, [0, 0.35], [heroSize, HEADER_SIZE]);
-  const x = useTransform(scrollYProgress, [0, 0.35], [heroCenterX, slotPos.x]);
-  const y = useTransform(scrollYProgress, [0, 0.35], [heroCenterY, slotPos.y]);
-  const globeOpacity = useTransform(scrollYProgress, [0, 0.25], [0.3, 0.9]);
+  const x = useTransform(scrollYProgress, [0, 0.35], [heroX, slotPos.x]);
+  const y = useTransform(scrollYProgress, [0, 0.35], [heroY, slotPos.y]);
+  const globeOpacity = useTransform(scrollYProgress, [0, 0.3], [0.25, 0.9]);
 
-  // Don't render until client-side mount to avoid hydration mismatch
   if (!mounted) return null;
 
-  // Non-homepage: static header logo
   if (!isHome) {
     return (
       <div
@@ -84,7 +85,6 @@ export default function WireframeGlobe() {
     );
   }
 
-  // Homepage: scroll-linked shrink animation
   return (
     <motion.div
       className="fixed z-[55] pointer-events-none"
