@@ -3,6 +3,7 @@
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
 import LanguageToggle from "@/components/LanguageToggle";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -11,6 +12,7 @@ export default function Header() {
   const [mobileOpen, setMobileOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const { t } = useLanguage();
+  const pathname = usePathname();
 
   const navLinks = [
     { href: "/case-studies", label: t("nav.work") },
@@ -37,7 +39,16 @@ export default function Header() {
     >
       <nav className="mx-auto max-w-7xl px-6 lg:px-12 h-18 flex items-center justify-between">
         {/* Logo */}
-        <Link href="/" className="relative group flex items-center gap-3">
+        <Link
+          href="/"
+          className="relative group flex items-center gap-3"
+          onClick={(e) => {
+            if (pathname === "/") {
+              e.preventDefault();
+              window.scrollTo({ top: 0, behavior: "smooth" });
+            }
+          }}
+        >
           <Image
             src="/logo.png"
             alt="Global Edge Strategies"

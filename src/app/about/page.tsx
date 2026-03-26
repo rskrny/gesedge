@@ -127,9 +127,6 @@ export default function About() {
               <RevealSection delay={0.1}>
                 <p className="text-lg text-fg-muted leading-relaxed">{t("about.philosophy.p1")}</p>
               </RevealSection>
-              <RevealSection delay={0.15}>
-                <p className="text-lg text-fg-muted leading-relaxed">{t("about.philosophy.p2")}</p>
-              </RevealSection>
             </div>
             <div className="lg:col-span-4 flex items-center">
               <RevealSection delay={0.2}>

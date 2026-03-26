@@ -42,7 +42,7 @@ const translations = {
   "home.hero.line3": { en: "Markets.", zh: "市场。" },
   "home.hero.sub": {
     en: "Custom AI systems, web platforms, and digital tools engineered for businesses operating across the US, China, and beyond.",
-    zh: "为跨文化运营的企业量身打造AI系统、Web平台和数字工具——连接美国、中国及更广阔的市场。",
+    zh: "为跨文化运营的企业量身打造AI系统、Web平台和数字工具，覆盖美国、中国及更广阔的市场。",
   },
   "home.hero.cta1": { en: "View Our Work", zh: "查看我们的作品" },
   "home.hero.cta2": { en: "Start a Project", zh: "开始项目" },
@@ -57,7 +57,7 @@ const translations = {
   "home.welcome.title": { en: "Looking for a website, an AI tool, or something more?", zh: "需要网站、AI工具，还是更多？" },
   "home.welcome.sub": {
     en: "Whether you found us through a client project, a referral, or a search, here's what we build for businesses like yours.",
-    zh: "无论您是通过客户项目、推荐还是搜索找到我们——以下是我们为您这样的企业打造的解决方案。",
+    zh: "无论您是通过客户项目、推荐还是搜索找到我们，以下是我们为您这样的企业打造的解决方案。",
   },
   "home.welcome.cta": { en: "Tell us what you're solving", zh: "告诉我们您要解决的问题" },
 
@@ -77,7 +77,7 @@ const translations = {
   "home.cap3.title": { en: "Cross-Border Operations", zh: "跨境业务运营" },
   "home.cap3.body": {
     en: "Multilingual platforms and compliance-aware infrastructure for businesses operating between the US, China, and beyond. We run entities in Wyoming, Chengdu, and London.",
-    zh: "为在中美之间运营的企业提供多语言平台和合规基础设施。我们亲身经历——在怀俄明、成都和伦敦均设有实体。",
+    zh: "为在中美之间运营的企业提供多语言平台和合规基础设施。我们在怀俄明、成都和伦敦均设有实体。",
   },
 
   "home.stats.badge": { en: "Why us", zh: "为什么选择我们" },
@@ -279,12 +279,12 @@ const translations = {
   "cs.pjcs.title": { en: "PJCS RAG System", zh: "PJCS RAG智能系统" },
   "cs.pjcs.subtitle": {
     en: "Trilingual AI product advisor bridging Chinese manufacturing and Latin American construction",
-    zh: "三语AI产品顾问——连接中国制造与拉美建筑行业",
+    zh: "三语AI产品顾问，连接中国制造与拉美建筑行业",
   },
   "cs.pjcs.industry": { en: "B2B Construction Materials", zh: "B2B建筑材料" },
   "cs.pjcs.challenge": {
     en: "A Chinese waterproofing materials manufacturer needed to help Latin American contractors find the right product for their specific application, substrate, and budget. Three languages, no sales rep required.",
-    zh: "一家中国防水材料制造商需要帮助拉美承包商根据具体应用场景、基材和预算找到合适的产品——跨越三种语言，无需致电销售代表。",
+    zh: "一家中国防水材料制造商需要帮助拉美承包商根据具体应用场景、基材和预算找到合适的产品。三种语言，无需致电销售代表。",
   },
   "cs.pjcs.solution": {
     en: "We built a RAG-powered product intelligence system: an AI chat that answers natural-language questions about 84 waterproofing products, a 5-step guided product finder (application → substrate → scale → budget → recommendation), and a filterable catalog. The system uses hybrid search combining ChromaDB vector embeddings with BM25 keyword matching and reciprocal rank fusion across all three languages.",
@@ -302,7 +302,7 @@ const translations = {
   },
   "cs.docproc.solution": {
     en: "A privacy-first document processing suite with 18 registered pipelines, all running locally. PDF operations (compress, merge, split, rotate, watermark, protect), image operations (resize, convert, AI background removal), and a RAG-powered AI chat where you describe what you need in natural language and the system generates and executes deterministic processing plans.",
-    zh: "一套隐私优先的文档处理套件，包含18条注册管道，全部本地运行。PDF操作（压缩、合并、拆分、旋转、水印、加密），图像操作（调整大小、转换、AI背景移除），以及RAG驱动的AI聊天——用自然语言描述需求，系统自动生成并执行确定性处理方案。",
+    zh: "一套隐私优先的文档处理套件，包含18条注册管道，全部本地运行。PDF操作（压缩、合并、拆分、旋转、水印、加密），图像操作（调整大小、转换、AI背景移除），以及RAG驱动的AI聊天。用自然语言描述需求，系统自动生成并执行确定性处理方案。",
   },
 
   /* ── Case Study Results (bilingual) ──────────────────────── */
@@ -345,7 +345,7 @@ const translations = {
   "csBloodline.hero.badge": { en: "Marine Services", zh: "海洋服务" },
   "csBloodline.hero.subtitle": {
     en: "Full-stack booking platform and operations dashboard for a Cape Cod charter fishing business. Zero to live in under a week.",
-    zh: "为科德角包船钓鱼企业打造的全栈预订平台和运营后台——从零到上线不到一周。",
+    zh: "为科德角包船钓鱼企业打造的全栈预订平台和运营后台。从零到上线不到一周。",
   },
   "csBloodline.hero.viewSite": { en: "View Live Site", zh: "访问线上网站" },
 
@@ -365,11 +365,11 @@ const translations = {
   },
   "csBloodline.problem.p1": {
     en: "A Cape Cod charter fishing captain was managing his entire operation through phone calls, text messages, and a basic website builder. During peak season, he was losing bookings to scheduling conflicts. Two parties calling about the same date, no way to track who had priority.",
-    zh: "一位科德角包船钓鱼船长通过电话、短信和一个基础建站工具管理全部运营。在旺季，他因排期冲突丢失订单——两组客人同时问询同一日期，却没有任何方式追踪谁优先。",
+    zh: "一位科德角包船钓鱼船长通过电话、短信和一个基础建站工具管理全部运营。在旺季，他因排期冲突丢失订单。两组客人同时问询同一日期，却没有任何方式追踪谁优先。",
   },
   "csBloodline.problem.p2": {
     en: "He was spending hours on admin instead of on the water: manually tracking inquiries in spreadsheets, sending deposit requests by hand, calling back every person who filled out a contact form. He had zero visibility into his business performance. No idea which months were most profitable, which trips were most popular, or how his website was performing.",
-    zh: "他把大量时间花在行政事务而非出海上：在表格里手动追踪咨询、手动发送订金请求、逐一回电给每个填写联系表单的人。他对业务表现毫无可视性——不知道哪个月利润最高、哪种航程最受欢迎，也不了解网站的表现如何。",
+    zh: "他把大量时间花在行政事务而非出海上：在表格里手动追踪咨询、手动发送订金请求、逐一回电给每个填写联系表单的人。他对业务表现毫无可视性。不知道哪个月利润最高、哪种航程最受欢迎，也不了解网站的表现如何。",
   },
   "csBloodline.problem.p3": {
     en: "He needed a complete replacement, not a plugin or a template. He needed something that could run his entire season.",
@@ -451,7 +451,7 @@ const translations = {
   },
 
   /* ── PJCS RAG — Detail Page ────────────────────────────── */
-  "csPjcs.hero.badge": { en: "B2B Construction Materials \u2014 AI Tools", zh: "B2B建筑材料 \u2014 AI工具" },
+  "csPjcs.hero.badge": { en: "B2B Construction Materials / AI Tools", zh: "B2B建筑材料 / AI工具" },
   "csPjcs.hero.subtitle": {
     en: "Trilingual AI product advisor bridging a Chinese manufacturer and Latin American contractors across three languages and zero language barrier.",
     zh: "三语AI产品顾问，连接中国制造商与拉美承包商，跨越三种语言，消除语言壁垒。",
@@ -476,16 +476,16 @@ const translations = {
     zh: "一家中国制造商、拉美承包商，以及一本无人能查阅的产品目录",
   },
   "csPjcs.problem.p1": {
-    en: "PJCS makes industrial waterproofing materials in China. Their customers are professional contractors across Mexico, Colombia, Peru, and other Latin American markets \u2014 many of whom speak only Spanish and have highly specific technical requirements: the right product for a specific substrate, application environment, and budget.",
-    zh: "PJCS在中国生产工业防水材料。他们的客户是遍布墨西哥、哥伦比亚、秘鲁等拉美市场的专业承包商——其中许多人只说西班牙语，且有非常具体的技术需求：针对特定基材、应用环境和预算选择合适的产品。",
+    en: "PJCS makes industrial waterproofing materials in China. Their customers are professional contractors across Mexico, Colombia, Peru, and other Latin American markets, many of whom speak only Spanish and have highly specific technical requirements: the right product for a specific substrate, application environment, and budget.",
+    zh: "PJCS在中国生产工业防水材料。他们的客户是遍布墨西哥、哥伦比亚、秘鲁等拉美市场的专业承包商，其中许多人只说西班牙语，且有非常具体的技术需求：针对特定基材、应用环境和预算选择合适的产品。",
   },
   "csPjcs.problem.p2": {
     en: "With 84 products across categories ranging from roof coatings to foundation membranes, finding the right product meant calling a rep, digging through a PDF catalog, or guessing. The language barrier between Mandarin-speaking product managers and Spanish-speaking contractors made this even harder.",
     zh: "84种产品横跨屋面涂料到基础防水膜等多个品类，找到合适的产品意味着要打电话给销售代表、翻阅PDF目录或凭猜测。说普通话的产品经理与说西班牙语的承包商之间的语言障碍让这一切更加困难。",
   },
   "csPjcs.problem.p3": {
-    en: "They needed a system that could answer \u201CWhich product works for an exposed rooftop in a high-UV environment with a $500 budget?\u201D \u2014 in Spanish, English, or Chinese \u2014 without requiring a human in the loop.",
-    zh: "他们需要一个系统，能回答\u201C在高紫外线环境的露天屋顶，预算500美元，哪种产品合适？\u201D——用西班牙语、英语或中文回答——无需人工介入。",
+    en: "They needed a system that could answer \u201CWhich product works for an exposed rooftop in a high-UV environment with a $500 budget?\u201D In Spanish, English, or Chinese. No human in the loop.",
+    zh: "他们需要一个系统，能回答\u201C在高紫外线环境的露天屋顶，预算500美元，哪种产品合适？\u201D用西班牙语、英语或中文回答，无需人工介入。",
   },
 
   "csPjcs.archSection.label": { en: "02 / Architecture", zh: "02 / 系统架构" },
@@ -498,8 +498,8 @@ const translations = {
     zh: "核心思路：纯向量搜索会遗漏精确规格匹配（如特定产品编码或化学名称），而纯关键词搜索会遗漏语义意图（\u201C适合地下室的防水产品\u201D）。我们通过倒数排名融合将两者结合，兼得其利。",
   },
   "csPjcs.archSection.p2": {
-    en: "Beyond the chat interface, we built a 5-step guided product finder wizard: users select their application type, substrate, scale, and budget, and the system narrows to a curated recommendation. Two audience modes \u2014 buyer and professional installer \u2014 surface different levels of technical detail.",
-    zh: "除了聊天界面，我们还构建了5步引导式产品查找向导：用户选择应用类型、基材、规模和预算，系统会缩小范围给出精选推荐。两种受众模式——买家和专业安装工——呈现不同层次的技术细节。",
+    en: "Beyond the chat interface, we built a 5-step guided product finder wizard: users select their application type, substrate, scale, and budget, and the system narrows to a curated recommendation. Two audience modes (buyer and professional installer) surface different levels of technical detail.",
+    zh: "除了聊天界面，我们还构建了5步引导式产品查找向导：用户选择应用类型、基材、规模和预算，系统会缩小范围给出精选推荐。两种受众模式（买家和专业安装工）呈现不同层次的技术细节。",
   },
   "csPjcs.archSection.p3": {
     en: "The system degrades gracefully: if the AI layer is unavailable, the hybrid search results are shown directly. Nothing breaks silently.",
@@ -536,8 +536,8 @@ const translations = {
   "csPjcs.resultsSection.title": { en: "What we built", zh: "我们构建了什么" },
   "csPjcs.results.card1Title": { en: "Trilingual coverage", zh: "三语覆盖" },
   "csPjcs.results.card1Body": {
-    en: "Full support across English, Chinese (Simplified), and Spanish \u2014 UI, AI responses, and product data.",
-    zh: "全面支持英语、简体中文和西班牙语——覆盖UI、AI回复和产品数据。",
+    en: "Full support across English, Chinese (Simplified), and Spanish: UI, AI responses, and product data.",
+    zh: "全面支持英语、简体中文和西班牙语，覆盖UI、AI回复和产品数据。",
   },
   "csPjcs.results.card2Title": { en: "Hybrid RAG pipeline", zh: "混合RAG管道" },
   "csPjcs.results.card2Body": {
@@ -586,20 +586,20 @@ const translations = {
   "csDocproc.sidebar.service3": { en: "Local ML Inference", zh: "本地ML推理" },
 
   "csDocproc.problem.title": {
-    en: "Document processing is fragmented \u2014 and it leaks your data",
-    zh: "文档处理工具四分五裂——而且会泄露你的数据",
+    en: "Document processing is fragmented, and it leaks your data",
+    zh: "文档处理工具四分五裂，而且会泄露你的数据",
   },
   "csDocproc.problem.p1": {
-    en: "Compressing a PDF means uploading it to one tool. Merging PDFs means a different tool. Removing a background from an image means a third tool. Each requires uploading files \u2014 often sensitive ones \u2014 to a third-party server you don\u2019t control and can\u2019t audit.",
-    zh: "压缩PDF要上传到一个工具，合并PDF要用另一个，图片去背景又要第三个。每个工具都要求上传文件——往往是敏感文件——到你无法控制也无法审计的第三方服务器。",
+    en: "Compressing a PDF means uploading it to one tool. Merging PDFs means a different tool. Removing a background from an image means a third tool. Each requires uploading files, often sensitive ones, to a third-party server you don\u2019t control and can\u2019t audit.",
+    zh: "压缩PDF要上传到一个工具，合并PDF要用另一个，图片去背景又要第三个。每个工具都要求上传文件（往往是敏感文件）到你无法控制也无法审计的第三方服务器。",
   },
   "csDocproc.problem.p2": {
     en: "Businesses handling contracts, medical records, financial documents, or proprietary engineering drawings can\u2019t afford that exposure. They need processing power without the privacy trade-off.",
     zh: "处理合同、病历、财务文件或专有工程图纸的企业承受不起这种暴露。他们需要处理能力，但不能以牺牲隐私为代价。",
   },
   "csDocproc.problem.p3": {
-    en: "Beyond privacy: the fragmentation itself is a productivity problem. Switching between tools, re-uploading files, reconfiguring settings \u2014 it adds up. A single coherent suite with a natural language interface would save hours per week.",
-    zh: "隐私之外，工具碎片化本身就是效率问题。在工具间切换、重新上传文件、重新配置设置——日积月累消耗大量时间。一套连贯的工具加上自然语言界面，每周能节省数小时。",
+    en: "Beyond privacy, the fragmentation itself is a productivity problem. Switching between tools, re-uploading files, reconfiguring settings. It adds up. A single coherent suite with a natural language interface saves hours per week.",
+    zh: "隐私之外，工具碎片化本身就是效率问题。在工具间切换、重新上传文件、重新配置设置，日积月累消耗大量时间。一套连贯的工具加上自然语言界面，每周能节省数小时。",
   },
 
   "csDocproc.approachSection.label": { en: "02 / Approach", zh: "02 / 方案" },
@@ -649,8 +649,8 @@ const translations = {
     zh: "测试套件覆盖每条管道、AI聊天执行流程、RAG检索引擎、配方链式系统和API层。248个自动化测试在每次发布前运行。",
   },
   "csDocproc.engSection.p2": {
-    en: "The recipe system allows users to chain operations: \u201Ccompress this PDF, then merge it with these three others, then add a watermark.\u201D Each step is deterministic and individually tested. The final .exe package bundles the entire suite \u2014 Python runtime, all dependencies, ML models \u2014 into a single executable that non-technical users can run without installing anything.",
-    zh: "配方系统允许用户链式操作：\u201C压缩这个PDF，然后与其他三个合并，再加上水印。\u201D每个步骤都是确定性的并经过单独测试。最终的.exe包将整个套件——Python运行时、所有依赖、ML模型——打包为一个可执行文件，非技术用户无需安装任何东西即可运行。",
+    en: "The recipe system allows users to chain operations: \u201Ccompress this PDF, then merge it with these three others, then add a watermark.\u201D Each step is deterministic and individually tested. The final .exe package bundles the entire suite (Python runtime, all dependencies, ML models) into a single executable that non-technical users can run without installing anything.",
+    zh: "配方系统允许用户链式操作：\u201C压缩这个PDF，然后与其他三个合并，再加上水印。\u201D每个步骤都是确定性的并经过单独测试。最终的.exe包将整个套件（Python运行时、所有依赖、ML模型）打包为一个可执行文件，非技术用户无需安装任何东西即可运行。",
   },
   "csDocproc.eng.card1Title": { en: "248 automated tests", zh: "248个自动化测试" },
   "csDocproc.eng.card1Body": {

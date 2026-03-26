@@ -19,9 +19,9 @@ const projectGradients = [
 ];
 
 const projectAccents = [
-  { primary: "#E91E8C", label: "Marine Services", labelZh: "海洋服务" },
-  { primary: "#00D4FF", label: "B2B Construction", labelZh: "B2B建筑材料" },
-  { primary: "#B794F6", label: "Developer Tools", labelZh: "开发工具" },
+  { primary: "#D4467A", label: "Marine Services", labelZh: "海洋服务" },
+  { primary: "#4A9EBF", label: "B2B Construction", labelZh: "B2B建筑材料" },
+  { primary: "#9B85C4", label: "Developer Tools", labelZh: "开发工具" },
 ];
 
 export default function Home() {

@@ -29,7 +29,7 @@ export function createMetadata(overrides: Partial<Metadata> & { path?: string } 
           url: `${SITE_URL}/opengraph-image`,
           width: 1200,
           height: 630,
-          alt: `${SITE_NAME} — Custom AI-Powered Business Systems`,
+          alt: `${SITE_NAME} | Custom AI-Powered Business Systems`,
         },
       ],
       ...(rest.openGraph || {}),
