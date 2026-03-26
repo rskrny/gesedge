@@ -156,10 +156,7 @@ const translations = {
     en: "80% of AI projects fail to deliver measurable results. The reason is simple: most implementations start with the technology instead of the problem. We start with what your business actually needs, then apply the right tools to build it. Sometimes that's a RAG system with hybrid vector search. Sometimes it's a well-designed booking form with tide integration. The technology always serves the outcome.",
     zh: "80%的AI项目未能交付可衡量的成果。原因很简单：大多数实施从技术而非问题出发。我们从您的业务实际需求出发，然后应用合适的工具来构建。有时是带混合向量搜索的RAG系统，有时是集成潮汐数据的精心设计的预订表单。技术始终服务于结果。",
   },
-  "about.philosophy.p2": {
-    en: "We also believe in shipping. Our case studies are production systems with automated health checks, comprehensive test suites, and real users relying on them daily.",
-    zh: "我们还信奉交付。我们的案例研究是具有自动化健康检查、全面测试套件的生产系统，每天有真实用户依赖它们。",
-  },
+  /* about.philosophy.p2 removed — slop */
   "about.philosophy.stat1": { en: "100%", zh: "100%" },
   "about.philosophy.stat1sub": { en: "Custom built. Zero templates.", zh: "定制开发，零模板。" },
   "about.philosophy.stat2": { en: "Full-stack", zh: "全栈" },

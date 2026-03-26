@@ -1,8 +1,8 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { useLanguage } from "@/components/LanguageProvider";
+import GlobeSVG from "@/components/globe/GlobeSVG";
 
 export default function Footer() {
   const { t } = useLanguage();
@@ -14,30 +14,24 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-4">
             <Link href="/" className="inline-flex items-center gap-3">
-              <Image
-                src="/logo.png"
-                alt="Global Edge Strategies"
-                width={40}
-                height={40}
-                className="w-10 h-10 object-contain"
-              />
+              <GlobeSVG size={40} rotationOffset={0} opacity={0.8} />
               <span className="font-display text-2xl font-semibold tracking-tight text-fg">GES</span>
             </Link>
             <p className="mt-4 text-sm text-fg-muted leading-relaxed max-w-xs">
               {t("footer.tagline")}
             </p>
             <div className="flex gap-4 mt-6">
-              <span className="text-xs font-mono text-fg-dim tracking-wider">Wyoming</span>
+              <span className="text-xs text-fg-dim tracking-wider">Wyoming</span>
               <span className="text-accent text-xs">/</span>
-              <span className="text-xs font-mono text-fg-dim tracking-wider">Chengdu</span>
+              <span className="text-xs text-fg-dim tracking-wider">Chengdu</span>
               <span className="text-accent text-xs">/</span>
-              <span className="text-xs font-mono text-fg-dim tracking-wider">London</span>
+              <span className="text-xs text-fg-dim tracking-wider">London</span>
             </div>
           </div>
 
           {/* Work */}
           <div className="md:col-span-2 md:col-start-6">
-            <h4 className="text-xs font-mono text-accent tracking-wider uppercase mb-5">
+            <h4 className="text-xs font-medium text-accent tracking-wider uppercase mb-5">
               {t("footer.work")}
             </h4>
             <ul className="space-y-3">
@@ -66,7 +60,7 @@ export default function Footer() {
 
           {/* Company */}
           <div className="md:col-span-2">
-            <h4 className="text-xs font-mono text-accent tracking-wider uppercase mb-5">
+            <h4 className="text-xs font-medium text-accent tracking-wider uppercase mb-5">
               {t("footer.company")}
             </h4>
             <ul className="space-y-3">
@@ -90,7 +84,7 @@ export default function Footer() {
 
           {/* Contact */}
           <div className="md:col-span-2">
-            <h4 className="text-xs font-mono text-accent tracking-wider uppercase mb-5">
+            <h4 className="text-xs font-medium text-accent tracking-wider uppercase mb-5">
               {t("footer.contact")}
             </h4>
             <ul className="space-y-3">
@@ -110,10 +104,10 @@ export default function Footer() {
 
         {/* Bottom bar */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col sm:flex-row items-center justify-between gap-4">
-          <p className="text-xs text-fg-dim font-mono tracking-wide">
+          <p className="text-xs text-fg-dim tracking-wide">
             &copy; {new Date().getFullYear()} {t("footer.copyright")}
           </p>
-          <p className="text-xs text-fg-dim font-mono tracking-wide">
+          <p className="text-xs text-fg-dim tracking-wide">
             {t("footer.engineered")}
           </p>
         </div>

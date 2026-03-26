@@ -4,13 +4,13 @@
   "description": "Custom AI-powered business systems",
   "start_url": "/",
   "display": "browser",
-  "background_color": "#0A0E1A",
-  "theme_color": "#E91E8C",
+  "background_color": "#1A1C22",
+  "theme_color": "#E8836B",
   "icons": [
     {
-      "src": "/logo.png",
-      "sizes": "532x553",
-      "type": "image/png",
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
       "purpose": "any"
     }
   ]
