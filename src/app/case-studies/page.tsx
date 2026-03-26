@@ -1,17 +1,16 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import { caseStudies } from "@/lib/content";
 import RevealSection, { RevealStagger, RevealItem } from "@/components/RevealSection";
 import MagneticButton from "@/components/MagneticButton";
 import { useLanguage } from "@/components/LanguageProvider";
 import type { TranslationKey } from "@/lib/i18n";
 
-const caseStudyImages: Record<string, string> = {
-  "bloodline-charters": "/images/hero-bloodline.jpg",
-  "pjcs-rag": "/images/hero-pjcs.jpg",
-  "docproc": "/images/hero-docproc.jpg",
+const caseStudyAccents: Record<string, string> = {
+  "bloodline-charters": "#E91E8C",
+  "pjcs-rag": "#00D4FF",
+  "docproc": "#B794F6",
 };
 
 /* Map slug → i18n key prefixes */
@@ -106,16 +105,22 @@ export default function CaseStudies() {
                 <div className={idx % 2 === 0 ? "lg:col-span-5" : "lg:col-span-7 lg:order-1"}>
                   <RevealSection delay={0.15}>
                     <div className="relative overflow-hidden rounded-sm border border-border/50 h-[240px]">
-                      <Image
-                        src={caseStudyImages[cs.slug] || "/images/hero-home.jpg"}
-                        alt={cs.title}
-                        fill
-                        className="object-cover opacity-60"
+                      <div
+                        className="absolute inset-0"
+                        style={{
+                          background: `radial-gradient(ellipse at ${idx % 2 === 0 ? "30% 40%" : "70% 60%"}, ${caseStudyAccents[cs.slug] || "#E8836B"}18 0%, transparent 70%), linear-gradient(135deg, rgba(13,17,23,1) 0%, rgba(10,14,26,1) 100%)`,
+                        }}
                       />
-                      <div className="absolute inset-0 bg-gradient-to-t from-bg/80 to-transparent" />
+                      <div
+                        className="absolute inset-0 opacity-30"
+                        style={{
+                          backgroundImage: `linear-gradient(${caseStudyAccents[cs.slug] || "#E8836B"}08 1px, transparent 1px), linear-gradient(90deg, ${caseStudyAccents[cs.slug] || "#E8836B"}08 1px, transparent 1px)`,
+                          backgroundSize: "60px 60px",
+                        }}
+                      />
                       <div className="absolute bottom-4 left-4 flex gap-2 flex-wrap">
                         {cs.tech.slice(0, 3).map((tech) => (
-                          <span key={tech} className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md text-accent border border-accent/20">{tech}</span>
+                          <span key={tech} className="text-xs font-mono px-2 py-1 rounded-sm bg-bg/80 backdrop-blur-md border border-accent/20" style={{ color: caseStudyAccents[cs.slug] || "#E8836B" }}>{tech}</span>
                         ))}
                       </div>
                     </div>

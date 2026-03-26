@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 import RevealSection, { RevealStagger, RevealItem } from "@/components/RevealSection";
 import MagneticButton from "@/components/MagneticButton";
 import { useLanguage } from "@/components/LanguageProvider";
@@ -59,13 +58,6 @@ export default function BloodlineContent() {
       <section className="relative min-h-[70vh] flex items-end overflow-hidden pt-32 pb-20">
         {/* Background */}
         <div className="absolute inset-0 bg-bg">
-          <Image
-            src="/images/hero-bloodline.jpg"
-            alt=""
-            fill
-            className="object-cover opacity-50"
-            priority
-          />
           <div
             className="absolute inset-0"
             style={{
