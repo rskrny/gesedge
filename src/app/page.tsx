@@ -54,7 +54,13 @@ export default function Home() {
 
           {locale === "en" ? (
             <h1 className="font-display text-6xl md:text-8xl lg:text-[7rem] font-semibold leading-[0.95] max-w-5xl" style={{ letterSpacing: "0.02em" }}>
-              <HeroWordReveal text="Automate Your Future with Start Automate" delay={0.1} className="block" />
+              <HeroWordReveal text="Technology" delay={0.1} className="block" />
+              <span className="block">
+                <HeroWordReveal text="That" delay={0.25} />
+                {" "}
+                <HeroWordReveal text="Bridges" delay={0.32} className="text-gradient italic" />
+              </span>
+              <HeroWordReveal text="Markets." delay={0.46} className="block" />
             </h1>
           ) : (
             <h1 className="font-display text-5xl md:text-7xl lg:text-[6rem] font-semibold leading-[1.1] max-w-5xl" style={{ letterSpacing: "0.02em" }}>
