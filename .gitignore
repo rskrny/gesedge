@@ -37,3 +37,11 @@ yarn-error.log*
 next-env.d.ts
 
 .vercel
+
+# ── Local agent tooling & machine-specific files (do not commit) ──
+/.claude/
+/.dual-graph/
+/*.bat
+
+# Raw source photos staged for the redesign — not shipped yet (see .ai/STATE.md)
+/_source-assets/
