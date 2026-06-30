@@ -4,32 +4,47 @@
      Recent changes · Handoff. Drop any field that's empty. -->
 
 ## Status
-Active — full redesign/rebuild of the GES + Chengdu Huanqiao website (gesedge.com).
-The existing Next.js / Vercel / Supabase site is treated as legacy/disposable; most
-code will not carry over. Backend, hosting, and CMS are all being replaced (choices
-TBD). Operating framework (`.ai/`) just initialized; CLAUDE.md now points to AGENTS.md.
+Full redesign of gesedge.com — **logo corrected via vision critique; about to build for real.** Ran 3
+vision-enabled critics on a rendered PNG of the picked mark: #4 "G-Bridge" reads as an open "C", bridge
+absent. Pivoted to the **Beam** mark (globe crossed by a warm→cool great-circle span to West/East nodes),
+re-rendered and verified it reads clean. Lockup rebalanced (Chinese smaller/lighter; swap to Alibaba
+PuHuiTi). Awaiting Ryan's confirm (Beam vs the more-literal Span), then scaffold + build. Type = best
+free. All-dark + light text + tasteful gradients, immersive. Stack: Astro + React islands, Strapi v5.
 
 ## Next actions
-1. Decide the new stack: backend, hosting, and CMS (three open decisions). Log each in DECISIONS.md.
-2. Define the design direction — this is a from-scratch redesign; the current theme is not locked.
-3. Scope what (if anything) carries over from the current site — content, copy, assets — vs. rebuilt.
+1. Confirm with Ryan: Beam mark (recommended) vs Span (more literally a bridge); lockup direction.
+2. Scaffold a fresh Astro project + install the toolchain (Lenis, R3F, drei, postprocessing, GSAP,
+   @paper-design/shaders-react, Radix Colors + Open Props + Utopia).
+3. Build the real lit hero in the browser: Paper Shaders gradient + the Beam mark (bloom + scroll
+   draw/dock) + free type (PuHuiTi for ZH). Verify via headless-Chrome screenshot + vision critique.
+4. From there: DESIGN.md (tokens), then the rest of the site + Strapi.
 
 ## Open questions
-- New backend / hosting / CMS: any candidates already in mind, or evaluate options together?
-- Keep the gesedge.com domain and the bilingual EN/ZH structure? (assumed yes)
-- Design: evolve the current look or start clean? (assumed clean, per "redesign")
+- Mark: Beam (recommended) or Span (unmistakable bridge)?
+- ZH face = Alibaba PuHuiTi 3.0 (top pick) vs HarmonyOS Sans SC; subset to used glyphs.
+- Flipside: pull real episodes when building that section.
 
 ## Active context
-- Operators: Ryan (owner) + Shiying (developer).
-- Audience: prospective clients of GES (US SMBs needing software) and Chengdu Huanqiao (US↔China cross-border).
-- Persisting constraints: anti-AI-slop writing rules (now in AGENTS.md), free/low-cost preference, surgical changes, approval before any production deploy.
-- Legacy reference: `DEVELOPMENT_LOG.md` describes the current (soon-to-be-replaced) build and the still-valid email/DNS infra. The stale `CONTEXT.md` ("Midnight Sapphire" snapshot) was removed; its content survives in `../archive/` if ever needed.
-- Staged for the redesign (untracked, not committed): 3 China source photos in `_source-assets/` (gitignored); `scripts/optimize-heroes.mjs` (old image util — keep-or-drop is a rebuild decision).
+- VISION-REVIEW PIPELINE (new, reusable): write design to HTML → headless Chrome screenshot
+  (`chrome --headless=new --screenshot`, see scratchpad) → spawn vision agents to Read+critique the PNG.
+  Use on every logo/design pass. Renders live in scratchpad (logo_review.png, logo_v2.png).
+- Logo = Beam: globe + one warm→cool great-circle span to West(warm)/East(cool) nodes = 寰桥 "world
+  bridge". Reads at favicon size. Built on 成都寰桥 = world bridge; GES = Global Edge.
+- Lockup rule: pair Latin + CJK by OPTICAL match — CJK ~0.8em of Latin, one weight lighter, center
+  optically (not baseline). GES = tracked caps Schibsted Grotesk ~0.12em/500. ZH = PuHuiTi (not Noto).
+- Type: FREE. Direction: premium × cross-cultural × technically-advanced showcase, immersive. v1 US SMBs.
+- Anti-patterns: stat-boxes; AI-default fonts; navy+cyan; weak/banded gradients; generic-globe / open-C mark.
+- Toolchain: `.ai/research/build-toolchain.md`. Design rules: `.ai/experts/ui-design-review.md`.
+  **Logo mark source + lockup spec: `.ai/research/logo-marks.md`** (Beam SVG + Span fallback + lockup).
+- Salvage from old repo: `WireframeGlobe` scroll-morph rig, `HeroScene` R3F scene.
+- Assets: wallet CAD `C:\tmp\capture-cad`; Flipside https://www.youtube.com/@theflipsidepodcast_official.
+- Projects: Bloodline (flagship), Rogan Mooring, ShopMyRoom (Ryan CTO, C14-Space LTD).
+- Server ~20GB/1TB ample. Shiying = backend/server; Ryan+AI = frontend.
 
 ## Recent changes
-- Initialized `.ai/` framework. Migrated CLAUDE.md's writing rules + gstack tooling into AGENTS.md; CLAUDE.md is now a pointer.
-- Cleaned the working tree: gitignored local tooling (`.claude/`, `.dual-graph/`, `*.bat`) and `_source-assets/`; removed stale `CONTEXT.md`. Committed the framework and the pending DEVELOPMENT_LOG update to local `main` — NOT pushed (push auto-deploys to production).
+- Built a render→vision-critique pipeline; 3 vision critics reviewed the mark. Pivoted #4 (reads "C") →
+  Beam (verified reads clean). Captured lockup-balance + ZH-font fixes. Logged in DECISIONS.
 
 ## Handoff
-This is a ground-up website redesign. The immediate fork is the three stack decisions
-(backend, hosting, CMS) plus design direction. Nothing is chosen yet — start there.
+Mark corrected and verified by vision. Confirm Beam (vs Span) + lockup, then BUILD: scaffold Astro +
+install + stand up the real lit hero, verifying each pass with the render→vision pipeline.
