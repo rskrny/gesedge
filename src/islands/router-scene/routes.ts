@@ -30,34 +30,36 @@ export interface EndpointDef {
   pos: THREE.Vector3;
 }
 
+/* Scene HUD uses capability labels only — client names appear nowhere
+   (DESIGN.md §9). Industry descriptors live in the work index copy. */
 export const ENDPOINTS: EndpointDef[] = [
   {
-    id: 'goldie',
-    name: 'Goldie Group',
-    outcome: 'Email read, tagged, routed',
+    id: 'triage',
+    name: 'Email triage',
+    outcome: 'Read · tagged · routed',
     status: 'Client system',
     elbow: new THREE.Vector3(2.2, 0.4, -0.5),
     pos: new THREE.Vector3(4.9, 0.55, -1.0),
   },
   {
-    id: 'shopmyroom',
-    name: 'ShopMyRoom',
-    outcome: 'Photo becomes a 3D room',
+    id: 'rooms',
+    name: '3D room pipeline',
+    outcome: 'Photo becomes a room',
     status: 'Live product',
     elbow: new THREE.Vector3(2.0, -0.55, 0.9),
     pos: new THREE.Vector3(4.4, -1.1, 1.55),
   },
   {
-    id: 'wallet',
-    name: 'Wallet e-writer',
+    id: 'ewriter',
+    name: 'E-ink note taker',
     outcome: 'Handwriting becomes notes',
     status: 'R&D',
     elbow: new THREE.Vector3(1.9, 0.95, 0.75),
     pos: new THREE.Vector3(4.1, 1.65, 1.2),
   },
   {
-    id: 'bloodline',
-    name: 'Bloodline Charters',
+    id: 'booking',
+    name: 'Booking engine',
     outcome: 'Request becomes a booking',
     status: 'In production',
     elbow: new THREE.Vector3(2.4, -0.12, -1.35),

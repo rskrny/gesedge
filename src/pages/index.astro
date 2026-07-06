@@ -57,7 +57,7 @@ import RouterScene from '../islands/router-scene/RouterScene';
       <div class="hero-scrim" aria-hidden="true"></div>
       <div class="beat beat-hero" data-beat="0">
         <p class="label beat-eyebrow">Global Edge Strategies</p>
-        <h1>AI that <em>moves</em> work through your business.</h1>
+        <h1>AI that moves work through your business.</h1>
         <p class="beat-sub">
           Custom software and automation for American small businesses,
           engineered between the US and Chengdu. Behind this text: requests
@@ -74,7 +74,7 @@ import RouterScene from '../islands/router-scene/RouterScene';
       </div>
 
       <div class="beat" data-beat="2">
-        <p class="label">Goldie Group · email triage</p>
+        <p class="label">Live route · email triage</p>
         <p class="beat-big">
           An email arrives. The system reads it, tags what matters, and routes
           the job to the right person with context attached.
@@ -98,16 +98,16 @@ import RouterScene from '../islands/router-scene/RouterScene';
       <div class="project-grid">
         <article class="project" data-reveal>
           <p class="label project-status">Client system</p>
-          <h3>Goldie Group — email triage</h3>
+          <h3>Email triage</h3>
           <p>
-            Inbound email gets read by an AI layer, classified, and routed to
-            the right worker with the context already attached. The inbox
-            stops being a full-time job.
+            Inbound email for a client group gets read by an AI layer,
+            classified, and routed to the right worker with the context
+            already attached. The inbox stops being a full-time job.
           </p>
         </article>
         <article class="project" data-reveal>
           <p class="label project-status">Live product · Ryan is CTO</p>
-          <h3>ShopMyRoom</h3>
+          <h3>Interior-design platform</h3>
           <p>
             A photo of a room becomes a furnished, shoppable 3D redesign. An
             AI pipeline carries the image from upload to interactive space.
@@ -115,10 +115,10 @@ import RouterScene from '../islands/router-scene/RouterScene';
         </article>
         <article class="project" data-reveal>
           <p class="label project-status">In production</p>
-          <h3>Bloodline Charters</h3>
+          <h3>Charter booking system</h3>
           <p>
             Booking and scheduling for a Cape Cod charter fishing operation,
-            live at fishingbloodline.com.
+            running through its seasons.
           </p>
         </article>
         <article class="project" data-reveal>
@@ -219,10 +219,11 @@ import RouterScene from '../islands/router-scene/RouterScene';
   }
 
   .loader-latin {
-    font-weight: 500;
-    font-size: 1.2rem;
-    letter-spacing: 0.34em;
-    text-indent: 0.34em; /* optically recenters tracked caps */
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: 1.1rem;
+    letter-spacing: 0.22em;
+    text-indent: 0.22em; /* optically recenters tracked caps */
     color: var(--stroke);
   }
 
@@ -345,26 +346,23 @@ import RouterScene from '../islands/router-scene/RouterScene';
   }
 
   h1 {
+    font-family: var(--font-display);
     font-size: var(--text-hero);
-    font-weight: 560;
-    line-height: 1.02;
-    letter-spacing: -0.026em;
+    font-weight: 600;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
     text-wrap: balance;
-    max-width: 11ch;
-  }
-
-  h1 em {
-    font-style: italic;
-    font-weight: 480;
+    max-width: 14ch;
   }
 
   .beat-big {
+    font-family: var(--font-display);
     font-size: var(--text-beat);
     font-weight: 500;
-    line-height: 1.18;
-    letter-spacing: -0.015em;
+    line-height: 1.2;
+    letter-spacing: -0.01em;
     text-wrap: balance;
-    max-width: 22ch;
+    max-width: 24ch;
   }
 
   .beat-sub {
@@ -426,18 +424,19 @@ import RouterScene from '../islands/router-scene/RouterScene';
   }
 
   h2 {
+    font-family: var(--font-display);
     font-size: var(--text-h2);
-    font-weight: 540;
-    letter-spacing: -0.018em;
-    line-height: 1.1;
-    max-width: 24ch;
+    font-weight: 600;
+    letter-spacing: -0.01em;
+    line-height: 1.12;
+    max-width: 26ch;
     margin-bottom: var(--space-4);
   }
 
   h3 {
     font-size: var(--text-h3);
-    font-weight: 540;
-    letter-spacing: -0.01em;
+    font-weight: 500;
+    letter-spacing: 0.01em;
     margin-bottom: 0.6rem;
   }
 

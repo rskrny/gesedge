@@ -22,17 +22,17 @@
   --warm-dim: rgba(240, 200, 150, 0.55);
   --cool-dim: rgba(159, 182, 214, 0.55);
 
-  /* type */
-  --font-display: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif;
+  /* type — DESIGN.md §4: Unbounded (rare, huge) + IBM Plex Mono (everything else) */
+  --font-display: 'Unbounded Variable', 'Unbounded', system-ui, sans-serif;
   --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
   --font-cjk: 'Alibaba PuHuiTi 3.0', 'PingFang SC', 'Microsoft YaHei', sans-serif;
 
-  /* fluid type scale */
-  --text-hero: clamp(2.5rem, 1.2rem + 5.4vw, 5.4rem);
-  --text-beat: clamp(1.6rem, 0.9rem + 2.6vw, 3.1rem);
-  --text-h2: clamp(1.7rem, 1.1rem + 2.2vw, 3rem);
-  --text-h3: clamp(1.15rem, 1rem + 0.7vw, 1.5rem);
-  --text-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  /* fluid type scale (Unbounded is wide — sized down accordingly) */
+  --text-hero: clamp(2.1rem, 1rem + 4.4vw, 4.3rem);
+  --text-beat: clamp(1.3rem, 0.8rem + 2vw, 2.4rem);
+  --text-h2: clamp(1.35rem, 0.95rem + 1.7vw, 2.3rem);
+  --text-h3: clamp(1rem, 0.9rem + 0.5vw, 1.2rem);
+  --text-body: clamp(0.9rem, 0.86rem + 0.15vw, 1rem);
   --text-label: 0.8125rem;
 
   /* space scale */
