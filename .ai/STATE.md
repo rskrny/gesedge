@@ -49,6 +49,16 @@ a placeholder until The Crossing world is built.
 - gstack /browse daemon still broken (1.6.3 → 1.58.5 available): `/gstack-upgrade`. Workaround:
   headless Chrome (DOM/type only) + Claude preview tools; scene critique needs a real GPU.
 
+## Ops notes
+- **Ryan's system proxy breaks ALL localhost tooling when active.** `HTTP(S)_PROXY/ALL_PROXY =
+  http://192.168.1.30:20170` with NO localhost exemption → dev-server requests get proxied and
+  rejected 503 (curl, preview browser, headless Chrome alike). It masqueraded as a broken dev
+  server for an hour on 2026-07-06. Workarounds: `curl --noproxy "*"`, headless Chrome
+  `--no-proxy-server`; real fix = set `NO_PROXY=localhost,127.0.0.1,::1` system-wide (suggest to
+  Ryan). Astro dev was healthy the whole time (200 in 33ms bypassed).
+- Avoid npm install/uninstall while `astro dev` runs (caused real transient module-runner errors
+  earlier same day); node_modules was precautionarily `npm ci` rebuilt — clean state now.
+
 ## Active context
 - Branch `rebuild/astro-immersive`; main = legacy live site. **⚠ `deploy_vercel.bat` deploys the
   WORKING DIR — never run it on this branch without approval.**
