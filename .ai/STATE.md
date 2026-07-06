@@ -34,10 +34,16 @@ a placeholder until The Crossing world is built.
    full-scene vision critique on a real GPU · then swap-deploy discussion (approval required).
 
 ## Open questions (for Ryan)
-- Goldie Group's industry (needed for its work-index descriptor — currently "a client group").
-- ShopMyRoom naming: it's HIS venture — name it or keep de-named? (Default: de-named.)
-- Ship model sourcing (he offered) — spec in DESIGN.md §14.
 - ZH copy review workflow with Shiying.
+<!-- Resolved 2026-07-06: Goldie = device-lifecycle group (refurbishment/remarketing,
+     goldiegroup.com) · ShopMyRoom named (own venture, shopmyroom.co.uk) · ship delivered. -->
+
+## Assets
+- **Ship:** `public/models/ship.glb` — 328KB (draco + 512 WebP), 28k tris (spec said ≤15k;
+  kept higher to avoid hull holes — within budget). Raw 19MB Meshy original:
+  `_source-assets/ship_meshy_original.glb`. Runtime draco-decode check still pending
+  (happens in the previs build; drei useGLTF default decoder).
+- Wallet CAD renders: `C:\tmp\capture-cad` (project pages later).
 
 ## Blockers
 - gstack /browse daemon still broken (1.6.3 → 1.58.5 available): `/gstack-upgrade`. Workaround:
