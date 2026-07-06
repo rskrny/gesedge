@@ -49,6 +49,17 @@ a placeholder until The Crossing world is built.
 - gstack /browse daemon still broken (1.6.3 → 1.58.5 available): `/gstack-upgrade`. Workaround:
   headless Chrome (DOM/type only) + Claude preview tools; scene critique needs a real GPU.
 
+## Go-live status (Ryan's call, 2026-07-06)
+- **HOLD production until the punch list is done:** The Crossing world · ledger work section ·
+  copy rewrite · 中文 · route/contact parity with the old site. Then swap with approval.
+- **Preview of the branch is LIVE:** https://gesedge-50lgt7z0v-ryans-projects-4fd48889.vercel.app
+  (login-protected; Ryan's Vercel account sees it directly). Verified 200 + correct content.
+- **⚠ Production wiring facts:** Vercel project `gesedge` is pinned framework=**nextjs** (must
+  flip to astro at swap time — `vercel.json` on the branch already declares astro) and **git
+  integration auto-deploys main → gesedge.com**. NEVER push this branch's content to main until
+  the swap is intended and approved. At swap: also plan redirects for old routes (/work, /about,
+  /contact, case studies) and contact-form replacement.
+
 ## Ops notes
 - **Ryan's system proxy breaks ALL localhost tooling when active.** `HTTP(S)_PROXY/ALL_PROXY =
   http://192.168.1.30:20170` with NO localhost exemption → dev-server requests get proxied and
