@@ -13,6 +13,14 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Production swap DEFERRED until the punch list is complete (hold decision)
+Date: 2026-07-06 · Status: Accepted
+Context: Ryan asked to "push it all to main" to see the rebuild at gesedge.com. Investigation: Vercel git integration auto-deploys main → production, the project is pinned framework=nextjs (Astro would misbuild/fail), and the branch is an interim one-pager (v0 hero + card grid Ryan already judged below the bar; no routes/contact/中文 — old URLs would 404).
+Decision: HOLD production. Ryan reviews via a Vercel preview deployment of the branch instead. gesedge.com swaps ONLY when the punch list is done — The Crossing world, ledger work section, copy rewrite, 中文, route/contact parity + redirects — and Ryan explicitly approves the swap (at which point: flip Vercel framework to astro, merge, verify).
+Rationale: The site is the proof of capability; publishing an interim build under the awards-register positioning would damage the exact credibility it exists to earn. A one-time "push it" request made on the belief the work was finished is not durable authorization to deploy unfinished work.
+Trade-offs: Ryan waits longer to see it on the real domain; preview URLs carry Vercel branding/protection.
+Reversal trigger: Ryan can order the swap early at any time; if so, run the hardening pass first (routes, redirects, contact capture, OG parity) in the same change.
+
 ## Decision: Design system locked — DESIGN.md is the design source of truth ("The Crossing")
 Date: 2026-07-06 · Status: Accepted · Refines "The Router" (below) after Ryan's critique of v0
 Context: Ryan reviewed the v0 hero: routing concept "okay" but reads generic (primitives in a void vs igloo's world); fonts didn't match his accepted pick (Unbounded F16 — I shipped Schibsted by mistake); client names must not appear; card-grid work section and italic-emphasis headline words are AI tells; copy needs a rewrite; multilingual was wrongly deferred. He asked for a creative-director grilling (8 structured questions) before any further design. Two research briefs (igloo-tier art direction · work-section patterns) ground the system.

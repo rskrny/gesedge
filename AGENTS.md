@@ -48,6 +48,7 @@ Read in this order; stop as soon as you have what the task needs.
 |---|---|
 | `.ai/STATE.md` | Always, first. |
 | Current task files | Always. |
+| `DESIGN.md` (repo root) | ANY visual, motion, copy, or interaction work. It is the design constitution — binding. |
 | `.ai/PROJECT.md` | Goals, audience, client, or constraints matter. |
 | `.ai/DECISIONS.md` | Making or revisiting a major decision. |
 | `.ai/experts/<name>.md` | Working in that discipline (see *Experts*). |
@@ -146,7 +147,10 @@ If gstack skills aren't working, run `cd .claude/skills/gstack && ./setup` to bu
 
 ## Project: writing rules (anti-AI-slop)
 
-All published writing (blog posts, website copy, case studies, social posts) must follow these rules:
+All published writing (blog posts, website copy, case studies, social posts) must follow these
+rules, PLUS the voice law and kill list in root `DESIGN.md` (§10, §13) — notably: no
+italic-emphasis words in headlines, no uniform card grids, no client names (GES's own ventures
+exempt), no always-on bloom, no third typeface or hue.
 
 ### Banned patterns
 - **No semicolons for contrast.** If you use a semicolon to create contrast between two clauses, the sentence is rejected. Rewrite it.
