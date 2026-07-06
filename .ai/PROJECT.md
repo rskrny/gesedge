@@ -26,6 +26,9 @@ work and advanced-but-performant visuals — without being heavy enough to crash
   (developer; strongest in Python, backend/API integration, and the server).
 - **Primary audience (v1):** US SMBs needing custom software / automation. Ryan (MBA →
   tech) can explain AI simply to non-technical buyers.
+- **Register amendment (2026-07-06, Ryan):** the site EXPERIENCE is optimized for the
+  awards/peers/press register (igloo-tier judgment), not brochure clarity. SMB conversion
+  remains the business goal but is earned through demonstrated capability. See DESIGN.md §1.
 - **Secondary:** cross-border US↔China. Key client: **Safepacific Shipping** (Shanghai;
   Ryan runs their web ops to win LATAM/other export clients shipping out of China).
 - **Bilingual model:** all concrete site content in **both EN + ZH**; blog posts stay in
