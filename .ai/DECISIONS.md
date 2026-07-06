@@ -13,6 +13,48 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Hero + homepage = "The Router" (AI routing-tree scene → editorial handoff), tiered for performance
+Date: 2026-07-06 · Status: Accepted
+Context: Ryan set the hero concept himself: "a very visually pleasing decision or routing tree of AI architecture," drawing on ShopMyRoom + the Goldie email triage, with the wallet note-taker featured; igloo.inc remains the interaction north star; he stressed balancing wow vs client-device compute. Asked 3 forks via structured questions.
+Decision: (1) Homepage = hero-world→editorial: the scene owns the first ~4 scroll viewports (scroll-as-camera: wide tree → dive to core → bank along the Goldie branch → constellation), then hands off to editorial DOM sections. (2) Packets are abstract glowing lights that "resolve" into labeled outcomes at endpoints. (3) All four branches featured: Goldie triage, ShopMyRoom, Wallet e-writer (labeled R&D), Bloodline. Engineering: procedural scene (no asset loads), 12 baked route LUTs + one InstancedMesh, single key light + bloom (emissive>1), device tiers 0/1/2 + runtime demotion + reduced-motion static fallback, frameloop paused off-view.
+Rationale: A routing tree IS what GES sells (systems that read/decide/route) — more specific than any globe, inherently animated, and an order of magnitude cheaper to render than igloo's modeled world, so the igloo interaction grammar (loader beat, scroll-as-camera, one continuous lit scene) fits within a small-business perf budget (~380KB gz JS, 58fps w/ bloom in preview).
+Trade-offs: Less raw spectacle than a fully modeled igloo world; endpoint labels are DOM (crisp/accessible but not "in" the 3D material).
+Reversal trigger: If after polish the tree still reads below the igloo bar to Ryan, escalate to a fuller continuous-world treatment (option b from the fork) rather than falling back to a static hero.
+
+## Decision: CMS = none for now — Astro Content Collections (git-based content); Strapi dropped from the critical path
+Date: 2026-07-06 · Status: Accepted · Supersedes "self-hosted Strapi" (2026-06-29)
+Context: Ryan tried Strapi on another project and doubts its fit; he delegated the call ("you make the call"). Operators are two technical people; content updates are low-frequency; Ryan's editing workflow is AI-assisted (Claude Code editing files beats a CMS admin for him); the site is a showcase, not a content farm.
+Options: (a) keep self-hosted Strapi (Linux box at a friend's house); (b) hosted headless CMS; (c) Astro Content Collections — markdown/MDX in the repo, schema-validated, statically built.
+Decision: (c). Projects/blog/copy live as content collections; the site ships fully static on the existing Vercel setup. Contact-form backend decided separately when that page is built (Astro endpoint + existing Supabase vs mail relay).
+Rationale: Zero server ops in the serving path (no dependency on the friend's-house box), free hosting stays free, git = versioning + review, bilingual posts are just files, and AI-assisted editing works directly on the repo. Shiying can still own future dynamic services where they add value instead of babysitting a CMS.
+Trade-offs: No browser admin UI; non-technical contributors can't edit; content deploys ride site builds.
+Reversal trigger: A non-technical editor joins, or update frequency makes commits annoying → adopt a HOSTED headless CMS (not self-hosted ops).
+
+## Decision: Next phase = build an igloo.inc-level immersive site; identity paused (logo deferred, all candidates rejected)
+Date: 2026-07-06 · Status: Accepted
+Context: After a full session on identity, Ryan is not satisfied with ANY logo candidate — the globe/coin/arc family (rejected as AI-generic), the "The Edge" E-as-bridge icon (hand-coded SVG hit a quality ceiling — "3 lines somewhat connected"), or the wordmark-led voices (Switzer / Zodiak / IBM Plex Mono + a warm→cool West→East "bridge" rule). He redirected: go deep on the WEBSITE, make it look/behave like igloo.inc ("complicated yet impressive animations"), and clone its interaction features.
+Decision: Pause identity. Next phase builds the immersive site with igloo.inc as the explicit north star — clone its TECHNIQUES (scroll-as-camera WebGL, one lit continuous scene, loader-as-brand-moment, scene transitions) on our stack (Astro + R3F/drei/postprocessing + GSAP + Lenis + Paper Shaders). Prototype ONE signature moment (the hero) first, verify, then expand to the IA + Strapi. The logo is revisited later (the site may inform it). Runway captured in `.ai/research/igloo-study.md`.
+Rationale: The site — not a glyph — is the actual proof of capability and the conversion engine; it's the right place to invest, and it's what convinced no one when it was just a logo. Igloo is already our top immersive reference. Building the signature moment early also de-risks the biggest technical unknown (WebGL performance).
+Trade-offs: Igloo-grade is a large, performance-risky build; must engineer poster/fallback/tiering from the start and sequence scope (one moment first). "Clone" = techniques, not their assets/content.
+Reversal trigger: If the immersive approach can't hit acceptable performance on mid-range devices, fall back to lighter visuals with selective showcase moments (per the existing design-lane decision).
+
+## Decision: Logo direction = "The Edge" — the E of GES as a bridge (custom letterform); globe/coin/arc family rejected
+Date: 2026-06-30 · Status: Accepted (variant E1/E2/E3 pending Ryan) · Supersedes Beam + the whole globe family
+Context: Designed directions B (world-bridge gate / meridian coin) and C (edge monogram), rendered them, ran the 3-critic vision panel (cold-read, senior brand, bilingual-type). The cold-read AND the brand critic INDEPENDENTLY judged the globe/arc/coin family AI-generic (sunrise-stamp, clock, no-entry; "the globe+arc IS the AI tell"; 3–4/10). The monogram (C) was the only "authored"-looking mark (6.5/10) and the only one to survive favicon size.
+Decision: Drop the globe/circle family entirely. Adopt "The Edge": the E of GES (E = "Edge", the operative word) rendered as a bridge — three confident arms so it reads as a letter, the MIDDLE arm a warm→cool (West→East) span = the 桥/crossing. Three variants: E1 arch (arched middle span), E2 arch sealed (E in a 印章 seal/chop — best favicon + bilingual pairing), E3 cantilever (deck overshoots onto an East pier). Bilingual lockup fixes from the type critic applied.
+Rationale: An authored custom letterform is ownable/trademarkable, unmistakably not a globe/ring, favicon-robust, and (per both critics) the move that escapes "AI-generated." The E carries "Global Edge"; the bridge middle arm carries 寰桥/cross-border; warm→cool carries West↔East. Meaning is built into the geometry, not bolted on.
+Trade-offs: Drops the literal globe/world imagery the brand leaned on for several sessions (can return in the hero scene, not the mark). A custom letterform needs careful optical refinement before production.
+Reversal trigger: If Ryan wants the literal world/bridge kept in the mark itself, revisit a non-cliché globe abstraction (Cathay-brushwing-style single gesture), not the rejected coin/arc.
+
+## Decision: Re-source logo inspiration from REAL exemplars (7-scout sweep) before designing; Beam → baseline/fallback
+Date: 2026-06-30 · Status: Accepted · Revisits the Beam "build now" decision below
+Context: Ryan judged the AI-generated marks — including the vision-verified Beam — too basic and obviously AI-generated. The miss wasn't finish, it was that "globe + arc" is the generic default. Rather than generate more, mirror the website-sourcing method (the 6-subagent run behind design-references.md).
+Options: (a) iterate the Beam again; (b) generate a fresh batch of AI marks; (c) SOURCE real best-in-class logo + animation exemplars first, extract principles, then design originals.
+Decision: (c). Ran 7 parallel research scouts across non-overlapping lanes (bridge/connection · globe-sans-cliché · East↔West bilingual systems · boutique monogram systems · 2D logo motion · logo-in-site choreography · 3D/shader marks). Captured to `.ai/research/logo-references.md`: 4 convergent principles + 3 original-mark directions (A "The Seam" / B "The 寰桥 Gate" / C "The Edge-Cut Monogram"). Beam stays documented in logo-marks.md but is demoted from "the pick" to a baseline/fallback.
+Rationale: The fix for "looks AI-generated" is a single PROPRIETARY structural move (a joint/seam, a gate/coin frame, a cut derived from the GES wordmark) — every lane converged on this. Grounding the design in real exemplars + their techniques makes the mark feel engineered, not generated, and bilingual-credible.
+Trade-offs: Adds a sourcing+synthesis cycle before any mark is drawn (slower to a candidate), but de-risks shipping another generic mark.
+Reversal trigger: If, after rendering B+C through the vision pipeline, the evolved Beam (A) still reads strongest, revert to it as the pick.
+
 ## Decision: Logo mark = Beam (globe + great-circle span), after a vision critique killed the G-Bridge "C"
 Date: 2026-06-30 · Status: Accepted (pending Ryan's final confirm) — supersedes the #4 G-Bridge pick
 Context: Rendered the chosen #4 mark to PNG (headless Chrome) and ran 3 vision-enabled critics (brand designer, cold first-impression, bilingual-type). Unanimous: #4 reads as an open "C"/Pac-Man, the bridge (the whole point) is absent, premium finish but generic/unresolved idea; the small/favicon version loses the bridge entirely.

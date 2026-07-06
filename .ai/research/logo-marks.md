@@ -1,4 +1,13 @@
 # Logo Marks — working source (2026-06-30)
+
+> **⚠ SUPERSEDED / PARKED (2026-07-06).** Ryan is not satisfied with ANY logo to date. Every mark in this
+> file — Beam, Span, G-Bridge (and the later globe / coin / arc family) — is REJECTED as too generic / AI.
+> A wordmark-led direction was then explored (Latin: Switzer / Zodiak / IBM Plex Mono; CJK: Noto Sans/Serif SC
+> → build target Alibaba PuHuiTi 3.0; a warm→cool West→East "bridge" rule as the signature; the lockup recipe
+> below still applies) and also NOT accepted. **The logo is DEFERRED** — next phase is the website (igloo.inc-
+> level immersive; see `.ai/research/igloo-study.md`). Revisit the mark AFTER the site's visual language exists;
+> if resumed, the plan was wordmark-led + ONE custom letterform cut (retail type alone isn't ownable). The
+> content below is kept for reference (lockup rules) and history (rejected marks) only.
 <!-- The mark previously existed ONLY in chat widgets + the session scratchpad (which does NOT
      persist across sessions). This is the persistent source so the next agent continues without
      rebuilding from scratch. -->
