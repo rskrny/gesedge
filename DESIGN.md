@@ -143,9 +143,10 @@ scene fragment); cursor swaps. Click → case page (set-piece layout, one hero
 artifact — the wallet CAD exploded render earns a full screen).
 
 **Anonymity scheme (locked):** industry descriptors in copy ("a Cape Cod charter
-operation", "an interior-design platform"); capability labels in the scene HUD
-("EMAIL TRIAGE", "BOOKING ENGINE"). Client names appear nowhere. Open: whether
-ShopMyRoom (Ryan's own venture) stays nameable — Ryan's call, default de-named.
+operation", "a device-lifecycle group"); capability labels in the scene HUD
+("EMAIL TRIAGE", "BOOKING ENGINE"). Client names appear nowhere. **Exception
+(Ryan 2026-07-06): GES's own ventures may be named — ShopMyRoom
+(shopmyroom.co.uk), the wallet e-writer.**
 
 ## 10 · Voice & copy law
 
@@ -184,15 +185,17 @@ the world · "AI that…" as an opener is on notice for the rewrite.
 
 Previs first (greybox the camera journey, untextured). Live tweak panel (leva)
 for fog/grade/easing during art direction — no code-guess-refresh tuning. Assets:
-bridge + harbor works are parametric/extruded (no sourcing needed); the ship and
-optionally one hero pylon are sourced (Ryan offered — spec: low-poly container
-ship silhouette, ≤15k tris, we shade it ourselves; formats GLB). Vision-review
-pipeline on every pass; full-scene critique on a real GPU before any milestone
-is called done.
+bridge + harbor works are parametric/extruded (no sourcing needed). **Ship:
+delivered** — `public/models/ship.glb` (328KB, draco + 512px WebP, 28k tris;
+above the 15k spec but within GPU/payload budget — simplifying further risked
+hull holes). Raw Meshy original archived in `_source-assets/`. We shade it
+ourselves (dark silhouette + our own lights). Vision-review pipeline on every
+pass; full-scene critique on a real GPU before any milestone is called done.
 
 ## 15 · Open items
 
-- Goldie Group industry descriptor (Ryan to confirm what the business does).
-- ShopMyRoom naming (own venture — name it or de-name it?).
 - ZH copy review workflow with Shiying.
 - Sound design (phase 2) · logo (parked; the bridge world may seed the mark).
+
+Resolved 2026-07-06: Goldie = device-lifecycle group (refurbishment/remarketing —
+goldiegroup.com); ShopMyRoom named (own venture); ship asset delivered and compressed.
