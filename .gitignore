@@ -8,7 +8,11 @@
 !.yarn/releases
 !.yarn/versions
 
-# next.js
+# astro
+/dist/
+/.astro/
+
+# next.js (legacy main branch)
 /.next/
 /out/
 
@@ -45,3 +49,4 @@ next-env.d.ts
 
 # Raw source photos staged for the redesign — not shipped yet (see .ai/STATE.md)
 /_source-assets/
+.gstack/

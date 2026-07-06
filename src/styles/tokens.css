@@ -1,0 +1,51 @@
+/* ── GES design tokens ─────────────────────────────────────────────
+   Palette: dark "ink" grounds + one warm (West) and one cool (East) hue.
+   Rule: warm→cool is the flow direction everywhere (input → output,
+   West → East). Never introduce a third hue. */
+
+:root {
+  /* grounds (radial depth: deep → base → warm tint) */
+  --ink-deep: #08080c;
+  --ink: #0d0d12;
+  --ink-warm: #1b1422;
+
+  /* strokes / text */
+  --stroke: #ece6d8;
+  --text: #ece6d8;
+  --text-dim: rgba(236, 230, 216, 0.62);
+  --text-faint: rgba(236, 230, 216, 0.38);
+  --hairline: rgba(236, 230, 216, 0.14);
+
+  /* the two hues */
+  --warm: #f0c896;
+  --cool: #9fb6d6;
+  --warm-dim: rgba(240, 200, 150, 0.55);
+  --cool-dim: rgba(159, 182, 214, 0.55);
+
+  /* type */
+  --font-display: 'Schibsted Grotesk Variable', 'Schibsted Grotesk', system-ui, sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'Cascadia Mono', monospace;
+  --font-cjk: 'Alibaba PuHuiTi 3.0', 'PingFang SC', 'Microsoft YaHei', sans-serif;
+
+  /* fluid type scale */
+  --text-hero: clamp(2.5rem, 1.2rem + 5.4vw, 5.4rem);
+  --text-beat: clamp(1.6rem, 0.9rem + 2.6vw, 3.1rem);
+  --text-h2: clamp(1.7rem, 1.1rem + 2.2vw, 3rem);
+  --text-h3: clamp(1.15rem, 1rem + 0.7vw, 1.5rem);
+  --text-body: clamp(1rem, 0.95rem + 0.2vw, 1.125rem);
+  --text-label: 0.8125rem;
+
+  /* space scale */
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 1.75rem;
+  --space-4: 3rem;
+  --space-5: 5rem;
+  --space-6: 8rem;
+
+  /* layout */
+  --page-max: 76rem;
+  --page-pad: clamp(1.25rem, 4vw, 3.5rem);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+}

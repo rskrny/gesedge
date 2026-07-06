@@ -1,0 +1,597 @@
+---
+import Base from '../layouts/Base.astro';
+import RouterScene from '../islands/router-scene/RouterScene';
+---
+
+<Base>
+  <!-- ── loader: brief brand beat, removed on scene-ready ── -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-mark">
+      <span class="loader-latin">GES</span>
+      <span class="loader-line"></span>
+    </div>
+  </div>
+
+  <!-- ── fixed scene layer: poster backdrop always, WebGL when the device can ── -->
+  <div class="scene-layer" aria-hidden="true">
+    <div class="poster">
+      <svg
+        class="poster-tree"
+        viewBox="0 0 1200 640"
+        fill="none"
+        preserveAspectRatio="xMidYMid slice"
+      >
+        <defs>
+          <linearGradient id="flow" x1="0" x2="1" y1="0" y2="0">
+            <stop offset="0" stop-color="#f0c896"></stop>
+            <stop offset="1" stop-color="#9fb6d6"></stop>
+          </linearGradient>
+        </defs>
+        <g stroke="url(#flow)" stroke-width="1.4" opacity="0.5">
+          <path d="M40,200 C240,240 380,300 600,320"></path>
+          <path d="M20,360 C230,350 400,330 600,320"></path>
+          <path d="M60,480 C260,440 420,350 600,320"></path>
+          <path d="M600,320 C760,300 860,240 1150,180"></path>
+          <path d="M600,320 C780,330 900,380 1160,430"></path>
+          <path d="M600,320 C740,280 830,180 1080,110"></path>
+          <path d="M600,320 C770,360 880,470 1120,540"></path>
+        </g>
+        <circle cx="600" cy="320" r="10" fill="#f0c896" opacity="0.9"></circle>
+        <g fill="#9fb6d6" opacity="0.8">
+          <circle cx="1150" cy="180" r="5"></circle>
+          <circle cx="1160" cy="430" r="5"></circle>
+          <circle cx="1080" cy="110" r="5"></circle>
+          <circle cx="1120" cy="540" r="5"></circle>
+        </g>
+      </svg>
+    </div>
+    <div class="scene-canvas">
+      <RouterScene client:only="react" />
+    </div>
+    <div class="scene-vignette"></div>
+  </div>
+
+  <!-- ── hero track: 4 beats of scroll drive the camera through the tree ── -->
+  <section id="hero-track" aria-label="Introduction">
+    <div class="hero-sticky">
+      <div class="hero-scrim" aria-hidden="true"></div>
+      <div class="beat beat-hero" data-beat="0">
+        <p class="label beat-eyebrow">Global Edge Strategies</p>
+        <h1>AI that <em>moves</em> work through your business.</h1>
+        <p class="beat-sub">
+          Custom software and automation for American small businesses,
+          engineered between the US and Chengdu. Behind this text: requests
+          come in, a system decides, work goes where it should.
+        </p>
+        <p class="label beat-hint">Scroll to follow a request ↓</p>
+      </div>
+
+      <div class="beat" data-beat="1">
+        <p class="beat-big">
+          Every request your team handles by hand follows a decision tree.
+        </p>
+        <p class="beat-sub">Our systems learn that tree and walk it for you.</p>
+      </div>
+
+      <div class="beat" data-beat="2">
+        <p class="label">Goldie Group · email triage</p>
+        <p class="beat-big">
+          An email arrives. The system reads it, tags what matters, and routes
+          the job to the right person with context attached.
+        </p>
+      </div>
+
+      <div class="beat" data-beat="3">
+        <p class="beat-big">
+          Email triage. Booking engines. 3D product pipelines. Hardware R&D.
+        </p>
+        <p class="beat-sub">See the work ↓</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── editorial sections ── -->
+  <section id="projects" class="section grain">
+    <div class="wrap">
+      <p class="label section-label" data-reveal>Selected work</p>
+      <h2 data-reveal>From inbox triage to hardware R&D.</h2>
+      <div class="project-grid">
+        <article class="project" data-reveal>
+          <p class="label project-status">Client system</p>
+          <h3>Goldie Group — email triage</h3>
+          <p>
+            Inbound email gets read by an AI layer, classified, and routed to
+            the right worker with the context already attached. The inbox
+            stops being a full-time job.
+          </p>
+        </article>
+        <article class="project" data-reveal>
+          <p class="label project-status">Live product · Ryan is CTO</p>
+          <h3>ShopMyRoom</h3>
+          <p>
+            A photo of a room becomes a furnished, shoppable 3D redesign. An
+            AI pipeline carries the image from upload to interactive space.
+          </p>
+        </article>
+        <article class="project" data-reveal>
+          <p class="label project-status">In production</p>
+          <h3>Bloodline Charters</h3>
+          <p>
+            Booking and scheduling for a Cape Cod charter fishing operation,
+            live at fishingbloodline.com.
+          </p>
+        </article>
+        <article class="project" data-reveal>
+          <p class="label project-status">R&D · open to investment</p>
+          <h3>Wallet e-writer</h3>
+          <p>
+            A wallet-sized e-ink note taker. Write on it, and the notes are
+            digitized. In development, with CAD prototypes complete.
+          </p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="services" class="section section-alt">
+    <div class="wrap">
+      <p class="label section-label" data-reveal>Services</p>
+      <h2 data-reveal>What we build and teach.</h2>
+      <div class="service-list">
+        <div class="service" data-reveal>
+          <h3>AI, explained for owners</h3>
+          <p>
+            Plain-language consults on what LLMs can and can't do for your
+            operation. You leave knowing which parts of your week a system
+            could take over.
+          </p>
+        </div>
+        <div class="service" data-reveal>
+          <h3>Automation pipelines, designed and built</h3>
+          <p>
+            We map the manual decision tree behind a workflow, then build the
+            system that walks it: intake, classification, routing, follow-up.
+          </p>
+        </div>
+        <div class="service" data-reveal>
+          <h3>US market localization</h3>
+          <p>
+            For Chinese companies entering the US: language, positioning, and
+            the psychology of the American buyer.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="section">
+    <div class="wrap about-wrap">
+      <p class="label section-label" data-reveal>About</p>
+      <blockquote class="about-quote" data-reveal>
+        “You won't be replaced by a tractor. You'll be replaced by the horse
+        that learned to drive one.”
+      </blockquote>
+      <p class="about-body" data-reveal>
+        Global Edge Strategies runs between the United States and Chengdu:
+        American business context on one side, engineering depth on the other.
+        We build the systems we sell, including this site.
+      </p>
+    </div>
+  </section>
+
+  <section id="contact" class="section section-alt">
+    <div class="wrap contact-wrap">
+      <p class="label section-label" data-reveal>Contact</p>
+      <h2 data-reveal>Tell us what your team still does by hand.</h2>
+      <p class="contact-sub" data-reveal>
+        We'll tell you which parts a system can take over, and what that would
+        cost. English or 中文.
+      </p>
+      <a class="contact-cta" href="mailto:ryan@gesedge.com" data-reveal>
+        ryan@gesedge.com
+      </a>
+    </div>
+  </section>
+</Base>
+
+<style>
+  /* ── loader ── */
+  #loader {
+    position: fixed;
+    inset: 0;
+    z-index: 60;
+    display: grid;
+    place-items: center;
+    background: var(--ink-deep);
+    transition: opacity 0.5s var(--ease-out), visibility 0.5s;
+  }
+
+  #loader.is-done {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .loader-mark {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .loader-latin {
+    font-weight: 500;
+    font-size: 1.2rem;
+    letter-spacing: 0.34em;
+    text-indent: 0.34em; /* optically recenters tracked caps */
+    color: var(--stroke);
+  }
+
+  .loader-line {
+    display: block;
+    width: 0;
+    height: 1.5px;
+    background: linear-gradient(90deg, var(--warm), var(--cool));
+    animation: loader-draw 1.6s var(--ease-out) forwards;
+  }
+
+  @keyframes loader-draw {
+    to {
+      width: 148px;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #loader {
+      display: none;
+    }
+  }
+
+  /* ── fixed scene layer ── */
+  .scene-layer {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+  }
+
+  .poster {
+    position: absolute;
+    inset: 0;
+    background:
+      radial-gradient(120% 90% at 72% 20%, var(--ink-warm) 0%, transparent 55%),
+      radial-gradient(100% 100% at 30% 80%, var(--ink) 0%, var(--ink-deep) 70%);
+  }
+
+  .poster-tree {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.8s;
+  }
+
+  /* the SVG tree only shows when there is no WebGL scene */
+  :global(html.tier-0) .poster-tree {
+    opacity: 0.55;
+  }
+
+  .scene-canvas {
+    position: absolute;
+    inset: 0;
+  }
+
+  .scene-vignette {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      130% 100% at 50% 50%,
+      transparent 55%,
+      rgba(8, 8, 12, 0.55) 100%
+    );
+  }
+
+  /* ── hero track + beats ── */
+  #hero-track {
+    position: relative;
+    height: 420vh;
+    z-index: 1;
+  }
+
+  .hero-sticky {
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    height: 100svh;
+    overflow: clip;
+  }
+
+  /* legibility layer under the beat text, over the scene */
+  .hero-scrim {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: radial-gradient(
+      70% 85% at 22% 52%,
+      rgba(8, 8, 12, 0.66) 0%,
+      rgba(8, 8, 12, 0.28) 55%,
+      transparent 78%
+    );
+  }
+
+  .beat {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding-inline: var(--page-pad);
+    max-width: min(46rem, 92vw);
+    pointer-events: none;
+  }
+
+  .beat[data-beat='0'] {
+    pointer-events: auto;
+  }
+
+  .beat:not([data-beat='0']) {
+    opacity: 0;
+    visibility: hidden;
+  }
+
+  .beat-eyebrow {
+    margin-bottom: 1.2rem;
+    color: var(--warm-dim);
+  }
+
+  h1 {
+    font-size: var(--text-hero);
+    font-weight: 560;
+    line-height: 1.02;
+    letter-spacing: -0.026em;
+    text-wrap: balance;
+    max-width: 11ch;
+  }
+
+  h1 em {
+    font-style: italic;
+    font-weight: 480;
+  }
+
+  .beat-big {
+    font-size: var(--text-beat);
+    font-weight: 500;
+    line-height: 1.18;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    max-width: 22ch;
+  }
+
+  .beat-sub {
+    margin-top: 1.4rem;
+    max-width: 44ch;
+    color: var(--text-dim);
+    text-wrap: pretty;
+  }
+
+  .beat-hint {
+    margin-top: 2.6rem;
+    color: var(--text-faint);
+  }
+
+  .beat .label + .beat-big {
+    margin-top: 1rem;
+  }
+
+  /* tier 0: no pinned choreography — beats stack as normal content */
+  :global(html.tier-0) #hero-track {
+    height: auto;
+  }
+
+  :global(html.tier-0) .hero-sticky {
+    position: static;
+    height: auto;
+    overflow: visible;
+  }
+
+  :global(html.tier-0) .beat {
+    position: static;
+    opacity: 1 !important;
+    visibility: visible !important;
+    min-height: 60vh;
+    justify-content: center;
+  }
+
+  /* ── editorial sections ── */
+  .section {
+    position: relative;
+    z-index: 2;
+    background: var(--ink);
+    padding-block: var(--space-6);
+    border-top: 1px solid var(--hairline);
+  }
+
+  .section-alt {
+    background: var(--ink-deep);
+  }
+
+  #projects {
+    /* the first solid section slides over the fixed scene */
+    box-shadow: 0 -60px 120px rgba(8, 8, 12, 0.9);
+  }
+
+  .section-label {
+    margin-bottom: 1rem;
+    color: var(--warm-dim);
+  }
+
+  h2 {
+    font-size: var(--text-h2);
+    font-weight: 540;
+    letter-spacing: -0.018em;
+    line-height: 1.1;
+    max-width: 24ch;
+    margin-bottom: var(--space-4);
+  }
+
+  h3 {
+    font-size: var(--text-h3);
+    font-weight: 540;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.6rem;
+  }
+
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(17rem, 1fr));
+    gap: 1px;
+    background: var(--hairline);
+    border: 1px solid var(--hairline);
+  }
+
+  .project {
+    background: var(--ink);
+    padding: var(--space-4) var(--space-3);
+    transition: background 0.35s;
+  }
+
+  .project:hover {
+    background: color-mix(in oklab, var(--ink) 92%, var(--warm) 8%);
+  }
+
+  .project p:not(.label) {
+    color: var(--text-dim);
+    max-width: 38ch;
+  }
+
+  .project-status {
+    margin-bottom: 1.1rem;
+    color: var(--cool-dim);
+  }
+
+  .service-list {
+    display: grid;
+    gap: var(--space-4);
+    grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  }
+
+  .service p {
+    color: var(--text-dim);
+    max-width: 40ch;
+  }
+
+  .about-wrap {
+    max-width: 54rem;
+  }
+
+  .about-quote {
+    font-size: var(--text-beat);
+    font-weight: 500;
+    line-height: 1.25;
+    letter-spacing: -0.015em;
+    text-wrap: balance;
+    margin-block: var(--space-3);
+  }
+
+  .about-body {
+    color: var(--text-dim);
+    max-width: 52ch;
+  }
+
+  .contact-wrap {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .contact-sub {
+    color: var(--text-dim);
+    max-width: 44ch;
+    margin-bottom: var(--space-4);
+  }
+
+  .contact-cta {
+    font-family: var(--font-mono);
+    font-size: clamp(1.1rem, 0.9rem + 1.4vw, 1.8rem);
+    letter-spacing: 0.02em;
+    padding: 0.9em 1.6em;
+    border: 1px solid var(--hairline);
+    border-radius: 999px;
+    background: linear-gradient(
+      100deg,
+      rgba(240, 200, 150, 0.1),
+      rgba(159, 182, 214, 0.1)
+    );
+    transition: border-color 0.3s, transform 0.3s var(--ease-out);
+  }
+
+  .contact-cta:hover {
+    border-color: var(--warm-dim);
+    transform: translateY(-2px);
+  }
+
+  /* endpoint labels live inside the R3F Html portal (global scope) */
+  :global(.ep-label) {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.55rem 0.8rem;
+    border: 1px solid var(--hairline);
+    border-radius: 6px;
+    background: rgba(13, 13, 18, 0.66);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    transform: translateY(-2.4rem);
+    white-space: nowrap;
+    transition: border-color 0.4s;
+  }
+
+  :global(.ep-label.is-hit) {
+    animation: ep-hit 0.9s var(--ease-out);
+  }
+
+  @keyframes ep-hit {
+    0% {
+      border-color: var(--warm);
+      box-shadow: 0 0 22px rgba(240, 200, 150, 0.28);
+    }
+    100% {
+      border-color: var(--hairline);
+      box-shadow: 0 0 0 rgba(240, 200, 150, 0);
+    }
+  }
+
+  :global(.ep-name) {
+    font-weight: 540;
+    font-size: 0.82rem;
+    letter-spacing: 0.01em;
+    color: var(--text);
+  }
+
+  :global(.ep-outcome) {
+    font-family: var(--font-mono);
+    font-size: 0.68rem;
+    letter-spacing: 0.04em;
+    color: var(--text-dim);
+  }
+
+  :global(.ep-status) {
+    font-family: var(--font-mono);
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--cool-dim);
+  }
+
+  @media (max-width: 760px) {
+    :global(.ep-outcome),
+    :global(.ep-status) {
+      display: none;
+    }
+
+    :global(.ep-label) {
+      padding: 0.4rem 0.6rem;
+      transform: translateY(-1.7rem);
+    }
+  }
+</style>
