@@ -54,6 +54,11 @@ its v0 hero/work section are placeholders that The Crossing replaces — do not 
 
 ## Open questions
 - ZH copy review workflow with Shiying (before anything bilingual ships).
+- **2026-10-05, pending Ryan:** Shiying's GitHub username (collaborator invite) · what "include
+  Chengdu Huanqiao" must cover and whether mainland visitors matter (drives hosting) · repo is
+  PUBLIC with `.ai/` strategy docs + client names: keep, make private, or split.
+- Legal CN name is **成都寰桥企业管理咨询服务有限公司**. Live `main` wrongly shows 环桥 in 4 strings
+  (`src/lib/i18n.ts`); fix is on local branch `fix/huanqiao-chinese-name`, unpushed (merge = prod).
 
 ## Active context
 - Scene code: `src/islands/router-scene/` · scroll/beats: `src/scripts/scroll.ts` · page:
