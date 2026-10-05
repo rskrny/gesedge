@@ -48,7 +48,21 @@ HuanQiao's buyers are mainland companies, so the ZH site needs its own delivery 
 - Cloudflare's mainland network (China Network) is Enterprise-only and needs an ICP filing per
   apex domain (Cloudflare docs). Free plan + Tunnel serves China from outside China.
 - A public site served from a mainland server needs an ICP filing, tunnel or not.
-- ICP path for the WFOE: mainland server (≥3-month term) + a domain owned by the WFOE and
-  real-name verified at a China-accredited registrar; filing via Aliyun/Tencent, ~1-3 weeks;
-  备案号 in the footer. Rough year-one cost ~¥150-250 (Kimi's estimate, unverified).
+- ICP path for the WFOE: mainland server (≥3-month term) + a domain held at a mainland-qualified
+  registrar in the WFOE's name. Porkbun can't be filed: either transfer gesedge.com (ties the US
+  brand's domain to the WFOE) or buy a separate HuanQiao `.cn`. 备案号 in the footer, then the
+  public-security filing (公安备案) within 30 days.
+- Cheapest compliant setup (Codex, sourced to Tencent docs 2026-10-05): Tencent Cloud account
+  verified as the WFOE; Chengdu Lighthouse 2c/2GB ~¥52/month list, 3 months qualifies for filing
+  (~¥156 upfront); domain ~¥30-100/yr; DNSPod + SSL free; filing free. Budget 2-6 weeks overall.
+  Kimi's independent estimate: ~¥150-250 year one, 1-3 weeks.
+- ICP enables mainland hosting and helps trust; it does not guarantee Baidu ranking.
 - Stopgap without ICP: Hong Kong hosting. Works today; mainland speed and Baidu trust are weaker.
+- **PIPL:** a contact form collecting mainland visitors' details into Supabase/US systems is a
+  cross-border transfer of personal information — disclose the overseas recipient and get
+  separate consent (PIPL Arts. 38-39).
+
+## Vercel activity (checked 2026-10-05)
+Production deploys only from `main` (last one 2026-06-27). Every push to any other branch makes a
+**preview** deploy + a Vercel email/PR comment. That continues until the Vercel project is
+disconnected or deleted.

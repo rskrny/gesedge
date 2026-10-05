@@ -26,10 +26,13 @@ Rationale: Tunnel needs no inbound ports or static IP and keeps DNS/TLS where it
 porting code slated for replacement is wasted work and adds regression risk.
 Trade-offs / open: Cloudflare free (Tunnel included) has no mainland-China network, so HuanQiao's
 mainland buyers get the slowest path. A site served from a mainland box without ICP filing is
-non-compliant whatever the tunnel does. ICP needs a mainland server plus a domain owned by the WFOE
-and real-name verified at a China-accredited registrar (a Porkbun domain can't be filed — Kimi,
-confirm with Aliyun/Tencent). Likely end-state: one codebase, two delivery paths — GES (EN) on
-Cloudflare; HuanQiao (ZH) on an ICP-filed mainland host under a WFOE-owned domain.
+non-compliant whatever the tunnel does. ICP needs a mainland server plus a domain held at a
+mainland-qualified registrar in the WFOE's name (Porkbun can't be filed — Kimi + Codex/Tencent docs;
+transfer gesedge.com or buy a separate `.cn`). Likely end-state: one codebase, two delivery paths —
+GES (EN) on Cloudflare; HuanQiao (ZH) on an ICP-filed mainland host. Costs: `.ai/research/hosting.md`.
+Update same day: Ryan expected the site to be off Vercel already. With no rebuild deadline the
+Next.js site may stay live for months, which weakens the "port is throwaway" argument — the
+Vercel exit is Ryan's call to make now.
 Reversal trigger: mini-server location or HuanQiao's audience changes; mainland tests show
 Cloudflare is acceptable from China.
 
