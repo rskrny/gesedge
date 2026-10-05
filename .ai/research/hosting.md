@@ -19,7 +19,36 @@ DNS moved from Porkbun to Cloudflare on 2026-10-01. **The site still runs on Ver
   `sullivan-section`, behind Cloudflare Access, team domain gesedge.cloudflareaccess.com).
 - The Access apps and policies in Zero Trust belong to that dashboard.
 
-## Vercel exit — suggested path (from the 2026-10-01 DNS session; NOT started)
+## Vercel exit — status 2026-10-05: worker deployed + tested, DNS NOT switched yet
+- Branch `chore/cloudflare-workers` (off `main`): OpenNext adapter, `wrangler.jsonc` (worker
+  `gesedge`), Next 16.3.8, HSTS header. Test URL: https://gesedge.rskrny.workers.dev
+  (workers.dev is blocked in mainland China — test via VPN).
+- Worker secrets set (same 4 as Vercel): NEXT_PUBLIC_SUPABASE_URL, NEXT_PUBLIC_SUPABASE_ANON_KEY,
+  SUPABASE_SERVICE_ROLE_KEY, GES_ADMIN_PASSWORD. No RESEND key existed — the contact form has
+  never emailed; leads only land in Supabase (`ges_contact_submissions`, seen at /admin).
+- Verified on workers.dev: 15 routes same status + title as live (incl. 404), next/image → webp
+  via Images binding, OG 1200×630, immutable `/_next/static`, HSTS, admin 401/200 + PATCH,
+  contact 400/200 + row landed (test row id 3, archived). Screenshots match live.
+- PR #2 (`chore/cloudflare-workers`) also adds: www → apex 308 in `next.config.ts` (root has its
+  own rule — OpenNext leaves an empty `:path*` literal), `next/image` remote sources locked to the 3
+  Unsplash URLs in use (Images free tier = 5k unique transformations/mo). Vercel preview of PR #2
+  builds fine, so merging is safe while Vercel still serves.
+- Supabase RLS verified: anon can only INSERT into `ges_contact_submissions` / `ges_page_views`;
+  reading leads needs the service-role key. Client page views from the worker land fine.
+- Local `CLOUDFLARE_API_TOKEN` can deploy Workers but can NOT read/edit DNS or zone settings.
+- Worker custom domains: keep them OUT of `wrangler.jsonc` (no `routes` key) and add them in the
+  dashboard. With no `routes` key, deploys leave them alone (proven by `sullivan-section`). With a
+  `routes` key, every deploy overwrites them.
+- Workers Builds (when connected): production branch `main` only, non-production builds OFF,
+  build `npx opennextjs-cloudflare build`, deploy `npx opennextjs-cloudflare deploy`, build vars
+  NEXT_PUBLIC_SUPABASE_URL + NEXT_PUBLIC_SUPABASE_ANON_KEY (inlined at build; runtime secrets are
+  separate and already set).
+- Pre-existing bug (live too): footer "Blog" link, post back-links and sitemap point to `/blog`,
+  which 404s.
+- **Rollback:** remove the Worker custom domains, re-add `A @ 76.76.21.21` and
+  `CNAME www cname.vercel-dns.com` (both DNS-only). Keep the Vercel project ≥48h after cutover.
+
+## Vercel exit — original suggested path (from the 2026-10-01 DNS session)
 Written against the legacy Next.js app on `main`. See "Open question" below before doing it.
 1. Adapt the Next.js 16 app (output standalone; `/api/contact` → Supabase insert + optional Resend
    email; `/api/admin` behind `GES_ADMIN_PASSWORD`) with `@opennextjs/cloudflare` for Workers.

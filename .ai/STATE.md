@@ -30,7 +30,9 @@ foundation build is on a preview URL; its v0 hero/work section are placeholders 
 ## Hosting (verified 2026-10-05) — full detail in `.ai/research/hosting.md`
 - DNS is on **Cloudflare** (since 2026-10-01); the site is still served by **Vercel**. Email
   (Purelymail) and `sullivan.gesedge.com` (a separate Worker) live in the same zone: never touch.
-- Vercel exit is planned but NOT started; move hosting once, with whichever codebase goes live.
+- **Vercel exit in progress (Ryan approved 2026-10-05):** current Next.js site ported to Cloudflare
+  Workers (PR #2), live + tested at https://gesedge.rskrny.workers.dev. Waiting on Ryan for the DNS
+  switch + Workers Builds hookup; runbook + rollback in `hosting.md`. Keep Vercel ≥48h after.
 
 ## Ops gotchas (any provider)
 - **Ryan's system proxy (`HTTP(S)_PROXY/ALL_PROXY=http://192.168.1.30:20170`, no localhost
