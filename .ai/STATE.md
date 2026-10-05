@@ -54,11 +54,14 @@ its v0 hero/work section are placeholders that The Crossing replaces — do not 
 
 ## Open questions
 - ZH copy review workflow with Shiying (before anything bilingual ships).
-- **2026-10-05, pending Ryan:** Shiying's GitHub username (collaborator invite) · what "include
-  Chengdu Huanqiao" must cover and whether mainland visitors matter (drives hosting) · repo is
-  PUBLIC with `.ai/` strategy docs + client names: keep, make private, or split.
+- **Developer Kenny** (GitHub `kawasakiakasei`) invited 2026-10-05 with write access (accept
+  pending). Repo stays PUBLIC (Ryan). Ryan is waiting on Kenny's HuanQiao site ideas.
+- **HuanQiao (2026-10-05):** angle = Chinese companies entering US/EU (FDE, branding, marketing,
+  localization), then GEO/SEO. Hosting target = own mini server via Cloudflare Tunnel. OPEN: where
+  the mini server sits; how mainland buyers get a fast + ICP-compliant path (see DECISIONS.md);
+  whether the WFOE's registered 经营范围 covers the services the site will advertise.
 - Legal CN name is **成都寰桥企业管理咨询服务有限公司**. Live `main` wrongly shows 环桥 in 4 strings
-  (`src/lib/i18n.ts`); fix is on local branch `fix/huanqiao-chinese-name`, unpushed (merge = prod).
+  (`src/lib/i18n.ts`); fix = branch `fix/huanqiao-chinese-name` (merge = prod, Ryan's call).
 
 ## Active context
 - Scene code: `src/islands/router-scene/` · scroll/beats: `src/scripts/scroll.ts` · page:

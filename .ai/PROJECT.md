@@ -16,7 +16,8 @@ work and advanced-but-performant visuals — without being heavy enough to crash
 ## Goals
 - A premium, technically-impressive, cross-cultural site that demonstrates capability
   and converts US SMB prospects into conversations.
-- Easy for Ryan + Shiying to update via a self-hosted CMS (Strapi).
+- Easy for Ryan + the developer to update via git (Astro content collections; Strapi dropped
+  2026-07-06, see DECISIONS.md).
 - Replace the current build; keep the gesedge.com domain.
 - Design direction: **premium × cross-cultural × technically advanced.** More ambitious
   than the current ocean-background + animated globe, but engineered to stay fast.
@@ -24,6 +25,8 @@ work and advanced-but-performant visuals — without being heavy enough to crash
 ## Operator / audience
 - **Operators:** Ryan Kearney (owner; business + frontend/vibecoding) and **Shiying**
   (developer; strongest in Python, backend/API integration, and the server).
+  **Kenny** (developer, Chengdu; GitHub `kawasakiakasei`, write access invited 2026-10-05) —
+  owns HuanQiao site ideas with Ryan. (Is Kenny = Shiying? Unconfirmed; ask Ryan.)
 - **Primary audience (v1):** US SMBs needing custom software / automation. Ryan (MBA →
   tech) can explain AI simply to non-technical buyers.
 - **Register amendment (2026-07-06, Ryan):** the site EXPERIENCE is optimized for the
@@ -31,6 +34,10 @@ work and advanced-but-performant visuals — without being heavy enough to crash
   remains the business goal but is earned through demonstrated capability. See DESIGN.md §1.
 - **Secondary:** cross-border US↔China. Key client: **Safepacific Shipping** (Shanghai;
   Ryan runs their web ops to win LATAM/other export clients shipping out of China).
+- **HuanQiao / Chinese market (Ryan, 2026-10-05):** Chinese companies entering US + EU
+  markets — FDE (forward-deployed engineering), branding, marketing, localization. Once the
+  site is good: heavy GEO + SEO push to drive traffic to the GES/HuanQiao site.
+  Legal CN name: 成都寰桥企业管理咨询服务有限公司 (寰, never 环).
 - **Bilingual model:** all concrete site content in **both EN + ZH**; blog posts stay in
   the author's native language (Ryan = English, Shiying = Chinese) for a local touch.
 
@@ -52,11 +59,11 @@ work and advanced-but-performant visuals — without being heavy enough to crash
   lead-qualification bot).
 
 ## Constraints
-- **Backend/CMS:** **Strapi** (open-source headless CMS), **self-hosted** on a Linux PC
-  at a friend's house (~20 GB RAM, 1 TB — ample for low traffic). Shiying owns the
-  server/API side.
+- **Content:** no CMS — Astro content collections in git (Strapi dropped 2026-07-06).
+- **Hosting target (Ryan, 2026-10-05):** own mini server (hardware pending), served via
+  **Cloudflare Tunnel**. Until then: Vercel. Details + open questions: `.ai/research/hosting.md`.
 - **Frontend:** **Astro + React islands** (React Three Fiber + GSAP for 3D/motion). Ryan + AI build
-  it; Shiying owns Strapi/server. Toolchain: `.ai/research/build-toolchain.md`.
+  it; the developer owns server/backend. Toolchain: `.ai/research/build-toolchain.md`.
 - **Identity/design:** all-dark, light text, tasteful animated gradients (@paper-design/shaders),
   immersive (Igloo-grade). Mark = "Beam" world-bridge (`.ai/research/logo-marks.md`). Type = best FREE
   (grotesk + mono + Alibaba PuHuiTi 3.0 for ZH). Design rules + anti-patterns: `.ai/experts/ui-design-review.md`.

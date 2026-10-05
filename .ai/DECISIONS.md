@@ -13,6 +13,26 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: HuanQiao positioning + hosting direction (self-host behind Cloudflare Tunnel); developer onboarded
+Date: 2026-10-05 · Status: Accepted (Ryan) — mainland-China delivery path still OPEN
+Context: Ryan invited developer Kenny (GitHub `kawasakiakasei`, write) to the repo, which stays
+PUBLIC (Ryan confirmed). DNS moved to Cloudflare 2026-10-01; site still on Vercel. No rebuild deadline.
+Decision: (1) HuanQiao's market angle = Chinese companies entering US + EU markets: FDE, branding,
+marketing, localization. GEO + SEO push once the site is good. (2) Keep building in GitHub; when
+hardware arrives, self-host on an own mini server served via Cloudflare Tunnel. (3) Do NOT port the
+legacy Next.js app to Workers now: move hosting once, with whichever codebase goes live
+(Claude, Codex and Kimi agreed).
+Rationale: Tunnel needs no inbound ports or static IP and keeps DNS/TLS where it already lives;
+porting code slated for replacement is wasted work and adds regression risk.
+Trade-offs / open: Cloudflare free (Tunnel included) has no mainland-China network, so HuanQiao's
+mainland buyers get the slowest path. A site served from a mainland box without ICP filing is
+non-compliant whatever the tunnel does. ICP needs a mainland server plus a domain owned by the WFOE
+and real-name verified at a China-accredited registrar (a Porkbun domain can't be filed — Kimi,
+confirm with Aliyun/Tencent). Likely end-state: one codebase, two delivery paths — GES (EN) on
+Cloudflare; HuanQiao (ZH) on an ICP-filed mainland host under a WFOE-owned domain.
+Reversal trigger: mini-server location or HuanQiao's audience changes; mainland tests show
+Cloudflare is acceptable from China.
+
 ## Decision: Production swap DEFERRED until the punch list is complete (hold decision)
 Date: 2026-07-06 · Status: Accepted
 Context: Ryan asked to "push it all to main" to see the rebuild at gesedge.com. Investigation: Vercel git integration auto-deploys main → production, the project is pinned framework=nextjs (Astro would misbuild/fail), and the branch is an interim one-pager (v0 hero + card grid Ryan already judged below the bar; no routes/contact/中文 — old URLs would 404).

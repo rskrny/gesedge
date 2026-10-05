@@ -36,7 +36,19 @@ Written against the legacy Next.js app on `main`. See "Open question" below befo
 to Workers now is work thrown away at the swap unless the rebuild stays shelved. Decide which
 codebase goes live first, then move hosting once.
 
+## Target (Ryan, 2026-10-05)
+Own mini server (hardware pending) served through **Cloudflare Tunnel**. Location not yet set.
+
 ## China reachability
 Ryan works from mainland China. Cloudflare free-plan custom domains can fail the TLS handshake
 there, and Vercel has its own mainland problems. Test from a US runner, a VPN, or the
-`workers.dev` address. If Chengdu Huanqiao needs mainland visitors, hosting needs its own decision.
+`workers.dev` address.
+
+HuanQiao's buyers are mainland companies, so the ZH site needs its own delivery path:
+- Cloudflare's mainland network (China Network) is Enterprise-only and needs an ICP filing per
+  apex domain (Cloudflare docs). Free plan + Tunnel serves China from outside China.
+- A public site served from a mainland server needs an ICP filing, tunnel or not.
+- ICP path for the WFOE: mainland server (≥3-month term) + a domain owned by the WFOE and
+  real-name verified at a China-accredited registrar; filing via Aliyun/Tencent, ~1-3 weeks;
+  备案号 in the footer. Rough year-one cost ~¥150-250 (Kimi's estimate, unverified).
+- Stopgap without ICP: Hong Kong hosting. Works today; mainland speed and Baidu trust are weaker.
