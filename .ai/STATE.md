@@ -37,6 +37,11 @@ its v0 hero/work section are placeholders that The Crossing replaces — do not 
   **Never push/merge this branch to `main` until the swap is approved.** `deploy_vercel.bat`
   deploys the WORKING DIR to production — never run it on this branch.
 
+## Hosting (verified 2026-10-05) — full detail in `.ai/research/hosting.md`
+- DNS is on **Cloudflare** (since 2026-10-01); the site is still served by **Vercel**. Email
+  (Purelymail) and `sullivan.gesedge.com` (a separate Worker) live in the same zone: never touch.
+- Vercel exit is planned but NOT started; move hosting once, with whichever codebase goes live.
+
 ## Ops gotchas (any provider)
 - **Ryan's system proxy (`HTTP(S)_PROXY/ALL_PROXY=http://192.168.1.30:20170`, no localhost
   exemption) breaks ALL localhost tooling when his proxy client is on** — dev-server requests
