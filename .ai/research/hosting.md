@@ -1,9 +1,17 @@
 # Hosting & DNS — gesedge.com
 <!-- Reference. Verified facts carry a date; re-verify before changing shared state. -->
 
-## Current state (verified live 2026-10-05)
-DNS moved from Porkbun to Cloudflare on 2026-10-01. **The site still runs on Vercel**
-(`curl -sI https://gesedge.com` → `Server: Vercel`, A record → 76.76.21.21).
+## Current state — LIVE ON CLOUDFLARE since 2026-10-05 ~10:58 local
+gesedge.com and www.gesedge.com are Worker custom domains on worker `gesedge` (Server: cloudflare).
+www → 308 → apex (in code). "Always Use HTTPS" ON for the zone (http → 301 https; sullivan fine).
+Post-switch checks passed on the live domain: 15 routes, HSTS, images, OG, admin 401/200, real
+contact submit (row id 4, archived), MX unchanged, sullivan.gesedge.com still behind Access.
+Vercel: project kept as rollback until ≥2026-10-07, Git integration DISCONNECTED (no builds/emails).
+PR #2 merged to `main` (3912a4b). Workers Builds (auto-deploy on merge to main): see below.
+
+## Pre-switch state (historical)
+DNS moved from Porkbun to Cloudflare on 2026-10-01; the site was served by Vercel
+(`A @ 76.76.21.21`, `CNAME www cname.vercel-dns.com`, both DNS-only) until 2026-10-05.
 
 - Registrar: Porkbun (unchanged). Nameservers: quentin.ns.cloudflare.com, selah.ns.cloudflare.com.
 - Zone: Cloudflare Free, on Ryan's personal Cloudflare account. 11 records copied 1:1 from Porkbun:

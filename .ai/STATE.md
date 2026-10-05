@@ -30,9 +30,11 @@ foundation build is on a preview URL; its v0 hero/work section are placeholders 
 ## Hosting (verified 2026-10-05) — full detail in `.ai/research/hosting.md`
 - DNS is on **Cloudflare** (since 2026-10-01); the site is still served by **Vercel**. Email
   (Purelymail) and `sullivan.gesedge.com` (a separate Worker) live in the same zone: never touch.
-- **Vercel exit in progress (Ryan approved 2026-10-05):** current Next.js site ported to Cloudflare
-  Workers (PR #2), live + tested at https://gesedge.rskrny.workers.dev. Waiting on Ryan for the DNS
-  switch + Workers Builds hookup; runbook + rollback in `hosting.md`. Keep Vercel ≥48h after.
+- **gesedge.com is LIVE ON CLOUDFLARE WORKERS (2026-10-05)** — worker `gesedge`, `main` = the
+  Next.js site + OpenNext. Vercel kept as rollback until ≥2026-10-07 (Git disconnected), then
+  delete the project. Rollback + Workers Builds settings in `hosting.md`.
+- Deploying `main` manually: worktree off `main`, `.env.production.local` with the two
+  NEXT_PUBLIC_* values, `npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy`.
 
 ## Ops gotchas (any provider)
 - **Ryan's system proxy (`HTTP(S)_PROXY/ALL_PROXY=http://192.168.1.30:20170`, no localhost
