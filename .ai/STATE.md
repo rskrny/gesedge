@@ -5,28 +5,18 @@
 
 ## Status
 **Rebuild in progress on branch `rebuild/astro-immersive`** (Astro 5 + React islands; `main`
-still holds the legacy live Next.js site). This session locked the **design system — root
-`DESIGN.md` is the binding constitution** (read it before any visual/copy/motion work): awards
-register · world = **THE CROSSING** (night sea, warm West harbor → glass-fiber bridge → cool
-East city; ship; light packets are the work) · Unbounded + IBM Plex Mono · numbered-ledger work
-section · no client names (own ventures exempt) · pointer-fed beams, click = send-a-request ·
-EN+中文 from the foundation. The **foundation build is live on a preview URL** (see Go-live);
-its v0 hero/work section are placeholders that The Crossing replaces — do not polish them.
+still holds the legacy live Next.js site). **Root `DESIGN.md` is the binding design
+constitution** — read it before any visual/copy/motion work (world = THE CROSSING; Unbounded +
+IBM Plex Mono; ledger work section; no client names; EN+中文 from the foundation). The
+foundation build is on a preview URL; its v0 hero/work section are placeholders — don't polish.
 
-## Next actions (DESIGN.md §14 pipeline, in order)
-1. **Greybox previs of The Crossing**: water plane, two shore masses, bridge spline, ship
-   placed at scale (validates the GLB draco-decodes at runtime), camera spline scrubbed by
-   scroll. Untextured. Add a live tweak panel (leva). Suggest building at a `/previs` route so
-   the homepage stays intact.
-2. Atmosphere stack: fog color == background hex, water/ground receiving faked glow, mist
-   particulate, grain+vignette+micro-CA final pass.
-3. Material pass: bridge = fresnel glass-fiber tubes with internal emissive packet core;
-   REPLACE always-on bloom with event bloom; 0–1 real-time lights total.
-4. Cast: parametric harbor works (West) + arrival piers (East) + city-glow + ship.
-5. Interaction: pointer-fed flow, click/tap = send-a-request; Crossing-Rule hairlines in DOM.
-6. HUD/type pass · 7. Ledger work section + full copy rewrite (voice law §10) + i18n
-   scaffolding (en/zh) · 8. Loader overture, PuHuiTi subset, poster regen, real-GPU scene
-   critique · 9. Production swap ONLY per Go-live below.
+## Next actions
+0. **Now (2026-10-05): waiting on Kenny's HuanQiao site ideas** (Ryan's call). No rebuild deadline.
+1. **Greybox previs of The Crossing** (rebuild stalled since 2026-07-06): water plane, two shore
+   masses, bridge spline, ship at scale (validates draco GLB decode), scroll-scrubbed camera
+   spline, untextured, leva tweak panel, at a `/previs` route so the homepage stays intact.
+2. Then DESIGN.md §14 steps 2–9 in order (atmosphere → materials → cast → interaction → HUD/type
+   → ledger + copy + en/zh → loader/poster/GPU critique → production swap per Go-live).
 
 ## Go-live (Ryan's decision 2026-07-06 — binding)
 - **HOLD production** until: Crossing world · ledger · copy rewrite · 中文 · route/contact
@@ -75,5 +65,6 @@ its v0 hero/work section are placeholders that The Crossing replaces — do not 
   group · ShopMyRoom = named (Ryan's venture).
 
 ## Handoff
-Resume: `git switch rebuild/astro-immersive` (branch is pushed to origin) → read `DESIGN.md`
-→ start Next-action 1 (greybox previs). `main`'s STATE.md is a stub pointing here.
+Resume: `git switch rebuild/astro-immersive` → read `DESIGN.md` → Next actions. GitHub's default
+branch `main` (live Next.js) has NO pointer to this branch yet: local `main` holds an unpushed stub
+STATE.md (pushing `main` redeploys production — ask Ryan first).
