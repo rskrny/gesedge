@@ -31,11 +31,11 @@ const translations = {
   "footer.company": { en: "Company", zh: "公司" },
   "footer.contact": { en: "Contact", zh: "联系方式" },
   "footer.startProject": { en: "Start a Project", zh: "开始项目" },
-  "footer.copyright": { en: "Global Edge Strategies LLC", zh: "Global Edge Strategies LLC（环桥策略）" },
+  "footer.copyright": { en: "Global Edge Strategies LLC", zh: "Global Edge Strategies LLC（寰桥策略）" },
   "footer.engineered": { en: "Engineered with precision.", zh: "精工细作。" },
 
   /* ── Homepage ────────────────────────────────────────────── */
-  "home.hero.badge": { en: "Global Edge Strategies", zh: "环桥策略" },
+  "home.hero.badge": { en: "Global Edge Strategies", zh: "寰桥策略" },
   "home.hero.line1": { en: "Technology", zh: "科技" },
   "home.hero.line2a": { en: "That", zh: "连接" },
   "home.hero.line2b": { en: "Bridges", zh: "全球" },
@@ -132,7 +132,7 @@ const translations = {
   "about.title2": { en: "three countries.", zh: "三个国家。" },
   "about.sub": {
     en: "Global Edge Strategies is a technical consultancy that builds custom business systems powered by AI. We build the actual platforms, tools, and infrastructure that our clients use every day.",
-    zh: "环桥策略是一家技术咨询公司，专注于构建AI驱动的定制商业系统。我们打造客户每天使用的实际平台、工具和基础设施。",
+    zh: "寰桥策略是一家技术咨询公司，专注于构建AI驱动的定制商业系统。我们打造客户每天使用的实际平台、工具和基础设施。",
   },
   "about.story.badge": { en: "Our Story", zh: "我们的故事" },
   "about.story.title": { en: "How we", zh: "我们如何" },
@@ -169,7 +169,7 @@ const translations = {
   "about.loc.usEntity": { en: "Global Edge Strategies LLC", zh: "Global Edge Strategies LLC" },
   "about.loc.usCity": { en: "Wyoming", zh: "怀俄明州" },
   "about.loc.cn": { en: "China", zh: "中国" },
-  "about.loc.cnEntity": { en: "Chengdu HuanQiao", zh: "成都环桥" },
+  "about.loc.cnEntity": { en: "Chengdu HuanQiao", zh: "成都寰桥" },
   "about.loc.cnCity": { en: "Chengdu, Sichuan", zh: "四川省成都市" },
   "about.loc.uk": { en: "United Kingdom", zh: "英国" },
   "about.loc.ukEntity": { en: "UK Operations", zh: "英国运营" },
