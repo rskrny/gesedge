@@ -97,13 +97,13 @@ Draft 2026-10-06, built on `.ai/research/redo-interview.md` (Rounds 1–3) and D
 
 **From Ryan:**
 - Naming permission and one real quote each from Goldie, Sullivan and Bloodline
-- Captures of the Goldie and Sullivan UIs
-- US prices
-- The audit price
-- 寰桥 address
-- 2–3 photos
+- ~~Captures of the Goldie and Sullivan UIs~~ done (private)
+- ~~US prices~~ approved (interview, Round 4b)
+- ~~The audit price~~ ¥2,980
+- ~~寰桥 address~~ registered address only (private notes)
+- ~~2–3 photos~~ headshots supplied (private)
 - Approval of the Everglory and C14 wording
-- A cal.com account and hours
+- ~~A cal.com account and hours~~ cal.com/gesedge/30min, 08:00–02:00 China time daily
 - Flipside on the site: yes or no
 
 **From Kenny:**

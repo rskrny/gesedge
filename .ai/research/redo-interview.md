@@ -263,9 +263,28 @@ Sans SC stand-in (PuHuiTi file not available to the tool).
 Inputs: Goldie + Sullivan screens captured read-only (8 screens, private: business/redo-assets-private/);
 headshots supplied (private copies; originals git-excluded locally); Kenny OK to be named as Chinese contact,
 Zhu Shiying (characters not found in docs/email — ask Kenny); 寰桥 has a company bank account (WeCom verification
-can proceed); cal.com account: signup started via Google, waiting on Ryan's Allow.
+can proceed); cal.com account: done (see Round 4b).
 **Identity: Ryan picked C · Dovetail.** He flagged the kit's specimen line "Both sides of the trade, from Chengdu."
 as AI phrasing → it had skipped the copy gate. Fix: kit copy now limited to lines that passed no-ai-slop (headline
 "We build AI systems for US companies and English websites for Chinese factories." + factual company/founder lines);
 rule — nothing unreviewed appears in anything shown to Ryan. Kit build running with mark refinement (must read as a
 dovetail, not an "H").
+
+## Round 4b — prices and call hours (Ryan, 2026-10-06)
+**US prices approved** ("look ok for now"). Website lines (internal anchors stay private):
+- AI operations pilot: workflow review $2,500 (credited toward the build) · builds from $15,000 · support
+  $750/mo (monitoring) or $1,500/mo (monitoring + improvements).
+- Owner's dashboard: setup from $3,000 · $750/mo (reports + monitoring) or $1,500/mo (adds analysis + one
+  improvement a month).
+- Your person in China (advisory only): desk check $750 · supplier visit + decision memo $1,500
+  (Chengdu/Chongqing) · other regions from $2,500 + travel · retainer from $1,500/mo, 3-month minimum.
+- Factory audit (寰桥): ¥2,980, 5 working days, full credit toward a build within 60 days.
+
+**Booking:** cal.com/gesedge (Google SSO, Google Calendar connected for conflicts). Event used on the site:
+cal.com/gesedge/30min. Hours: every day, Asia/Shanghai, 08:00–02:00 (Ryan unavailable 02:00–08:00 China time =
+14:00–20:00 New York in EDT). Verified on the public page from a New York browser. Weekends included by default.
+Event titles/descriptions still cal.com defaults — they go through the copy gate before the site links to them.
+
+**Ask assistant (Q6):** open-weight Qwen or DeepSeek model, can run on a 24 GB-GPU PC in the 寰桥 office behind
+Cloudflare Tunnel. A public Chinese-facing chatbot likely needs China's generative-AI filing. Later phase,
+English first on gesedge.com, answering only from site pages.
