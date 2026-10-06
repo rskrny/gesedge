@@ -136,7 +136,28 @@ that likely fail for a foreign legal rep), ¥300/yr, ~3h + 3–15 working days; 
 form fallback (WeChat ID/phone) with PIPL notice + separate cross-border consent; 公众号 at launch only if ≥2 ZH
 pieces/month; skip 视频号. Blocker: does 寰桥 have a working 对公账户 with online banking?
 
-## Round 2 — offers (research running 2026-10-06)
+**Codex review (adopted):** US automation/retainers = cash engine for 60–90 days; factories = bounded
+validation track (3 PAID audits via warm intros, ¥1.8–3.8k credited to a build) before committing to the
+premium site offer; start with a 5–8-page buyer-ready site, extras priced separately; Inquiry Desk only after
+a paid diagnostic, as a narrow pilot on the client's own tools; client owns spec/regulatory accuracy; moat =
+measurable procurement clarity, not "an American writes your copy"; disclose location to existing clients
+before renewals if they relied on it; ask runway/capacity/priorities before preferences.
+
+## Round 2 — priorities, offers, trust (asked 2026-10-06)
+1. Runway + minimum safe monthly revenue (answer goes to private notes only).
+2. Capacity: Ryan's delivery hours/week; Kenny's hours for Chinese sales/support; can Kenny prospect + close alone?
+3. What must be true at 30 / 60 / 90 days to call this working?
+4. US offers for the site: AI operations pilot (Goldie playbook), owner's dashboard retainer (Sullivan
+   playbook), "your person in China" (advisory).
+5. Factory track: warm intros (Ryan/Kenny/BrandPal) for paid audits this month? BrandPal's clients factories or brands?
+6. Factory offers at launch: paid audit · 5–8-page buyer-ready site · inquiry diagnostic → pilot · Canton Fair
+   follow-up (only with a warm exhibitor). Right/wrong?
+7. Location disclosure to existing US clients before renewals (details in private notes).
+8. Naming permission (Goldie, Sullivan, Bloodline, BrandPal + one quote); 寰桥 对公账户 with online banking;
+   general vs small-scale VAT (专票).
+
+### Answers
+_(pending)_
 Lenses: Supply Chain Strategist (factory market, tariffs, competitors, prices), Cross-Border E-Commerce
 Specialist (exporter digital stack, packaged deliverables), Private Domain Operator (WeCom setup for a WFOE
 with a foreign legal rep), Business Strategist (US offers from real Goldie/Sullivan deliverables, "your person
