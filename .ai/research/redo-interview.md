@@ -83,5 +83,28 @@ parallel feasibility check once the 经营范围/发票 answer is in).
 8. Site's job: A awards showpiece · B sales site that proves capability (fast readable pages + one signature
    3D moment; launch without waiting) · C plain, no 3D. Default B.
 
-### Answers
-_(pending)_
+### Answers (Ryan, 2026-10-06) — public-safe summary
+Full answers incl. revenue live OUTSIDE this public repo: `../business/gesedge-redo-private-notes.md`.
+1. **UK:** "London" = C14 Space (UK; shopmyroom.co.uk, appliedbusinessrealities.com), where Ryan is CTO — a
+   connection, not a GES entity. How to mention it: open. **寰桥** (business license read): owned by Ryan
+   personally (外国自然人独资), not a GES subsidiary → present GES + 寰桥 as sister companies under one founder.
+   Scope covers 软件开发, 信息系统集成, IT/tech consulting, 市场营销策划, 广告设计/代理, video, digital content,
+   design, exhibitions → 发票 fine for web/CRM/marketing work. Not in scope: translation, import-export/purchasing
+   agency → sell localization as marketing/content; any China-sourcing offer stays advisory.
+   **Kenny = Zhu Shiying** (developer, architecture, cheap/local-first tinkerer).
+2. Real clients so far: BrandPal (China; marketing, podcast co-hosting, AI help), Goldie Group and Sullivan &
+   Sullivan (US; word of mouth after the free fishingbloodline.com build). Safepacific/PJCS have not advanced —
+   not proof.
+3. Next 12 months: be discoverable by Chinese **factories** (localization + website/CRM for selling to US/EU;
+   no track record yet → research), more US AI-systems clients like Goldie, and US businesses needing a
+   trusted connection in China.
+5. Open to offers; near-term revenue matters more than polish.
+6. Nameable-candidate clients: Bloodline, Goldie Group, Sullivan & Sullivan, BrandPal (permission still to ask).
+7. Kenny answers Chinese leads. WeCom/WeChat setup complexity → researched in Round 2.
+8. **Site job = B:** sales site that shows the offers and makes inquiry easy; launch without waiting for 3D.
+
+## Round 2 — offers (research running 2026-10-06)
+Lenses: Supply Chain Strategist (factory market, tariffs, competitors, prices), Cross-Border E-Commerce
+Specialist (exporter digital stack, packaged deliverables), Private Domain Operator (WeCom setup for a WFOE
+with a foreign legal rep), Business Strategist (US offers from real Goldie/Sullivan deliverables, "your person
+in China", brand architecture, 30-day revenue moves), Kimi (factory-boss view, RMB pricing, channels).
