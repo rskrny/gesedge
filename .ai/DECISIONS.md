@@ -13,6 +13,33 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: gesedge.com REDO — sales site for two audiences; July design locks revised
+Date: 2026-10-06 · Status: Accepted (Ryan, interview Rounds 1–3) · Revises "Design system locked" (07-06)
+Context: Ryan judged the live site "very bad and vibecoded" and asked for a near-total redo, decided through a
+structured interview (6 agency-agent lenses + Kimi, reviewed by Codex). Record: `.ai/research/redo-interview.md`
+(public-safe) + private notes outside the repo. The business changed since July: 寰桥 now sells to Chinese
+factories going to US/EU; GES sells AI systems to US businesses; revenue is thin.
+Decision: (1) Site job = **sales site that proves capability** (fast, readable, crawlable pages; launch
+without waiting for 3D). Replaces DESIGN.md §1 awards register as the optimization target (craft bar stays).
+(2) **Hero = real work + a small bridge accent**; the full "Crossing" world is shelved. (3) **Mostly dark**;
+DNA from Ryan's loves (igloo.inc, zolplay.com): one sculptural object, corner micro-labels, a coordinates
+line, monochrome restraint. Hated: Linear, Stripe, XTransfer, the current site. (4) **Fonts kept**
+(Unbounded + IBM Plex Mono + PuHuiTi). Logo + palette via the brand-identity skill (3 sets → Ryan picks).
+(5) **GES and 寰桥 = sister companies under one founder** (寰桥 owned by Ryan personally; never "GES 旗下";
+drop 寰桥策略; C14 Space only in Ryan's bio). (6) **Client names: plan for them, confirm before publishing**
+(replaces the blanket ban). (7) **Language by audience, not full mirror**: real server-rendered /zh pages;
+ICP/.cn as a parallel check. (8) **Offers:** US — AI operations pilot, owner's dashboard retainer, "your
+person in China" (advisory only); factories — buyer's-eye audit, buyer-ready English site (5–8 pages), AI
+inquiry diagnostic → pilot. (9) **US retainers are the cash engine for 60–90 days**; factories are a bounded
+test track (discovery via US shipping records, outreach in English, Kenny on calls). (10) **Copy gate:**
+EN via no-ai-slop; ZH via Kenny native → qu-ai-wei → lieflat-less-ai-tone → Kimi.
+Rationale: the decision-makers are now buyers and AI answer engines, not design juries; launch speed matters
+more than a 3D world; the founder's real story (American in Chengdu, US import-operations background, built
+working AI systems) is the moat.
+Trade-offs: less spectacle than The Crossing; per-client permission adds a pre-launch step.
+Reversal trigger: Ryan wants the full immersive world back after the identity is chosen, or factory demand
+proves false after the 60-day test.
+
 ## Decision: HuanQiao positioning + hosting direction (self-host behind Cloudflare Tunnel); developer onboarded
 Date: 2026-10-05 · Status: Accepted (Ryan) — mainland-China delivery path still OPEN
 Context: Ryan invited developer Kenny (GitHub `kawasakiakasei`, write) to the repo, which stays

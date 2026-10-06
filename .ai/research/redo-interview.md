@@ -203,6 +203,28 @@ Specialist (exporter digital stack, packaged deliverables), Private Domain Opera
 with a foreign legal rep), Business Strategist (US offers from real Goldie/Sullivan deliverables, "your person
 in China", brand architecture, 30-day revenue moves), Kimi (factory-boss view, RMB pricing, channels).
 
+## Round 3 — design + pitch (answered 2026-10-06)
+**Reference board ratings** (board: 14 sites, deployed temporarily at ges-refboard.rskrny.workers.dev, noindex):
+love **01 igloo.inc, 06 zolplay.com** · fine 02 Scout Motors, 03 Terminal Industries, 04 Obys, 05 Rela,
+07 14islands, 08 Flexport, 12 Shang Xia, 13 Anker · hate **00 current gesedge.com, 09 Linear, 10 Stripe,
+11 XTransfer**.
+Read: premium studio register with character; NOT generic clean SaaS (Linear/Stripe) and NOT the familiar
+Chinese B2B-service look (XTransfer). Shared DNA of the two loves: one sculptural object as the hero
+(igloo / origami crane), corner micro-labels (HUD / "TASTE · CRAFT · CARE · SOUL"), a coordinates/location
+line ("22.5429°N — 114.0596°E · SZX | CHN"), monochrome restraint, confident one-line positioning; Zolplay
+also has an "Ask Ori" AI assistant.
+1. Hero: **C — real work in the hero (Goldie triage, Sullivan dashboard; anonymized if needed) + a small
+   bridge accent.**
+2. **Mostly dark.**
+3. **Real photos of Ryan: yes. Kenny: no photos** (he can still be named as the Chinese contact — confirm).
+4. **Run the brand-identity skill: yes** (GES + 寰桥, en + zh-Hans).
+5. **Keep July fonts** (Unbounded + IBM Plex Mono; PuHuiTi for ZH) — the skill must not replace type.
+6. Ryan can't pitch a factory in Mandarin for 20 minutes → **Kenny joins calls** with prospects who replied.
+7. White-label for coastal agencies: low margin; only as a connection-builder → deprioritized (no /partners at launch).
+8. **No buying experience. Worked at Everglory Logistics** (US full-service freight forwarder/customs broker
+   with an Asia network — everglorylogistics.com) **as import operations coordinator.** → Honest pitch:
+   "reviewed by an American who worked in US import operations", never "as a US purchasing manager".
+
 ## Tooling for Round 3 (2026-10-06)
 - **brand-identity skill** (github.com/fatihaydost/brand-identity-skill, MIT; suggested by Ryan). Builds
   logo + type + palette together from one idea, avoids AI-default identities, gates on contrast, colour-blind
