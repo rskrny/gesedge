@@ -288,3 +288,16 @@ Event titles/descriptions still cal.com defaults — they go through the copy ga
 **Ask assistant (Q6):** open-weight Qwen or DeepSeek model, can run on a 24 GB-GPU PC in the 寰桥 office behind
 Cloudflare Tunnel. A public Chinese-facing chatbot likely needs China's generative-AI filing. Later phase,
 English first on gesedge.com, answering only from site pages.
+
+## Identity kit — C · Dovetail built (2026-10-06)
+Kit (draft, temporary, noindex): https://ges-refboard.rskrny.workers.dev/kit/ · local: C:\tmp\ges-identity\global-edge-strategies\kit\C\
+(PDF 11 pp, logo set SVG/PNG, zh lockups 寰桥 / 成都寰桥 / GES | 寰桥, tokens css/scss/dtcg/tailwind).
+- Mark: joint stands upright, tail flares 26→48 units (~19° flanks), 3.5-unit gap between pieces; no longer reads as "H".
+  Separate pixel-grid favicon; 32 px reads as a dovetail, 16 px holds but is borderline (reads as a cup in a frame).
+- Palette unchanged: timber #1b1411, Ru Celadon #87b6af, Ash #e4ddd2, ink #f5f2f1. Colour mark only on its timber tile;
+  one-colour version on light grounds.
+- Chinese face: Alibaba PuHuiTi 3.0 (official download), 100% zh-Hans base coverage measured. Licence says free commercial
+  use, but no licence text ships in the files → confirm with Alibaba before filing the 寰桥 lockups as a trademark.
+- Copy in the kit: only gated lines; Chinese site mock shows [PLACEHOLDER] until Kenny writes it. Idea line uses
+  燕尾榫 (Kimi: precise term; 榫卯 is the family) — Kenny to confirm wording for the Chinese site (燕尾榫（榫卯的一种）).
+- Post-review fixes by coordinator: orphaned 司 in the legal name (zh type page), repeated "Brand guidelines" on cover.
