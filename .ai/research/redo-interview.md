@@ -168,6 +168,36 @@ before renewals if they relied on it; ask runway/capacity/priorities before pref
 - Client names: plan as if allowed; confirm before publishing. VAT status unknown — not blocking.
 → Implication: the 60-day China goal needs a factory-acquisition channel plan (no intros, no BD person);
   the site + GEO alone won't deliver it in 60 days. Researching (Round 2b).
+
+## Round 2b — finding factories that can't be found online (Outbound Strategist + Kimi, 2026-10-06)
+Ryan's insight: target factories are by definition invisible to search/AI — discovery must not depend on
+their web presence.
+**List sources (ranked):** (1) US bill-of-lading data — ImportYeti (free; Pro $50/mo): search Chengdu/Zigong/
+Chongqing/Sichuan + product → factories proven to ship to US importers (ocean only; misses trading-company
+exports; mainland access untested). (2) Made-in-China / Alibaba.com storefronts filtered by province →
+export intent, English quality, own-site or not. (3) Exhibitor lists: IAAPA Orlando Nov 16–20 (lanterns),
+Chengdu pump/valve expo, IFFC furniture (四川省家具进出口商会). (4) 企查查 VIP ¥388/yr — verify, don't discover
+(direct exporter? size? boss?). (5) Parks/associations: Chongzhou furniture zone, 家具进出口商会. (6) Policy
+lists: 专精特新 / 小巨人 (cross-check with (1)). Skip: Panjiva, CN customs-data SaaS, EU (no company-level data).
+**Invisibility hook:** product from shipping records → 5 buyer prompts × 3 runs in ChatGPT (search on) +
+Perplexity, fresh US session, dated screenshots → counts ("named 0/30; your Wenzhou rival 9") + the pages AI
+cited = fix list. Opener: "You shipped N containers to US importers this year. The next buyer who asks
+ChatGPT won't find you." Always state answers vary and nobody can guarantee citations; never publish their
+US customers. Weimob (微盟) launched a GEO-for-exporters product Jul 2026 → lead with shipping data + the
+American's read; AI check as evidence.
+**Channels:** #1 signal-triggered 1:1 outreach (≈9 h/wk, English OK; 15 snapshots/wk; touches day 1/4/10/18;
+est. 1–2 paid audits). #2 white-label for coastal 外贸建站/ads agencies (≈4 h/wk; wholesale audit ¥1.2k,
+rewrite ¥500/page; est. 1 paying agency). #3 rooms — 开放成都, 川企出海 salons, furniture chamber (≈3 h/wk; needs
+Mandarin or Kenny present; mostly day-90 pipeline). Not now: short video (by-product clips only), 公众号/知乎,
+猪八戒. Email law: China 2006 rules require consent + "AD" tag for commercial email → researched 1:1 notes only.
+**Honest outlook:** 1–3 paid audits; 2 paying Chinese companies by day 60 ≈ coin flip; builds land after day 60.
+**Kimi:** free 10-min video teardown → paid audit ¥2,980–4,980 (below approval threshold); distrust signals:
+no/machine ZH, no registration/address/real team, no named clients, guru marketing, one-person vibe.
+**Site needs:** /zh/audit (server-rendered, WeChat-fast, prices, deliverables, 5-day turnaround, credit to
+build, WeCom QR + form w/ PIPL, 成都寰桥 legal name, 发票, Kenny named) · method page (prompts, runs, dates,
+variance) · sample snapshot + full sample audit (anonymized public Sichuan exporter; PDF + 3-min video,
+EN+ZH) · /s/[code] noindex snapshot pages · /partners (ZH+EN) · proof (Goldie case w/ permission, Bloodline,
+Ryan bio with real buying experience).
 Lenses: Supply Chain Strategist (factory market, tariffs, competitors, prices), Cross-Border E-Commerce
 Specialist (exporter digital stack, packaged deliverables), Private Domain Operator (WeCom setup for a WFOE
 with a foreign legal rep), Business Strategist (US offers from real Goldie/Sullivan deliverables, "your person
