@@ -235,3 +235,17 @@ also has an "Ask Ori" AI assistant.
   Caveats: 2 days old, single author; Google Fonts only (PuHuiTi not on GF → ZH face may change); ~0.9M tokens
   per run. Plan: run it AFTER Ryan rates the reference board, for GES + 寰桥 (en + zh-Hans), with the live site
   as the "keep/refresh" input.
+
+## Round 3b — identity directions (brand-identity skill, 2026-10-06)
+Board (temporary, noindex): https://ges-refboard.rskrny.workers.dev/identity/ · local: C:\tmp\ges-identity\.
+All three pass every gate (contrast/colour-blind/16–32 px renders); fonts kept; zh-Hans measured with a Noto
+Sans SC stand-in (PuHuiTi file not available to the tool).
+- **A · Mirror Span** (skill's recommendation): 104°03′W (Wyoming) ↔ 104°04′E (Chengdu) as two mirror
+  cantilevers meeting at a joint; West Sand #f0c896 + East Steel #86a8cf on ink #0a0a0e; "104°03′W · 104°04′E"
+  as the corner label. Coordinator's read: best concept, weakest drawing (stepped blocks read as pixel stairs).
+- **B · Deck Slot:** GES wordmark in Unbounded 700, one slot of light cut through the G (slotted G = favicon);
+  Paper #ebebe8 + Yard Line #f2d855 on #0b0b0c. Most refined, closest to igloo's restraint.
+- **C · Dovetail:** 榫卯 dovetail tile; Ru Celadon #87b6af + Ash #e4ddd2 on timber #1b1411. Richest cultural
+  story; the mark reads as an "H".
+- Hybrid proposed by the coordinator: B's slotted-G wordmark (the slot = the 104° meridian line) + A's
+  sand/steel palette + A's "104°03′W · 104°04′E" corner label.
