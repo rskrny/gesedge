@@ -202,3 +202,14 @@ Lenses: Supply Chain Strategist (factory market, tariffs, competitors, prices), 
 Specialist (exporter digital stack, packaged deliverables), Private Domain Operator (WeCom setup for a WFOE
 with a foreign legal rep), Business Strategist (US offers from real Goldie/Sullivan deliverables, "your person
 in China", brand architecture, 30-day revenue moves), Kimi (factory-boss view, RMB pricing, channels).
+
+## Tooling for Round 3 (2026-10-06)
+- **brand-identity skill** (github.com/fatihaydost/brand-identity-skill, MIT; suggested by Ryan). Builds
+  logo + type + palette together from one idea, avoids AI-default identities, gates on contrast, colour-blind
+  sims, glyph coverage incl. zh_Hans, licences; outputs 3 sets as identity cards → picked set → guidelines PDF,
+  SVG/PNG logos, tokens. Reviewed before install (network only Google Fonts / GitHub raw / PyPI via uv /
+  user-given sites; subprocess only its own scripts + uv + browser; no secret reads, no uploads). Installed
+  pinned to commit eeb7d4d at `~/.claude/skills/brand-identity`; `brand.py check` all OK.
+  Caveats: 2 days old, single author; Google Fonts only (PuHuiTi not on GF → ZH face may change); ~0.9M tokens
+  per run. Plan: run it AFTER Ryan rates the reference board, for GES + 寰桥 (en + zh-Hans), with the live site
+  as the "keep/refresh" input.
