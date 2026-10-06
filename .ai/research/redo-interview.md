@@ -249,3 +249,23 @@ Sans SC stand-in (PuHuiTi file not available to the tool).
   story; the mark reads as an "H".
 - Hybrid proposed by the coordinator: B's slotted-G wordmark (the slot = the 104° meridian line) + A's
   sand/steel palette + A's "104°03′W · 104°04′E" corner label.
+
+## Round 4 — site plan decisions (Ryan, 2026-10-06)
+1. Lean launch (~12 pages): **yes**.
+2. US-first homepage: **yes**; **寰桥 gets its own address: huanqiao.gesedge.com** (Chinese site; replaces /zh/ in the
+   spec). Same identity and codebase; host-based routing or a second build. hreflang across the two hosts only for
+   true equivalents. A mainland .cn can later mirror it once ICP is filed.
+3. Audit ¥2,980, 5 working days, **full credit** toward a build within 60 days: **OK**.
+4. Free 15-minute call before payment: **yes** (Kenny on Chinese calls).
+5. US prices: **Ryan asked us to price them** → Pricing Analyst running (anchors from real projects kept private).
+6. "Ask" assistant: Ryan asked which model, and whether it could run locally in the 寰桥 office → answered; later phase.
+7. Retire PJCS, DocProc and the "80%" post: **yes**.
+Inputs: Goldie + Sullivan screens captured read-only (8 screens, private: business/redo-assets-private/);
+headshots supplied (private copies; originals git-excluded locally); Kenny OK to be named as Chinese contact,
+Zhu Shiying (characters not found in docs/email — ask Kenny); 寰桥 has a company bank account (WeCom verification
+can proceed); cal.com account: signup started via Google, waiting on Ryan's Allow.
+**Identity: Ryan picked C · Dovetail.** He flagged the kit's specimen line "Both sides of the trade, from Chengdu."
+as AI phrasing → it had skipped the copy gate. Fix: kit copy now limited to lines that passed no-ai-slop (headline
+"We build AI systems for US companies and English websites for Chinese factories." + factual company/founder lines);
+rule — nothing unreviewed appears in anything shown to Ryan. Kit build running with mark refinement (must read as a
+dovetail, not an "H").
