@@ -34,7 +34,7 @@ foundation build is on a preview URL; its v0 hero/work section are placeholders 
   Next.js site + OpenNext. Vercel kept as rollback until ≥2026-10-07 (Git disconnected), then
   delete the project. Rollback + Workers Builds settings in `hosting.md`.
 - Deploys: merge to `main` → Cloudflare Workers Builds deploys automatically (connected
-  2026-10-05; first auto-build not yet observed). Other branches don't build anywhere.
+  2026-10-05; verified with the PR #1 deploy). Other branches don't build anywhere.
 
 ## Ops gotchas (any provider)
 - **Ryan's system proxy (`HTTP(S)_PROXY/ALL_PROXY=http://192.168.1.30:20170`, no localhost
@@ -55,7 +55,7 @@ foundation build is on a preview URL; its v0 hero/work section are placeholders 
   the mini server sits; how mainland buyers get a fast + ICP-compliant path (see DECISIONS.md);
   whether the WFOE's registered 经营范围 covers the services the site will advertise.
 - Legal CN name is **成都寰桥企业管理咨询服务有限公司**. Live `main` wrongly shows 环桥 in 4 strings
-  (`src/lib/i18n.ts`); fix = branch `fix/huanqiao-chinese-name` (merge = prod, Ryan's call).
+  (`src/lib/i18n.ts`) — FIXED + live 2026-10-05 (PR #1).
 
 ## Active context
 - Scene code: `src/islands/router-scene/` · scroll/beats: `src/scripts/scroll.ts` · page:

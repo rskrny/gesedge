@@ -11,7 +11,7 @@ PR #2 merged to `main` (3912a4b). **Workers Builds CONNECTED 2026-10-05** (Cloud
 rskrny): repo `rskrny/gesedge`, production branch `main`, build `npx opennextjs-cloudflare build`,
 deploy `npx opennextjs-cloudflare deploy`, preview builds OFF, build vars NEXT_PUBLIC_SUPABASE_URL +
 NEXT_PUBLIC_SUPABASE_ANON_KEY (runtime secrets separate, already set). Auto-created build API token.
-First automatic build not yet run — runs on the next merge to `main`.
+First automatic build verified 2026-10-05: PR #1 merge → version 96e79a21 live, 0% errors.
 
 ## Pre-switch state (historical)
 DNS moved from Porkbun to Cloudflare on 2026-10-01; the site was served by Vercel
