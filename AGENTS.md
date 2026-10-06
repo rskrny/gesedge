@@ -154,8 +154,12 @@ exempt), no always-on bloom, no third typeface or hue.
 
 **Required gate (Ryan, 2026-10-06): every piece of English website copy goes through the
 `no-ai-slop` skill before it ships** — edit mode on the draft, then a detect pass on the final text.
-Note in the commit/PR that the pass ran. Chinese copy is outside that skill: Kenny (Zhu Shiying)
-rewrites it natively and a second model (Kimi) reviews it. Copy that skipped the gate does not merge.
+Note in the commit/PR that the pass ran. **Chinese copy** (Simplified): Kenny (Zhu Shiying) writes or
+rewrites it natively (never ship a straight translation of the English), then an edit pass with the
+`qu-ai-wei` skill (brand-copy aware; targets 翻译腔, 客服腔, filler; tell it the copy is for a brand
+website), then a minimal-edit check with `lieflat-less-ai-tone` (whitelist rules, corpus-based), then a
+Kimi review. Both skills preserve facts and never add claims — re-check numbers and names after each pass.
+Copy that skipped the gate does not merge.
 
 ### Banned patterns
 - **No semicolons for contrast.** If you use a semicolon to create contrast between two clauses, the sentence is rejected. Rewrite it.
