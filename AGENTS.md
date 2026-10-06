@@ -152,6 +152,11 @@ rules, PLUS the voice law and kill list in root `DESIGN.md` (§10, §13) — not
 italic-emphasis words in headlines, no uniform card grids, no client names (GES's own ventures
 exempt), no always-on bloom, no third typeface or hue.
 
+**Required gate (Ryan, 2026-10-06): every piece of English website copy goes through the
+`no-ai-slop` skill before it ships** — edit mode on the draft, then a detect pass on the final text.
+Note in the commit/PR that the pass ran. Chinese copy is outside that skill: Kenny (Zhu Shiying)
+rewrites it natively and a second model (Kimi) reviews it. Copy that skipped the gate does not merge.
+
 ### Banned patterns
 - **No semicolons for contrast.** If you use a semicolon to create contrast between two clauses, the sentence is rejected. Rewrite it.
 - **No em dashes for contrast.** Same rule. If the em dash exists to juxtapose two ideas, rewrite it.
