@@ -156,8 +156,18 @@ before renewals if they relied on it; ask runway/capacity/priorities before pref
 8. Naming permission (Goldie, Sullivan, Bloodline, BrandPal + one quote); 寰桥 对公账户 with online banking;
    general vs small-scale VAT (专票).
 
-### Answers
-_(pending)_
+### Answers (Ryan, 2026-10-06) — public-safe summary (full in private notes)
+- Capacity: Ryan + Kenny ~10–20 h/week each for new client work. **Kenny answers inquiries; he does not do BD.**
+- Goals: 30 days — close the US retainers; **60 days — doing business with ≥2 Chinese companies/factories.**
+- **US offers: all three** (AI operations pilot, owner's dashboard retainer, "your person in China" supplier-side
+  connections — the one that uses Ryan's China network).
+- **No factory connections yet. BrandPal = overlapping competitor, not a channel.**
+- Factory offers: audit, buyer-ready site, inquiry diagnostic → pilot. **Canton Fair follow-up dropped.**
+- **Location: non-issue.** US clients know Ryan lives in China; GES is a registered Wyoming company; Ryan travels
+  to the US as needed → site states "based in Chengdu".
+- Client names: plan as if allowed; confirm before publishing. VAT status unknown — not blocking.
+→ Implication: the 60-day China goal needs a factory-acquisition channel plan (no intros, no BD person);
+  the site + GEO alone won't deliver it in 60 days. Researching (Round 2b).
 Lenses: Supply Chain Strategist (factory market, tariffs, competitors, prices), Cross-Border E-Commerce
 Specialist (exporter digital stack, packaged deliverables), Private Domain Operator (WeCom setup for a WFOE
 with a foreign legal rep), Business Strategist (US offers from real Goldie/Sullivan deliverables, "your person
