@@ -103,6 +103,39 @@ Full answers incl. revenue live OUTSIDE this public repo: `../business/gesedge-r
 7. Kenny answers Chinese leads. WeCom/WeChat setup complexity → researched in Round 2.
 8. **Site job = B:** sales site that shows the offers and makes inquiry easy; launch without waiting for 3D.
 
+## Round 2 research synthesis (2026-10-06; sources in agent outputs, key ones below)
+**Market reality (web-sourced; inference labeled):**
+- Local prices: English B2B site ¥5k template / ¥16.8k semi-custom / ¥23.8k multilingual; SEO ¥12.8–19.8k/yr
+  ([Sohu, Sep 2026](https://m.sohu.com/a/1071092953_372233)); Alibaba 出口通 ~¥30k/yr; GEO agencies
+  ¥15–20k/month; OKKI (70% Alibaba-owned) / 孚盟 CRMs ~¥9–24k/yr (third-party). → can't win on build price;
+  win on native-English buyer copy + AI-readable specs + Goldie-style inquiry handling.
+- Tariffs: IEEPA tariffs struck down Feb 2026; new 12.5% Sec. 301 on China (also VN/TH/IN) since Jul 24 2026,
+  stacking on older 301 lists ([GT Law](https://www.gtlaw.com/de/insights/2026/7/ustr-imposes-new-section-301-forced-labor-tariffs-on-imports-from-60-economies));
+  de minimis gone; truce reportedly extended to Jan 2027. EU CBAM definitive phase from 2026 (metals buyers
+  ask for emissions data). → copy must answer landed cost, lead time, compliance; EU-bound may be easier.
+- Sichuan: 80% of exports electromechanical, big assemblers don't hire agencies; reachable clusters — Chengdu
+  women's shoes, Zigong lanterns + pumps/valves, Chongqing motorcycles, Chongzhou furniture, specialty food;
+  Chengdu–Europe rail = EU pitch; 川行天下 subsidizes shows/branding/online marketing (rates unpublished).
+- Buyers use AI for shortlists (Forrester 2026: 94% use AI, verify answers); vendor "73% use ChatGPT" stats
+  are unreliable; nobody can guarantee AI citations.
+- Canton Fair 140th: Oct 15–19, 23–27, Oct 31–Nov 4 2026.
+
+**Offer candidates (consensus of 5 lenses):** Factories (寰桥, RMB): (1) Buyer's-Eye Audit 海外买家视角诊断
+¥3.8–6.8k, first 3 free for case-study rights; (2) Buyer-Ready English Site 买家版英文官网 ¥19.8–29.8k +
+care; (3) Inquiry Desk AI询盘响应系统 ¥12.8–30k setup + ¥1–3k/mo (Goldie pattern, add-on to OKKI/孚盟);
+(4) Trade-show kit / Canton Fair follow-up ¥6.8k–15k; (5) GEO monthly — later. US (GES, USD): (A) AI
+operations pilot (Goldie playbook: paid review → build → shadow mode → retainer); (B) owner's dashboard
+retainer (Sullivan playbook); (C) "your person in China" — advisory only.
+**Don't sell:** translation line items, sourcing/purchasing/import-export, Alibaba 代运营, ads as % of spend,
+an own CRM, guarantees of inquiries/rankings/citations, TikTok/ads (BrandPal's turf), tariff-avoidance advice,
+LinkedIn automation, cold email into Germany.
+**Brand architecture:** sister companies under one founder; never "GES 旗下"; drop 寰桥策略; C14 Space only in
+Ryan's bio ("also CTO of C14 Space (UK), maker of ShopMyRoom"); remove "UK operations / three countries".
+**WeCom (2/5 difficulty):** Kenny registers WeCom under 寰桥, verifies via 对公账户打款 (avoids face-scan routes
+that likely fail for a foreign legal rep), ¥300/yr, ~3h + 3–15 working days; 联系我 QR + 获客链接 on ZH pages;
+form fallback (WeChat ID/phone) with PIPL notice + separate cross-border consent; 公众号 at launch only if ≥2 ZH
+pieces/month; skip 视频号. Blocker: does 寰桥 have a working 对公账户 with online banking?
+
 ## Round 2 — offers (research running 2026-10-06)
 Lenses: Supply Chain Strategist (factory market, tariffs, competitors, prices), Cross-Border E-Commerce
 Specialist (exporter digital stack, packaged deliverables), Private Domain Operator (WeCom setup for a WFOE
