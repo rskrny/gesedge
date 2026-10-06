@@ -33,8 +33,8 @@ foundation build is on a preview URL; its v0 hero/work section are placeholders 
 - **gesedge.com is LIVE ON CLOUDFLARE WORKERS (2026-10-05)** — worker `gesedge`, `main` = the
   Next.js site + OpenNext. Vercel kept as rollback until ≥2026-10-07 (Git disconnected), then
   delete the project. Rollback + Workers Builds settings in `hosting.md`.
-- Deploying `main` manually: worktree off `main`, `.env.production.local` with the two
-  NEXT_PUBLIC_* values, `npx opennextjs-cloudflare build && npx opennextjs-cloudflare deploy`.
+- Deploys: merge to `main` → Cloudflare Workers Builds deploys automatically (connected
+  2026-10-05; first auto-build not yet observed). Other branches don't build anywhere.
 
 ## Ops gotchas (any provider)
 - **Ryan's system proxy (`HTTP(S)_PROXY/ALL_PROXY=http://192.168.1.30:20170`, no localhost

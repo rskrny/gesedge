@@ -7,7 +7,11 @@ www → 308 → apex (in code). "Always Use HTTPS" ON for the zone (http → 301
 Post-switch checks passed on the live domain: 15 routes, HSTS, images, OG, admin 401/200, real
 contact submit (row id 4, archived), MX unchanged, sullivan.gesedge.com still behind Access.
 Vercel: project kept as rollback until ≥2026-10-07, Git integration DISCONNECTED (no builds/emails).
-PR #2 merged to `main` (3912a4b). Workers Builds (auto-deploy on merge to main): see below.
+PR #2 merged to `main` (3912a4b). **Workers Builds CONNECTED 2026-10-05** (Cloudflare GitHub app on
+rskrny): repo `rskrny/gesedge`, production branch `main`, build `npx opennextjs-cloudflare build`,
+deploy `npx opennextjs-cloudflare deploy`, preview builds OFF, build vars NEXT_PUBLIC_SUPABASE_URL +
+NEXT_PUBLIC_SUPABASE_ANON_KEY (runtime secrets separate, already set). Auto-created build API token.
+First automatic build not yet run — runs on the next merge to `main`.
 
 ## Pre-switch state (historical)
 DNS moved from Porkbun to Cloudflare on 2026-10-01; the site was served by Vercel
