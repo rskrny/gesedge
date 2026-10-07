@@ -301,3 +301,20 @@ Kit (draft, temporary, noindex): https://ges-refboard.rskrny.workers.dev/kit/ ·
 - Copy in the kit: only gated lines; Chinese site mock shows [PLACEHOLDER] until Kenny writes it. Idea line uses
   燕尾榫 (Kimi: precise term; 榫卯 is the family) — Kenny to confirm wording for the Chinese site (燕尾榫（榫卯的一种）).
 - Post-review fixes by coordinator: orphaned 司 in the legal name (zh type page), repeated "Brand guidelines" on cover.
+
+## Round 5 — copy answers (Ryan, 2026-10-07)
+Reply time one working day ✓ · form retention 24 months ✓ · Everglory + C14 on About ✓ · desk-check scope and the
+audit's AI assistants delegated to Claude.
+- **Desk check ($750):** public-record lookups only (registration, lawsuits/penalties, US shipment records, whether
+  claimed certificates appear in issuers' databases) + factory-vs-trading-company read, written report. Never
+  "verify / inspect / guarantee".
+- **Audit engines: ChatGPT, Google AI Overviews, Perplexity.** Directional data (secondary sources, mixed quality):
+  ChatGPT ~63–75% of AI referrals, Gemini ~11%, Perplexity ~7%, Copilot ~4%, Claude ~3% overall but ~18% on B2B
+  (software-heavy) sites; AI Overviews show on ~half of US Google queries (seranking.com, higoodie.com,
+  data-mania.com, 2026). Three engines = three different retrieval stacks. Method: run logged-out through a US
+  connection, screenshot each answer; script it (OpenAI web search, Gemini grounding, Perplexity Sonar) only if the
+  manual run on Kenny's sample audit takes more than ~2 hours.
+- **Ryan: GEO audits are getting competitive.** Agreed: automated trackers (Profound, Peec AI, Otterly, Semrush/
+  Ahrefs AI tools) do the snapshot cheaper. The snapshot stays one section; the sellable parts are the native-English
+  buyer-side review, delivery in Chinese by people in Chengdu with a free call, the fix list, and the credit toward a
+  build.

@@ -47,7 +47,7 @@ export const t = {
     getTitle: ph('section: what you get'),
     get: [
       ph('notes on every page from a foreign buyer’s point of view'),
-      ph('AI snapshot: 5 buyer questions × 3 runs in the main AI assistants, dated screenshots'),
+      ph('AI snapshot: 5 buyer questions × 3 runs in ChatGPT, Google AI Overviews and Perplexity, dated screenshots'),
       ph('fixes in priority order'),
       ph('report in Chinese and English, plus a short video walkthrough'),
     ],
