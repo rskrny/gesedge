@@ -62,13 +62,14 @@ async function mail(env, row, zh) {
   const enc = new TextEncoder();
   const b64 = (str) => { let bin = ''; for (const b of enc.encode(str)) bin += String.fromCharCode(b); return btoa(bin); };
   const oneLine = (str) => String(str).replace(/[\r\n]+/g, ' ');
-  const subject = `${zh ? '[寰桥] ' : ''}Website message from ${oneLine(row.name)}${row.company ? ` (${oneLine(row.company)})` : ''}`.slice(0, 150);
+  const subject = `${zh ? '[Huanqiao] ' : ''}Website message from ${oneLine(row.name)}${row.company ? ` (${oneLine(row.company)})` : ''}`.slice(0, 150);
+  const ascii = /^[ -~]*$/.test(subject); // encode only when needed: needless base64 subjects score as spam
   const body = `Name: ${row.name}\n${zh ? 'WeChat/phone' : 'Email'}: ${row.email}\nCompany: ${row.company ?? '-'}\n\n${row.message}\n`;
   const message = [
     `From: gesedge.com website <${from}>`,
     `To: <${to}>`,
     ...(zh ? [] : [`Reply-To: <${row.email}>`]), // validated: no spaces or line breaks
-    `Subject: =?UTF-8?B?${b64(subject)}?=`,
+    `Subject: ${ascii ? subject : `=?UTF-8?B?${b64(subject)}?=`}`,
     `Date: ${new Date().toUTCString()}`,
     `Message-ID: <${crypto.randomUUID()}@gesedge.com>`,
     'MIME-Version: 1.0',
@@ -94,6 +95,7 @@ async function mail(env, row, zh) {
     }
     const got = buf; buf = '';
     if (got.match(done)[1] !== String(code)) throw new Error(`wanted ${code}, got ${got.trim().slice(0, 120)}`);
+    return got.trim();
   };
   const send = (line) => writer.write(enc.encode(line + '\r\n'));
   const session = async () => {
@@ -103,7 +105,8 @@ async function mail(env, row, zh) {
     await send(`MAIL FROM:<${from}>`); await expect(250);
     await send(`RCPT TO:<${to}>`); await expect(250);
     await send('DATA'); await expect(354);
-    await writer.write(enc.encode(message)); await expect(250);
+    await writer.write(enc.encode(message));
+    console.log('smtp accepted:', (await expect(250)).slice(0, 120)); // queue id, no message content
     await send('QUIT');
     return true;
   };
