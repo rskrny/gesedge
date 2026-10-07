@@ -10,9 +10,10 @@ import { HOST, HQ, ZH_LIVE } from '../../shared/site';
   path="/exporters/"
   alt="/audit/"
 >
-  <div class="wrap head">
+  <div class="wrap page-head">
+    <p class="label"><span lang="zh-CN">成都寰桥</span> · Chengdu</p>
     <h1 class="display h1">Your factory’s website, reviewed from a US buyer’s point of view.</h1>
-    <p class="muted">For export managers at Chinese factories. Our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your website and checks how AI assistants describe your company.</p>
+    <p class="lede">For export managers at Chinese factories. Our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your website and checks how AI assistants describe your company.</p>
     <p class="ctas">{ZH_LIVE
       ? <a class="btn" href={HOST.zh + '/audit/'} hreflang="zh-CN">Chinese version for your boss →</a>
       : <a class="btn" href="/contact/">Contact</a>}</p>
@@ -56,10 +57,8 @@ import { HOST, HQ, ZH_LIVE } from '../../shared/site';
 </Page>
 
 <style>
-  .head { padding-top: 56px; padding-bottom: 48px; }
-  .head p { margin-top: 20px; }
-  .ctas { margin-top: 28px; }
+  .page-head .ctas { margin-top: 36px; }
   .list { margin: 0; padding-left: 1.1em; }
   .list li { margin-bottom: 0.6em; }
-  .price { color: var(--celadon); }
+  .price { font: 400 18px/1.6 var(--sans); border-left: 2px solid var(--celadon); padding-left: 16px; }
 </style>

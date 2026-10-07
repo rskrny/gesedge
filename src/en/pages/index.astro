@@ -1,14 +1,15 @@
 ---
 // Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Don't edit wording here without re-running the gate.
+// Layout: comps A (joint hero, coordinates strip, ledger) + B (real-work screenshot), DESIGN.md §5–6.
 import Page from '../../shared/layouts/Page.astro';
-import TriageFigure from '../../shared/components/TriageFigure.astro';
-import { BOOKING, EMAIL, COORDS, CANONICAL, GES } from '../../shared/site';
+import Joint from '../../shared/components/Joint.astro';
+import { BOOKING, EMAIL, CANONICAL, GES } from '../../shared/site';
 import { work, who } from '../work';
 
 const offers = [
-  { n: '01', name: 'AI operations pilot', body: 'For teams that spend hours a day sorting email, re-keying orders, or chasing status updates. We start with a paid review of one workflow, build one system for it, and run that system beside your team until its output has been checked.', price: 'Review $2,500, credited to the build. Builds from $15,000.' },
-  { n: '02', name: 'Owner’s dashboard', body: 'One private page that shows what is happening across your business, rebuilt every night from the systems you already use.', price: 'Setup from $3,000, then from $750 a month.' },
-  { n: '03', name: 'Your person in China', body: 'For US companies that buy from Chinese suppliers and need someone on the ground in China. Desk checks, supplier visits, and a written memo to help you decide. Advisory only. We never handle goods or money.', price: 'Desk check $750.' },
+  { n: '01', name: 'AI operations pilot', body: 'For teams that spend hours a day sorting email, re-keying orders, or chasing status updates. We start with a paid review of one workflow, build one system for it, and run that system beside your team until its output has been checked.', price: ['Review $2,500, credited to the build', 'Builds from $15,000'] },
+  { n: '02', name: 'Owner’s dashboard', body: 'One private page that shows what is happening across your business, rebuilt every night from the systems you already use.', price: ['Setup from $3,000', 'then from $750 a month'] },
+  { n: '03', name: 'Your person in China', body: 'For US companies that buy from Chinese suppliers and need someone on the ground in China. Desk checks, supplier visits, and a written memo to help you decide. Advisory only. We never handle goods or money.', price: ['Desk check $750', 'Supplier visit $1,500'] },
 ];
 const steps = [
   { name: 'Review', body: 'A paid look at one workflow. You get a written plan and a fixed price.' },
@@ -16,6 +17,7 @@ const steps = [
   { name: 'Shadow mode', body: 'The system runs beside your team, and its output is checked before anyone relies on it.' },
   { name: 'Support', body: '$750 a month for monitoring, or $1,500 a month with improvements.' },
 ];
+const [lead, ...rest] = work;
 const org = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -35,62 +37,77 @@ const org = {
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(org)} />
 
-  <div class="hero wrap">
-    <div class="corners label" aria-hidden="true"><span>{COORDS}</span><span>Based in Chengdu</span></div>
-    <div class="grid">
-      <div class="s-7 lead">
+  <div class="hero">
+    <div class="wrap stage">
+      <div class="lead">
+        <p class="label eyebrow">AI systems · China advisory · Since 2024</p>
         <h1 class="display h1">We build AI systems for US companies and English websites for Chinese factories.</h1>
-        <p class="sub">Global Edge Strategies is a Wyoming company, and its sister company <span lang="zh-CN">成都寰桥</span> is in Chengdu. Ryan Kearney runs both.</p>
+        <p class="lede">Global Edge Strategies is a Wyoming company, and its sister company <span lang="zh-CN">成都寰桥</span> is in Chengdu. Ryan Kearney runs both.</p>
         <p class="ctas"><a class="btn" href={BOOKING}>Book a call</a> <a class="btn ghost" href="/work/">See the work</a></p>
+        <p class="aside"><a href="/exporters/">For Chinese factories selling to US buyers →</a></p>
       </div>
-      <div class="s-5 fig">
-        <TriageFigure caption="Illustration of a live email triage system, with sample messages." />
-      </div>
+      <div class="obj"><Joint /></div>
     </div>
-    <div class="split">
-      <a href="#services">Three services for US businesses ↓</a>
-      <a href="/exporters/">For Chinese factories selling to US buyers →</a>
-    </div>
+    <div class="wrap hud label" aria-hidden="true"><span>104°03′W · Wyoming</span><span>Two companies, one founder</span><span>Chengdu · 104°04′E</span></div>
   </div>
+
+  <section class="band proof" aria-labelledby="proof-title">
+    <div class="wrap proof-grid">
+      <div class="proof-copy">
+        <p class="label"><span class="num">01</span> &nbsp;Systems in use</p>
+        <h2 class="display h2" id="proof-title">{lead.title}</h2>
+        <p class="label meta">{who(lead)}<br />{lead.meta.split(' · ').pop()}</p>
+        <p class="muted">{lead.home}</p>
+        <p><a href={`/work/#${lead.id}`}>More on the work →</a></p>
+      </div>
+      <figure class="shot">
+        <div class="tilt">
+          <img src={lead.image!.src} alt={lead.image!.alt} width="1600" height="887" fetchpriority="high" />
+          <span class="pin" style="left:45.2%;top:20.5%" aria-hidden="true">1</span>
+          <span class="pin" style="left:34%;top:65.5%" aria-hidden="true">2</span>
+        </div>
+        <figcaption>
+          <ol class="legend">
+            <li><span class="pin" aria-hidden="true">1</span> On track, at risk, or overdue against each ticket’s target date</li>
+            <li><span class="pin" aria-hidden="true">2</span> Sorted into one of 29 categories</li>
+          </ol>
+          <p class="label">Real screen · client data blurred</p>
+        </figcaption>
+      </figure>
+    </div>
+    <ol class="wrap also" start="2">
+      {rest.map((w, i) => (
+        <li>
+          <span class="num">{String(i + 2).padStart(2, '0')}</span>
+          <div><h3 class="h3">{w.title}</h3><p class="label meta">{who(w)} · {w.meta.split(' · ').pop()}</p><p class="muted">{w.home}</p></div>
+        </li>
+      ))}
+    </ol>
+  </section>
 
   <section id="services">
     <div class="wrap">
-      <h2 class="label">What we do for US businesses</h2>
-      <ol class="rows">
+      <div class="sec-head"><h2 class="label">What we do for US businesses</h2><p class="display h2">Three services, each with a fixed price agreed before work starts.</p></div>
+      <ol class="ledger">
         {offers.map((o) => (
-          <li class="grid">
-            <span class="ord s-2">{o.n}</span>
-            <h3 class="h3 s-3">{o.name}</h3>
-            <div class="s-7"><p>{o.body}</p><p class="price">{o.price}</p></div>
+          <li>
+            <span class="ord">{o.n}</span>
+            <h3 class="h3">{o.name}</h3>
+            <p>{o.body}</p>
+            <p class="price">{o.price[0]}<span>{o.price[1]}</span></p>
           </li>
         ))}
       </ol>
-      <p class="more"><a href="/services/">All services and prices →</a></p>
+      <p class="ctas after"><a class="btn" href={BOOKING}>Book a call</a> <a class="btn ghost" href="/services/">All services and prices</a></p>
     </div>
   </section>
 
   <section>
     <div class="wrap">
-      <h2 class="label">Systems in use</h2>
-      <ol class="rows">
-        {work.map((w, i) => (
-          <li class="grid">
-            <span class="ord s-2">{String(i + 1).padStart(2, '0')}</span>
-            <div class="s-3"><h3 class="h3">{w.title}</h3><p class="muted meta">{who(w)} · {w.meta.split(' · ').pop()}</p></div>
-            <p class="s-7">{w.home}</p>
-          </li>
-        ))}
-      </ol>
-      <p class="more"><a href="/work/">More on the work →</a></p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap">
-      <h2 class="label">How a project runs</h2>
-      <ol class="steps grid">
+      <div class="sec-head"><h2 class="label">How a project runs</h2></div>
+      <ol class="route">
         {steps.map((s, i) => (
-          <li class="s-3"><span class="ord">{String(i + 1).padStart(2, '0')}</span><h3 class="h3">{s.name}</h3><p>{s.body}</p></li>
+          <li><span class="num">{String(i + 1).padStart(2, '0')}</span><h3 class="h3">{s.name}</h3><p class="muted">{s.body}</p></li>
         ))}
       </ol>
     </div>
@@ -98,43 +115,73 @@ const org = {
 
   <section>
     <div class="wrap grid">
-      <h2 class="label s-3">Who you work with</h2>
-      <div class="s-7">
+      <h2 class="label s-4">Who you work with</h2>
+      <div class="s-8">
         <p class="big">Ryan Kearney is an American who lives in Chengdu. He coordinated import operations at a freight forwarder in Boston before he started building software, and he built every system on this page. Zhu Shiying, a developer in Chengdu, works on new builds and with Chinese-speaking clients.</p>
         <p><a href="/about/">About →</a></p>
       </div>
     </div>
   </section>
 
-  <section class="close">
-    <div class="wrap">
-      <h2 class="display h2">Book a call</h2>
-      <p>30 minutes on video to see whether a review makes sense. Times show in your timezone. Or email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
-      <p><a class="btn" href={BOOKING}>Book a call</a></p>
+  <section class="band close">
+    <div class="wrap grid">
+      <h2 class="display h1 s-5">Book a call</h2>
+      <div class="s-7">
+        <p class="lede">30 minutes on video to see whether a review makes sense. Times show in your timezone. Or email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+        <p><a class="btn" href={BOOKING}>Book a call</a></p>
+      </div>
     </div>
   </section>
 </Page>
 
 <style>
-  .hero { position: relative; padding-top: 56px; padding-bottom: 32px; }
-  .corners { display: flex; justify-content: space-between; margin-bottom: 40px; }
-  .lead { align-self: center; }
-  .sub { margin-top: 24px; color: var(--muted); }
-  .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
-  .fig { align-self: center; }
-  .split { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 56px;
-    padding-top: 16px; border-top: 1px solid var(--line); font-size: 15px; }
-  .split a { color: var(--ink); text-decoration: none; }
-  .split a:hover { color: var(--celadon); }
-  h2.label { margin-bottom: 24px; }
-  .rows h3 { margin-top: 4px; }
-  .price { color: var(--celadon); margin: 0; }
-  .meta { font-size: 14px; margin-top: 6px; }
-  .more { margin: 24px 0 0; }
-  .steps { list-style: none; padding: 0; margin: 0; }
-  .steps li { border-top: 1px solid var(--line); padding-top: 16px; }
-  .steps h3 { margin: 8px 0; }
-  .big { font-size: clamp(1.05rem, 1.6vw, 1.25rem); }
+  /* proof band: real screen, tilted once (comp B) */
+  .proof { overflow: hidden; }
+  .proof-grid { display: grid; grid-template-columns: 4fr 8fr; gap: 56px; align-items: center; }
+  .proof-copy h2 { margin: 20px 0 12px; }
+  .proof-copy .meta { margin-bottom: 24px; }
+  .shot { margin: 0; perspective: 1600px; }
+  .tilt { position: relative; transform: rotateY(-8deg) rotateX(2deg); transform-origin: left center; }
+  .tilt img { width: 100%; border-radius: 6px; box-shadow: 0 40px 120px rgba(0, 0, 0, 0.55), 0 0 0 1px var(--line); }
+  .pin { display: inline-grid; place-items: center; width: 22px; height: 22px; border-radius: 50%; background: var(--celadon);
+    color: var(--ground); font: 500 11px/1 var(--mono); letter-spacing: 0; }
+  .tilt .pin { position: absolute; transform: translate(-50%, -50%); box-shadow: 0 0 0 4px rgba(135, 182, 175, 0.25); }
+  figcaption { margin-top: 36px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 12px 32px; }
+  figcaption p { margin: 0; }
+  .legend { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 28px; font-size: 15px; }
+  .legend li { display: flex; align-items: center; gap: 10px; }
+  .also { list-style: none; margin-top: clamp(64px, 7vw, 96px); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+  .also li { display: grid; grid-template-columns: 48px 1fr; gap: 8px; border-top: 1px solid var(--line); padding-top: 28px; }
+  .also .meta { margin: 10px 0 14px; }
+  .also p.muted { font-size: 17px; margin: 0; }
+
+  .after { margin: 40px 0 0; }
+
+  /* route: one line, four stops */
+  .route { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); position: relative; }
+  .route::before { content: ''; position: absolute; left: 0; right: 0; top: 34px; height: 1px; background: var(--line); }
+  .route::after { content: ''; position: absolute; top: 31px; left: 0; width: 7px; height: 7px; border-radius: 50%; background: var(--celadon); animation: travel 9s linear infinite; }
+  .route li { position: relative; padding-right: 32px; }
+  .route li::before { content: ''; position: absolute; top: 30px; left: 0; width: 9px; height: 9px; border-radius: 50%; background: var(--ground); border: 1px solid var(--celadon); }
+  .route .num { display: block; margin-bottom: 36px; }
+  .route h3 { margin-bottom: 10px; }
+  .route p { font-size: 17px; margin: 0; }
+  @keyframes travel { 0% { left: 0; opacity: 0; } 4% { opacity: 1; } 90% { opacity: 1; } 100% { left: calc(100% - 7px); opacity: 0; } }
+
+  .big { font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1.5; max-width: 34em; }
   .close .btn { margin-top: 8px; }
-  .close h2 { margin-bottom: 16px; }
+
+  @media (max-width: 1100px) {
+    .proof-grid { grid-template-columns: 1fr; gap: 48px; }
+    .tilt { transform: none; }
+  }
+  @media (max-width: 860px) {
+    .tilt .pin { width: 18px; height: 18px; font-size: 10px; }
+    .also { grid-template-columns: 1fr; }
+    .route { grid-template-columns: 1fr; gap: 36px; padding-left: 28px; }
+    .route::before { left: 4px; right: auto; top: 8px; bottom: 8px; width: 1px; height: auto; }
+    .route::after { display: none; }
+    .route li::before { left: -28px; top: 6px; }
+    .route .num { margin-bottom: 8px; }
+  }
 </style>

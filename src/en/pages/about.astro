@@ -21,12 +21,12 @@ const person = {
   path="/about/"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
-  <div class="wrap head"><h1 class="display h1">About</h1></div>
+  <div class="wrap page-head"><p class="label">Who you work with</p><h1 class="display h1">About</h1></div>
 
   <section>
     <div class="wrap grid">
       <h2 class="h3 s-4">Ryan Kearney</h2>
-      <p class="s-8">American, based in Chengdu. B.S., Massachusetts Maritime Academy. Import operations coordinator at Everglory Logistics, a freight forwarder and customs broker in Boston, 2021–2022. MBA, Sichuan University. Started Global Edge Strategies in 2024 and builds its systems himself. Also CTO of C14 Space, the UK company that makes ShopMyRoom.</p>
+      <p class="s-8 lead-p">American, based in Chengdu. B.S., Massachusetts Maritime Academy. Import operations coordinator at Everglory Logistics, a freight forwarder and customs broker in Boston, 2021–2022. MBA, Sichuan University. Started Global Edge Strategies in 2024 and builds its systems himself. Also CTO of C14 Space, the UK company that makes ShopMyRoom.</p>
     </div>
   </section>
 
@@ -52,8 +52,8 @@ const person = {
 </Page>
 
 <style>
-  .head { padding-top: 56px; padding-bottom: 48px; }
   .cos { list-style: none; padding: 0; margin: 0 0 1.5em; }
   .cos li { margin-bottom: 1em; }
   .cos strong { font-weight: 500; }
+  .lead-p { font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.55; }
 </style>

@@ -4,7 +4,7 @@ import Page from '../../../shared/layouts/Page.astro';
 import { BOOKING, EMAIL } from '../../../shared/site';
 ---
 <Page title="Contact · Global Edge Strategies" description="Book a 30-minute call with Ryan Kearney, or send a note." path="/contact/">
-  <div class="wrap head">
+  <div class="wrap page-head">
     <h1 class="display h1">Contact</h1>
   </div>
   <section>
@@ -28,11 +28,10 @@ import { BOOKING, EMAIL } from '../../../shared/site';
 </Page>
 
 <style>
-  .head { padding-top: 56px; padding-bottom: 48px; }
   .form { display: grid; gap: 18px; max-width: 640px; }
-  .form label { display: grid; gap: 6px; font-size: 15px; }
+  .form label { display: grid; gap: 8px; font-size: 15px; color: var(--muted); }
   .form input, .form textarea {
-    font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px;
+    font: 400 17px/1.5 var(--sans); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 12px 14px;
   }
   .form input:focus, .form textarea:focus { border-color: var(--celadon); outline: none; }
   .form button { justify-self: start; cursor: pointer; }

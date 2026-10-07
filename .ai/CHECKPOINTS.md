@@ -25,3 +25,4 @@
 - 2026-10-05 — gesedge.com moved Vercel → Cloudflare Workers (OpenNext port, PR #2 merged; www→apex, HSTS, Always Use HTTPS; live checks passed; Vercel Git disconnected, project kept 48h for rollback). Developer Kenny (kawasakiakasei) onboarded. 寰桥 name fix = PR #1 (open).
 - 2026-10-06 · Redo v1: Dovetail identity approved, DESIGN.md rewritten, Astro two-site build on redo/site, gated EN copy, ZH shell for Kenny, previews live on workers.dev.
 - 2026-10-07 · Redo v1 hardened (Google booking, Purelymail SMTP form email, redacted work shots, share images, prod config) but Ryan rejected the look; three homepage comps on refboard/comps awaiting his pick; swap on hold.
+- 2026-10-07 · Ryan picked comps A + B. Site restyled to the merge (joint hero, real-work proof band, ledger, Plex Sans body), reviewed by Codex/Kimi/DeepSeek, copy gate run, previews redeployed; awaiting Ryan's review.

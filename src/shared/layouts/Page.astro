@@ -1,8 +1,9 @@
 ---
 // Page shell for both sites: head (SEO, fonts), header, footer. SITE picks the language and chrome.
 import '@fontsource-variable/unbounded/wght.css';
-import '@fontsource/ibm-plex-mono/400.css';
-import '@fontsource/ibm-plex-mono/500.css';
+import '@fontsource/ibm-plex-sans/latin-400.css';
+import '@fontsource/ibm-plex-sans/latin-500.css';
+import '@fontsource/ibm-plex-mono/latin-500.css';
 import '../styles/base.css';
 import Logo from '../components/Logo.astro';
 import { SITE, PREVIEW, HOST, CANONICAL, EMAIL, BOOKING, COORDS, GES, HQ, ZH_LIVE } from '../site';
@@ -48,7 +49,7 @@ const here = (href: string) => path.startsWith(href);
     <meta property="og:image:width" content="1200" />
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#1b1411" />
+    <meta name="theme-color" content="#140e0b" />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png" />
     <link rel="apple-touch-icon" href="/share.png" />
@@ -60,7 +61,7 @@ const here = (href: string) => path.startsWith(href);
     <a class="skip" href="#main">{zh ? t.skip : 'Skip to content'}</a>
     <header class="site-head wrap">
       <a href="/" class="home" aria-label={zh ? HQ.short : GES.name}>
-        <Logo variant={zh ? 'huanqiao' : 'ges'} height={28} />
+        <Logo variant={zh ? 'huanqiao' : 'ges'} height={26} />
       </a>
       <nav aria-label={zh ? t.nav.label : 'Main'}>
         <ul>
@@ -98,20 +99,21 @@ const here = (href: string) => path.startsWith(href);
 </html>
 
 <style>
-  .site-head { display: flex; align-items: center; gap: 24px; min-height: 76px; border-bottom: 1px solid var(--line); }
+  .site-head { display: flex; align-items: center; gap: 40px; min-height: 88px; }
   .site-head .home { display: flex; color: inherit; }
   .site-head nav { margin-left: auto; }
-  .site-head ul { display: flex; gap: 22px; list-style: none; margin: 0; padding: 0; }
-  .site-head nav a { color: var(--ink); text-decoration: none; font-size: 15px; }
-  .site-head nav a:hover, .site-head nav a[aria-current='page'] { color: var(--celadon); }
-  .site-foot { padding-top: 48px; padding-bottom: 48px; border-top: 1px solid var(--line); margin-top: 0; }
+  .site-head ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
+  .site-head nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
+  .site-head nav a:hover, .site-head nav a[aria-current='page'] { color: var(--ink); }
+  .site-head .btn { padding: 11px 18px; font-size: 14px; }
+  .site-foot { padding-top: 56px; padding-bottom: 56px; border-top: 1px solid var(--line); }
   .small { font-size: 14px; color: var(--muted); }
   .small p { margin-bottom: 0.8em; }
   .foot-links { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
   @media (max-width: 860px) {
-    .site-head { flex-wrap: wrap; gap: 12px 16px; padding-top: 14px; padding-bottom: 14px; }
+    .site-head { flex-wrap: wrap; gap: 14px 16px; min-height: 0; padding-top: 18px; padding-bottom: 18px; }
     .site-head nav { order: 3; width: 100%; margin-left: 0; }
-    .site-head ul { gap: 16px; flex-wrap: wrap; }
-    .site-head .btn { margin-left: auto; padding: 9px 12px; font-size: 14px; }
+    .site-head ul { gap: 20px; flex-wrap: wrap; }
+    .site-head .btn { margin-left: auto; padding: 10px 14px; }
   }
 </style>

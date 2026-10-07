@@ -6,9 +6,9 @@ import { t } from '../copy';
 const a = t.audit;
 ---
 <Page title={a.title} description={a.description} path="/audit/" alt="/exporters/">
-  <div class="wrap head">
+  <div class="wrap page-head">
     <h1 class="display h1">{a.h1}</h1>
-    <p class="muted">{a.lede}</p>
+    <p class="lede">{a.lede}</p>
     <p class="reg label">{HQ.name} · {t.footer.uscc} {HQ.uscc} · {t.footer.fapiao}</p>
     <p class="ctas"><a class="btn" href="/contact/">{t.cta}</a></p>
   </div>
@@ -18,12 +18,11 @@ const a = t.audit;
   <section><div class="wrap grid"><h2 class="label s-4">{a.faqTitle}</h2><dl class="s-8 faq">{a.faq.map((f) => <><dt>{f.q}</dt><dd>{f.a}</dd></>)}</dl></div></section>
 </Page>
 <style>
-  .head { padding-top: 56px; padding-bottom: 48px; }
-  .head p { margin-top: 16px; }
-  .reg { color: var(--ink); }
+  .page-head .reg { color: var(--ink); margin-top: 24px; }
+  .page-head .ctas { margin-top: 32px; }
   .list { margin: 0; padding-left: 1.2em; }
   .list li { margin-bottom: 0.6em; }
-  .price { color: var(--celadon); }
+  .price { font: 400 18px/1.6 var(--sans); border-left: 2px solid var(--celadon); padding-left: 16px; }
   .faq dt { font-weight: 500; margin-top: 18px; }
   .faq dd { margin: 6px 0 0; color: var(--muted); }
 </style>

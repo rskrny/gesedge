@@ -16,14 +16,15 @@ const faq = [
   description="AI operations pilot, owner's dashboard, and supplier checks and visits in China, with prices in US dollars."
   path="/services/"
 >
-  <div class="wrap head">
+  <div class="wrap page-head">
+    <p class="label">What we do for US businesses</p>
     <h1 class="display h1">Services and prices</h1>
-    <p class="muted">Three services for US businesses. Each has a fixed price, agreed before work starts. If the scope changes, we agree the new price first. Prices are in US dollars.</p>
+    <p class="lede">Three services for US businesses. Each has a fixed price, agreed before work starts. If the scope changes, we agree the new price first. Prices are in US dollars.</p>
   </div>
 
   <section id="ai-operations">
     <div class="wrap grid">
-      <div class="s-4"><span class="ord">01</span><h2 class="display h2">AI operations pilot</h2></div>
+      <div class="s-4 side"><span class="ord">01</span><h2 class="display h2">AI operations pilot</h2></div>
       <div class="s-8 body">
         <h3 class="label">Who it’s for</h3>
         <p>Teams that spend hours a day on email, order entry, or status updates. A build pays off only when the volume is high enough, and the review tells you whether yours is.</p>
@@ -44,7 +45,7 @@ const faq = [
 
   <section id="dashboards">
     <div class="wrap grid">
-      <div class="s-4"><span class="ord">02</span><h2 class="display h2">Owner’s dashboard</h2></div>
+      <div class="s-4 side"><span class="ord">02</span><h2 class="display h2">Owner’s dashboard</h2></div>
       <div class="s-8 body">
         <h3 class="label">Who it’s for</h3>
         <p>Owners who check five different systems to find out how the week is going.</p>
@@ -59,7 +60,7 @@ const faq = [
 
   <section id="china">
     <div class="wrap grid">
-      <div class="s-4"><span class="ord">03</span><h2 class="display h2">Your person in China</h2></div>
+      <div class="s-4 side"><span class="ord">03</span><h2 class="display h2">Your person in China</h2></div>
       <div class="s-8 body">
         <h3 class="label">Who it’s for</h3>
         <p>US companies that buy from Chinese suppliers and need someone on the ground in China.</p>
@@ -84,23 +85,24 @@ const faq = [
     </div>
   </section>
 
-  <section class="close">
-    <div class="wrap"><a class="btn" href={BOOKING}>Book a call</a></div>
+  <section class="band close">
+    <div class="wrap grid">
+      <h2 class="display h2 s-4">Book a call</h2>
+      <p class="s-8 ctas"><a class="btn" href={BOOKING}>Book a call</a> <a class="btn ghost" href="/work/">See the work</a></p>
+    </div>
   </section>
 </Page>
 
 <style>
-  .head { padding-top: 56px; padding-bottom: 48px; }
-  .head p { margin-top: 20px; }
-  .ord { display: block; margin-bottom: 8px; }
-  .body h3 { margin: 24px 0 8px; }
+  .ord { display: block; margin-bottom: 20px; }
+  .body h3 { margin: 32px 0 10px; }
   .body h3:first-child { margin-top: 0; }
   .body ul { padding-left: 1.1em; margin: 0 0 1em; }
   .body li { margin-bottom: 0.6em; }
   .body strong { font-weight: 500; color: var(--ink); }
-  .price { color: var(--celadon); }
+  .body .price { font: 400 18px/1.6 var(--sans); color: var(--ink); border-left: 2px solid var(--celadon); padding-left: 16px; }
   .faq { margin: 0; }
-  .faq dt { font-weight: 500; margin-top: 20px; }
+  .faq dt { font-weight: 500; margin-top: 28px; }
   .faq dt:first-child { margin-top: 0; }
   .faq dd { margin: 6px 0 0; color: var(--muted); }
 </style>

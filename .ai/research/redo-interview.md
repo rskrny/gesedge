@@ -333,3 +333,7 @@ section the same label+text shape. Three comps built (first screen + services, g
 ges-refboard.rskrny.workers.dev/comps/: A exploded 3D dovetail joint (recommended), B tilted real-work screenshot
 (SaaS cliché risk), C meridian coordinates + light ash services. All switch body text to IBM Plex Sans
 (Plex Mono for labels). Awaiting Ryan's pick; site restyle follows; no swap before.
+
+## Round 7 — pick (Ryan, 2026-10-07)
+Ryan: "I really like A and B." Built as a merge: A's joint hero, coordinates strip and ledger; B's real-work
+screenshot as a proof band straight after the hero. Plex Sans body accepted with the pick. Previews redeployed.

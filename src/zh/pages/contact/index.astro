@@ -6,7 +6,7 @@ import { t } from '../../copy';
 const c = t.contact;
 ---
 <Page title={c.title} description={c.description} path="/contact/">
-  <div class="wrap head"><h1 class="display h1">{c.h1}</h1></div>
+  <div class="wrap page-head"><h1 class="display h1">{c.h1}</h1></div>
   <section>
     <div class="wrap grid">
       <div class="s-4 wecom">
@@ -28,11 +28,10 @@ const c = t.contact;
   </section>
 </Page>
 <style>
-  .head { padding-top: 56px; padding-bottom: 48px; }
   .qr { width: 200px; height: 200px; border: 1px dashed var(--line); display: grid; place-content: center; text-align: center; padding: 12px; color: var(--muted); font-size: 13px; margin-top: 16px; }
   .form { display: grid; gap: 16px; max-width: 640px; }
   .form label { display: grid; gap: 6px; font-size: 15px; }
-  .form input:not([type='checkbox']), .form textarea { font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px; }
+  .form input:not([type='checkbox']), .form textarea { font: 400 17px/1.5 var(--sans); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 12px 14px; }
   .form .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted); }
   .form .check input { margin-top: 4px; }
   .form button { justify-self: start; cursor: pointer; }

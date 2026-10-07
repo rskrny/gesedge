@@ -13,6 +13,21 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Site look = comps A + B merged (joint hero, real-work proof band, ledger); Plex Sans body
+Date: 2026-10-07 · Status: Accepted (Ryan picked A and B; merge reviewed by GPT-5.6, Kimi K2.6, DeepSeek V4)
+Context: Ryan rejected v1, saw three comps, said "I really like A and B". C (meridians) dropped.
+Options: (a) joint hero, screenshot as the second beat; (b) both objects in one hero; (c) joint on home,
+screenshots only on inner pages.
+Decision: (a). Hero = exploded dovetail joint (A) + coordinates strip; proof band right after = the real email
+triage screenshot tilted once, with two numbered pins (B); services = A's ledger. Timber band only for proof and
+the closing call. Body text IBM Plex Sans (font change Ryan accepted by picking A/B); Plex Mono for labels only.
+The HTML triage illustration (TriageFigure) is deleted; the real screenshot replaces it. ZH home uses the joint
+until the sample audit exists.
+Rationale: one object per screen (brand, then proof); all three outside models backed the order and flagged the
+same template risks (alternating bands, right-aligned price table), which were fixed.
+Trade-offs: two objects in the first two screens; the tilt is a known SaaS trope, kept small (−8°) because Ryan liked B.
+Reversal trigger: Ryan's review of the restyled preview.
+
 ## Decision: No third-party booking/mail services; v1 look rejected → design comps before any swap
 Date: 2026-10-07 · Status: Accepted (Ryan)
 Context: Ryan dislikes services like Resend (free tier used elsewhere) and cal.com (too much access to his
