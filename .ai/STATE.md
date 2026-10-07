@@ -17,6 +17,11 @@
 - Headless Chrome can't go below ~500 px wide: check phones with a 390 px iframe wrapper.
 
 ## Next actions
+0. **DESIGN PASS FIRST (2026-10-07).** Ryan: the preview "looks awful" — it was a functional wireframe (mono body
+   text, no hero object, muddy brown, one repeated section shape). Three homepage comps on
+   https://ges-refboard.rskrny.workers.dev/comps/ (A joint object · B real-work screenshot · C meridians), all with
+   IBM Plex Sans body + Plex Mono labels (@fontsource/ibm-plex-sans installed; needs Ryan's OK as a font change).
+   Source: .ai/deliverables/comps/ (comps.py, joint.py). Restyle the whole site to the picked comp; NO swap before that.
 1. **EN swap (needs Ryan's explicit go):**
    a. `npx wrangler secret put SMTP_PASS -c wrangler.jsonc` (value from the preview Workers' setup; ask Ryan to
       re-create via Purelymail if lost). b. Zone Redirect Rule www.gesedge.com/* → https://gesedge.com/$1 (301).
