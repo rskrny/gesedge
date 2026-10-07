@@ -325,3 +325,11 @@ Google account). Decision: booking = Google Calendar's own appointment schedule 
 cal.com account deleted (cal.com/gesedge now 404) and its Google access revoked. Form email = Purelymail SMTP from
 the Worker (his existing $10/yr host), dedicated mailbox website@gesedge.com. Cloudflare Email Service rejected:
 it needs Cloudflare MX on the sending domain, which would displace Purelymail on gesedge.com.
+
+## Round 6 — design rejected, comps (Ryan, 2026-10-07)
+Ryan on the v1 preview: "looks awful. Did you even see it?" Fair: it was checked for function, not taste.
+Diagnosis: monospace body text everywhere, no hero object (igloo/zolplay DNA), timber+tan read muddy, every
+section the same label+text shape. Three comps built (first screen + services, gated copy only) at
+ges-refboard.rskrny.workers.dev/comps/: A exploded 3D dovetail joint (recommended), B tilted real-work screenshot
+(SaaS cliché risk), C meridian coordinates + light ash services. All switch body text to IBM Plex Sans
+(Plex Mono for labels). Awaiting Ryan's pick; site restyle follows; no swap before.

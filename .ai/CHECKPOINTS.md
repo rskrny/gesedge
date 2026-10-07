@@ -24,3 +24,4 @@
 - 2026-06-29 — Project initialized with the file-based operating framework (AGENTS.md + .ai/ scaffold + agent shims).
 - 2026-10-05 — gesedge.com moved Vercel → Cloudflare Workers (OpenNext port, PR #2 merged; www→apex, HSTS, Always Use HTTPS; live checks passed; Vercel Git disconnected, project kept 48h for rollback). Developer Kenny (kawasakiakasei) onboarded. 寰桥 name fix = PR #1 (open).
 - 2026-10-06 · Redo v1: Dovetail identity approved, DESIGN.md rewritten, Astro two-site build on redo/site, gated EN copy, ZH shell for Kenny, previews live on workers.dev.
+- 2026-10-07 · Redo v1 hardened (Google booking, Purelymail SMTP form email, redacted work shots, share images, prod config) but Ryan rejected the look; three homepage comps on refboard/comps awaiting his pick; swap on hold.

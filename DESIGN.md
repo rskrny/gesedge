@@ -9,6 +9,9 @@ Set 2026-10-06 from the redo interview (`.ai/research/redo-interview.md`), the s
 
 ---
 
+> **Under revision (2026-10-07):** Ryan rejected the v1 look. §4 (Plex Mono for body) and §5–6 will change to the
+> homepage comp he picks (`.ai/STATE.md`, refboard /comps/). Comps use IBM Plex Sans for body text.
+
 ## 1 · Job and register
 
 A **sales site that proves capability**. The readers who decide are US business owners, Chinese factory

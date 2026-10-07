@@ -13,6 +13,20 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: No third-party booking/mail services; v1 look rejected → design comps before any swap
+Date: 2026-10-07 · Status: Accepted (Ryan)
+Context: Ryan dislikes services like Resend (free tier used elsewhere) and cal.com (too much access to his
+Google account); his real schedule lives outside Google. He then rejected the v1 preview's look ("awful").
+Decision: (1) Booking = Google Calendar appointment schedule on his existing account; bookings are requests he
+confirms or moves by email; no calendar sync, no extra accounts; cal.com deleted. (2) Form notifications =
+Worker SMTP to his existing Purelymail as website@gesedge.com (Reply-To always set), Supabase row as fallback.
+Cloudflare Email Service rejected (needs Cloudflare MX on the sending domain → would displace Purelymail).
+(3) Swap held until Ryan picks one of three homepage comps (refboard /comps/) and the site is restyled;
+comps propose IBM Plex Sans for body text (Plex Mono kept for labels) — a change to the July font locks.
+Rationale: fewer vendors and less data exposure; Ryan's taste is the gate for launch, not functional QA.
+Trade-offs: no automatic conflict checks against his offline schedule; restyle delays launch.
+Reversal trigger: booking volume makes manual confirmation painful; Purelymail sending limits are hit.
+
 ## Decision: Redo build = Astro static, two build targets (en, zh) → two Workers; Dovetail identity approved
 Date: 2026-10-06 · Status: Accepted (identity: Ryan, "Yes approved"; architecture: Claude + Codex + Kimi)
 Context: Ryan approved the C · Dovetail kit (`brand/`, PDF + logo files + tokens). The redo needs
