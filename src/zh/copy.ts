@@ -10,6 +10,8 @@ const ph = (brief: string) => `[PLACEHOLDER: ${brief}]`;
 
 export const t = {
   skip: ph('skip to content'),
+  pause: ph('button label for screen readers: pause the logo animation'),
+  play: ph('button label for screen readers: play the logo animation'),
   cta: ph('header button: add us on WeCom'),
   nav: {
     label: ph('main navigation'),

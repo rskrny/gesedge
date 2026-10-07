@@ -108,7 +108,7 @@ section { padding: clamp(72px, 9vw, 128px) 0; border-top: 1px solid var(--line);
 .aside { margin: 28px 0 0; font-size: 15px; }
 .aside a { color: var(--muted); text-decoration: none; }
 .aside a:hover { color: var(--ink); }
-.obj { justify-self: center; width: min(400px, 100%); padding-top: 24px; }
+.obj { justify-self: center; width: min(540px, 100%); }
 .hud { display: flex; justify-content: space-between; gap: 16px; padding-top: 22px; padding-bottom: 28px; border-top: 1px solid var(--line); width: 100%; }
 
 .skip { position: absolute; left: -9999px; }
@@ -126,7 +126,7 @@ section { padding: clamp(72px, 9vw, 128px) 0; border-top: 1px solid var(--line);
   .ledger > li > :nth-child(n + 3) { grid-column: 1 / -1; }
   .hero { min-height: 0; }
   .stage { grid-template-columns: 1fr; padding-top: 24px; padding-bottom: 48px; gap: 8px; }
-  .obj { width: min(260px, 70%); padding-top: 32px; }
+  .obj { width: min(360px, 92%); margin-top: 8px; }
   .hud { flex-direction: column; gap: 6px; }
   .hud span:nth-child(2):not(:last-child) { display: none; }
 }

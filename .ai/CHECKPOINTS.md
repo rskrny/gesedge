@@ -26,3 +26,4 @@
 - 2026-10-06 · Redo v1: Dovetail identity approved, DESIGN.md rewritten, Astro two-site build on redo/site, gated EN copy, ZH shell for Kenny, previews live on workers.dev.
 - 2026-10-07 · Redo v1 hardened (Google booking, Purelymail SMTP form email, redacted work shots, share images, prod config) but Ryan rejected the look; three homepage comps on refboard/comps awaiting his pick; swap on hold.
 - 2026-10-07 · Ryan picked comps A + B. Site restyled to the merge (joint hero, real-work proof band, ledger, Plex Sans body), reviewed by Codex/Kimi/DeepSeek, copy gate run, previews redeployed; awaiting Ryan's review.
+- 2026-10-07 · Logo animated: Blender sliding-dovetail render replaces the (physically wrong) SVG hero; AV1/H.264 video with poster, reduced-motion still, pause button; Worker serves /media with byte ranges; previews redeployed.

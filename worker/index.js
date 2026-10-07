@@ -1,9 +1,10 @@
 // Worker for both sites. Static pages are served by the assets binding without running this code
-// (run_worker_first covers /api/* only). POST /api/contact stores the message in Supabase and emails it to
+// (run_worker_first covers /api/* and /media/*). POST /api/contact stores the message in Supabase and emails it to
 // Ryan through Purelymail (his existing mail host) as website@gesedge.com. No third-party mail service.
 // Works without JavaScript: the form posts here and gets a 303.
 // ponytail: honeypot + same-origin + size limits only. Add Turnstile or a rate-limit binding if spam shows up.
 import { connect } from 'cloudflare:sockets';
+import { ranged } from './ranged.js';
 
 const LIMITS = { name: 100, email: 200, company: 200, contact: 100, site: 300, message: 4000 };
 
@@ -11,6 +12,7 @@ export default {
   async fetch(request, env) {
     const url = new URL(request.url);
     if (url.pathname === '/api/contact/' || url.pathname === '/api/contact') return contact(request, env, url);
+    if (url.pathname.startsWith('/media/')) return ranged(request, await env.ASSETS.fetch(request));
     return env.ASSETS.fetch(request);
   },
 };

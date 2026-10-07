@@ -13,6 +13,21 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Hero object = the logo animated in Blender (sliding dovetail), replacing the SVG exploded joint
+Date: 2026-10-07 · Status: Accepted (Ryan asked for the logo animated, highest quality; storyboard reviewed by Codex + Kimi)
+Context: Ryan: "check the logo again, we need it animated". On re-check, the hero SVG showed the joint exploded
+vertically with the socket dropping onto the tail. A dovetail cannot assemble that way (the tail's head is wider
+than the socket's mouth); it only slides in along its depth. The logo itself is the assembled joint with an even gap.
+Options: (a) fix the SVG/CSS animation; (b) WebGL (DESIGN bans it); (c) pre-rendered Blender video.
+Decision: (c). Cycles render from the master symbol's coordinates, satin ash + Ru-celadon wood (grain ~6%/3%),
+orthographic camera so the face-on frame is the flat mark (colours within ~4/255 of the hex). 8 s loop: face-on →
+3/4 → tail slides out along its channel → slides back and locks → face-on. Gap open in every frame. Delivered as
+AV1 WebM + H.264 MP4 (800 and 520 px, 57–160 KB) on black with mix-blend-mode: lighten (decoded black = 0, so the
+page ground shows through exactly); poster = face-on mark; reduced motion = still 3/4, no video fetched; pause button.
+Rationale: highest visual quality at the lowest weight; no runtime 3D; correct joinery is the brand's own claim.
+Trade-offs: changing the motion means a re-render (~25 min on the GTX 1650); headless screenshots show the poster only.
+Reversal trigger: Ryan's review; or a browser/WebView where the blend shows a box.
+
 ## Decision: Site look = comps A + B merged (joint hero, real-work proof band, ledger); Plex Sans body
 Date: 2026-10-07 · Status: Accepted (Ryan picked A and B; merge reviewed by GPT-5.6, Kimi K2.6, DeepSeek V4)
 Context: Ryan rejected v1, saw three comps, said "I really like A and B". C (meridians) dropped.
