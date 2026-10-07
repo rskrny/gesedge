@@ -1,0 +1,26 @@
+// PRODUCTION Worker for gesedge.com (English site). Workers Builds deploys this from `main`:
+//   build: node scripts/build.mjs en      deploy: npx wrangler deploy
+// Never run `wrangler deploy` with this file by hand: it replaces the live site. Previews use wrangler.en.jsonc.
+// Custom domains gesedge.com + www.gesedge.com are attached in the dashboard (no `routes` key, so deploys keep them).
+// Before the swap: SMTP_PASS secret on this Worker (same value as the previews), and a zone Redirect Rule
+// www.gesedge.com/* -> https://gesedge.com/$1 (301). Not in the Worker: run_worker_first on every path would
+// switch off _redirects and _headers (Cloudflare docs, static-assets/redirects + headers).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gesedge",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "dist/en",
+    "binding": "ASSETS",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*"]
+  },
+  "vars": {
+    "SITE": "en",
+    "SUPABASE_URL": "https://pqepbusovsveizvdcrjh.supabase.co",
+    "SUPABASE_KEY": "sb_publishable_qvSzVz83i4kDnLfUCOcfLw_KwyYJy5J",
+    "MAIL_FROM": "website@gesedge.com"
+  }
+}

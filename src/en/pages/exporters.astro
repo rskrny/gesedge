@@ -2,7 +2,7 @@
 // Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Equivalent page on huanqiao.gesedge.com: /audit/.
 // ponytail: "Sample report" button hidden until Kenny's sample audit exists.
 import Page from '../../shared/layouts/Page.astro';
-import { HOST, HQ } from '../../shared/site';
+import { HOST, HQ, ZH_LIVE } from '../../shared/site';
 ---
 <Page
   title="Website review for Chinese exporters · 成都寰桥"
@@ -13,7 +13,9 @@ import { HOST, HQ } from '../../shared/site';
   <div class="wrap head">
     <h1 class="display h1">Your factory’s website, reviewed from a US buyer’s point of view.</h1>
     <p class="muted">For export managers at Chinese factories. Our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your website and checks how AI assistants describe your company.</p>
-    <p class="ctas"><a class="btn" href={HOST.zh + '/audit/'} hreflang="zh-CN">Chinese version for your boss →</a></p>
+    <p class="ctas">{ZH_LIVE
+      ? <a class="btn" href={HOST.zh + '/audit/'} hreflang="zh-CN">Chinese version for your boss →</a>
+      : <a class="btn" href="/contact/">Contact</a>}</p>
   </div>
 
   <section>

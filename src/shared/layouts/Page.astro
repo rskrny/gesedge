@@ -5,7 +5,7 @@ import '@fontsource/ibm-plex-mono/400.css';
 import '@fontsource/ibm-plex-mono/500.css';
 import '../styles/base.css';
 import Logo from '../components/Logo.astro';
-import { SITE, PREVIEW, HOST, CANONICAL, EMAIL, BOOKING, COORDS, GES, HQ } from '../site';
+import { SITE, PREVIEW, HOST, CANONICAL, EMAIL, BOOKING, COORDS, GES, HQ, ZH_LIVE } from '../site';
 import { t } from '../../zh/copy';
 
 interface Props {
@@ -15,7 +15,8 @@ interface Props {
   alt?: string; // equivalent page on the other site, for hreflang
   noindex?: boolean;
 }
-const { title, description, path, alt, noindex } = Astro.props;
+const { title, description, path, noindex } = Astro.props;
+const alt = ZH_LIVE ? Astro.props.alt : undefined; // no cross-site links until both sites are live
 const zh = SITE === 'zh';
 const other = zh ? 'en' : 'zh';
 const lang = zh ? 'zh-CN' : 'en-US';
@@ -43,7 +44,10 @@ const here = (href: string) => path.startsWith(href);
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:url" content={canonical} />
-    <meta property="og:image" content={CANONICAL[SITE] + '/share.png'} />
+    <meta property="og:image" content={`${CANONICAL[SITE]}/og-${SITE}.png`} />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#1b1411" />
     <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
     <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png" />
@@ -61,7 +65,7 @@ const here = (href: string) => path.startsWith(href);
       <nav aria-label={zh ? t.nav.label : 'Main'}>
         <ul>
           {nav.map((n) => <li><a href={n.href} aria-current={here(n.href) ? 'page' : undefined}>{n.label}</a></li>)}
-          <li><a href={switchLink.href} hreflang={switchLink.lang} lang={switchLink.lang}>{switchLink.label}</a></li>
+          {ZH_LIVE && <li><a href={switchLink.href} hreflang={switchLink.lang} lang={switchLink.lang}>{switchLink.label}</a></li>}
         </ul>
       </nav>
       {zh ? <a class="btn" href="/contact/">{t.cta}</a> : <a class="btn" href={BOOKING}>Book a call</a>}

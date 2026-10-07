@@ -1,6 +1,7 @@
 ---
 // Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Data: ../work.ts.
-// ponytail: no screenshots yet. Add redacted crops of the real UIs (no client data readable) before launch.
+// Screenshots: made by ../business/redo-assets-private/redact.py (outside the repo); no client data readable.
+// The booking system has no screenshot: its public site would identify the client.
 import Page from '../../shared/layouts/Page.astro';
 import { BOOKING } from '../../shared/site';
 import { work } from '../work';
@@ -24,6 +25,12 @@ import { work } from '../work';
           <p class="label meta">{w.meta}</p>
         </div>
         <div class="s-8 body">
+          {w.image && (
+            <figure class="shot">
+              <img src={w.image.src} alt={w.image.alt} width="1600" height="887" loading="lazy" decoding="async" />
+              <figcaption class="label">Real screen. Client data blurred.</figcaption>
+            </figure>
+          )}
           {w.before && <><h3 class="label">Before</h3><p>{w.before}</p></>}
           <h3 class="label">What we built</h3>
           <p>{w.built}</p>
@@ -46,4 +53,7 @@ import { work } from '../work';
   .meta { margin-top: 16px; line-height: 1.7; }
   .body h3 { margin: 24px 0 8px; }
   .body h3:first-child { margin-top: 0; }
+  .shot { margin: 0 0 32px; }
+  .shot img { width: 100%; height: auto; border: 1px solid var(--line); }
+  .shot figcaption { margin-top: 8px; }
 </style>

@@ -6,6 +6,9 @@ export const PREVIEW = process.env.PREVIEW === '1';
 export const HOST = PREVIEW
   ? { en: 'https://gesedge-preview.rskrny.workers.dev', zh: 'https://huanqiao-preview.rskrny.workers.dev' }
   : { en: 'https://gesedge.com', zh: 'https://huanqiao.gesedge.com' };
+// The Chinese site launches after Kenny's copy is in. Until then the English site hides every link to it
+// (nav switch, hreflang, exporters button). Previews always show them. Flip to true at the ZH launch.
+export const ZH_LIVE = PREVIEW || false;
 // Canonicals always point at the production hosts.
 export const CANONICAL = { en: 'https://gesedge.com', zh: 'https://huanqiao.gesedge.com' };
 
