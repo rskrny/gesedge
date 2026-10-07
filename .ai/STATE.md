@@ -52,7 +52,9 @@ Factory audit ¥2,980, 5 working days, full credit toward a build within 60 days
 ## Booking + form email (2026-10-07: no third-party services, Ryan's call)
 - Booking = Google Calendar appointment schedule on rskrny@gmail.com ("Call with Ryan Kearney (Global Edge
   Strategies)", 30 min, Meet, daily 00:00–02:00 + 08:00–24:00 China time). Link in `src/shared/site.ts`. cal.com
-  account deleted and its Google access revoked. Booking page shows the Google account name "rskrny" (Ryan's call).
+  account deleted and its Google access revoked. Google name now "Ryan Kearney"; no profile photo (Ryan, 2026-10-07).
+  Ryan keeps his real schedule outside Google: bookings land on his calendar and he confirms or proposes another
+  time by email. Don't add calendar-sync or extra Google accounts.
 - Form email = Worker SMTP to smtp.purelymail.com:465 as website@gesedge.com (mailbox created 2026-10-07;
   password only in the `SMTP_PASS` secret on both preview Workers; set it on production Workers at the swap).
   Both sites verified end to end into Gmail (2026-10-07). Gotcha: mail WITHOUT a Reply-To header was accepted by
