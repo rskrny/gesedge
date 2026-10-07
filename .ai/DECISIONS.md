@@ -13,6 +13,26 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Redo build = Astro static, two build targets (en, zh) → two Workers; Dovetail identity approved
+Date: 2026-10-06 · Status: Accepted (identity: Ryan, "Yes approved"; architecture: Claude + Codex + Kimi)
+Context: Ryan approved the C · Dovetail kit (`brand/`, PDF + logo files + tokens). The redo needs
+gesedge.com (EN) and huanqiao.gesedge.com (ZH) from one repo, server-rendered, cheap, and the ZH site must
+later move unchanged to an ICP-filed mainland host. The branch already has Astro 5.
+Options: (a) one build + one Worker rewriting by host; (b) two build targets + two Workers; (c) two repos.
+Decision: (b). One Astro repo, shared components/styles/data, `SITE=en|zh` selects srcDir, `site`, and
+outDir (`dist/en`, `dist/zh`). Each output deploys as its own Worker with static assets
+(`html_handling: force-trailing-slash`, `not_found_handling: 404-page`) plus a small script for
+`POST /api/contact`. No React/three/GSAP (3D shelved). Fonts self-hosted; PuHuiTi subset per build from
+the characters in the built HTML. Previews on workers.dev (`gesedge-preview`, `huanqiao-preview`, noindex);
+the live `gesedge` Worker and DNS change only at the approved swap. DESIGN.md rewritten for the redo
+(July Crossing version archived); old globe brand files archived.
+Rationale: Codex — `run_worker_first` matches paths, not hosts, so (a) runs the Worker on every request and
+mixes caches, sitemaps and 404s across hosts; (b) gives each site root-native URLs and a `dist` that can be
+copied to a mainland host as-is. Kimi — unfiled domains can't use WeChat JSSDK share cards, so titles carry
+the message; no ICP wording before a number is issued; no Google-hosted assets.
+Trade-offs: two deploy targets to keep in sync; a shared-component change needs both builds checked.
+Reversal trigger: the ZH site is dropped or merged into gesedge.com, or the mainland move is abandoned.
+
 ## Decision: gesedge.com REDO — sales site for two audiences; July design locks revised
 Date: 2026-10-06 · Status: Accepted (Ryan, interview Rounds 1–3) · Revises "Design system locked" (07-06)
 Context: Ryan judged the live site "very bad and vibecoded" and asked for a near-total redo, decided through a
