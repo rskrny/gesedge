@@ -17,12 +17,17 @@
 - Headless Chrome can't go below ~500 px wide: check phones with a 390 px iframe wrapper.
 
 ## Next actions
-1. Ryan reviews the preview copy and answers the [Ryan: …] items (reply time, retention, desk-check scope,
-   Everglory/C14 lines, which AI assistants the audit uses).
-2. Before launch: redacted screenshots on Work, Ryan's photo on About, OG image 1200×630, `SMTP_PASS` secret on the production Workers, decide on the two old blog posts (now 301 → home).
-3. Kenny: WeCom QR + 获客链接, all Chinese copy through the gate, the sample audit, his name in characters.
-4. Swap (Ryan's explicit approval): point Workers Builds on `gesedge` at `node scripts/build.mjs en` +
-   a production wrangler config; add the `huanqiao` Worker + `huanqiao.gesedge.com`; smoke-test.
+1. **EN swap (needs Ryan's explicit go):**
+   a. `npx wrangler secret put SMTP_PASS -c wrangler.jsonc` (value from the preview Workers' setup; ask Ryan to
+      re-create via Purelymail if lost). b. Zone Redirect Rule www.gesedge.com/* → https://gesedge.com/$1 (301).
+   c. Workers Builds on `gesedge`: build `node scripts/build.mjs en`, deploy `npx wrangler deploy`.
+   d. On `redo/site`: `git merge -s ours origin/main` (keeps this tree, records main), PR → main (fast-forward).
+   e. Smoke test gesedge.com (routes, redirects, form → Gmail, booking link, www 301). Rollback: Workers →
+      gesedge → Deployments → previous version (the Next.js build).
+2. ZH launch after Kenny's copy + WeCom: create Worker `huanqiao` (+ `huanqiao.gesedge.com`), SMTP_PASS secret,
+   flip `ZH_LIVE` to true in `src/shared/site.ts`, rebuild both.
+3. Later: About photo (Ryan not ready; headshots must stay out of git), the two old blog posts (301 → home now),
+   client names once approved, booking-system screenshot once Bloodline is named.
 
 ## Open questions / blockers
 - Client names (Goldie, Sullivan, Bloodline): built in, off until each client approves (Ryan not asking yet).
