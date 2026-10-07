@@ -23,3 +23,4 @@
 - 2026-06-29 — Defined PROJECT.md: full redesign/rebuild of the GES + Chengdu Huanqiao site; operators Ryan + Shiying; new backend/hosting/CMS pending. Migrated CLAUDE.md writing rules + gstack tooling into AGENTS.md and pointed CLAUDE.md at it. Logged the rebuild decision in DECISIONS.md.
 - 2026-06-29 — Project initialized with the file-based operating framework (AGENTS.md + .ai/ scaffold + agent shims).
 - 2026-10-05 — gesedge.com moved Vercel → Cloudflare Workers (OpenNext port, PR #2 merged; www→apex, HSTS, Always Use HTTPS; live checks passed; Vercel Git disconnected, project kept 48h for rollback). Developer Kenny (kawasakiakasei) onboarded. 寰桥 name fix = PR #1 (open).
+- 2026-10-06 · Redo v1: Dovetail identity approved, DESIGN.md rewritten, Astro two-site build on redo/site, gated EN copy, ZH shell for Kenny, previews live on workers.dev.

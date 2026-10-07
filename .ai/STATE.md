@@ -4,23 +4,26 @@
      Recent changes · Handoff. Drop any field that's empty. -->
 
 ## Status
-**Redo build starting (2026-10-06)** on branch `redo/site` (from `rebuild/astro-immersive`). The live site is
-still the legacy Next.js app on `main`, served by the Cloudflare Worker `gesedge`. Interview Rounds 1–4 are
-done (`.ai/research/redo-interview.md`), the spec is `.ai/research/redo-site-spec.md`, and the **Dovetail
-identity is approved** (`brand/`). **`DESIGN.md` is the binding design law** (rewritten for the redo; the
-July "Crossing" version is in `.ai/archive/`). Architecture: DECISIONS 2026-10-06 (Astro static, `SITE=en|zh`,
-two Workers).
+**Redo v1 built and on preview (2026-10-06)**, branch `redo/site` (pushed; builds nowhere automatically).
+- EN preview: https://gesedge-preview.rskrny.workers.dev · ZH preview: https://huanqiao-preview.rskrny.workers.dev
+  (both noindex). Live gesedge.com is still the legacy Next.js app (Worker `gesedge`, deployed from `main`).
+- English copy gated (no-ai-slop edit + Codex detect): `.ai/deliverables/redo-copy-en.md`. Chinese text is
+  `[PLACEHOLDER]` in `src/zh/copy.ts` (one file for Kenny). Contact form tested end to end (Supabase row 5, archived).
+- **`DESIGN.md` is the binding design law.** Architecture: DECISIONS 2026-10-06.
+
+## How to build / deploy previews
+- `npm run fonts` after any Chinese text change (needs full PuHuiTi in `../assets/fonts/puhuiti`, commit the woff2).
+- PowerShell: `$env:PREVIEW='1'; node scripts/build.mjs en; npx wrangler@4 deploy -c wrangler.en.jsonc` (same for zh).
+- Headless Chrome can't go below ~500 px wide: check phones with a 390 px iframe wrapper.
 
 ## Next actions
-1. Build the lean launch on `redo/site`:
-   - EN (gesedge.com): `/`, `/services`, `/work`, `/about`, `/contact`, `/exporters`, `/privacy`, 404.
-   - ZH (huanqiao.gesedge.com): `/`, `/audit`, `/sample`, `/contact`, `/privacy`, 404. Chinese text =
-     `[PLACEHOLDER]` until Kenny writes it.
-   - Redirects for old URLs (spec §1).
-2. Copy: English drafts → `no-ai-slop` (edit + detect) → Ryan edits for voice. Chinese via Kenny's gate.
-3. Previews: `gesedge-preview` / `huanqiao-preview` on workers.dev (noindex) for Ryan.
-4. Swap only with Ryan's explicit approval: switch Workers Builds on `gesedge` to the Astro build, add the
-   `huanqiao.gesedge.com` Worker + DNS, then smoke-test.
+1. Ryan reviews the preview copy and answers the [Ryan: …] items (reply time, retention, desk-check scope,
+   Everglory/C14 lines, which AI assistants the audit uses).
+2. Before launch: redacted screenshots on Work, Ryan's photo on About, OG image 1200×630, Resend (records on
+   `send.gesedge.com` only) + `RESEND_API_KEY` secret, decide on the two old blog posts (now 301 → home).
+3. Kenny: WeCom QR + 获客链接, all Chinese copy through the gate, the sample audit, his name in characters.
+4. Swap (Ryan's explicit approval): point Workers Builds on `gesedge` at `node scripts/build.mjs en` +
+   a production wrangler config; add the `huanqiao` Worker + `huanqiao.gesedge.com`; smoke-test.
 
 ## Open questions / blockers
 - Client names (Goldie, Sullivan, Bloodline): built in, off until each client approves (Ryan not asking yet).
@@ -49,4 +52,5 @@ memo $1,500 (Chengdu/Chongqing), other regions from $2,500 + travel, retainer fr
 Factory audit ¥2,980, 5 working days, full credit toward a build within 60 days. Booking: cal.com/gesedge/30min.
 
 ## Handoff
-`git switch redo/site` → read `DESIGN.md` → Next actions.
+`git switch redo/site` → read `DESIGN.md` → Next actions. Client names appear in older planning docs already on
+GitHub (`.ai/research/*`, PROJECT.md, DEVELOPMENT_LOG.md); scrubbing them is Ryan's call.
