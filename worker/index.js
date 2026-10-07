@@ -68,7 +68,8 @@ async function mail(env, row, zh) {
   const message = [
     `From: gesedge.com website <${from}>`,
     `To: <${to}>`,
-    ...(zh ? [] : [`Reply-To: <${row.email}>`]), // validated: no spaces or line breaks
+    // Always set Reply-To: without it, Purelymail-forwarded mail to Gmail was silently dropped (tested 2026-10-07).
+    `Reply-To: <${zh ? from : row.email}>`, // EN email is validated: no spaces or line breaks
     `Subject: ${ascii ? subject : `=?UTF-8?B?${b64(subject)}?=`}`,
     `Date: ${new Date().toUTCString()}`,
     `Message-ID: <${crypto.randomUUID()}@gesedge.com>`,

@@ -55,8 +55,8 @@ Factory audit ¥2,980, 5 working days, full credit toward a build within 60 days
   account deleted and its Google access revoked. Booking page shows the Google account name "rskrny" (Ryan's call).
 - Form email = Worker SMTP to smtp.purelymail.com:465 as website@gesedge.com (mailbox created 2026-10-07;
   password only in the `SMTP_PASS` secret on both preview Workers; set it on production Workers at the swap).
-  EN verified end to end (Gmail inbox). ZH notifications with '[寰桥]' subjects were accepted by Purelymail but
-  never reached Gmail; subjects now ASCII '[Huanqiao] …' (verification in progress). Supabase row is the fallback.
+  Both sites verified end to end into Gmail (2026-10-07). Gotcha: mail WITHOUT a Reply-To header was accepted by
+  Purelymail (250) but never reached Gmail — Reply-To is now always set (ZH: website@). Supabase row is the fallback.
 
 ## Handoff
 `git switch redo/site` → read `DESIGN.md` → Next actions. Client names appear in older planning docs already on
