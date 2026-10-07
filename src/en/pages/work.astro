@@ -1,0 +1,49 @@
+---
+// Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Data: ../work.ts.
+// ponytail: no screenshots yet. Add redacted crops of the real UIs (no client data readable) before launch.
+import Page from '../../shared/layouts/Page.astro';
+import { BOOKING } from '../../shared/site';
+import { work } from '../work';
+---
+<Page
+  title="Work · Global Edge Strategies"
+  description="Three live systems: email triage for a refurbishment group, an owner's dashboard for an auction firm, and a booking system for a charter boat."
+  path="/work/"
+>
+  <div class="wrap head">
+    <h1 class="display h1">Work</h1>
+    <p class="muted">Three live systems. Client names stay off this page until each client agrees.</p>
+  </div>
+
+  {work.map((w, i) => (
+    <section id={w.id}>
+      <div class="wrap grid">
+        <div class="s-4">
+          <span class="ord">{String(i + 1).padStart(2, '0')}</span>
+          <h2 class="display h2">{w.title}</h2>
+          <p class="label meta">{w.meta}</p>
+        </div>
+        <div class="s-8 body">
+          {w.before && <><h3 class="label">Before</h3><p>{w.before}</p></>}
+          <h3 class="label">What we built</h3>
+          <p>{w.built}</p>
+          <h3 class="label">What happened</h3>
+          <p>{w.result}</p>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="close">
+    <div class="wrap"><a class="btn" href={BOOKING}>Book a call</a></div>
+  </section>
+</Page>
+
+<style>
+  .head { padding-top: 56px; padding-bottom: 48px; }
+  .head p { margin-top: 20px; }
+  .ord { display: block; margin-bottom: 8px; }
+  .meta { margin-top: 16px; line-height: 1.7; }
+  .body h3 { margin: 24px 0 8px; }
+  .body h3:first-child { margin-top: 0; }
+</style>

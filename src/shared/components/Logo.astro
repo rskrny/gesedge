@@ -1,0 +1,23 @@
+---
+// Inlines an approved logo file from brand/logo, cropped to its ink (the files carry clear space).
+// Never retype or redraw the wordmark (DESIGN.md §2).
+import ges from '../../../brand/logo/full-color-dark.svg?raw';
+import huanqiao from '../../../brand/logo/zh/lockup-huanqiao-full-color-dark.svg?raw';
+import chengdu from '../../../brand/logo/zh/lockup-chengdu-huanqiao-full-color-dark.svg?raw';
+
+interface Props { variant?: 'ges' | 'huanqiao' | 'chengdu'; height?: number; label?: string }
+const { variant = 'ges', height = 32, label } = Astro.props;
+const files = { ges, huanqiao, chengdu };
+const names = { ges: 'Global Edge Strategies', huanqiao: '寰桥', chengdu: '成都寰桥' };
+
+const raw = files[variant];
+const ink = raw.match(/data-ink="([^"]+)"/)![1].split(' ').map(Number);
+const [x0, y0, x1, y1] = ink;
+const svg = raw
+  .replace(/<\?xml[^>]*>/, '')
+  .replace(/viewBox="[^"]*"/, `viewBox="${x0} ${y0} ${x1 - x0} ${y1 - y0}"`)
+  .replace(/ data-[a-z-]+="[^"]*"/g, '')
+  .replace(/ id="[^"]*"/g, '')
+  .replace('<svg ', `<svg role="img" aria-label="${label ?? names[variant]}" height="${height}" width="${Math.round((height * (x1 - x0)) / (y1 - y0))}" `);
+---
+<Fragment set:html={svg} />

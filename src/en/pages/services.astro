@@ -1,0 +1,106 @@
+---
+// Copy: .ai/deliverables/redo-copy-en.md (v3, gated).
+import Page from '../../shared/layouts/Page.astro';
+import { BOOKING } from '../../shared/site';
+
+const faq = [
+  { q: 'Do you work with companies outside the US?', a: 'These services are for US companies. Factories in China work with our sister company, <a href="/exporters/">成都寰桥</a>.' },
+  { q: 'Who builds the systems?', a: 'Ryan Kearney, with Zhu Shiying on new builds.' },
+  { q: 'Which AI models do you use?', a: 'Whichever fits the job and your data rules. Model and hosting costs are billed at cost.' },
+  { q: 'How do I pay?', a: 'By invoice, in US dollars. Builds are half upfront. China work is paid in advance.' },
+  { q: 'What if the review shows a build won’t pay off?', a: 'We tell you, and you keep the plan.' },
+];
+---
+<Page
+  title="Services and prices · Global Edge Strategies"
+  description="AI operations pilot, owner's dashboard, and supplier checks and visits in China, with prices in US dollars."
+  path="/services/"
+>
+  <div class="wrap head">
+    <h1 class="display h1">Services and prices</h1>
+    <p class="muted">Three services for US businesses. Each has a fixed price, agreed before work starts. If the scope changes, we agree the new price first. Prices are in US dollars.</p>
+  </div>
+
+  <section id="ai-operations">
+    <div class="wrap grid">
+      <div class="s-4"><span class="ord">01</span><h2 class="display h2">AI operations pilot</h2></div>
+      <div class="s-8 body">
+        <h3 class="label">Who it’s for</h3>
+        <p>Teams that spend hours a day on email, order entry, or status updates. A build pays off only when the volume is high enough, and the review tells you whether yours is.</p>
+        <h3 class="label">What you get</h3>
+        <ul>
+          <li><strong>Workflow review.</strong> We map one workflow and measure it, then give you a written plan and a fixed build price.</li>
+          <li><strong>Build.</strong> One system for that workflow, with automated tests that run before every change.</li>
+          <li><strong>Shadow mode.</strong> The system runs beside your team until its output has been checked.</li>
+        </ul>
+        <h3 class="label">Timeline</h3>
+        <p>Our most recent build, the email triage system, went from approved scope to production in about 12 weeks.</p>
+        <h3 class="label">Price</h3>
+        <p class="price">Review $2,500, credited to the build if you go ahead. Builds from $15,000, half upfront. Support $750 a month for monitoring, or $1,500 a month with ongoing improvements.</p>
+        <p><a href="/work/#email-triage">Example: email triage for a refurbishment group →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="dashboards">
+    <div class="wrap grid">
+      <div class="s-4"><span class="ord">02</span><h2 class="display h2">Owner’s dashboard</h2></div>
+      <div class="s-8 body">
+        <h3 class="label">Who it’s for</h3>
+        <p>Owners who check five different systems to find out how the week is going.</p>
+        <h3 class="label">What you get</h3>
+        <p>One private page behind a sign-in, rebuilt every night from the systems you already use.</p>
+        <h3 class="label">Price</h3>
+        <p class="price">Setup from $3,000. Then $750 a month for reports and monitoring, or $1,500 a month with a monthly review and one improvement built (up to one working day).</p>
+        <p><a href="/work/#owner-dashboard">Example: dashboard for an auction firm →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section id="china">
+    <div class="wrap grid">
+      <div class="s-4"><span class="ord">03</span><h2 class="display h2">Your person in China</h2></div>
+      <div class="s-8 body">
+        <h3 class="label">Who it’s for</h3>
+        <p>US companies that buy from Chinese suppliers and need someone on the ground in China.</p>
+        <h3 class="label">What you get</h3>
+        <ul>
+          <li><strong>Desk check, $750.</strong> A written look at a supplier’s registration, licences, and public record.</li>
+          <li><strong>Supplier visit, $1,500.</strong> Ryan visits one supplier in the Chengdu–Chongqing area and writes a memo in English to help you decide.</li>
+          <li><strong>Other regions,</strong> from $2,500 plus travel.</li>
+          <li><strong>Retainer,</strong> from $1,500 a month with a three-month minimum. Ongoing questions, calls with suppliers, and visits when needed.</li>
+        </ul>
+        <p>Advisory only. We never handle goods, payments, or shipping. For first orders under about $25,000, we’ll point you to a third-party inspection firm instead. Travel and other third-party costs are billed at cost.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid">
+      <h2 class="label s-4">Questions</h2>
+      <dl class="s-8 faq">
+        {faq.map((f) => (<><dt>{f.q}</dt><dd set:html={f.a} /></>))}
+      </dl>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap"><a class="btn" href={BOOKING}>Book a call</a></div>
+  </section>
+</Page>
+
+<style>
+  .head { padding-top: 56px; padding-bottom: 48px; }
+  .head p { margin-top: 20px; }
+  .ord { display: block; margin-bottom: 8px; }
+  .body h3 { margin: 24px 0 8px; }
+  .body h3:first-child { margin-top: 0; }
+  .body ul { padding-left: 1.1em; margin: 0 0 1em; }
+  .body li { margin-bottom: 0.6em; }
+  .body strong { font-weight: 500; color: var(--ink); }
+  .price { color: var(--celadon); }
+  .faq { margin: 0; }
+  .faq dt { font-weight: 500; margin-top: 20px; }
+  .faq dt:first-child { margin-top: 0; }
+  .faq dd { margin: 6px 0 0; color: var(--muted); }
+</style>

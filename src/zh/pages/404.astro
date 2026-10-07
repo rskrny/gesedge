@@ -1,0 +1,8 @@
+---
+import Page from '../../shared/layouts/Page.astro';
+import { t } from '../copy';
+---
+<Page title={t.notFound.h1} description={t.notFound.h1} path="/404/" noindex>
+  <div class="wrap msg"><h1 class="display h2">{t.notFound.h1}</h1><p><a href="/">{t.notFound.home}</a></p></div>
+</Page>
+<style>.msg { padding: 96px var(--pad); } .msg h1 { margin-bottom: 16px; }</style>

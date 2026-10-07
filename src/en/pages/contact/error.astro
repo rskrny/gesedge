@@ -1,0 +1,12 @@
+---
+import Page from '../../../shared/layouts/Page.astro';
+import { EMAIL } from '../../../shared/site';
+---
+<Page title="Message not sent · Global Edge Strategies" description="Your message did not send." path="/contact/error/" noindex>
+  <div class="wrap msg">
+    <h1 class="display h2">That didn’t send.</h1>
+    <p>Please email <a href={`mailto:${EMAIL}`}>{EMAIL}</a> instead.</p>
+    <p><a href="/contact/">Back to the form</a></p>
+  </div>
+</Page>
+<style>.msg { padding: 96px var(--pad); } .msg h1 { margin-bottom: 16px; }</style>

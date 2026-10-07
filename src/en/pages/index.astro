@@ -1,0 +1,140 @@
+---
+// Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Don't edit wording here without re-running the gate.
+import Page from '../../shared/layouts/Page.astro';
+import TriageFigure from '../../shared/components/TriageFigure.astro';
+import { BOOKING, EMAIL, COORDS, CANONICAL, GES } from '../../shared/site';
+import { work, who } from '../work';
+
+const offers = [
+  { n: '01', name: 'AI operations pilot', body: 'For teams that spend hours a day sorting email, re-keying orders, or chasing status updates. We start with a paid review of one workflow, build one system for it, and run that system beside your team until its output has been checked.', price: 'Review $2,500, credited to the build. Builds from $15,000.' },
+  { n: '02', name: 'Owner’s dashboard', body: 'One private page that shows what is happening across your business, rebuilt every night from the systems you already use.', price: 'Setup from $3,000, then from $750 a month.' },
+  { n: '03', name: 'Your person in China', body: 'For US companies that buy from Chinese suppliers and need someone on the ground in China. Desk checks, supplier visits, and a written memo to help you decide. Advisory only. We never handle goods or money.', price: 'Desk check $750.' },
+];
+const steps = [
+  { name: 'Review', body: 'A paid look at one workflow. You get a written plan and a fixed price.' },
+  { name: 'Build', body: 'We build one system for that workflow, with tests that run before every change.' },
+  { name: 'Shadow mode', body: 'The system runs beside your team, and its output is checked before anyone relies on it.' },
+  { name: 'Support', body: '$750 a month for monitoring, or $1,500 a month with improvements.' },
+];
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: GES.name,
+  url: CANONICAL.en,
+  email: EMAIL,
+  logo: CANONICAL.en + '/share.png',
+  founder: { '@type': 'Person', name: 'Ryan Kearney' },
+  address: { '@type': 'PostalAddress', addressRegion: 'WY', addressCountry: 'US' },
+};
+---
+<Page
+  title="Global Edge Strategies · AI systems for US companies"
+  description="We build AI systems for US companies and English websites for Chinese factories. Run by Ryan Kearney from Chengdu."
+  path="/"
+  alt="/"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(org)} />
+
+  <div class="hero wrap">
+    <div class="corners label" aria-hidden="true"><span>{COORDS}</span><span>Based in Chengdu</span></div>
+    <div class="grid">
+      <div class="s-7 lead">
+        <h1 class="display h1">We build AI systems for US companies and English websites for Chinese factories.</h1>
+        <p class="sub">Global Edge Strategies is a Wyoming company, and its sister company <span lang="zh-CN">成都寰桥</span> is in Chengdu. Ryan Kearney runs both.</p>
+        <p class="ctas"><a class="btn" href={BOOKING}>Book a call</a> <a class="btn ghost" href="/work/">See the work</a></p>
+      </div>
+      <div class="s-5 fig">
+        <TriageFigure caption="Illustration of a live email triage system, with sample messages." />
+      </div>
+    </div>
+    <div class="split">
+      <a href="#services">Three services for US businesses ↓</a>
+      <a href="/exporters/">For Chinese factories selling to US buyers →</a>
+    </div>
+  </div>
+
+  <section id="services">
+    <div class="wrap">
+      <h2 class="label">What we do for US businesses</h2>
+      <ol class="rows">
+        {offers.map((o) => (
+          <li class="grid">
+            <span class="ord s-2">{o.n}</span>
+            <h3 class="h3 s-3">{o.name}</h3>
+            <div class="s-7"><p>{o.body}</p><p class="price">{o.price}</p></div>
+          </li>
+        ))}
+      </ol>
+      <p class="more"><a href="/services/">All services and prices →</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="label">Systems in use</h2>
+      <ol class="rows">
+        {work.map((w, i) => (
+          <li class="grid">
+            <span class="ord s-2">{String(i + 1).padStart(2, '0')}</span>
+            <div class="s-3"><h3 class="h3">{w.title}</h3><p class="muted meta">{who(w)} · {w.meta.split(' · ').pop()}</p></div>
+            <p class="s-7">{w.home}</p>
+          </li>
+        ))}
+      </ol>
+      <p class="more"><a href="/work/">More on the work →</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="label">How a project runs</h2>
+      <ol class="steps grid">
+        {steps.map((s, i) => (
+          <li class="s-3"><span class="ord">{String(i + 1).padStart(2, '0')}</span><h3 class="h3">{s.name}</h3><p>{s.body}</p></li>
+        ))}
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid">
+      <h2 class="label s-3">Who you work with</h2>
+      <div class="s-7">
+        <p class="big">Ryan Kearney is an American who lives in Chengdu. He coordinated import operations at a freight forwarder in Boston before he started building software, and he built every system on this page. Zhu Shiying, a developer in Chengdu, works on new builds and with Chinese-speaking clients.</p>
+        <p><a href="/about/">About →</a></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="close">
+    <div class="wrap">
+      <h2 class="display h2">Book a call</h2>
+      <p>30 minutes on video to see whether a review makes sense. Times show in your timezone. Or email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+      <p><a class="btn" href={BOOKING}>Book a call</a></p>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .hero { position: relative; padding-top: 56px; padding-bottom: 32px; }
+  .corners { display: flex; justify-content: space-between; margin-bottom: 40px; }
+  .lead { align-self: center; }
+  .sub { margin-top: 24px; color: var(--muted); }
+  .ctas { display: flex; gap: 12px; flex-wrap: wrap; margin-top: 28px; }
+  .fig { align-self: center; }
+  .split { display: flex; justify-content: space-between; gap: 16px; flex-wrap: wrap; margin-top: 56px;
+    padding-top: 16px; border-top: 1px solid var(--line); font-size: 15px; }
+  .split a { color: var(--ink); text-decoration: none; }
+  .split a:hover { color: var(--celadon); }
+  h2.label { margin-bottom: 24px; }
+  .rows h3 { margin-top: 4px; }
+  .price { color: var(--celadon); margin: 0; }
+  .meta { font-size: 14px; margin-top: 6px; }
+  .more { margin: 24px 0 0; }
+  .steps { list-style: none; padding: 0; margin: 0; }
+  .steps li { border-top: 1px solid var(--line); padding-top: 16px; }
+  .steps h3 { margin: 8px 0; }
+  .big { font-size: clamp(1.05rem, 1.6vw, 1.25rem); }
+  .close .btn { margin-top: 8px; }
+  .close h2 { margin-bottom: 16px; }
+</style>

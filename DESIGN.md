@@ -65,7 +65,7 @@ ordinals (`01`–`03`) for offers and work. Metadata as a colophon: industry · 
 
 ## 6 · Hero and imagery
 
-- **EN hero object:** a real-work frame of the Goldie-style triage (mixed inbox gets labelled and
+- **EN hero object:** a real-work frame of the email triage system (mixed inbox gets labelled and
   routed), drawn in HTML/SVG from the real UI. No WebGL.
 - **ZH hero object:** a page from the sample audit.
 - Real screenshots only, cropped so no client customer data is readable. Ryan's real photo on About.

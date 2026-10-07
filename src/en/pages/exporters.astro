@@ -1,0 +1,63 @@
+---
+// Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Equivalent page on huanqiao.gesedge.com: /audit/.
+// ponytail: "Sample report" button hidden until Kenny's sample audit exists.
+import Page from '../../shared/layouts/Page.astro';
+import { HOST, HQ } from '../../shared/site';
+---
+<Page
+  title="Website review for Chinese exporters · 成都寰桥"
+  description="Your factory's website, and how AI assistants describe your company, reviewed from a US buyer's point of view. ¥2,980."
+  path="/exporters/"
+  alt="/audit/"
+>
+  <div class="wrap head">
+    <h1 class="display h1">Your factory’s website, reviewed from a US buyer’s point of view.</h1>
+    <p class="muted">For export managers at Chinese factories. Our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your website and checks how AI assistants describe your company.</p>
+    <p class="ctas"><a class="btn" href={HOST.zh + '/audit/'} hreflang="zh-CN">Chinese version for your boss →</a></p>
+  </div>
+
+  <section>
+    <div class="wrap grid">
+      <h2 class="label s-4">What you get</h2>
+      <ul class="s-8 list">
+        <li>Notes on each page from a buyer’s point of view.</li>
+        <li>An AI snapshot: five buyer questions put to ChatGPT, Gemini, and Perplexity, three times each, with dated screenshots.</li>
+        <li>A list of fixes in priority order.</li>
+        <li>The report in English and Chinese, with a short video walkthrough.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid">
+      <h2 class="label s-4">Price</h2>
+      <p class="s-8 price">¥2,980, five working days. The full fee is credited to a website build ordered within 60 days.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid">
+      <h2 class="label s-4">How it works</h2>
+      <div class="s-8">
+        <p>Add us on WeCom, then a free 15-minute call, then the contract and fapiao. The report is due five working days after that.</p>
+        <p class="muted">We don’t promise inquiries, search rankings, or mentions by AI assistants.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid">
+      <h2 class="label s-4">Company</h2>
+      <p class="s-8"><span lang="zh-CN">{HQ.name}</span> · Unified Social Credit Code {HQ.uscc} · Issues fapiao.</p>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .head { padding-top: 56px; padding-bottom: 48px; }
+  .head p { margin-top: 20px; }
+  .ctas { margin-top: 28px; }
+  .list { margin: 0; padding-left: 1.1em; }
+  .list li { margin-bottom: 0.6em; }
+  .price { color: var(--celadon); }
+</style>

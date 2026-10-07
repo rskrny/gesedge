@@ -1,0 +1,41 @@
+---
+// Copy: .ai/deliverables/redo-copy-en.md (v3, gated). The form posts to worker/index.js (no JS needed).
+import Page from '../../../shared/layouts/Page.astro';
+import { BOOKING, EMAIL } from '../../../shared/site';
+---
+<Page title="Contact · Global Edge Strategies" description="Book a 30-minute call with Ryan Kearney, or send a note." path="/contact/">
+  <div class="wrap head">
+    <h1 class="display h1">Contact</h1>
+  </div>
+  <section>
+    <div class="wrap grid">
+      <div class="s-4">
+        <p>Book a 30-minute call. Times show in your timezone.</p>
+        <p><a class="btn" href={BOOKING}>Book a call</a></p>
+        <p class="muted">Or send a note, or email <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+      </div>
+      <form class="s-8 form" method="post" action="/api/contact/" id="form">
+        <label>Name <input name="name" required maxlength="100" autocomplete="name" /></label>
+        <label>Email <input name="email" type="email" required maxlength="200" autocomplete="email" /></label>
+        <label>Company or website <input name="company" maxlength="200" autocomplete="organization" /></label>
+        <label>Which task takes your team the most time? <textarea name="message" required maxlength="4000" rows="6"></textarea></label>
+        <label class="hp" aria-hidden="true">Leave empty <input name="website2" tabindex="-1" autocomplete="off" /></label>
+        <p class="muted small">We use what you send only to reply to you. See the <a href="/privacy/">privacy notice</a>.</p>
+        <button class="btn" type="submit">Send</button>
+      </form>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .head { padding-top: 56px; padding-bottom: 48px; }
+  .form { display: grid; gap: 18px; max-width: 640px; }
+  .form label { display: grid; gap: 6px; font-size: 15px; }
+  .form input, .form textarea {
+    font: inherit; color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 4px; padding: 10px 12px;
+  }
+  .form input:focus, .form textarea:focus { border-color: var(--celadon); outline: none; }
+  .form button { justify-self: start; cursor: pointer; }
+  .small { font-size: 14px; margin: 0; }
+  .hp { position: absolute; left: -9999px; }
+</style>
