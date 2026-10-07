@@ -318,3 +318,10 @@ audit's AI assistants delegated to Claude.
   Ahrefs AI tools) do the snapshot cheaper. The snapshot stays one section; the sellable parts are the native-English
   buyer-side review, delivery in Chinese by people in Chengdu with a free call, the fix list, and the credit toward a
   build.
+
+## Round 5b — no third-party services (Ryan, 2026-10-07)
+Ryan dislikes services like Resend and cal.com (Resend free tier used up elsewhere; cal.com sees too much of his
+Google account). Decision: booking = Google Calendar's own appointment schedule (done, verified logged-out);
+cal.com account deleted (cal.com/gesedge now 404) and its Google access revoked. Form email = Purelymail SMTP from
+the Worker (his existing $10/yr host), dedicated mailbox website@gesedge.com. Cloudflare Email Service rejected:
+it needs Cloudflare MX on the sending domain, which would displace Purelymail on gesedge.com.

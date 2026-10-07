@@ -19,8 +19,8 @@
 ## Next actions
 1. Ryan reviews the preview copy and answers the [Ryan: …] items (reply time, retention, desk-check scope,
    Everglory/C14 lines, which AI assistants the audit uses).
-2. Before launch: redacted screenshots on Work, Ryan's photo on About, OG image 1200×630, Resend (records on
-   `send.gesedge.com` only) + `RESEND_API_KEY` secret, decide on the two old blog posts (now 301 → home).
+2. Before launch: redacted screenshots on Work, Ryan's photo on About, OG image 1200×630, Purelymail mailbox
+   website@gesedge.com + `SMTP_PASS` secret on both Workers, decide on the two old blog posts (now 301 → home).
 3. Kenny: WeCom QR + 获客链接, all Chinese copy through the gate, the sample audit, his name in characters.
 4. Swap (Ryan's explicit approval): point Workers Builds on `gesedge` at `node scripts/build.mjs en` +
    a production wrangler config; add the `huanqiao` Worker + `huanqiao.gesedge.com`; smoke-test.
@@ -29,7 +29,6 @@
 - Client names (Goldie, Sullivan, Bloodline): built in, off until each client approves (Ryan not asking yet).
 - Approval of the Everglory and C14 wording on About; Flipside on the site: yes or no.
 - Kenny: WeCom (QR + 获客链接), his name in characters, all Chinese copy, the sample audit.
-- Form email: needs a sending service (Resend, records on a subdomain only; never touch apex MX/SPF).
 - PuHuiTi: confirm logo/trademark use with Alibaba before any trademark filing (web use is fine).
 - Delete the Vercel project on/after 2026-10-07: ask Ryan first. Take down `ges-refboard` after review.
 
@@ -49,7 +48,14 @@
 AI operations pilot: review $2,500 (credited), builds from $15,000, support $750 or $1,500/mo · Owner's
 dashboard: setup from $3,000, $750 or $1,500/mo · Your person in China: desk check $750, supplier visit +
 memo $1,500 (Chengdu/Chongqing), other regions from $2,500 + travel, retainer from $1,500/mo (3-month min) ·
-Factory audit ¥2,980, 5 working days, full credit toward a build within 60 days. Booking: cal.com/gesedge/30min.
+Factory audit ¥2,980, 5 working days, full credit toward a build within 60 days.
+
+## Booking + form email (2026-10-07: no third-party services, Ryan's call)
+- Booking = Google Calendar appointment schedule on rskrny@gmail.com ("Call with Ryan Kearney (Global Edge
+  Strategies)", 30 min, Meet, daily 00:00–02:00 + 08:00–24:00 China time). Link in `src/shared/site.ts`. cal.com
+  account deleted and its Google access revoked. Booking page shows the Google account name "rskrny" (Ryan's call).
+- Form email = Worker SMTP to smtp.purelymail.com:465 as website@gesedge.com (mailbox to create in Purelymail,
+  password → `npx wrangler secret put SMTP_PASS -c wrangler.<site>.jsonc`). Supabase row is the fallback.
 
 ## Handoff
 `git switch redo/site` → read `DESIGN.md` → Next actions. Client names appear in older planning docs already on
