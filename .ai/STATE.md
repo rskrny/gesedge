@@ -19,8 +19,7 @@
 ## Next actions
 1. Ryan reviews the preview copy and answers the [Ryan: …] items (reply time, retention, desk-check scope,
    Everglory/C14 lines, which AI assistants the audit uses).
-2. Before launch: redacted screenshots on Work, Ryan's photo on About, OG image 1200×630, Purelymail mailbox
-   website@gesedge.com + `SMTP_PASS` secret on both Workers, decide on the two old blog posts (now 301 → home).
+2. Before launch: redacted screenshots on Work, Ryan's photo on About, OG image 1200×630, `SMTP_PASS` secret on the production Workers, decide on the two old blog posts (now 301 → home).
 3. Kenny: WeCom QR + 获客链接, all Chinese copy through the gate, the sample audit, his name in characters.
 4. Swap (Ryan's explicit approval): point Workers Builds on `gesedge` at `node scripts/build.mjs en` +
    a production wrangler config; add the `huanqiao` Worker + `huanqiao.gesedge.com`; smoke-test.
@@ -54,8 +53,10 @@ Factory audit ¥2,980, 5 working days, full credit toward a build within 60 days
 - Booking = Google Calendar appointment schedule on rskrny@gmail.com ("Call with Ryan Kearney (Global Edge
   Strategies)", 30 min, Meet, daily 00:00–02:00 + 08:00–24:00 China time). Link in `src/shared/site.ts`. cal.com
   account deleted and its Google access revoked. Booking page shows the Google account name "rskrny" (Ryan's call).
-- Form email = Worker SMTP to smtp.purelymail.com:465 as website@gesedge.com (mailbox to create in Purelymail,
-  password → `npx wrangler secret put SMTP_PASS -c wrangler.<site>.jsonc`). Supabase row is the fallback.
+- Form email = Worker SMTP to smtp.purelymail.com:465 as website@gesedge.com (mailbox created 2026-10-07;
+  password only in the `SMTP_PASS` secret on both preview Workers; set it on production Workers at the swap).
+  EN verified end to end (Gmail inbox). ZH notifications with '[寰桥]' subjects were accepted by Purelymail but
+  never reached Gmail; subjects now ASCII '[Huanqiao] …' (verification in progress). Supabase row is the fallback.
 
 ## Handoff
 `git switch redo/site` → read `DESIGN.md` → Next actions. Client names appear in older planning docs already on
