@@ -1,7 +1,9 @@
 // Worker for both sites. Static pages are served by the assets binding without running this code
-// (run_worker_first covers /api/* only). POST /api/contact stores the message in Supabase and, when
-// RESEND_API_KEY is set, emails it to Ryan. Works without JavaScript: the form posts here and gets a 303.
+// (run_worker_first covers /api/* only). POST /api/contact stores the message in Supabase and emails it to
+// Ryan through Purelymail (his existing mail host) as website@gesedge.com. No third-party mail service.
+// Works without JavaScript: the form posts here and gets a 303.
 // ponytail: honeypot + same-origin + size limits only. Add Turnstile or a rate-limit binding if spam shows up.
+import { connect } from 'cloudflare:sockets';
 
 const LIMITS = { name: 100, email: 200, company: 200, contact: 100, site: 300, message: 4000 };
 
@@ -50,20 +52,67 @@ async function store(env, row) {
   } catch { return false; }
 }
 
+// Plain SMTP over implicit TLS (smtp.purelymail.com:465). The mailbox password is the Worker secret SMTP_PASS
+// (`npx wrangler secret put SMTP_PASS -c wrangler.<site>.jsonc`). Returns false on any failure; the row in
+// Supabase is the fallback.
 async function mail(env, row, zh) {
-  if (!env.RESEND_API_KEY) return false;
+  if (!env.SMTP_PASS) return false;
+  const from = env.MAIL_FROM;
+  const to = 'ryan@gesedge.com';
+  const enc = new TextEncoder();
+  const b64 = (str) => { let bin = ''; for (const b of enc.encode(str)) bin += String.fromCharCode(b); return btoa(bin); };
+  const oneLine = (str) => String(str).replace(/[\r\n]+/g, ' ');
+  const subject = `${zh ? '[寰桥] ' : ''}Website message from ${oneLine(row.name)}${row.company ? ` (${oneLine(row.company)})` : ''}`.slice(0, 150);
+  const body = `Name: ${row.name}\n${zh ? 'WeChat/phone' : 'Email'}: ${row.email}\nCompany: ${row.company ?? '-'}\n\n${row.message}\n`;
+  const message = [
+    `From: gesedge.com website <${from}>`,
+    `To: <${to}>`,
+    ...(zh ? [] : [`Reply-To: <${row.email}>`]), // validated: no spaces or line breaks
+    `Subject: =?UTF-8?B?${b64(subject)}?=`,
+    `Date: ${new Date().toUTCString()}`,
+    `Message-ID: <${crypto.randomUUID()}@gesedge.com>`,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding: base64',
+    '',
+    b64(body).replace(/.{76}/g, '$&\r\n'),
+    '.',
+    '',
+  ].join('\r\n');
+
+  const socket = connect({ hostname: 'smtp.purelymail.com', port: 465 }, { secureTransport: 'on' });
+  const writer = socket.writable.getWriter();
+  const reader = socket.readable.getReader();
+  const dec = new TextDecoder();
+  let buf = '';
+  const done = /(?:^|\r\n)(\d{3})(?: [^\r\n]*)?\r\n$/; // last line of a reply: code + space (or nothing)
+  const expect = async (code) => {
+    while (!done.test(buf)) {
+      const { value, done: closed } = await reader.read();
+      if (closed) throw new Error(`closed waiting for ${code}`);
+      buf += dec.decode(value, { stream: true });
+    }
+    const got = buf; buf = '';
+    if (got.match(done)[1] !== String(code)) throw new Error(`wanted ${code}, got ${got.trim().slice(0, 120)}`);
+  };
+  const send = (line) => writer.write(enc.encode(line + '\r\n'));
+  const session = async () => {
+    await expect(220);
+    await send('EHLO gesedge.com'); await expect(250);
+    await send('AUTH PLAIN ' + b64(`\0${from}\0${env.SMTP_PASS}`)); await expect(235);
+    await send(`MAIL FROM:<${from}>`); await expect(250);
+    await send(`RCPT TO:<${to}>`); await expect(250);
+    await send('DATA'); await expect(354);
+    await writer.write(enc.encode(message)); await expect(250);
+    await send('QUIT');
+    return true;
+  };
   try {
-    const res = await fetch('https://api.resend.com/emails', {
-      method: 'POST',
-      headers: { Authorization: `Bearer ${env.RESEND_API_KEY}`, 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        from: env.MAIL_FROM,
-        to: 'ryan@gesedge.com',
-        ...(zh ? {} : { reply_to: row.email }),
-        subject: `${zh ? '[寰桥] ' : ''}Website message from ${row.name}${row.company ? ` (${row.company})` : ''}`,
-        text: `Name: ${row.name}\n${zh ? 'WeChat/phone' : 'Email'}: ${row.email}\nCompany: ${row.company ?? '-'}\n\n${row.message}`,
-      }),
-    });
-    return res.ok;
-  } catch { return false; }
+    return await Promise.race([session(), new Promise((resolve) => setTimeout(() => resolve(false), 10000))]);
+  } catch (err) {
+    console.log('smtp failed:', err.message); // never logs the password or the message body
+    return false;
+  } finally {
+    socket.close().catch(() => {});
+  }
 }

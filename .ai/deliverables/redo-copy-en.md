@@ -208,3 +208,5 @@ Reply time one working day: yes. Retention 24 months: yes. Everglory + C14 lines
 audit's AI assistants: Ryan delegated. Desk check = registration, lawsuits/penalties, US shipment records, claimed
 certificates, factory-vs-trader read, written report (no "verify/inspect/guarantee"). Assistants = ChatGPT, Google AI
 Overviews, Perplexity (reach data in redo-interview.md, Round 5).
+
+## 2026-10-07: cal.com → Google Calendar booking page; Resend → Purelymail SMTP. Privacy lines updated to match.
