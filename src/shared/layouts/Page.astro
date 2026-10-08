@@ -3,10 +3,10 @@
 import '@fontsource-variable/unbounded/wght.css';
 import '@fontsource/ibm-plex-sans/latin-400.css';
 import '@fontsource/ibm-plex-sans/latin-500.css';
-import '@fontsource/ibm-plex-mono/latin-500.css';
+import '@fontsource/ibm-plex-sans/latin-600.css';
 import '../styles/base.css';
 import Logo from '../components/Logo.astro';
-import { SITE, PREVIEW, HOST, CANONICAL, EMAIL, BOOKING, COORDS, GES, HQ, ZH_LIVE } from '../site';
+import { SITE, PREVIEW, HOST, CANONICAL, EMAIL, BOOKING, GES, HQ, ZH_LIVE } from '../site';
 import { t } from '../../zh/copy';
 
 interface Props {
@@ -80,12 +80,11 @@ const here = (href: string) => path.startsWith(href);
           <Logo variant={zh ? 'chengdu' : 'ges'} height={24} />
         </div>
         <div class="s-4 small">
-          <p>{GES.name} · {GES.place}</p>
+          <p>{GES.name}, {GES.place}</p>
           <p lang="zh-CN">{HQ.name}<br />{zh ? t.footer.uscc : 'Unified Social Credit Code'} {HQ.uscc}{zh && <><br />{HQ.address}<br />{t.footer.fapiao}</>}</p>
-          <p>{zh ? t.footer.sisters : 'Sister companies, both founded by Ryan Kearney.'}</p>
+          {zh && <p>{t.footer.sisters}</p>}
         </div>
         <div class="s-4 small">
-          <p class="label">{COORDS}</p>
           <ul class="foot-links">
             {zh
               ? <><li><a href="/privacy/">{t.footer.privacy}</a></li></>
@@ -109,7 +108,7 @@ const here = (href: string) => path.startsWith(href);
   .site-foot { padding-top: 56px; padding-bottom: 56px; border-top: 1px solid var(--line); }
   .small { font-size: 14px; color: var(--muted); }
   .small p { margin-bottom: 0.8em; }
-  .foot-links { list-style: none; margin: 12px 0 0; padding: 0; display: grid; gap: 6px; }
+  .foot-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
   @media (max-width: 860px) {
     .site-head { flex-wrap: wrap; gap: 14px 16px; min-height: 0; padding-top: 18px; padding-bottom: 18px; }
     .site-head nav { order: 3; width: 100%; margin-left: 0; }

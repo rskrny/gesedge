@@ -53,11 +53,12 @@ bands down the page reads as a template (2026-10-07 review, GPT + Kimi + DeepSee
 
 ## 4 · Typography
 
-- **Display: Unbounded 500** (300 for the large ledger ordinals). The hero line, page titles, section
-  statements, and row titles (services, work, steps). Never body or UI.
-- **Text: IBM Plex Sans 400/500.** Body, nav, buttons, form fields. Body 18px (17px on phones), line-height 1.6.
-- **Labels: IBM Plex Mono 500,** for metadata only: micro-labels in caps 11px, tracking `0.14em`; prices;
-  small ordinals. Never paragraphs. (v1 set body text in mono; Ryan rejected it as reading like a terminal.)
+**Two typefaces, nothing else.** (2026-10-08: Ryan rejected the Plex Mono caps labels as AI slop. Mono is gone.)
+- **Display: Unbounded 500.** The hero line, page titles, section headings, and row titles (services, work,
+  steps). Never body or UI.
+- **Text: IBM Plex Sans 400/500/600.** Body, nav, buttons, forms, subheads, prices, captions. Body 18px (17px on
+  phones), line-height 1.6. Subheads (`.label`) are Plex Sans 600, sentence case, no tracking, never uppercase.
+  Prices use `font-variant-numeric: tabular-nums`.
 - **中文: Alibaba PuHuiTi 3.0**, self-hosted and subset to the characters on the page.
   Letter-spacing 0 always; never tracked like Latin caps.
 - All fonts self-hosted. **No Google Fonts** anywhere (blocked or slow in mainland China).
@@ -67,17 +68,16 @@ bands down the page reads as a template (2026-10-07 review, GPT + Kimi + DeepSee
 
 12-column grid, page pad `clamp(20px, 4vw, 56px)`, 4 columns on mobile. Separation by hairlines, not
 boxes, cards, shadows, or radii (buttons 2px; screenshots 6px). Asymmetric spans by default.
-- **Home hero (comp A):** copy left, object right, a coordinates strip at the foot
-  (`104°03′W · Wyoming` · `Two companies, one founder` · `Chengdu · 104°04′E`).
-- **Proof band (comp B):** straight after the hero, on the timber band: one live system, copy 4 cols,
-  real screenshot 8 cols, two numbered pins on the screen explained in a legend.
-- **Ledger (comp A):** services as rows of big celadon ordinal · title · description · price (mono,
-  left-aligned so it reads as scope, not a checkout table).
-- **Section head:** mono label left (4 cols), Unbounded statement right (8 cols).
-- **Inner pages:** page head = celadon mono label + Unbounded H1 + muted lede. Long pages (services, work)
-  keep the title column sticky on desktop.
-- Change the composition between sections, not only the background: route line for steps, two-column
-  "also live" rows, a pull-paragraph for people. Zero-padded ordinals (`01`–`03`). Metadata as a colophon.
+- **Home hero:** copy left, the animated joint right. Nothing under it.
+- **Proof band:** straight after the hero, on the timber band: one live system, copy 4 cols, the real
+  screenshot 8 cols, flat, with a plain one-sentence caption.
+- **Section headings sit above their content**, left-aligned (Unbounded). No small label in a left column.
+- **Each page gets a composition that fits its content:** services = a price list (title and headline price on
+  one line, details in two columns); work = case studies (title + one plain line, full-width screen, the story in
+  columns); about = prose bios side by side; exporters and privacy = a left-aligned document (max 760px).
+- Inner pages: page head = Unbounded H1 + muted lede. No eyebrow above it.
+- Numbers only where order is real (the four project steps, as plain 1–4). Metadata as a plain sentence
+  ("Built for a … and live since …"), never a dot-separated label string.
 
 ## 6 · Hero and imagery
 
@@ -88,16 +88,16 @@ boxes, cards, shadows, or radii (buttons 2px; screenshots 6px). Asymmetric spans
   it dropping in vertically. The gap between the pieces stays open in every frame. No WebGL, no glow.
   Delivery: `<video>` AV1 + H.264 on black, `mix-blend-mode: lighten`; poster = face-on mark; reduced motion
   = a still 3/4 frame (`src/shared/components/Joint.astro`).
-- **EN proof:** the real email triage screenshot, tilted once (rotateY −8°) on the home page only; flat with a
-  hairline frame everywhere else.
+- **EN proof:** the real email triage screenshot, flat with a hairline frame (the tilt was dropped 2026-10-08 as
+  a stock SaaS move). Work page: real screens of all three systems (booking system = the charter's public
+  booking page, captured with Ryan's OK; no customer data).
 - **ZH proof:** a page from the sample audit, in a proof band under the hero once Kenny's sample exists.
 - Real screenshots only, cropped so no client customer data is readable. Ryan's real photo on About.
   Kenny is named, not photographed. No stock photos, no AI-generated people.
 
 ## 7 · Motion
 
-The hero joint is a pre-rendered video loop (above); everything else is CSS only. A dot travels the
-"How a project runs" route line.
+The hero joint is a pre-rendered video loop (above). Nothing else moves: no decorative CSS animation.
 Every page works with JavaScript off. `prefers-reduced-motion` removes all movement. Off inside WeChat.
 
 ## 8 · Voice and copy law
@@ -129,3 +129,10 @@ with fixed dimensions. Zero layout shift. Works in WeChat's in-app browser.
 Uniform card grids · stat boxes · italic-emphasis headline words · a third hue or typeface · CJK
 letter-spacing · centred template layouts · hover lift-and-shadow · glass panels · gradients ·
 neon accents · mascots · stock imagery · "AI that…" openers · invented quotes, logos, or numbers.
+
+**Added 2026-10-08 (AI tells Ryan caught or three reviewers flagged):** monospace caps "HUD" labels · eyebrow
+labels above headings · middle-dot "·" label strings on the page · coordinates, degree marks, or other decorative
+data · "Two X, one Y"-style slogans · zero-padded 01/02/03 ordinals as decoration · label-left/statement-right
+section heads repeated down a page · progress rails and moving dots · numbered pins on screenshots · tilted 3D
+screenshots · captions insisting a screen is "real" · button pairs repeated in every band · copy fragments
+("Advisory only."). If a reviewer flags one of these, fix it. Passing an earlier gate is not a reason to keep it.

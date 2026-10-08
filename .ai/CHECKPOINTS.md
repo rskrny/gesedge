@@ -29,3 +29,4 @@
 - 2026-10-07 · Logo animated: Blender sliding-dovetail render replaces the (physically wrong) SVG hero; AV1/H.264 video with poster, reduced-motion still, pause button; Worker serves /media with byte ranges; previews redeployed.
 - 2026-10-08 · gesedge.com LIVE on the redo (PRs #3, #4). Redirect rule www→apex, Builds commands switched, SMTP_PASS rotated; first build failed on a Windows-only lockfile, fixed and verified in Docker; smoke test passed; /about and /contact now 301.
 - 2026-10-08 · Supabase and Vercel removed from GES: form copies to Workers KV (730-day TTL), privacy copy updated, GES Supabase data exported privately; Bloodline still uses the shared Supabase project.
+- 2026-10-08 · Anti-AI design + copy pass: mono labels, eyebrows, coordinates, ordinals, pins, tilt and label-left heads gone; pages re-composed; booking screenshot added; three reviewers; ban list in DESIGN.md.

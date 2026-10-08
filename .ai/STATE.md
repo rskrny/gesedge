@@ -8,6 +8,10 @@
   `gesedge`: build `node scripts/build.mjs en`, deploy `npx wrangler deploy`). Astro static, A+B design, animated
   Blender logo hero, gated English copy. Smoke test passed (pages, old-URL 301s, www→apex, headers, video 206,
   form email to Gmail inbox, no console errors desktop/phone).
+- **Anti-AI pass shipped 2026-10-08** (Ryan: mono coordinate labels + "Two companies, one founder" = AI slop).
+  Audited by a UI finish-gate agent, Codex and Kimi; Plex Mono, eyebrows, coordinates, ordinals, pins, tilt, label-
+  left heads and copy fragments removed; each page re-composed; booking-system screenshot added (fishingbloodline.com
+  public booking page, Ryan's OK). Ban list now in DESIGN.md §11 and AGENTS.md. Reviewer re-check: tells gone.
 - **Rollback:** dashboard → Workers → gesedge → Deployments → roll back to an earlier redo version. The legacy
   Next.js version (`88f06611`) depended on Supabase and is no longer a valid rollback target.
 - `main` now = the redo. Every push to `main` deploys production. `redo/site` is kept in sync with `main`.

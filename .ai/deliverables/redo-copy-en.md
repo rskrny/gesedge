@@ -210,3 +210,23 @@ certificates, factory-vs-trader read, written report (no "verify/inspect/guarant
 Overviews, Perplexity (reach data in redo-interview.md, Round 5).
 
 ## 2026-10-07: cal.com → Google Calendar booking page; Resend → Purelymail SMTP. Privacy lines updated to match.
+
+## 2026-10-08 anti-AI pass (supersedes the lines it replaces; no-ai-slop gate re-run, edit + detect)
+Ryan rejected "Two companies, one founder" and the mono coordinate labels as AI slop. Three reviewers (UI finish-gate
+agent, Codex, Kimi K2.6) audited every page. Removed: hero eyebrow "AI systems · China advisory · Since 2024",
+the coordinates strip, footer coordinates, About coordinates line, "Systems in use", "Real screen · client data
+blurred", footer "Sister companies, both founded by Ryan Kearney.", page-head eyebrows.
+Replaced:
+- Hero subline → "Ryan Kearney built every system on this site. Three of them run every day for US clients."
+- Case meta → "Built for a [descriptor] and live since [month year]." (generated per case from work.ts)
+- Home screenshot caption → "On the executive dashboard, each ticket shows as on track, at risk, or overdue against its target date. The system sorts mail into 29 categories."
+- Home services heading → "Each service has a fixed price, agreed before work starts."
+- "Who you work with" → "Who builds it"; closing "Book a call" heading → "Start with a 30-minute call" + "We talk on video about your workflow and whether a review makes sense. The booking page shows times in your timezone. You can also email ryan@gesedge.com."
+- "Advisory only. We never handle goods or money/payments, or shipping." → "We give advice and never handle goods or money." / "…goods, payments, or shipping."
+- Home China offer → "…We do desk checks and supplier visits, and write a memo to help you decide."
+- Steps → "We review one workflow for a fee and give you a written plan and a fixed price." / "Support costs $750 a month for monitoring, or $1,500 a month with improvements."
+- Services lede → "These three services are for US businesses. …"; Work lede → "These three systems are live. …"
+- Retainer → "…It covers ongoing questions, calls with suppliers, and visits when needed."
+- About: "Two companies, one founder" → "The companies"; bios rewritten as prose (same facts); company lines: "Global Edge Strategies LLC, registered in Wyoming, builds AI systems for US businesses and advises those that buy from Chinese suppliers." / "Its sister company in Chengdu is 成都寰桥… (Chengdu Huanqiao). It reviews factory websites from a US buyer's point of view and builds English websites for Chinese factories."
+- Exporters lede → "If you're an export manager at a Chinese factory, our sister company in Chengdu, 成都寰桥, reviews your website and checks how AI assistants describe your company."; price → "The review costs ¥2,980 and takes five working days. …"; company → "Registered as 成都寰桥…, Unified Social Credit Code … The company issues fapiao."
+Kept on purpose: service names (Ryan-approved offers), the H1, the body copy the reviewers called the strongest part.
