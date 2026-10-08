@@ -8,16 +8,19 @@
   `gesedge`: build `node scripts/build.mjs en`, deploy `npx wrangler deploy`). Astro static, A+B design, animated
   Blender logo hero, gated English copy. Smoke test passed (pages, old-URL 301s, www→apex, headers, video 206,
   form email to Gmail inbox, no console errors desktop/phone).
-- **Rollback:** dashboard → Workers → gesedge → Deployments → roll back to `88f06611` (legacy Next.js site).
+- **Rollback:** dashboard → Workers → gesedge → Deployments → roll back to an earlier redo version. The legacy
+  Next.js version (`88f06611`) depended on Supabase and is no longer a valid rollback target.
 - `main` now = the redo. Every push to `main` deploys production. `redo/site` is kept in sync with `main`.
 - **Chinese site not live.** Preview only: https://huanqiao-preview.rskrny.workers.dev. EN preview:
   https://gesedge-preview.rskrny.workers.dev (noindex; set `PREVIEW=1` when building for it).
 
 ## Next actions
 1. Ryan: look at gesedge.com on a real iPhone and in WeChat (untested there; poster = flat logo if autoplay is blocked).
-2. After ~1 week stable, clean the legacy leftovers on Worker `gesedge`: secrets `GES_ADMIN_PASSWORD`,
-   `NEXT_PUBLIC_SUPABASE_*`, `SUPABASE_SERVICE_ROLE_KEY`; build variables `NEXT_PUBLIC_SUPABASE_*`. (Kept for now so
-   the rollback version still has what it needs.) Then ask Ryan about deleting the Vercel project and `ges-refboard`.
+2. **No Supabase, no Vercel (Ryan, 2026-10-08).** GES no longer touches either: form copies live in Workers KV
+   (`MESSAGES`: prod 8088904e…, previews 32e3fb81…; keys auto-delete after 730 days). GES data exported to
+   `../business/supabase-export-2026-10-08/`. The Supabase project is shared with the Bloodline charter booking system
+   (live client), so it stays; only the GES tables go. Bloodline and other client sites still on Vercel/Supabase =
+   separate migration if Ryan wants it. Ask Ryan before deleting `ges-refboard`.
 3. ZH launch after Kenny: all Chinese copy in `src/zh/copy.ts` (gate: Kenny → qu-ai-wei → lieflat → Kimi),
    WeCom QR + 获客链接, sample audit (becomes the ZH proof band under the joint hero), his name in characters;
    then Worker `huanqiao` + domain, flip `ZH_LIVE`.
@@ -25,8 +28,9 @@
 ## Open questions / constraints
 - Client names off until each client approves; repo is PUBLIC (no client names, revenue, Ryan's email,
   headshots in git). Older planning docs already on GitHub name clients — scrubbing is Ryan's call.
-- About photo: not yet (Ryan). Test rows "Smoke test (Claude)" exist in Supabase `ges_contact_submissions` and
-  Gmail (2026-10-07/08); safe to delete.
+- About photo: not yet (Ryan). Test emails "Smoke test (Claude)" / "KV test (Claude)" in Gmail are safe to delete.
+- Emailed copies of form messages in Ryan's mailbox are not auto-deleted at 24 months (the privacy notice says
+  messages are deleted then); KV copies are.
 - Not taken (new copy needs the gate + Ryan): "Good fit / Not a fit" block; "Start with one workflow review" line.
 
 ## Ops gotchas

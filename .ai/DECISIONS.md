@@ -13,6 +13,19 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: No Supabase, no Vercel for GES — form copies move to Workers KV
+Date: 2026-10-08 · Status: Accepted (Ryan: "We should not be using supabase or vercel anymore")
+Context: the redo Worker still saved each form message to Supabase as a fallback to email; the privacy notice named
+Supabase; the legacy Worker carried Supabase secrets; a retired `gesedge` Vercel project remained.
+Options: (a) Workers KV; (b) D1; (c) email only.
+Decision: (a). One KV key per message, 730-day TTL (matches the 24-month promise, never late). Supabase GES tables
+exported to `../business/supabase-export-2026-10-08/` and dropped; Supabase secrets removed from Worker `gesedge`;
+privacy copy updated (no-ai-slop gate passed). The Supabase project itself stays: it also runs the Bloodline booking
+system. Codex agreed on KV (Kimi consulted too).
+Rationale: same vendor as hosting, free tier far above volume, automatic deletion.
+Trade-offs: KV has no query UI beyond list/get; fine at a few messages a week.
+Reversal trigger: volume or search needs outgrow KV → D1.
+
 ## Decision: gesedge.com swapped to the redo (Astro) — live 2026-10-08
 Date: 2026-10-08 · Status: Accepted (Ryan: "proceed as best you see fit")
 Context: Ryan approved the A+B look and the animated logo and asked to deploy.

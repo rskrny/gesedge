@@ -28,3 +28,4 @@
 - 2026-10-07 · Ryan picked comps A + B. Site restyled to the merge (joint hero, real-work proof band, ledger, Plex Sans body), reviewed by Codex/Kimi/DeepSeek, copy gate run, previews redeployed; awaiting Ryan's review.
 - 2026-10-07 · Logo animated: Blender sliding-dovetail render replaces the (physically wrong) SVG hero; AV1/H.264 video with poster, reduced-motion still, pause button; Worker serves /media with byte ranges; previews redeployed.
 - 2026-10-08 · gesedge.com LIVE on the redo (PRs #3, #4). Redirect rule www→apex, Builds commands switched, SMTP_PASS rotated; first build failed on a Windows-only lockfile, fixed and verified in Docker; smoke test passed; /about and /contact now 301.
+- 2026-10-08 · Supabase and Vercel removed from GES: form copies to Workers KV (730-day TTL), privacy copy updated, GES Supabase data exported privately; Bloodline still uses the shared Supabase project.
