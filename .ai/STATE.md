@@ -18,9 +18,11 @@
 1. Ryan: look at gesedge.com on a real iPhone and in WeChat (untested there; poster = flat logo if autoplay is blocked).
 2. **No Supabase, no Vercel (Ryan, 2026-10-08).** GES no longer touches either: form copies live in Workers KV
    (`MESSAGES`: prod 8088904e…, previews 32e3fb81…; keys auto-delete after 730 days). GES data exported to
-   `../business/supabase-export-2026-10-08/`. The Supabase project is shared with the Bloodline charter booking system
-   (live client), so it stays; only the GES tables go. Bloodline and other client sites still on Vercel/Supabase =
-   separate migration if Ryan wants it. Ask Ryan before deleting `ges-refboard`.
+   `../business/supabase-export-2026-10-08/`. Supabase secrets + build vars removed from Worker `gesedge`. The Supabase
+   project is shared with the Bloodline charter booking system (live client), so it stays; the two GES tables are
+   dormant (drop declined at the prompt). **Vercel `gesedge` project still serves the old site at gesedge.vercel.app**
+   (indexable) until Ryan deletes it (link in the 2026-10-08 session). Bloodline and other client sites still on
+   Vercel/Supabase = separate migration if Ryan wants it. Ask Ryan before deleting `ges-refboard`.
 3. ZH launch after Kenny: all Chinese copy in `src/zh/copy.ts` (gate: Kenny → qu-ai-wei → lieflat → Kimi),
    WeCom QR + 获客链接, sample audit (becomes the ZH proof band under the joint hero), his name in characters;
    then Worker `huanqiao` + domain, flip `ZH_LIVE`.
