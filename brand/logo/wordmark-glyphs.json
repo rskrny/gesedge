@@ -1,0 +1,54 @@
+{
+ "units": "wordmark: cap height 100, cap top y=0, baseline y=100, x from the pen origin; index = data-glyph",
+ "text": "GES",
+ "glyphs": [
+  {
+   "index": 1,
+   "char": "G",
+   "x0": 5.47,
+   "x1": 119.47,
+   "pen_x": 0.0,
+   "advance": 127.33,
+   "cap_top": 0,
+   "baseline": 100,
+   "stems": [
+    [
+     6.63,
+     30.16
+    ]
+   ]
+  },
+  {
+   "index": 2,
+   "char": "E",
+   "x0": 145.07,
+   "x1": 235.07,
+   "pen_x": 138.0,
+   "advance": 104.0,
+   "cap_top": 0,
+   "baseline": 100,
+   "stems": [
+    [
+     150.93,
+     172.66
+    ]
+   ]
+  },
+  {
+   "index": 3,
+   "char": "S",
+   "x0": 257.6,
+   "x1": 357.47,
+   "pen_x": 252.67,
+   "advance": 109.73,
+   "cap_top": 0,
+   "baseline": 100,
+   "stems": [
+    [
+     327.02,
+     356.82
+    ]
+   ]
+  }
+ ]
+}

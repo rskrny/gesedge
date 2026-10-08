@@ -1,0 +1,21 @@
+// Preview Worker for the en site (workers.dev, noindex). Build: PREVIEW=1 node scripts/build.mjs en
+// The live Worker is "gesedge"; it changes only at the swap Ryan approves (STATE.md, Next actions 4).
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "gesedge-preview",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": "dist/en",
+    "binding": "ASSETS",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*", "/media/*"]
+  },
+  "vars": {
+    "SITE": "en",
+    "SUPABASE_URL": "https://pqepbusovsveizvdcrjh.supabase.co",
+    "SUPABASE_KEY": "sb_publishable_qvSzVz83i4kDnLfUCOcfLw_KwyYJy5J",
+    "MAIL_FROM": "website@gesedge.com"
+  }
+}

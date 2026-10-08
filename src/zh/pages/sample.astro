@@ -1,0 +1,9 @@
+---
+import Page from '../../shared/layouts/Page.astro';
+import { t } from '../copy';
+const s = t.sample;
+---
+<Page title={s.title} description={s.description} path="/sample/">
+  <div class="wrap page-head"><h1 class="display h1">{s.h1}</h1><p class="lede">{s.body}</p></div>
+</Page>
+

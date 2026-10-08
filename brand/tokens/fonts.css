@@ -1,0 +1,8 @@
+:root {
+  --font-display: "Unbounded", 'Alibaba PuHuiTi 3.0', system-ui, sans-serif;
+  --font-display-weight: 500;
+  --font-display-tracking: 0.000em;
+  --font-text: "IBM Plex Mono", 'Alibaba PuHuiTi 3.0', ui-monospace, Consolas, monospace;
+  --font-text-weight: 400;
+  --font-text-tracking: 0.000em;
+}

@@ -8,7 +8,11 @@
 !.yarn/releases
 !.yarn/versions
 
-# next.js
+# astro
+/dist/
+/.astro/
+
+# next.js (legacy main branch)
 /.next/
 /out/
 
@@ -38,7 +42,11 @@ next-env.d.ts
 
 .vercel
 
-# cloudflare
-.open-next
-.wrangler
-.dev.vars*
+# ── Local agent tooling & machine-specific files (do not commit) ──
+/.claude/
+/.dual-graph/
+/*.bat
+
+# Raw source photos staged for the redesign — not shipped yet (see .ai/STATE.md)
+/_source-assets/
+.gstack/

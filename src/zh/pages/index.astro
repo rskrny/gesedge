@@ -1,0 +1,43 @@
+---
+// All text from ../copy.ts (Kenny's file). Hero object: the joint (燕尾榫) until the sample audit exists,
+// then a page from it goes in a proof band under the hero, as on the English home page.
+import Page from '../../shared/layouts/Page.astro';
+import Joint from '../../shared/components/Joint.astro';
+import { CANONICAL, HQ, EMAIL } from '../../shared/site';
+import { t } from '../copy';
+const h = t.home;
+const org = {
+  '@context': 'https://schema.org',
+  '@type': 'Organization',
+  name: HQ.name,
+  alternateName: HQ.latin,
+  url: CANONICAL.zh,
+  logo: CANONICAL.zh + '/share.png',
+  email: EMAIL,
+  taxID: HQ.uscc,
+  founder: { '@type': 'Person', name: 'Ryan Kearney' },
+  address: { '@type': 'PostalAddress', streetAddress: HQ.address, addressLocality: '成都', addressCountry: 'CN' },
+};
+---
+<Page title={h.title} description={h.description} path="/" alt="/">
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(org)} />
+  <div class="hero">
+    <div class="wrap stage">
+      <div class="lead">
+        <h1 class="display h1">{h.h1}</h1>
+        <p class="lede">{h.lede}</p>
+        <p class="ctas"><a class="btn" href="/contact/">{h.cta}</a> <a class="btn ghost" href="/sample/">{h.cta2}</a></p>
+      </div>
+      <div class="obj"><Joint /></div>
+    </div>
+    <div class="wrap hud label" aria-hidden="true"><span>104°03′W</span><span>104°04′E</span></div>
+  </div>
+  <section><div class="wrap grid"><h2 class="label s-4">{h.problemTitle}</h2><p class="s-8">{h.problemBody}</p></div></section>
+  <section class="band"><div class="wrap grid"><h2 class="label s-4">{h.auditTitle}</h2><div class="s-8"><p class="price">{h.auditBody}</p><p><a href="/audit/">{t.nav.audit} →</a></p></div></div></section>
+  <section><div class="wrap grid"><h2 class="label s-4">{h.afterTitle}</h2><ol class="s-8 rows">{h.after.map((a, i) => <li><span class="ord">{String(i + 1).padStart(2, '0')}</span> {a}</li>)}</ol></div></section>
+  <section><div class="wrap grid"><h2 class="label s-4">{h.whoTitle}</h2><p class="s-8">{h.whoBody}</p></div></section>
+</Page>
+<style>
+  .price { font: 400 18px/1.6 var(--sans); border-left: 2px solid var(--celadon); padding-left: 16px; }
+  .rows li { display: flex; gap: 16px; align-items: baseline; }
+</style>

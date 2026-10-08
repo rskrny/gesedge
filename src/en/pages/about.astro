@@ -1,0 +1,59 @@
+---
+// Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Everglory + C14 lines approved by Ryan 2026-10-07.
+// ponytail: no photo yet. Ryan's headshot (private copy in ../business/redo-assets-private/headshots) goes
+// here as a compressed AVIF/WebP once he picks one.
+import Page from '../../shared/layouts/Page.astro';
+import { GES, HQ } from '../../shared/site';
+
+const person = {
+  '@context': 'https://schema.org',
+  '@type': 'Person',
+  name: 'Ryan Kearney',
+  jobTitle: 'Founder',
+  worksFor: { '@type': 'Organization', name: GES.name },
+  homeLocation: { '@type': 'Place', name: 'Chengdu, China' },
+  alumniOf: [{ '@type': 'CollegeOrUniversity', name: 'Massachusetts Maritime Academy' }, { '@type': 'CollegeOrUniversity', name: 'Sichuan University' }],
+};
+---
+<Page
+  title="About · Global Edge Strategies"
+  description="Ryan Kearney, an American in Chengdu, runs Global Edge Strategies and its sister company 成都寰桥."
+  path="/about/"
+>
+  <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
+  <div class="wrap page-head"><p class="label">Who you work with</p><h1 class="display h1">About</h1></div>
+
+  <section>
+    <div class="wrap grid">
+      <h2 class="h3 s-4">Ryan Kearney</h2>
+      <p class="s-8 lead-p">American, based in Chengdu. B.S., Massachusetts Maritime Academy. Import operations coordinator at Everglory Logistics, a freight forwarder and customs broker in Boston, 2021–2022. MBA, Sichuan University. Started Global Edge Strategies in 2024 and builds its systems himself. Also CTO of C14 Space, the UK company that makes ShopMyRoom.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid">
+      <h2 class="h3 s-4">Zhu Shiying (Kenny)</h2>
+      <p class="s-8">Developer, based in Chengdu. Works on new builds and with Chinese-speaking clients.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap grid">
+      <h2 class="h3 s-4">Two companies, one founder</h2>
+      <div class="s-8">
+        <ul class="cos">
+          <li><strong>{GES.name}</strong>, Wyoming, USA. AI systems and China advisory for US businesses.</li>
+          <li><strong lang="zh-CN">{HQ.name}</strong> ({HQ.latin}), Chengdu, China. Buyer-side audits and English websites for Chinese factories.</li>
+        </ul>
+        <p class="muted">Chengdu sits at 104°04′ east. Wyoming’s eastern border runs along 104°03′ west.</p>
+      </div>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .cos { list-style: none; padding: 0; margin: 0 0 1.5em; }
+  .cos li { margin-bottom: 1em; }
+  .cos strong { font-weight: 500; }
+  .lead-p { font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.55; }
+</style>

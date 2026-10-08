@@ -1,0 +1,30 @@
+---
+// Plain privacy notice. Not legal advice. Retention 24 months (Ryan, 2026-10-07).
+import Page from '../../shared/layouts/Page.astro';
+import { EMAIL, GES } from '../../shared/site';
+---
+<Page title="Privacy · Global Edge Strategies" description="What this website collects and what we do with it." path="/privacy/" alt="/privacy/">
+  <div class="wrap page-head"><h1 class="display h1">Privacy</h1><p class="lede">Updated October 2026.</p></div>
+  <section>
+    <div class="wrap body">
+      <h2 class="label">Who we are</h2>
+      <p>{GES.name}, a Wyoming company. Contact: <a href={`mailto:${EMAIL}`}>{EMAIL}</a>.</p>
+      <h2 class="label">What we collect</h2>
+      <p>If you use the contact form, we keep the name, email address, company, and message you send. If you book a call, Google Calendar handles the booking under Google’s privacy policy. If you email us, we keep the email.</p>
+      <p>This site runs no advertising or tracking scripts. Our hosting provider, Cloudflare, keeps request logs, such as IP address and browser, to run and protect the site.</p>
+      <h2 class="label">Why</h2>
+      <p>To reply to you, to run any work we agree on, and to keep the site secure. We don’t sell your details or use them for marketing.</p>
+      <h2 class="label">Who handles it</h2>
+      <p>Cloudflare hosts the site. Form messages are stored in a database run by Supabase and emailed to us through our mail provider, Purelymail. These companies process the data for us and may store it outside your country, including in the United States.</p>
+      <h2 class="label">How long</h2>
+      <p>We keep form messages for 24 months, then delete them.</p>
+      <h2 class="label">Your choices</h2>
+      <p>Email us to see, correct, or delete what we hold about you. We’ll do it unless the law requires us to keep it.</p>
+    </div>
+  </section>
+</Page>
+<style>
+  .body { max-width: 760px; }
+  .body h2 { margin: 36px 0 10px; }
+  .body h2:first-child { margin-top: 0; }
+</style>

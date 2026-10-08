@@ -1,0 +1,7 @@
+# Old gesedge.com URLs (legacy Next.js site) -> redo pages. Spec §1.
+/case-studies /work/ 301
+/case-studies/* /work/ 301
+/blog / 301
+/blog/* / 301
+/admin /contact/ 301
+/admin/* /contact/ 301

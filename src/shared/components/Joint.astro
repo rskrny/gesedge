@@ -1,0 +1,56 @@
+---
+// Hero object: the dovetail logo rendered in Blender (.ai/deliverables/logo-anim/joint_anim.py, encode.sh).
+// It opens face-on as the flat mark, turns to 3/4, and the tail slides out along its channel and locks back
+// in (a dovetail only assembles along its depth). Rendered on black and blended with `lighten`, so the black
+// drops out to the page ground exactly. Poster = the face-on mark, so blocked autoplay still shows the logo.
+// Reduced motion: no source matches, so nothing downloads, and the still 3/4 frame shows instead.
+// The pause button (WCAG 2.2.2) needs JS; without JS the loop plays and the OS reduced-motion setting still works.
+import { SITE } from '../site';
+import { t } from '../../zh/copy';
+const label = SITE === 'zh' ? { pause: t.pause, play: t.play } : { pause: 'Pause animation', play: 'Play animation' };
+const motion = '(prefers-reduced-motion: no-preference)';
+---
+<div class="joint">
+  <video class="move" autoplay muted loop playsinline webkit-playsinline preload="auto" poster="/media/joint-poster.webp" width="800" height="800" aria-hidden="true">
+    <source src="/media/joint-520.webm" type='video/webm; codecs="av01.0.01M.08"' media={`${motion} and (max-width: 860px)`} />
+    <source src="/media/joint-520.mp4" type="video/mp4" media={`${motion} and (max-width: 860px)`} />
+    <source src="/media/joint-800.webm" type='video/webm; codecs="av01.0.04M.08"' media={motion} />
+    <source src="/media/joint-800.mp4" type="video/mp4" media={motion} />
+  </video>
+  <img class="still" src="/media/joint-still.webp" width="800" height="800" alt="" loading="lazy" decoding="async" />
+  <button class="toggle" type="button" hidden aria-label={label.pause} data-pause={label.pause} data-play={label.play}><span aria-hidden="true"></span></button>
+</div>
+
+<script>
+  for (const box of document.querySelectorAll<HTMLElement>('.joint')) {
+    const video = box.querySelector('video')!;
+    const button = box.querySelector<HTMLButtonElement>('.toggle')!;
+    if (matchMedia('(prefers-reduced-motion: reduce)').matches) continue;
+    button.hidden = false;
+    button.addEventListener('click', () => {
+      if (video.paused) video.play(); else video.pause();
+      const paused = video.paused;
+      button.classList.toggle('paused', paused);
+      button.setAttribute('aria-label', paused ? button.dataset.play! : button.dataset.pause!);
+    });
+  }
+</script>
+
+<style>
+  .joint { position: relative; aspect-ratio: 1; }
+  .move, .still { width: 100%; height: auto; }
+  .move { display: block; mix-blend-mode: lighten; }
+  .still { display: none; }
+  .toggle { position: absolute; right: 4%; bottom: 4%; width: 32px; height: 32px; display: grid; place-items: center;
+    background: transparent; border: 1px solid var(--line); border-radius: 50%; color: var(--muted); cursor: pointer; padding: 0; }
+  .toggle:hover { color: var(--ink); border-color: var(--muted); }
+  .toggle[hidden] { display: none; }
+  /* pause glyph: two bars; play glyph: triangle */
+  .toggle span { width: 8px; height: 10px; border-left: 2px solid currentColor; border-right: 2px solid currentColor; }
+  .toggle.paused span { width: 0; height: 0; border: 0; border-left: 9px solid currentColor;
+    border-top: 6px solid transparent; border-bottom: 6px solid transparent; margin-left: 2px; }
+  @media (prefers-reduced-motion: reduce) {
+    .move { display: none; }
+    .still { display: block; }
+  }
+</style>

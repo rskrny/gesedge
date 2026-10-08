@@ -1,0 +1,8 @@
+---
+import Page from '../../../shared/layouts/Page.astro';
+import { t } from '../../copy';
+---
+<Page title={t.contact.title} description={t.contact.description} path="/contact/error/" noindex>
+  <div class="wrap msg"><h1 class="display h2">{t.contact.failed}</h1><p><a href="/contact/">{t.nav.contact}</a></p></div>
+</Page>
+<style>.msg { padding: 96px var(--pad); } .msg h1 { margin-bottom: 16px; }</style>
