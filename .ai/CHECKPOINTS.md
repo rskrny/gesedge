@@ -27,3 +27,4 @@
 - 2026-10-07 · Redo v1 hardened (Google booking, Purelymail SMTP form email, redacted work shots, share images, prod config) but Ryan rejected the look; three homepage comps on refboard/comps awaiting his pick; swap on hold.
 - 2026-10-07 · Ryan picked comps A + B. Site restyled to the merge (joint hero, real-work proof band, ledger, Plex Sans body), reviewed by Codex/Kimi/DeepSeek, copy gate run, previews redeployed; awaiting Ryan's review.
 - 2026-10-07 · Logo animated: Blender sliding-dovetail render replaces the (physically wrong) SVG hero; AV1/H.264 video with poster, reduced-motion still, pause button; Worker serves /media with byte ranges; previews redeployed.
+- 2026-10-08 · gesedge.com LIVE on the redo (PRs #3, #4). Redirect rule www→apex, Builds commands switched, SMTP_PASS rotated; first build failed on a Windows-only lockfile, fixed and verified in Docker; smoke test passed; /about and /contact now 301.

@@ -13,6 +13,16 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: gesedge.com swapped to the redo (Astro) — live 2026-10-08
+Date: 2026-10-08 · Status: Accepted (Ryan: "proceed as best you see fit")
+Context: Ryan approved the A+B look and the animated logo and asked to deploy.
+Decision: Workers Builds on `gesedge` switched to `node scripts/build.mjs en` / `npx wrangler deploy`; zone Redirect
+Rule for www→apex (the Next.js app used to do it); SMTP_PASS rotated and set on all three Workers; `redo/site` merged
+into `main` (PR #3, `-s ours` merge of main first) plus a lockfile fix (PR #4) after the first Linux build failed.
+Rationale: the build failure was safe by design (no deploy, old site kept serving); fix verified in Docker first.
+Trade-offs: legacy secrets/build vars left on the Worker for a week so rollback to 88f06611 stays clean.
+Reversal trigger: any production regression → dashboard rollback to 88f06611.
+
 ## Decision: Hero object = the logo animated in Blender (sliding dovetail), replacing the SVG exploded joint
 Date: 2026-10-07 · Status: Accepted (Ryan asked for the logo animated, highest quality; storyboard reviewed by Codex + Kimi)
 Context: Ryan: "check the logo again, we need it animated". On re-check, the hero SVG showed the joint exploded
