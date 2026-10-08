@@ -18,10 +18,12 @@ Date: 2026-10-08 · Status: Accepted (Ryan: "We should not be using supabase or 
 Context: the redo Worker still saved each form message to Supabase as a fallback to email; the privacy notice named
 Supabase; the legacy Worker carried Supabase secrets; a retired `gesedge` Vercel project remained.
 Options: (a) Workers KV; (b) D1; (c) email only.
-Decision: (a). One KV key per message, 730-day TTL (matches the 24-month promise, never late). Supabase GES tables
-exported to `../business/supabase-export-2026-10-08/` and dropped; Supabase secrets removed from Worker `gesedge`;
-privacy copy updated (no-ai-slop gate passed). The Supabase project itself stays: it also runs the Bloodline booking
-system. Codex agreed on KV (Kimi consulted too).
+Decision: (a). One KV key per message, 730-day TTL (matches the 24-month promise, never late). GES Supabase data
+exported to `../business/supabase-export-2026-10-08/`; the two GES tables are now dormant (the drop was declined at the
+permission prompt, so they stay until Ryan says otherwise). Supabase secrets + build vars removed from Worker
+`gesedge`; privacy copy updated (no-ai-slop gate passed). The Supabase project stays: it also runs the Bloodline
+booking system. Vercel `gesedge` project (old site still public at gesedge.vercel.app) awaits Ryan's one-click delete.
+Codex agreed on KV.
 Rationale: same vendor as hosting, free tier far above volume, automatic deletion.
 Trade-offs: KV has no query UI beyond list/get; fine at a few messages a week.
 Reversal trigger: volume or search needs outgrow KV → D1.
