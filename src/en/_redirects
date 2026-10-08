@@ -5,3 +5,6 @@
 /blog/* / 301
 /admin /contact/ 301
 /admin/* /contact/ 301
+# Old URLs without the trailing slash: a permanent 301 (the assets layer would answer 307).
+/about /about/ 301
+/contact /contact/ 301
