@@ -3,63 +3,53 @@
      Fields: Status · Next actions · Blockers/Open questions · Active context ·
      Recent changes · Handoff. Drop any field that's empty. -->
 
-## Status (2026-10-08)
-- **gesedge.com is LIVE on the redo** since 2026-10-08 04:34 UTC (PRs #3 + #4 into `main`; Workers Builds on Worker
-  `gesedge`: build `node scripts/build.mjs en`, deploy `npx wrangler deploy`). Astro static, A+B design, animated
-  Blender logo hero, gated English copy. Smoke test passed (pages, old-URL 301s, www→apex, headers, video 206,
-  form email to Gmail inbox, no console errors desktop/phone).
-- **Anti-AI pass shipped 2026-10-08** (Ryan: mono coordinate labels + "Two companies, one founder" = AI slop).
-  Audited by a UI finish-gate agent, Codex and Kimi; Plex Mono, eyebrows, coordinates, ordinals, pins, tilt, label-
-  left heads and copy fragments removed; each page re-composed; booking-system screenshot added (fishingbloodline.com
-  public booking page, Ryan's OK). Ban list now in DESIGN.md §11 and AGENTS.md. Reviewer re-check: tells gone.
-- **Rollback:** dashboard → Workers → gesedge → Deployments → roll back to an earlier redo version. The legacy
-  Next.js version (`88f06611`) depended on Supabase and is no longer a valid rollback target.
-- `main` now = the redo. Every push to `main` deploys production. `redo/site` is kept in sync with `main`.
-- **Chinese site not live.** Preview only: https://huanqiao-preview.rskrny.workers.dev. EN preview:
-  https://gesedge-preview.rskrny.workers.dev (noindex; set `PREVIEW=1` when building for it).
+## Status (2026-10-08, session closed)
+- **gesedge.com is LIVE on the redo** (Astro static on Cloudflare Workers, Worker `gesedge`). Pushes to `main`
+  auto-deploy (Workers Builds: `node scripts/build.mjs en` / `npx wrangler deploy`). `redo/site` = working branch,
+  identical to `main`. Last deploy: PR #8 (anti-AI pass); smoke test and media check passed.
+- Design: Unbounded + IBM Plex Sans only, animated Blender logo hero, real screenshots of all three systems.
+  `DESIGN.md` is binding, including the AI-tell ban list (§11).
+- Form: email via Purelymail (`SMTP_PASS`) + a copy in Workers KV `MESSAGES` (auto-deletes after 730 days).
+  **No Supabase, no Vercel** (Ryan, 2026-10-08).
+- **Chinese site not live.** Previews (noindex; build with `PREVIEW=1`, deploy `-c wrangler.<en|zh>.jsonc`):
+  https://gesedge-preview.rskrny.workers.dev · https://huanqiao-preview.rskrny.workers.dev
 
 ## Next actions
-1. Ryan: look at gesedge.com on a real iPhone and in WeChat (untested there; poster = flat logo if autoplay is blocked).
-2. **No Supabase, no Vercel (Ryan, 2026-10-08).** GES no longer touches either: form copies live in Workers KV
-   (`MESSAGES`: prod 8088904e…, previews 32e3fb81…; keys auto-delete after 730 days). GES data exported to
-   `../business/supabase-export-2026-10-08/`. Supabase secrets + build vars removed from Worker `gesedge`. The Supabase
-   project is shared with the Bloodline charter booking system (live client), so it stays; the two GES tables are
-   dormant (drop declined at the prompt). **Vercel `gesedge` project still serves the old site at gesedge.vercel.app**
-   (indexable) until Ryan deletes it (link in the 2026-10-08 session). Bloodline and other client sites still on
-   Vercel/Supabase = separate migration if Ryan wants it. Ask Ryan before deleting `ges-refboard`.
-3. ZH launch after Kenny: all Chinese copy in `src/zh/copy.ts` (gate: Kenny → qu-ai-wei → lieflat → Kimi),
-   WeCom QR + 获客链接, sample audit (becomes the ZH proof band under the joint hero), his name in characters;
-   then Worker `huanqiao` + domain, flip `ZH_LIVE`.
+1. Ryan: check gesedge.com on a real iPhone and in WeChat (untested; the poster is the flat logo if autoplay fails).
+2. Ryan decides: delete Vercel project `gesedge` (old site still public at gesedge.vercel.app); drop the dormant GES
+   Supabase tables (declined at the prompt; exported to `../business/supabase-export-2026-10-08/`); delete Worker
+   `ges-refboard`; rename services (Codex's idea; names are Ryan-approved, so ask).
+3. ZH launch after Kenny: copy in `src/zh/copy.ts` (Kenny → qu-ai-wei → lieflat → Kimi), WeCom QR + 获客链接,
+   sample audit, his name in characters; then Worker `huanqiao` + domain, flip `ZH_LIVE`.
 
 ## Open questions / constraints
-- Client names off until each client approves; repo is PUBLIC (no client names, revenue, Ryan's email,
-  headshots in git). Older planning docs already on GitHub name clients — scrubbing is Ryan's call.
-- About photo: not yet (Ryan). Test emails "Smoke test (Claude)" / "KV test (Claude)" in Gmail are safe to delete.
-- Emailed copies of form messages in Ryan's mailbox are not auto-deleted at 24 months (the privacy notice says
-  messages are deleted then); KV copies are.
-- Not taken (new copy needs the gate + Ryan): "Good fit / Not a fit" block; "Start with one workflow review" line.
+- Repo is PUBLIC: no client names, revenue, Ryan's email, headshots. Client names off until each approves (`name`
+  in `src/en/work.ts`). No About photo yet.
+- The Supabase project also runs the live Bloodline booking system: never delete it. Moving Bloodline and other
+  client sites off Vercel/Supabase is a separate job if Ryan wants it.
+- Emailed form copies aren't auto-deleted at 24 months (KV copies are). Gmail test messages "Smoke test (Claude)"
+  and "KV test (Claude)" are safe to delete.
 
 ## Ops gotchas
-- Node/npm from PowerShell; Git Bash for curl/python (`MSYS_NO_PATHCONV=1` for API paths). Ryan's proxy:
-  `curl --noproxy "*"`. Python can't read Git Bash `/c/...` paths; use `C:/...`.
-- **Lockfile:** regenerate on a clean tree (`rm -rf node_modules package-lock.json && npm install`), else it records
-  only Windows optional deps and Workers Builds' Linux `npm ci` fails. Real check: Docker `node:24` + npm 10.9.2
-  (`PATH` needs `/c/Program Files/Docker/Docker/resources/bin`).
-- `main` needs 1 review; Ryan's account merges with `gh pr merge --admin`.
-- Form mail: `SMTP_PASS` (website@gesedge.com, rotated 2026-10-08 via Purelymail API, value stored nowhere) on all
-  three Workers. Rotate again with `C:/tmp/ges-anim/rotate_smtp.py`.
-- www→apex = zone Redirect Rule "www.gesedge.com to gesedge.com" (301, keeps path + query).
-- Workers static assets ignore Range → `worker/ranged.js` serves `/media/*` (test: `node worker/ranged.test.mjs`);
-  `_headers` doesn't apply on `run_worker_first` paths. Trailing-slash redirects are 307 unless listed in `_redirects`.
-- Paseo browser on the Cloudflare dashboard: `fill`/Ctrl+A don't reach React inputs; set values with
-  `browser_evaluate` (native value setter + `input` event), then Save.
-- Screenshots: `C:/tmp/ges-shots/shoot.py <dist> <pages> 1440,390` (`PFX` prefixes names). Headless page screenshots
-  show only the video poster; sample frames via canvas (`C:/tmp/ges-anim/qa_play.py`).
-- Logo animation: edit `.ai/deliverables/logo-anim/joint_anim.py`, render
-  `blender -b -P joint_anim.py -- --out C:/tmp/ges-anim/frames --anim --res 800 --samples 96` (~25 min), then
-  `sh .ai/deliverables/logo-anim/encode.sh C:/tmp/ges-anim/frames public/media`.
-- Codex: `codex exec --skip-git-repo-check -s read-only --image a.png,b.png < prompt.md`. Kimi CLI quota → Kimi
-  K2.6 via SiliconFlow (`C:/tmp/ges-review/ask.py`). Qwen3-VL reviews unreliable.
+- Node/npm from PowerShell; Git Bash for curl/python (`MSYS_NO_PATHCONV=1` for API paths; Python wants `C:/...`).
+  Ryan's proxy: `curl --noproxy "*"`.
+- QA in repo: `scripts/qa/shoot.py` (1440/390 shots), `scripts/qa/media.py <dist|url>` (hero video, reduced motion,
+  pause, H.264), `scripts/qa/smoke.sh` (live). Headless full-page shots show only the video poster and miss lazy
+  images; check those in a scrolled viewport.
+- **Before Ryan sees any page:** anti-AI audit (UI Finish-Gate Reviewer agent + Codex with screenshots + Kimi on
+  copy) and `no-ai-slop` on every new English line. Fix flagged tells; never keep one because it passed before.
+- Lockfile: regenerate on a clean tree only; verify in Docker `node:24` with npm 10.9.2 (`npm ci` + build; `PATH`
+  needs `/c/Program Files/Docker/Docker/resources/bin`). A Windows-only lockfile broke the first prod build.
+- `main` needs 1 review: `gh pr merge --admin`. Rollback: dashboard → gesedge → Deployments.
+- Mail password: `python ../business/ops/rotate_smtp.py` (reads `C:/tmp/abr_tokens.txt`, PM=...; sets all three
+  Workers). www→apex = zone Redirect Rule. Static assets ignore Range → `worker/ranged.js` (`node
+  worker/ranged.test.mjs`). No-slash URLs get 307 unless listed in `src/en/_redirects`.
+- Cloudflare dashboard via Paseo browser (Ryan logs in): `fill`/Ctrl+A miss React inputs; use `browser_evaluate`
+  (native value setter + `input` event), then Save. The wrangler token can't edit Redirect Rules or Builds.
+- Logo animation: `.ai/deliverables/logo-anim/joint_anim.py` (Blender, ~25 min; `--range a,b` partial), then
+  `encode.sh` there → `public/media`.
+- Consults: `codex exec --skip-git-repo-check -s read-only --image a.png,b.png < prompt.md`; if Kimi CLI is out of
+  quota, `../business/ops/ask.py` (SiliconFlow Kimi K2.6 / DeepSeek V4). Qwen3-VL reviews are unreliable.
 
 ## Handoff
-gesedge.com is live from `main`. Next: Next actions 1–3. Design source of truth: `DESIGN.md`.
+Read `AGENTS.md`, this file, then `DESIGN.md` before any visual or copy work. Start at Next actions.

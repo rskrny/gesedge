@@ -13,6 +13,18 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Anti-AI design system — two typefaces, no labels/ordinals/coordinates, audit before showing
+Date: 2026-10-08 · Status: Accepted (Ryan: "the design cannot look like AI made it")
+Context: Ryan caught the Plex Mono caps coordinates strip and "Two companies, one founder" as AI slop, after both had
+been flagged and kept. A UI finish-gate agent, Codex and Kimi K2.6 then audited every page and agreed on the rest.
+Decision: Plex Mono removed (Unbounded + Plex Sans only); eyebrows, coordinates, zero-padded ordinals, progress rail,
+screenshot pins, tilted screenshot, label-left heads, dot-separated meta, repeated CTA pairs and copy fragments
+removed; pages composed by content (price list, case studies, prose bios, plain documents). The full ban list is in
+DESIGN.md §11 and AGENTS.md. Every page now gets a three-reviewer anti-AI audit before Ryan sees it.
+Rationale: the site is the proof of capability; anything that reads machine-made costs credibility.
+Trade-offs: the A/B comp details Ryan liked (tilt, big ordinals, coordinates strip) are gone.
+Reversal trigger: Ryan asks for any of them back.
+
 ## Decision: No Supabase, no Vercel for GES — form copies move to Workers KV
 Date: 2026-10-08 · Status: Accepted (Ryan: "We should not be using supabase or vercel anymore")
 Context: the redo Worker still saved each form message to Supabase as a fallback to email; the privacy notice named
