@@ -60,8 +60,9 @@ work and advanced-but-performant visuals — without being heavy enough to crash
 
 ## Constraints
 - **Content:** no CMS — Astro content collections in git (Strapi dropped 2026-07-06).
-- **Hosting target (Ryan, 2026-10-05):** own mini server (hardware pending), served via
-  **Cloudflare Tunnel**. Until then: Vercel. Details + open questions: `.ai/research/hosting.md`.
+- **Hosting (live 2026-10-08):** Cloudflare Workers (static assets + a small Worker for the form and media).
+  Form copies in Workers KV, mail via Purelymail. **No Supabase, no Vercel** (Ryan, 2026-10-08: done with both).
+  Long-term idea of an own mini server via Cloudflare Tunnel: `.ai/research/hosting.md`.
 - **Frontend:** **Astro + React islands** (React Three Fiber + GSAP for 3D/motion). Ryan + AI build
   it; the developer owns server/backend. Toolchain: `.ai/research/build-toolchain.md`.
 - **Identity/design:** all-dark, light text, tasteful animated gradients (@paper-design/shaders),

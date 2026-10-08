@@ -1,6 +1,6 @@
 // Worker for both sites. Static pages are served by the assets binding without running this code
-// (run_worker_first covers /api/* and /media/*). POST /api/contact stores the message in Supabase and emails it to
-// Ryan through Purelymail (his existing mail host) as website@gesedge.com. No third-party mail service.
+// (run_worker_first covers /api/* and /media/*). POST /api/contact emails the message to Ryan through Purelymail
+// (his existing mail host) as website@gesedge.com and keeps a copy in Workers KV (MESSAGES). No other vendors.
 // Works without JavaScript: the form posts here and gets a 303.
 // ponytail: honeypot + same-origin + size limits only. Add Turnstile or a rate-limit binding if spam shows up.
 import { connect } from 'cloudflare:sockets';
@@ -43,20 +43,20 @@ async function contact(request, env, url) {
   return go(stored || mailed ? '/contact/sent/' : '/contact/error/');
 }
 
+// The copy in KV is the fallback if mail fails. It expires after 730 days: the privacy notice promises deletion at
+// 24 months. Read with `npx wrangler kv key list --binding MESSAGES -c <config>` (add --remote).
+const KEEP_SECONDS = 730 * 24 * 60 * 60;
 async function store(env, row) {
   try {
-    const res = await fetch(`${env.SUPABASE_URL}/rest/v1/ges_contact_submissions`, {
-      method: 'POST',
-      headers: { apikey: env.SUPABASE_KEY, 'Content-Type': 'application/json', Prefer: 'return=minimal' },
-      body: JSON.stringify(row),
-    });
-    return res.ok;
+    const key = `${row.service}/${new Date().toISOString()}-${crypto.randomUUID().slice(0, 8)}`;
+    await env.MESSAGES.put(key, JSON.stringify({ ...row, at: new Date().toISOString() }), { expirationTtl: KEEP_SECONDS });
+    return true;
   } catch { return false; }
 }
 
 // Plain SMTP over implicit TLS (smtp.purelymail.com:465). The mailbox password is the Worker secret SMTP_PASS
-// (`npx wrangler secret put SMTP_PASS -c wrangler.<site>.jsonc`). Returns false on any failure; the row in
-// Supabase is the fallback.
+// (`npx wrangler secret put SMTP_PASS -c wrangler.<site>.jsonc`). Returns false on any failure; the copy in KV is
+// the fallback.
 async function mail(env, row, zh) {
   if (!env.SMTP_PASS) return false;
   const from = env.MAIL_FROM;

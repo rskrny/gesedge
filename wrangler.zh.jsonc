@@ -12,10 +12,9 @@
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/*", "/media/*"]
   },
+  "kv_namespaces": [{ "binding": "MESSAGES", "id": "32e3fb81c4f94576bd8f0a302459058b" }],
   "vars": {
     "SITE": "zh",
-    "SUPABASE_URL": "https://pqepbusovsveizvdcrjh.supabase.co",
-    "SUPABASE_KEY": "sb_publishable_qvSzVz83i4kDnLfUCOcfLw_KwyYJy5J",
     "MAIL_FROM": "website@gesedge.com"
   }
 }
