@@ -1,5 +1,6 @@
 ---
 // Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Equivalent page on huanqiao.gesedge.com: /audit/.
+// Layout: a plain document (2026-10-08 anti-AI pass: no labels in a left column).
 // ponytail: "Sample report" button hidden until Kenny's sample audit exists.
 import Page from '../../shared/layouts/Page.astro';
 import { HOST, HQ, ZH_LIVE } from '../../shared/site';
@@ -11,54 +12,40 @@ import { HOST, HQ, ZH_LIVE } from '../../shared/site';
   alt="/audit/"
 >
   <div class="wrap page-head">
-    <p class="label"><span lang="zh-CN">成都寰桥</span> · Chengdu</p>
     <h1 class="display h1">Your factory’s website, reviewed from a US buyer’s point of view.</h1>
-    <p class="lede">For export managers at Chinese factories. Our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your website and checks how AI assistants describe your company.</p>
-    <p class="ctas">{ZH_LIVE
-      ? <a class="btn" href={HOST.zh + '/audit/'} hreflang="zh-CN">Chinese version for your boss →</a>
-      : <a class="btn" href="/contact/">Contact</a>}</p>
+    <p class="lede">If you’re an export manager at a Chinese factory, our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your website and checks how AI assistants describe your company.</p>
+    <p class="ctas"><a class="btn" href="/contact/">Contact</a>{ZH_LIVE && <a class="zh-link" href={HOST.zh + '/audit/'} hreflang="zh-CN">Chinese version for your boss →</a>}</p>
   </div>
 
   <section>
-    <div class="wrap grid">
-      <h2 class="label s-4">What you get</h2>
-      <ul class="s-8 list">
+    <div class="wrap doc">
+      <h2 class="h3">What you get</h2>
+      <ul class="list">
         <li>Notes on each page from a buyer’s point of view.</li>
         <li>An AI snapshot: five buyer questions put to ChatGPT, Google’s AI Overviews, and Perplexity, three times each, with dated screenshots.</li>
         <li>A list of fixes in priority order.</li>
         <li>The report in English and Chinese, with a short video walkthrough.</li>
       </ul>
-    </div>
-  </section>
 
-  <section>
-    <div class="wrap grid">
-      <h2 class="label s-4">Price</h2>
-      <p class="s-8 price">¥2,980, five working days. The full fee is credited to a website build ordered within 60 days.</p>
-    </div>
-  </section>
+      <h2 class="h3">Price</h2>
+      <p>The review costs ¥2,980 and takes five working days. The full fee is credited to a website build ordered within 60 days.</p>
 
-  <section>
-    <div class="wrap grid">
-      <h2 class="label s-4">How it works</h2>
-      <div class="s-8">
-        <p>Add us on WeCom, then a free 15-minute call, then the contract and fapiao. The report is due five working days after that.</p>
-        <p class="muted">We don’t promise inquiries, search rankings, or mentions by AI assistants.</p>
-      </div>
-    </div>
-  </section>
+      <h2 class="h3">How it works</h2>
+      <p>Add us on WeCom, then a free 15-minute call, then the contract and fapiao. The report is due five working days after that.</p>
+      <p class="muted">We don’t promise inquiries, search rankings, or mentions by AI assistants.</p>
 
-  <section>
-    <div class="wrap grid">
-      <h2 class="label s-4">Company</h2>
-      <p class="s-8"><span lang="zh-CN">{HQ.name}</span> · Unified Social Credit Code {HQ.uscc} · Issues fapiao.</p>
+      <h2 class="h3">Company</h2>
+      <p>Registered as <span lang="zh-CN">{HQ.name}</span>, Unified Social Credit Code {HQ.uscc}. The company issues fapiao.</p>
     </div>
   </section>
 </Page>
 
 <style>
-  .page-head .ctas { margin-top: 36px; }
-  .list { margin: 0; padding-left: 1.1em; }
+  .page-head .ctas { margin-top: 36px; align-items: center; }
+  .zh-link { color: var(--ink); text-decoration: none; font-size: 15px; padding: 0 6px; }
+  .zh-link:hover { color: var(--celadon); }
+  .doc h2 { margin: 48px 0 12px; }
+  .doc h2:first-child { margin-top: 0; }
+  .list { margin: 0 0 1em; padding-left: 1.1em; }
   .list li { margin-bottom: 0.6em; }
-  .price { font: 400 18px/1.6 var(--sans); border-left: 2px solid var(--celadon); padding-left: 16px; }
 </style>

@@ -1,5 +1,6 @@
 ---
 // Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Everglory + C14 lines approved by Ryan 2026-10-07.
+// 2026-10-08 anti-AI pass: bios rewritten as prose, "Two companies, one founder" and the coordinates line removed.
 // ponytail: no photo yet. Ryan's headshot (private copy in ../business/redo-assets-private/headshots) goes
 // here as a compressed AVIF/WebP once he picks one.
 import Page from '../../shared/layouts/Page.astro';
@@ -21,39 +22,34 @@ const person = {
   path="/about/"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
-  <div class="wrap page-head"><p class="label">Who you work with</p><h1 class="display h1">About</h1></div>
+  <div class="wrap page-head"><h1 class="display h1">About</h1></div>
 
   <section>
-    <div class="wrap grid">
-      <h2 class="h3 s-4">Ryan Kearney</h2>
-      <p class="s-8 lead-p">American, based in Chengdu. B.S., Massachusetts Maritime Academy. Import operations coordinator at Everglory Logistics, a freight forwarder and customs broker in Boston, 2021–2022. MBA, Sichuan University. Started Global Edge Strategies in 2024 and builds its systems himself. Also CTO of C14 Space, the UK company that makes ShopMyRoom.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap grid">
-      <h2 class="h3 s-4">Zhu Shiying (Kenny)</h2>
-      <p class="s-8">Developer, based in Chengdu. Works on new builds and with Chinese-speaking clients.</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="wrap grid">
-      <h2 class="h3 s-4">Two companies, one founder</h2>
-      <div class="s-8">
-        <ul class="cos">
-          <li><strong>{GES.name}</strong>, Wyoming, USA. AI systems and China advisory for US businesses.</li>
-          <li><strong lang="zh-CN">{HQ.name}</strong> ({HQ.latin}), Chengdu, China. Buyer-side audits and English websites for Chinese factories.</li>
-        </ul>
-        <p class="muted">Chengdu sits at 104°04′ east. Wyoming’s eastern border runs along 104°03′ west.</p>
+    <div class="wrap people">
+      <div class="ryan">
+        <h2 class="h3">Ryan Kearney</h2>
+        <p class="bio">Ryan is an American who lives in Chengdu. After a B.S. at Massachusetts Maritime Academy, he coordinated import operations at Everglory Logistics, a freight forwarder and customs broker in Boston, from 2021 to 2022. He has an MBA from Sichuan University. He started Global Edge Strategies in 2024 and builds its systems himself, and he is CTO of C14 Space, the UK company that makes ShopMyRoom.</p>
       </div>
+      <div class="kenny">
+        <h2 class="h3">Zhu Shiying (Kenny)</h2>
+        <p class="bio">Kenny is a developer in Chengdu. He works on new builds and with clients who speak Chinese.</p>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap doc">
+      <h2 class="display h2 sec-title">The companies</h2>
+      <p><strong>{GES.name}</strong>, registered in Wyoming, builds AI systems for US businesses and advises those that buy from Chinese suppliers.</p>
+      <p>Its sister company in Chengdu is <strong lang="zh-CN">{HQ.name}</strong> ({HQ.latin}). It reviews factory websites from a US buyer’s point of view and builds English websites for Chinese factories.</p>
     </div>
   </section>
 </Page>
 
 <style>
-  .cos { list-style: none; padding: 0; margin: 0 0 1.5em; }
-  .cos li { margin-bottom: 1em; }
-  .cos strong { font-weight: 500; }
-  .lead-p { font-size: clamp(1.1rem, 1.6vw, 1.35rem); line-height: 1.55; }
+  .people { display: grid; grid-template-columns: 7fr 5fr; gap: 40px 72px; align-items: start; }
+  .people h2 { margin-bottom: 14px; }
+  .bio { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.55; }
+  .doc strong { font-weight: 600; }
+  @media (max-width: 860px) { .people { grid-template-columns: 1fr; } }
 </style>

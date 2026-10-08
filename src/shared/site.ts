@@ -15,7 +15,6 @@ export const CANONICAL = { en: 'https://gesedge.com', zh: 'https://huanqiao.gese
 export const EMAIL = 'ryan@gesedge.com';
 // Google Calendar appointment schedule on Ryan's own account (replaced cal.com 2026-10-07).
 export const BOOKING = 'https://calendar.google.com/calendar/appointments/schedules/AcZssZ0vmgKzZ5ejbPVvOwI0EFl_n39SL04N0ERIhPtckQdvdGsow0UlkA7_GgK7SxtMQgDs28ZbrIz3';
-export const COORDS = '104°03′W · 104°04′E';
 
 export const GES = { name: 'Global Edge Strategies LLC', place: 'Wyoming, USA' };
 export const HQ = {

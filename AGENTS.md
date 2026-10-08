@@ -174,6 +174,8 @@ Copy that skipped the gate does not merge.
   - "Stop doing X. Start doing Y."
   - "X is dead. Here's what's next."
 - **No filler intensifiers.** Cut "truly", "actually", "really", "incredibly", "absolutely", "game-changing", "revolutionary", "cutting-edge", "leverage", "unlock", "empower", "seamless", "robust".
+- **No parallel slogans.** "Two companies, one founder" and anything shaped like it ("X, one Y") is rejected (Ryan, 2026-10-08).
+- **No fragments as statements.** "Advisory only." reads machine-made. Write the sentence.
 - **No list-of-three cadence abuse.** "Fast, reliable, and scalable" is a crutch. Use it sparingly if at all.
 
 ### Honesty rules

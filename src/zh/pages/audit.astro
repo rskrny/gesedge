@@ -9,13 +9,13 @@ const a = t.audit;
   <div class="wrap page-head">
     <h1 class="display h1">{a.h1}</h1>
     <p class="lede">{a.lede}</p>
-    <p class="reg label">{HQ.name} · {t.footer.uscc} {HQ.uscc} · {t.footer.fapiao}</p>
+    <p class="reg">{HQ.name}，{t.footer.uscc} {HQ.uscc}。{t.footer.fapiao}</p>
     <p class="ctas"><a class="btn" href="/contact/">{t.cta}</a></p>
   </div>
-  <section><div class="wrap grid"><h2 class="label s-4">{a.getTitle}</h2><ul class="s-8 list">{a.get.map((g) => <li>{g}</li>)}</ul></div></section>
-  <section><div class="wrap grid"><h2 class="label s-4">{a.priceTitle}</h2><p class="s-8 price">{a.price}</p></div></section>
-  <section><div class="wrap grid"><h2 class="label s-4">{a.stepsTitle}</h2><ol class="s-8 list">{a.steps.map((s) => <li>{s}</li>)}</ol></div></section>
-  <section><div class="wrap grid"><h2 class="label s-4">{a.faqTitle}</h2><dl class="s-8 faq">{a.faq.map((f) => <><dt>{f.q}</dt><dd>{f.a}</dd></>)}</dl></div></section>
+  <section><div class="wrap doc"><h2 class="h3 sec-title">{a.getTitle}</h2><ul class="list">{a.get.map((g) => <li>{g}</li>)}</ul></div></section>
+  <section><div class="wrap doc"><h2 class="h3 sec-title">{a.priceTitle}</h2><p class="price">{a.price}</p></div></section>
+  <section><div class="wrap doc"><h2 class="h3 sec-title">{a.stepsTitle}</h2><ol class="list">{a.steps.map((s) => <li>{s}</li>)}</ol></div></section>
+  <section><div class="wrap doc"><h2 class="h3 sec-title">{a.faqTitle}</h2><dl class="faq">{a.faq.map((f) => <><dt>{f.q}</dt><dd>{f.a}</dd></>)}</dl></div></section>
 </Page>
 <style>
   .page-head .reg { color: var(--ink); margin-top: 24px; }
