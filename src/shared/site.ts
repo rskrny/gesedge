@@ -9,6 +9,9 @@ export const HOST = PREVIEW
 // The Chinese site launches after Kenny's copy is in. Until then the English site hides every link to it
 // (nav switch, hreflang, exporters button). Previews always show them. Flip to true at the ZH launch.
 export const ZH_LIVE = PREVIEW || false;
+// ponytail: the sample audit doesn't exist yet. Until it does, /sample/ is noindexed and unlinked (nav, home
+// button, sitemap). Flip to true when the report, PDF and video are in.
+export const SAMPLE_READY = false;
 // Canonicals always point at the production hosts.
 export const CANONICAL = { en: 'https://gesedge.com', zh: 'https://huanqiao.gesedge.com' };
 

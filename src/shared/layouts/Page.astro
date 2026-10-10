@@ -6,7 +6,7 @@ import '@fontsource/ibm-plex-sans/latin-500.css';
 import '@fontsource/ibm-plex-sans/latin-600.css';
 import '../styles/base.css';
 import Logo from '../components/Logo.astro';
-import { SITE, PREVIEW, HOST, CANONICAL, EMAIL, BOOKING, GES, HQ, ZH_LIVE } from '../site';
+import { SITE, PREVIEW, HOST, CANONICAL, EMAIL, BOOKING, GES, HQ, ZH_LIVE, SAMPLE_READY } from '../site';
 import { t } from '../../zh/copy';
 
 interface Props {
@@ -24,7 +24,7 @@ const lang = zh ? 'zh-CN' : 'en-US';
 const canonical = CANONICAL[SITE] + path;
 
 const nav = zh
-  ? [{ href: '/audit/', label: t.nav.audit }, { href: '/sample/', label: t.nav.sample }, { href: '/contact/', label: t.nav.contact }]
+  ? [{ href: '/audit/', label: t.nav.audit }, ...(SAMPLE_READY ? [{ href: '/sample/', label: t.nav.sample }] : []), { href: '/contact/', label: t.nav.contact }]
   : [{ href: '/services/', label: 'Services' }, { href: '/work/', label: 'Work' }, { href: '/about/', label: 'About' }, { href: '/contact/', label: 'Contact' }];
 const switchLink = zh ? { href: HOST.en + (alt ?? '/'), label: 'EN', lang: 'en' } : { href: HOST.zh + (alt ?? '/'), label: '中文', lang: 'zh-CN' };
 const here = (href: string) => path.startsWith(href);

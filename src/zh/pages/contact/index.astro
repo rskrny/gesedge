@@ -21,7 +21,7 @@ const c = t.contact;
         <label>{c.fields.site} <input name="site" maxlength="300" /></label>
         <label>{c.fields.need} <textarea name="message" required maxlength="4000" rows="5"></textarea></label>
         <label class="hp" aria-hidden="true">x <input name="website2" tabindex="-1" autocomplete="off" /></label>
-        <label class="check"><input type="checkbox" name="consent" value="yes" required /> <span>{c.consent}</span></label>
+        <label class="check"><input type="checkbox" name="consent" value="yes" required /> <span>{c.consent}<a href="/privacy/">{t.footer.privacy}</a>。</span></label>
         <button class="btn" type="submit">{c.send}</button>
       </form>
     </div>
@@ -33,7 +33,7 @@ const c = t.contact;
   .form label { display: grid; gap: 6px; font-size: 15px; }
   .form input:not([type='checkbox']), .form textarea { font: 400 17px/1.5 var(--sans); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 12px 14px; }
   .form .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted); }
-  .form .check input { margin-top: 4px; }
+  .form .check { min-height: 44px; } .form .check input { margin-top: 3px; width: 20px; height: 20px; flex: none; }
   .form button { justify-self: start; cursor: pointer; }
   .hp { position: absolute; left: -9999px; }
 </style>

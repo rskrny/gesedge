@@ -3,8 +3,14 @@ import Page from '../../shared/layouts/Page.astro';
 import { HQ } from '../../shared/site';
 import { t } from '../copy';
 const p = t.privacy;
+// body: sections split by a blank line; each section = heading line, then text.
+const sections = p.body.split('\n\n').map((s) => { const [h, ...rest] = s.split('\n'); return { h, text: rest.join('') }; });
 ---
 <Page title={p.title} description={p.description} path="/privacy/" alt="/privacy/">
-  <div class="wrap msg"><h1 class="display h1">{p.h1}</h1><p>{p.body}</p><p class="muted">{HQ.name}，{t.footer.uscc} {HQ.uscc}</p></div>
+  <div class="wrap msg">
+    <h1 class="display h1">{p.h1}</h1>
+    {sections.map((s) => <><h2 class="h3">{s.h}</h2><p>{s.text}</p></>)}
+    <p class="muted">{HQ.name}，{t.footer.uscc} {HQ.uscc}</p>
+  </div>
 </Page>
-<style>.msg { padding: 56px var(--pad) 96px; } .msg h1 { margin-bottom: 24px; }</style>
+<style>.msg { padding: 56px var(--pad) 96px; } .msg h1 { margin-bottom: 24px; } .msg h2 { margin: 32px 0 8px; } .msg p { max-width: 760px; }</style>
