@@ -3,7 +3,10 @@
      Fields: Status · Next actions · Blockers/Open questions · Active context ·
      Recent changes · Handoff. Drop any field that's empty. -->
 
-## Status (2026-10-08, session closed)
+## Status (2026-10-10)
+- 2026-10-10: PR #10 live (verified): dovetail favicon.ico + favicon.svg?v=2 (old Vercel globe was cached at
+  /favicon.svg), apple-touch-icon, og/share images re-rendered without banned tells. `scripts/brand-assets.py`
+  regenerates them. Square logo `brand/logo/ges-logo-square-1024.png` sent to Ryan on Lark (lark-cli bot DM).
 - **gesedge.com is LIVE on the redo** (Astro static on Cloudflare Workers, Worker `gesedge`). Pushes to `main`
   auto-deploy (Workers Builds: `node scripts/build.mjs en` / `npx wrangler deploy`). `redo/site` = working branch,
   identical to `main`. Last deploy: PR #8 (anti-AI pass); smoke test and media check passed.
@@ -15,11 +18,12 @@
   https://gesedge-preview.rskrny.workers.dev · https://huanqiao-preview.rskrny.workers.dev
 
 ## Next actions
+0. PartnerStack: Ryan logs in at dash.partnerstack.com in the Paseo browser; then browse programs and rank the best fits.
 1. Ryan: check gesedge.com on a real iPhone and in WeChat (untested; the poster is the flat logo if autoplay fails).
 2. Ryan decides: delete Vercel project `gesedge` (old site still public at gesedge.vercel.app); drop the dormant GES
    Supabase tables (declined at the prompt; exported to `../business/supabase-export-2026-10-08/`); delete Worker
    `ges-refboard`; rename services (Codex's idea; names are Ryan-approved, so ask).
-3. ZH launch after Kenny: copy in `src/zh/copy.ts` (Kenny → qu-ai-wei → lieflat → Kimi), WeCom QR + 获客链接,
+3. **ZH site: we build all of it** (Ryan 2026-10-10: Kenny has no capacity). Was gated on Kenny for: copy in `src/zh/copy.ts` (Kenny → qu-ai-wei → lieflat → Kimi), WeCom QR + 获客链接,
    sample audit, his name in characters; then Worker `huanqiao` + domain, flip `ZH_LIVE`.
 
 ## Open questions / constraints
