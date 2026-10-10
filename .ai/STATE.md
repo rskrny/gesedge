@@ -18,17 +18,18 @@
   https://gesedge-preview.rskrny.workers.dev · https://huanqiao-preview.rskrny.workers.dev
 
 ## Next actions
-0. PartnerStack: Ryan logs in at dash.partnerstack.com in the Paseo browser; then browse programs and rank the best fits.
 1. Ryan: check gesedge.com on a real iPhone and in WeChat (untested; the poster is the flat logo if autoplay fails).
 2. Ryan decides: delete Vercel project `gesedge` (old site still public at gesedge.vercel.app); drop the dormant GES
    Supabase tables (declined at the prompt; exported to `../business/supabase-export-2026-10-08/`); delete Worker
    `ges-refboard`; rename services (Codex's idea; names are Ryan-approved, so ask).
-3. **ZH site (we build it; Ryan answers leads first, Kenny joins when needed):** all copy done 2026-10-10 (3-model
-   draft → gates, see DECISIONS), on https://huanqiao-preview.rskrny.workers.dev, form tested end to end. Before
-   launch: WeCom 联系我 QR + 获客链接 (contact page shows 二维码准备中), Kenny reads the preview, production Worker
-   `huanqiao` + custom domain, flip `ZH_LIVE`. Sample report hidden (`SAMPLE_READY=false`) until we make one.
-   Rerun `python scripts/subset-zh.py` after any Chinese text change. curl on Windows mangles Chinese form input:
-   test the form with Playwright.
+3. **Both sites LIVE (2026-10-10):** huanqiao.gesedge.com = Worker `huanqiao` (`wrangler.huanqiao.jsonc`, custom
+   domain; NOT on Workers Builds: after merging zh changes run `node scripts/build.mjs zh && npx wrangler deploy -c
+   wrangler.huanqiao.jsonc`). Contact = Ryan's personal WeChat QR (stopgap; swap for a 成都寰桥 WeCom 联系我 QR +
+   获客链接 later). Open: Kenny reads the live site; sample report (`SAMPLE_READY`); mainland speed/ICP path.
+   Rerun `python scripts/subset-zh.py` after any Chinese text change; test forms with Playwright (curl on Windows
+   mangles Chinese). Site emails land in Gmail's Updates tab: Ryan should add a filter to Primary.
+4. **Next: marketing and outreach.** PartnerStack waits on Ryan's login (Paseo's browser runs only in the desktop
+   app, so the iPhone can't use it).
 
 ## Open questions / constraints
 - Repo is PUBLIC: no client names, revenue, Ryan's email, headshots. Client names off until each approves (`name`
