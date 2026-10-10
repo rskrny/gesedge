@@ -23,8 +23,12 @@
 2. Ryan decides: delete Vercel project `gesedge` (old site still public at gesedge.vercel.app); drop the dormant GES
    Supabase tables (declined at the prompt; exported to `../business/supabase-export-2026-10-08/`); delete Worker
    `ges-refboard`; rename services (Codex's idea; names are Ryan-approved, so ask).
-3. **ZH site: we build all of it** (Ryan 2026-10-10: Kenny has no capacity). Was gated on Kenny for: copy in `src/zh/copy.ts` (Kenny → qu-ai-wei → lieflat → Kimi), WeCom QR + 获客链接,
-   sample audit, his name in characters; then Worker `huanqiao` + domain, flip `ZH_LIVE`.
+3. **ZH site (we build it; Ryan answers leads first, Kenny joins when needed):** all copy done 2026-10-10 (3-model
+   draft → gates, see DECISIONS), on https://huanqiao-preview.rskrny.workers.dev, form tested end to end. Before
+   launch: WeCom 联系我 QR + 获客链接 (contact page shows 二维码准备中), Kenny reads the preview, production Worker
+   `huanqiao` + custom domain, flip `ZH_LIVE`. Sample report hidden (`SAMPLE_READY=false`) until we make one.
+   Rerun `python scripts/subset-zh.py` after any Chinese text change. curl on Windows mangles Chinese form input:
+   test the form with Playwright.
 
 ## Open questions / constraints
 - Repo is PUBLIC: no client names, revenue, Ryan's email, headshots. Client names off until each approves (`name`
