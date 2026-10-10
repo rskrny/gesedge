@@ -50,9 +50,10 @@ const here = (href: string) => path.startsWith(href);
     <meta property="og:image:height" content="630" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="theme-color" content="#140e0b" />
-    <link rel="icon" href="/favicon-32.png" sizes="32x32" type="image/png" />
-    <link rel="icon" href="/favicon-16.png" sizes="16x16" type="image/png" />
-    <link rel="apple-touch-icon" href="/share.png" />
+    <link rel="icon" href="/favicon.ico" sizes="32x32" />
+    <!-- ?v=2: the old site served a different icon at /favicon.svg; new URL busts browser favicon caches -->
+    <link rel="icon" href="/favicon.svg?v=2" type="image/svg+xml" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     <style set:html={[400, 500].map((w) => `@font-face{font-family:'Alibaba PuHuiTi 3.0';src:url(/fonts/puhuiti-${SITE}-${w}.woff2) format('woff2');font-weight:${w};font-display:swap}`).join('')} />
     <slot name="head" />
   </head>

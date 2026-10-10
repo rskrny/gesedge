@@ -32,7 +32,8 @@ stands for one of the two companies. Source kit: `brand/` (logo SVG/PNG, zh lock
 - **Chinese lockups:** mark + 寰桥 (huanqiao.gesedge.com header), mark + 成都寰桥 (footer/legal),
   mark + GES | 寰桥 (bilingual). PuHuiTi licence covers web use; confirm with Alibaba before any
   trademark filing.
-- **Favicon:** the pixel-grid version in `brand/logo/favicon-*.png|svg`, not a scaled-down mark.
+- **Favicon:** the pixel-grid version in `brand/logo/favicon-*.png|svg`, not a scaled-down mark. Site icons,
+  share images and the square logo are rendered by `scripts/brand-assets.py`; share images carry no labels.
 
 ## 3 · Colour
 
