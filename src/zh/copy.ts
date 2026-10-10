@@ -2,7 +2,7 @@
 // Gate (AGENTS.md, changed 2026-10-10 because Kenny has no capacity to write it): drafted natively in Chinese by
 // DeepSeek V4, GLM 5.3 and Kimi K2.6 from one brief (never a translation of the English), merged by Kimi, then
 // qu-ai-wei → lieflat-less-ai-tone → Codex + DeepSeek review. Kenny reads the preview before launch.
-// Facts: ¥2,980; 5个工作日; full fee credited to a build ordered within 60 days; WeCom → free 15-minute call →
+// Facts: ¥2,980; 5个工作日; full fee credited to a build ordered within 60 days; WeChat (Ryan) → free 15-minute call →
 // contract + 发票 → report. Ryan answers new inquiries first, Kenny joins when needed. No promise of inquiries,
 // rankings or AI citations (FAQ only). Never 最佳/第一/保证/100% (广告法); sister companies = 姊妹公司, never 旗下.
 // Source for the 48% line: Responsive, "Inside the Buyer's Mind", press release 2025-10-15, 350 B2B buyers.
@@ -10,7 +10,7 @@ export const t = {
   "skip": "跳至内容",
   "pause": "暂停标志动画",
   "play": "播放标志动画",
-  "cta": "加企业微信",
+  "cta": "加微信",
   "nav": {
     "label": "主导航",
     "audit": "诊断",
@@ -28,7 +28,7 @@ export const t = {
     "description": "海外买家视角诊断：逐页检查工厂英文官网，实测AI怎么介绍你，5个工作日出报告。",
     "h1": "老外怎么看你的官网",
     "lede": "成都寰桥服务出口欧美、已经有英文网站的中国工厂。我们替你查两件事：美国买家怎么看你的官网，ChatGPT和谷歌AI概览怎么介绍你的公司。",
-    "cta": "加企业微信",
+    "cta": "加微信",
     "cta2": "查看样例",
     "problemTitle": "买家先问AI，再发询盘",
     "problemBody": "美国公司 Responsive 在2025年10月发布了一项调查，对象是来自不同行业和地区的350名B2B买家：48%的美国买家用生成式AI找供应商，其他地区是14%。所以美国买家发询盘之前，ChatGPT、谷歌AI概览或 Perplexity 可能已经介绍过你的公司，也可能根本没提到你。",
@@ -59,7 +59,7 @@ export const t = {
     "price": "¥2,980，5个工作日交付诊断报告。60天内委托建站，诊断费全额抵扣。",
     "stepsTitle": "怎么开始",
     "steps": [
-      "加企业微信。",
+      "加微信。",
       "约一次15分钟视频通话，免费，聊聊你的网站和产品。",
       "签合同，开发票，支持对公转账。",
       "5个工作日内交付中英文报告。"
@@ -86,16 +86,15 @@ export const t = {
   },
   "sample": {
     "title": "报告样例 | 成都寰桥",
-    "description": "一份四川出口企业的匿名诊断报告样例正在准备。想先看，加企业微信，我们发给你。",
+    "description": "一份四川出口企业的匿名诊断报告样例正在准备。想先看，加微信，我们发给你。",
     "h1": "报告样例",
-    "body": "样例基于一家四川出口企业的公开官网，已做匿名处理，目前还在准备。加企业微信，完成后先发给你。"
+    "body": "样例基于一家四川出口企业的公开官网，已做匿名处理，目前还在准备。加微信，完成后先发给你。"
   },
   "contact": {
     "title": "联系 | 成都寰桥",
-    "description": "加企业微信，或留言。我们会用微信或电话回复你。",
+    "description": "加微信，或留言。我们会用微信或电话回复你。",
     "h1": "联系我们",
-    "wecom": "电脑扫码添加企业微信，手机点图片直接加。",
-    "wecomPending": "二维码准备中",
+    "wecom": "电脑上用微信扫码，加 Ryan 为好友。在微信里打开本页时，长按二维码识别。",
     "formTitle": "或者留言",
     "fields": {
       "name": "姓名",
@@ -107,7 +106,9 @@ export const t = {
     "consent": "我同意将以上信息发送给 Ryan 和 Kenny（均在成都），并同意 Cloudflare 和 Purelymail 在中国境外（包括美国）处理和存储这些信息，即跨境传输，以便回复我。详见",
     "send": "发送",
     "sent": "已收到，我们会通过微信或电话回复你。",
-    "failed": "没发出去，请加企业微信。"
+    "failed": "没发出去，请加微信。",
+    "wecomLink": "在手机上打开微信添加",
+    "qrAlt": "Ryan 的微信二维码"
   },
   "privacy": {
     "title": "隐私声明 | 成都寰桥",

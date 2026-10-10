@@ -6,9 +6,8 @@ export const PREVIEW = process.env.PREVIEW === '1';
 export const HOST = PREVIEW
   ? { en: 'https://gesedge-preview.rskrny.workers.dev', zh: 'https://huanqiao-preview.rskrny.workers.dev' }
   : { en: 'https://gesedge.com', zh: 'https://huanqiao.gesedge.com' };
-// The Chinese site launches after Kenny's copy is in. Until then the English site hides every link to it
-// (nav switch, hreflang, exporters button). Previews always show them. Flip to true at the ZH launch.
-export const ZH_LIVE = PREVIEW || false;
+// Both sites live since 2026-10-10: the English site links to the Chinese one (nav switch, hreflang, exporters button).
+export const ZH_LIVE = true;
 // ponytail: the sample audit doesn't exist yet. Until it does, /sample/ is noindexed and unlinked (nav, home
 // button, sitemap). Flip to true when the report, PDF and video are in.
 export const SAMPLE_READY = false;
