@@ -28,7 +28,9 @@
    获客链接 later). Open: Kenny reads the live site; sample report (`SAMPLE_READY`); mainland speed/ICP path.
    Rerun `python scripts/subset-zh.py` after any Chinese text change; test forms with Playwright (curl on Windows
    mangles Chinese). Site emails land in Gmail's Updates tab: Ryan should add a filter to Primary.
-4. **Next: marketing and outreach.** PartnerStack waits on Ryan's login (Paseo's browser runs only in the desktop
+4. **US outreach plan (2026-10-10, awaiting Ryan's go):** `../business/us-outreach-plan-2026-10-10.md` (private;
+   research lanes in C:/tmp/usgtm). Plays: customs brokers (Goldie demo), auction houses (Sullivan clone), importer
+   supplier checks. Cold email never from gesedge.com. **Then: marketing and outreach.** PartnerStack waits on Ryan's login (Paseo's browser runs only in the desktop
    app, so the iPhone can't use it).
 
 ## Open questions / constraints
