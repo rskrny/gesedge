@@ -4,7 +4,7 @@
 B=https://gesedge.com
 c() { curl -s --noproxy '*' -o /dev/null -w '%{http_code}' "$@"; }
 r() { curl -s --noproxy '*' -o /dev/null -w '%{http_code} -> %{redirect_url}' "$@"; }
-echo "== pages"; for p in / /services/ /work/ /about/ /exporters/ /contact/ /privacy/ /contact/sent/ /robots.txt /sitemap.xml /og-en.png /favicon-32.png; do printf "%-18s %s\n" $p "$(c $B$p)"; done
+echo "== pages"; for p in / /services/ /work/ /about/ /exporters/ /contact/ /privacy/ /contact/sent/ /robots.txt /sitemap.xml /og-en.png /favicon.ico /favicon.svg /apple-touch-icon.png; do printf "%-18s %s\n" $p "$(c $B$p)"; done
 printf "%-18s %s\n" "/nope/ (404)" "$(c $B/nope/)"
 echo "== old URLs"; for p in /case-studies /case-studies/bloodline-charters /blog /blog/why-80-percent-of-ai-projects-fail /admin /about /contact /services; do printf "%-44s %s\n" $p "$(r $B$p)"; done
 echo "== hosts"; printf "%-30s %s\n" www "$(r https://www.gesedge.com/work/)"; printf "%-30s %s\n" http "$(r http://gesedge.com/)"
