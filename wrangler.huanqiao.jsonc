@@ -1,0 +1,24 @@
+// PRODUCTION Worker for huanqiao.gesedge.com (Chinese site). Not on Workers Builds yet: deploy by hand after merging
+// to main:  node scripts/build.mjs zh && npx wrangler deploy -c wrangler.huanqiao.jsonc
+// ponytail: manual deploy; add a second Workers Build (root build: node scripts/build.mjs zh, deploy:
+// npx wrangler deploy -c wrangler.huanqiao.jsonc) once the zh site changes often enough to forget it.
+// Form copies share the gesedge KV namespace (keys are prefixed huanqiao/). SMTP_PASS is a secret on this Worker.
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "huanqiao",
+  "main": "worker/index.js",
+  "compatibility_date": "2026-10-01",
+  "routes": [{ "pattern": "huanqiao.gesedge.com", "custom_domain": true }],
+  "assets": {
+    "directory": "dist/zh",
+    "binding": "ASSETS",
+    "html_handling": "force-trailing-slash",
+    "not_found_handling": "404-page",
+    "run_worker_first": ["/api/*", "/media/*"]
+  },
+  "kv_namespaces": [{ "binding": "MESSAGES", "id": "8088904e8657425b87704057e4676785" }],
+  "vars": {
+    "SITE": "zh",
+    "MAIL_FROM": "website@gesedge.com"
+  }
+}

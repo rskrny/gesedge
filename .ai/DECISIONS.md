@@ -289,3 +289,12 @@ Decision: (b) — full rebuild. Replace backend, hosting, and CMS; treat the cur
 Rationale: Current code is largely disposable for the intended direction; a CMS-driven site fits ongoing updates and a Ryan + Shiying (developer) workflow better.
 Trade-offs: Discards working code and the existing Supabase/admin + email/analytics integrations; new stack means fresh setup and content/copy migration.
 Reversal trigger: If new-stack evaluation shows rebuild cost outweighs benefit, or a chosen CMS/host can't meet bilingual EN/ZH or low-cost requirements, fall back to iterating the current Next.js site.
+
+## Decision: Chinese copy written by models, not Kenny; Ryan answers Chinese leads first
+Date: 2026-10-10 · Status: Accepted (Ryan: "the developer won't have the capacity… we'll need to make that whole thing";
+"Both Kenny and I can answer Chinese leads. I can get them first then escalate to Kenny")
+Context: every /zh/ string was a placeholder waiting on Kenny.
+Decision: DeepSeek V4 Pro, GLM 5.3 and Kimi K2.6 each draft natively from one brief (`src/zh/copy.ts` header lists
+the facts) → Kimi merges → qu-ai-wei → lieflat-less-ai-tone → Codex + DeepSeek adversarial review → Kimi final read.
+Kenny stays on the site (joins when needed) and reads the preview before launch. Sample report hidden
+(`SAMPLE_READY`) until it exists. Rejected: Kimi's "future date" flags (the dates are real; it misjudged today).

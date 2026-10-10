@@ -1,9 +1,11 @@
 ---
-// All text from ../../copy.ts. WeCom: Kenny's 联系我 QR (desktop) and 获客链接 (phone/WeChat) go here once registered.
+// All text from ../../copy.ts. Ryan's personal WeChat QR (2026-10-10, stopgap until a 成都寰桥 WeCom exists; then swap in
+// the WeCom 联系我 QR and 获客链接). WECHAT_ADD is what the QR encodes, for visitors on the phone that shows the code.
 // The consent box is unticked and required (PIPL cross-border transfer); notice text from Kenny + review.
 import Page from '../../../shared/layouts/Page.astro';
 import { t } from '../../copy';
 const c = t.contact;
+const WECHAT_ADD = 'https://u.wechat.com/kDcPaJvlTbMLftYAp85RVaE?s=2';
 ---
 <Page title={c.title} description={c.description} path="/contact/">
   <div class="wrap page-head"><h1 class="display h1">{c.h1}</h1></div>
@@ -11,7 +13,8 @@ const c = t.contact;
     <div class="wrap grid">
       <div class="s-4 wecom">
         <p>{c.wecom}</p>
-        <div class="qr">{c.wecomPending}</div>
+        <img class="qr" src="/images/wechat-qr.png" width="200" height="200" alt={c.qrAlt} />
+        <p><a href={WECHAT_ADD}>{c.wecomLink} →</a></p>
       </div>
       <form class="s-8 form" method="post" action="/api/contact/">
         <h2 class="label">{c.formTitle}</h2>
@@ -21,19 +24,19 @@ const c = t.contact;
         <label>{c.fields.site} <input name="site" maxlength="300" /></label>
         <label>{c.fields.need} <textarea name="message" required maxlength="4000" rows="5"></textarea></label>
         <label class="hp" aria-hidden="true">x <input name="website2" tabindex="-1" autocomplete="off" /></label>
-        <label class="check"><input type="checkbox" name="consent" value="yes" required /> <span>{c.consent}</span></label>
+        <label class="check"><input type="checkbox" name="consent" value="yes" required /> <span>{c.consent}<a href="/privacy/">{t.footer.privacy}</a>。</span></label>
         <button class="btn" type="submit">{c.send}</button>
       </form>
     </div>
   </section>
 </Page>
 <style>
-  .qr { width: 200px; height: 200px; border: 1px dashed var(--line); display: grid; place-content: center; text-align: center; padding: 12px; color: var(--muted); font-size: 13px; margin-top: 16px; }
+  .qr { display: block; width: 200px; height: 200px; border-radius: 6px; margin: 16px 0; }
   .form { display: grid; gap: 16px; max-width: 640px; }
   .form label { display: grid; gap: 6px; font-size: 15px; }
   .form input:not([type='checkbox']), .form textarea { font: 400 17px/1.5 var(--sans); color: var(--ink); background: var(--panel); border: 1px solid var(--line); border-radius: 2px; padding: 12px 14px; }
   .form .check { display: flex; gap: 10px; align-items: flex-start; font-size: 14px; color: var(--muted); }
-  .form .check input { margin-top: 4px; }
+  .form .check { min-height: 44px; } .form .check input { margin-top: 3px; width: 20px; height: 20px; flex: none; }
   .form button { justify-self: start; cursor: pointer; }
   .hp { position: absolute; left: -9999px; }
 </style>

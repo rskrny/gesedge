@@ -1,9 +1,9 @@
 // robots.txt and sitemap.xml for whichever site is building. Pages re-export these from their pages folder.
-import { PREVIEW, CANONICAL, SITE } from './site';
+import { PREVIEW, CANONICAL, SITE, SAMPLE_READY } from './site';
 
 const PAGES = {
   en: ['/', '/services/', '/work/', '/about/', '/contact/', '/exporters/', '/privacy/'],
-  zh: ['/', '/audit/', '/sample/', '/contact/', '/privacy/'],
+  zh: ['/', '/audit/', ...(SAMPLE_READY ? ['/sample/'] : []), '/contact/', '/privacy/'],
 };
 
 export const robots = () =>
