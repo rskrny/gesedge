@@ -298,3 +298,19 @@ Decision: DeepSeek V4 Pro, GLM 5.3 and Kimi K2.6 each draft natively from one br
 the facts) → Kimi merges → qu-ai-wei → lieflat-less-ai-tone → Codex + DeepSeek adversarial review → Kimi final read.
 Kenny stays on the site (joins when needed) and reads the preview before launch. Sample report hidden
 (`SAMPLE_READY`) until it exists. Rejected: Kimi's "future date" flags (the dates are real; it misjudged today).
+
+## Decision: Launch huanqiao.gesedge.com with Ryan's personal WeChat QR; deploy it by hand
+Date: 2026-10-10 · Status: Accepted (Ryan: "deploy that. I'd like both sites to be live", sent his WeChat QR)
+Context: no 成都寰桥 WeCom yet; Workers Builds only builds the English site.
+Decision: personal WeChat QR + its u.wechat.com link on /contact/, copy says 加微信. Worker `huanqiao` deployed with
+`wrangler.huanqiao.jsonc`. Sample report hidden until it exists. Cloudflare free plan: mainland speed untested.
+Reversal trigger: a 成都寰桥 WeCom exists (swap QR), or zh changes get frequent enough to add a second Workers Build.
+
+## Decision: US outreach = three plays where Ryan's background is the pitch (PROPOSED)
+Date: 2026-10-10 · Status: Proposed, awaiting Ryan's go
+Context: Ryan asked for non-obvious "arbitrage" to win US clients. Five research agents + GPT, Kimi, DeepSeek plans.
+Decision: (1) small customs brokers, Goldie inbox demo; (2) auction houses, Sullivan dashboard clone; (3) US importers
+of Chengdu/Chongqing suppliers, written supplier checks (test 10 messages first). Cold email only from a second domain
+on Purelymail, hand-sent, CAN-SPAM footer. Not doing: LinkedIn automation, Maps/Indeed/Yelp scraping, mass AI pages,
+SEO as main channel, PartnerStack as a lead source.
+Plan: ../business/us-outreach-plan-2026-10-10.md (private).

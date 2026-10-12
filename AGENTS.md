@@ -154,8 +154,9 @@ exempt), no always-on bloom, no third typeface or hue.
 
 **Required gate (Ryan, 2026-10-06): every piece of English website copy goes through the
 `no-ai-slop` skill before it ships** — edit mode on the draft, then a detect pass on the final text.
-Note in the commit/PR that the pass ran. **Chinese copy** (Simplified): Kenny (Zhu Shiying) writes or
-rewrites it natively (never ship a straight translation of the English), then an edit pass with the
+Note in the commit/PR that the pass ran. **Chinese copy** (Simplified): drafted natively, never a straight translation of the English. Since 2026-10-10
+(Kenny has no capacity) DeepSeek, GLM and Kimi each draft from one brief and Kimi merges; Kenny reads when he can.
+Then an edit pass with the
 `qu-ai-wei` skill (brand-copy aware; targets 翻译腔, 客服腔, filler; tell it the copy is for a brand
 website), then a minimal-edit check with `lieflat-less-ai-tone` (whitelist rules, corpus-based), then a
 Kimi review. Both skills preserve facts and never add claims — re-check numbers and names after each pass.
