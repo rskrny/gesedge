@@ -158,8 +158,8 @@ Note in the commit/PR that the pass ran. **Chinese copy** (Simplified): drafted 
 (Kenny has no capacity) DeepSeek, GLM and Kimi each draft from one brief and Kimi merges; Kenny reads when he can.
 Then an edit pass with the
 `qu-ai-wei` skill (brand-copy aware; targets 翻译腔, 客服腔, filler; tell it the copy is for a brand
-website), then a minimal-edit check with `lieflat-less-ai-tone` (whitelist rules, corpus-based), then a
-Kimi review. Both skills preserve facts and never add claims — re-check numbers and names after each pass.
+website), then a minimal-edit check with `lieflat-less-ai-tone` (whitelist rules, corpus-based), then Codex +
+DeepSeek adversarial review and a Kimi final read. Both skills preserve facts and never add claims — re-check numbers and names after each pass.
 Copy that skipped the gate does not merge.
 
 ### Banned patterns
