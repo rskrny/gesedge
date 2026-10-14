@@ -24,7 +24,7 @@
 ## Next actions
 1. **Ryan decides:** go live with the repositioning, including the default RMB terms on the China pages (流程梳理
    ¥9,800 credited, builds from ¥60,000 fixed price, maintenance 15%/year, deployed on the client's server or mainland
-   cloud in the client's name). On "go": merge the PR (`gh pr merge --admin`), then the ZH deploy above, then
+   cloud in the client's name). On "go": merge PR #12 (`gh pr merge 12 --admin`), then the ZH deploy above, then
    `scripts/qa/smoke.sh` and a WeChat check. Market note: forwarder SaaS costs ¥3k–23k/yr, so builds need a reason
    SaaS can't do it (agent-office quotes, laycan, heavy overseas email); validate with 3–5 ship-agent/operator calls.
 2. Open items the audits raised but this pass did not change (Ryan's call): no photo of Ryan anywhere; "CTO of C14
