@@ -13,6 +13,32 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Reposition both sites around operations systems; 寰桥 sells systems to 外贸/货代 teams, the audit becomes secondary
+Date: 2026-10-14 · Status: Accepted by Claude after Codex + Kimi review; RMB prices and contract terms await Ryan
+Context: Ryan: "offering just English websites for Chinese factories is not really enough"; broaden to more complex
+systems for international businesses in China (his examples for a Shanghai ship operator: space confirmation, quotes
+with price and laycan, internal comms, B/L creation, finance). Asked for an outsider's read: does it make sense, is it
+AI slop, does the CEO pay attention. Roundtable (Codex, Kimi K2.6, DeepSeek V4 Pro, GLM 5.3, Gemini, Claude persona
+walkthrough + market research; record in ../business/repositioning-2026-10-14/, private) agreed: the ZH site sold only a ¥2,980
+audit and showed none of the three live systems; the EN H1 split two unrelated businesses; no word on where data runs.
+Options: (a) add a services row; (b) reposition both sites around operations systems, audit secondary; (c) vertical
+landing pages + a shipping demo.
+Decision: (b). EN H1 = AI systems for teams that spend hours a day sorting email and re-keying orders; "Your person in
+China" off the home page (stays on /services/); new /china/ (systems for forwarders and trading companies in China,
+billed by 寰桥 in RMB); /exporters/ kept as the website-review page. ZH home = systems for 外贸/货代 operations teams,
+proof band with the real email-triage screen (US clients, anonymous), examples as 可以做, four steps with prices,
+contract terms; new /cases/ (三个匿名案例); nav 案例/官网诊断/联系; audit only via nav + /audit/. Never on either site:
+"EDI", 财务管理系统/ERP, building chat apps, the shipping company's name, any result promise. Integrations
+(企业微信/飞书/钉钉, 金蝶/用友) are "checked during the workflow review", not claimed. hreflang pairs only /work/↔/cases/
+and /exporters/↔/audit/. Default RMB terms (Ryan to confirm): review ¥9,800 credited, builds from ¥60,000 fixed price,
+maintenance 15%/year, deployed on the client's server or mainland cloud in the client's name, client pays the cloud.
+Rationale: the three live systems are operations software (inbox → tickets, nightly dashboard, conflict-free bookings),
+which is what a forwarder or trading company needs; Ryan's forwarder background makes 货代 the credible first segment.
+Six seats rejected a menu of five systems (finance and chat read as naive to a Shanghai GM).
+Trade-offs: the factory-audit funnel loses the ZH home; no China proof exists yet (examples only); prices are
+unvalidated market guesses (seats ranged ¥5k–30k review, ¥30k–300k build).
+Reversal trigger: no China systems inquiry within 60 days of outreach, or Ryan wants the audit back on the home page.
+
 ## Decision: Anti-AI design system — two typefaces, no labels/ordinals/coordinates, audit before showing
 Date: 2026-10-08 · Status: Accepted (Ryan: "the design cannot look like AI made it")
 Context: Ryan caught the Plex Mono caps coordinates strip and "Two companies, one founder" as AI slop, after both had

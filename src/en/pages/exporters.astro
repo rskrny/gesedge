@@ -1,5 +1,6 @@
 ---
 // Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Equivalent page on huanqiao.gesedge.com: /audit/.
+// 2026-10-14: stays as the website-review page; systems for companies in China live on /china/.
 // Layout: a plain document (2026-10-08 anti-AI pass: no labels in a left column).
 // ponytail: "Sample report" button hidden until Kenny's sample audit exists.
 import Page from '../../shared/layouts/Page.astro';
@@ -14,6 +15,7 @@ import { HOST, HQ, ZH_LIVE } from '../../shared/site';
   <div class="wrap page-head">
     <h1 class="display h1">Your factory’s website, reviewed from a US buyer’s point of view.</h1>
     <p class="lede">If you’re an export manager at a Chinese factory, our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your website and checks how AI assistants describe your company.</p>
+    <p class="aside"><a href="/china/">For email, quote and document systems, see our page for companies in China →</a></p>
     <p class="ctas"><a class="btn" href="/contact/">Contact</a>{ZH_LIVE && <a class="zh-link" href={HOST.zh + '/audit/'} hreflang="zh-CN">Chinese version for your boss →</a>}</p>
   </div>
 

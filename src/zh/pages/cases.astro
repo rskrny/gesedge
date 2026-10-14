@@ -1,0 +1,40 @@
+---
+// All text from ../copy.ts. The three live systems, written natively in Chinese (never a translation of /work/).
+// Screens are the same files as gesedge.com/work/ (no client data readable). English equivalent: /work/.
+import Page from '../../shared/layouts/Page.astro';
+import { work } from '../../en/work';
+import { t } from '../copy';
+const c = t.cases;
+---
+<Page title={c.title} description={c.description} path="/cases/" alt="/work/">
+  <div class="wrap page-head">
+    <h1 class="display h1">{c.h1}</h1>
+    <p class="lede">{c.lede}</p>
+  </div>
+
+  {c.items.map((it, i) => (
+    <section id={work[i].id} class="case">
+      <div class="wrap">
+        <header class="case-head">
+          <h2 class="display h2">{it.title}</h2>
+          <p class="meta">{it.meta}</p>
+        </header>
+        <figure class="shot">
+          <img src={work[i].image.src} alt={it.alt} width={work[i].image.w} height={work[i].image.h} loading="lazy" decoding="async" />
+        </figure>
+        <div class={`case-body ${it.before ? 'three' : 'two'}`}>
+          {it.before && <div><h3 class="label">{c.labels.before}</h3><p>{it.before}</p></div>}
+          <div><h3 class="label">{c.labels.built}</h3><p>{it.built}</p></div>
+          <div><h3 class="label">{c.labels.result}</h3><p>{it.result}</p></div>
+        </div>
+      </div>
+    </section>
+  ))}
+
+  <section class="band">
+    <div class="wrap grid">
+      <h2 class="display h2 s-6">{c.closeTitle}</h2>
+      <p class="s-6"><a class="btn" href="/contact/">{t.cta}</a></p>
+    </div>
+  </section>
+</Page>

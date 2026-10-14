@@ -87,6 +87,38 @@ section { padding: clamp(72px, 9vw, 128px) 0; border-top: 1px solid var(--line);
 .rows { list-style: none; margin: 0; padding: 0; }
 .rows > li { border-top: 1px solid var(--line); padding: 28px 0; }
 .rows > li:last-child { border-bottom: 1px solid var(--line); }
+.doc .rows { margin: 32px 0; }
+.rows h3 { margin-bottom: 10px; }
+.rows p { margin: 0; }
+.after { margin-top: 32px; }
+
+/* proof band (both home pages): one real screen, flat, with a plain caption; two more cases as text below */
+.proof-grid { display: grid; grid-template-columns: 4fr 8fr; gap: 56px; align-items: center; }
+.proof-copy h2 { margin: 0 0 12px; }
+.proof-copy .meta { margin-bottom: 24px; }
+.shot { margin: 0; }
+.shot img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 0 0 1px var(--line); }
+.shot figcaption { margin-top: 16px; max-width: 46em; }
+.also { list-style: none; margin-top: clamp(64px, 7vw, 96px); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
+.also li { border-top: 1px solid var(--line); padding-top: 28px; }
+.also .meta { margin: 10px 0 14px; }
+.also p.muted { font-size: 17px; margin: 0; }
+
+/* steps: a real sequence, so plain numbers; no rail, no moving dot */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
+.step { font: 600 16px/1 var(--sans); color: var(--celadon); margin: 0 0 16px; font-variant-numeric: tabular-nums; }
+.steps h3 { margin-bottom: 10px; }
+.steps p.muted { font-size: 17px; margin: 0; }
+
+/* case studies (EN /work/, ZH /cases/): title + one plain line, full-width screen, the story in columns */
+.case-head { margin-bottom: 32px; }
+.case-head .meta { margin: 10px 0 0; }
+.case .shot { margin: 0 0 48px; }
+.case-body { display: grid; gap: 24px 48px; }
+.case-body.three { grid-template-columns: repeat(3, 1fr); }
+.case-body.two { grid-template-columns: 1fr 1fr; }
+.case-body h3 { margin: 0 0 10px; }
+.case-body p { font-size: 17px; }
 
 
 /* home hero: copy left, object right, coordinates strip at the foot (comp A) */
@@ -112,7 +144,12 @@ section { padding: clamp(72px, 9vw, 128px) 0; border-top: 1px solid var(--line);
   .hero { min-height: 0; }
   .stage { grid-template-columns: 1fr; padding-top: 24px; padding-bottom: 48px; gap: 8px; }
   .obj { width: min(360px, 92%); margin-top: 8px; }
+  .also { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
+  .case-body.three, .case-body.two { grid-template-columns: 1fr; }
   }
+@media (max-width: 1100px) { .proof-grid { grid-template-columns: 1fr; gap: 40px; } }
+@media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }

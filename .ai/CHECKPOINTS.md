@@ -35,3 +35,4 @@
 - 2026-10-10 · huanqiao.gesedge.com LIVE: full Chinese copy (3-model draft + gates), Ryan's WeChat QR, production Worker `huanqiao` with custom domain, ZH_LIVE on; SMTP rotated to four Workers; both forms tested end to end.
 - 2026-10-10 · US outreach research: 5 agents + GPT/Kimi/DeepSeek roundtable, Codex fact-check; plan in ../business/ (customs brokers, auction houses, importer checks); PDF to Lark; awaiting Ryan's go.
 - 2026-10-12 · Session close: STATE rewritten for cold start; decisions and memory updated.
+- 2026-10-14 · Repositioning around operations systems: 6-seat outsider audit (Codex, Kimi, DeepSeek, GLM, Gemini, Claude persona + market research), decision reviewed by Codex + Kimi; EN H1 + /china/; ZH home rebuilt (proof band, examples, steps with RMB prices, terms) + /cases/; gates run (EN no-ai-slop; ZH 3-model draft → Kimi merge → qu-ai-wei → lieflat → Codex + DeepSeek → Kimi final read); previews only, production waits for Ryan.

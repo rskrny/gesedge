@@ -38,6 +38,10 @@ work and advanced-but-performant visuals — without being heavy enough to crash
   markets — FDE (forward-deployed engineering), branding, marketing, localization. Once the
   site is good: heavy GEO + SEO push to drive traffic to the GES/HuanQiao site.
   Legal CN name: 成都寰桥企业管理咨询服务有限公司 (寰, never 环).
+- **Repositioned 2026-10-14 (Ryan: websites for factories "is not really enough"):** both sites sell operations
+  systems (shared inbox → tickets, quotes, document drafts, reports), one workflow at a time. 寰桥 sells them to
+  货代/船代/外贸 teams in China (RMB, fapiao); the factory website audit is a secondary offer on /audit/. Never on the
+  site: EDI, 财务管理系统/ERP, chat apps, the shipping company's name. See DECISIONS.md 2026-10-14.
 - **Bilingual model:** all concrete site content in **both EN + ZH**; blog posts stay in
   the author's native language (Ryan = English, Shiying = Chinese) for a local touch.
 

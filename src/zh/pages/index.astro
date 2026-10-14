@@ -1,11 +1,14 @@
 ---
-// All text from ../copy.ts (Kenny's file). Hero object: the joint (燕尾榫) until the sample audit exists,
-// then a page from it goes in a proof band under the hero, as on the English home page.
+// All text from ../copy.ts. 2026-10-14 repositioning (DECISIONS.md): the home sells operations systems to 外贸 and 货代
+// teams; the ¥2,980 官网诊断 lives on /audit/ only (nav). Proof = the same real screen as the English home, US clients,
+// anonymous. Examples are "可以做", never delivered work. No hreflang pair (no English page with the same role).
 import Page from '../../shared/layouts/Page.astro';
 import Joint from '../../shared/components/Joint.astro';
-import { CANONICAL, HQ, EMAIL, SAMPLE_READY } from '../../shared/site';
+import { CANONICAL, HQ, EMAIL } from '../../shared/site';
+import { work } from '../../en/work';
 import { t } from '../copy';
 const h = t.home;
+const lead = work[0];
 const org = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
@@ -19,23 +22,80 @@ const org = {
   address: { '@type': 'PostalAddress', streetAddress: HQ.address, addressLocality: '成都', addressCountry: 'CN' },
 };
 ---
-<Page title={h.title} description={h.description} path="/" alt="/">
+<Page title={h.title} description={h.description} path="/">
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(org)} />
   <div class="hero">
     <div class="wrap stage">
       <div class="lead">
         <h1 class="display h1">{h.h1}</h1>
         <p class="lede">{h.lede}</p>
-        <p class="ctas"><a class="btn" href="/contact/">{h.cta}</a>{SAMPLE_READY && <> <a class="btn ghost" href="/sample/">{h.cta2}</a></>}</p>
+        <p class="ctas"><a class="btn" href="/contact/">{h.cta}</a></p>
       </div>
       <div class="obj"><Joint /></div>
     </div>
   </div>
-  <section><div class="wrap doc"><h2 class="h3 sec-title">{h.problemTitle}</h2><p>{h.problemBody}</p></div></section>
-  <section class="band"><div class="wrap doc"><h2 class="h3 sec-title">{h.auditTitle}</h2><div><p class="price">{h.auditBody}</p><p><a href="/audit/">{h.auditLink} →</a></p></div></div></section>
-  <section><div class="wrap doc"><h2 class="h3 sec-title">{h.afterTitle}</h2><ol class="rows">{h.after.map((a, i) => <li>{a}</li>)}</ol></div></section>
-  <section><div class="wrap doc"><h2 class="h3 sec-title">{h.whoTitle}</h2><p>{h.whoBody}</p></div></section>
+
+  <section class="band proof" aria-labelledby="proof-title">
+    <div class="wrap proof-grid">
+      <div class="proof-copy">
+        <h2 class="display h2" id="proof-title">{h.proofTitle}</h2>
+        <p class="meta">{h.proofMeta}</p>
+        <p class="muted">{h.proofBody}</p>
+        <p><a href="/cases/">{h.casesLink} →</a></p>
+      </div>
+      <figure class="shot">
+        <img src={lead.image.src} alt={t.cases.items[0].alt} width={lead.image.w} height={lead.image.h} fetchpriority="high" />
+        <figcaption class="meta">{h.proofCaption}</figcaption>
+      </figure>
+    </div>
+    <ul class="wrap also">
+      {h.also.map((a) => <li><h3 class="h3">{a.title}</h3><p class="meta">{a.meta}</p><p class="muted">{a.body}</p></li>)}
+    </ul>
+  </section>
+
+  <section>
+    <div class="wrap doc">
+      <h2 class="display h2 sec-title">{h.systemsTitle}</h2>
+      <p>{h.systemsIntro}</p>
+      <ul class="rows">
+        {h.systems.map((s) => <li><h3 class="h3">{s.name}</h3><p class="muted">{s.body}</p></li>)}
+      </ul>
+      <p class="after">{h.connect}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="display h2 sec-title">{h.stepsTitle}</h2>
+      <ol class="steps">
+        {h.steps.map((s, i) => <li><p class="step">{i + 1}</p><h3 class="h3">{s.name}</h3><p class="muted">{s.body}</p></li>)}
+      </ol>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap doc">
+      <h2 class="display h2 sec-title">{h.termsTitle}</h2>
+      <p>{h.terms}</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap doc">
+      <h2 class="display h2 sec-title">{h.whoTitle}</h2>
+      <p>{h.whoBody}</p>
+    </div>
+  </section>
+
+  <section class="band">
+    <div class="wrap grid">
+      <h2 class="display h2 s-6">{t.cases.closeTitle}</h2>
+      <p class="s-6"><a class="btn" href="/contact/">{t.cta}</a></p>
+    </div>
+  </section>
 </Page>
 <style>
-  .price { font: 400 18px/1.6 var(--sans); border-left: 2px solid var(--celadon); padding-left: 16px; }
+  /* 12 characters a line, so the H1 breaks after 、 instead of inside 邮件/报价. Retune if the H1 text changes. */
+  .lead h1 { max-width: 12.5em; }
+  @media (max-width: 860px) { .lead h1 { font-size: 28px; } }
 </style>

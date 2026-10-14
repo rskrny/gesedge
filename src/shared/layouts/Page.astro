@@ -24,7 +24,7 @@ const lang = zh ? 'zh-CN' : 'en-US';
 const canonical = CANONICAL[SITE] + path;
 
 const nav = zh
-  ? [{ href: '/audit/', label: t.nav.audit }, ...(SAMPLE_READY ? [{ href: '/sample/', label: t.nav.sample }] : []), { href: '/contact/', label: t.nav.contact }]
+  ? [{ href: '/cases/', label: t.nav.cases }, { href: '/audit/', label: t.nav.audit }, ...(SAMPLE_READY ? [{ href: '/sample/', label: t.nav.sample }] : []), { href: '/contact/', label: t.nav.contact }]
   : [{ href: '/services/', label: 'Services' }, { href: '/work/', label: 'Work' }, { href: '/about/', label: 'About' }, { href: '/contact/', label: 'Contact' }];
 const switchLink = zh ? { href: HOST.en + (alt ?? '/'), label: 'EN', lang: 'en' } : { href: HOST.zh + (alt ?? '/'), label: '中文', lang: 'zh-CN' };
 const here = (href: string) => path.startsWith(href);
@@ -89,7 +89,7 @@ const here = (href: string) => path.startsWith(href);
           <ul class="foot-links">
             {zh
               ? <><li><a href="/privacy/">{t.footer.privacy}</a></li></>
-              : <><li><a href="/exporters/">For exporters</a></li><li><a href="/privacy/">Privacy</a></li></>}
+              : <><li><a href="/china/">Companies in China</a></li><li><a href="/exporters/">For exporters</a></li><li><a href="/privacy/">Privacy</a></li></>}
             <li><a href={`mailto:${EMAIL}`}>{EMAIL}</a></li>
           </ul>
         </div>
