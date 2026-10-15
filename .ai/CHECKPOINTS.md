@@ -36,3 +36,4 @@
 - 2026-10-10 · US outreach research: 5 agents + GPT/Kimi/DeepSeek roundtable, Codex fact-check; plan in ../business/ (customs brokers, auction houses, importer checks); PDF to Lark; awaiting Ryan's go.
 - 2026-10-12 · Session close: STATE rewritten for cold start; decisions and memory updated.
 - 2026-10-14 · Repositioning around operations systems: 6-seat outsider audit (Codex, Kimi, DeepSeek, GLM, Gemini, Claude persona + market research), decision reviewed by Codex + Kimi; EN H1 + /china/; ZH home rebuilt (proof band, examples, steps with RMB prices, terms) + /cases/; gates run (EN no-ai-slop; ZH 3-model draft → Kimi merge → qu-ai-wei → lieflat → Codex + DeepSeek → Kimi final read); previews only, production waits for Ryan.
+- 2026-10-15 · Repositioning LIVE on both sites after a four-lens go/no-go review (Codex economics, Kimi buyer, DeepSeek compliance, Claude reality check); review fixes applied; PR #12 merged, ZH deployed; smoke + live screenshots pass.
