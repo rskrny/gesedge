@@ -3,61 +3,57 @@
      Fields: Status · Next actions · Blockers/Open questions · Active context ·
      Recent changes · Handoff. Drop any field that's empty. -->
 
-## Status (2026-10-10)
-- 2026-10-10: PR #10 live (verified): dovetail favicon.ico + favicon.svg?v=2 (old Vercel globe was cached at
-  /favicon.svg), apple-touch-icon, og/share images re-rendered without banned tells. `scripts/brand-assets.py`
-  regenerates them. Square logo `brand/logo/ges-logo-square-1024.png` sent to Ryan on Lark (lark-cli bot DM).
-- **gesedge.com is LIVE on the redo** (Astro static on Cloudflare Workers, Worker `gesedge`). Pushes to `main`
-  auto-deploy (Workers Builds: `node scripts/build.mjs en` / `npx wrangler deploy`). `redo/site` = working branch,
-  identical to `main`. Last deploy: PR #8 (anti-AI pass); smoke test and media check passed.
-- Design: Unbounded + IBM Plex Sans only, animated Blender logo hero, real screenshots of all three systems.
-  `DESIGN.md` is binding, including the AI-tell ban list (§11).
-- Form: email via Purelymail (`SMTP_PASS`) + a copy in Workers KV `MESSAGES` (auto-deletes after 730 days).
-  **No Supabase, no Vercel** (Ryan, 2026-10-08).
-- **Chinese site not live.** Previews (noindex; build with `PREVIEW=1`, deploy `-c wrangler.<en|zh>.jsonc`):
-  https://gesedge-preview.rskrny.workers.dev · https://huanqiao-preview.rskrny.workers.dev
+## Status (2026-10-14, live-checked 18:47 UTC)
+- **Repositioning built, on previews only; production unchanged.** Both sites now sell operations systems (shared inbox
+  → tickets, quotes, document drafts, reports), one workflow at a time. Decision + rationale: DECISIONS 2026-10-14.
+  Roundtable record (six outside seats + market research, private): `../business/repositioning-2026-10-14/`.
+  - EN: H1 "We build AI systems for teams that spend hours a day sorting email."; "Your person in China" only on
+    /services/; new **/china/** (systems for forwarders, ship agents, trading companies in China, RMB via 寰桥);
+    /exporters/ kept as the website-review page; data FAQ on /services/.
+  - ZH: home rebuilt (proof band with the email-triage screen, 5 example systems as 可以做, 4 steps with RMB prices,
+    deployment/data terms, closing WeChat band); new **/cases/** (三个匿名案例, US clients); nav 案例/官网诊断/联系;
+    the ¥2,980 audit lives on /audit/ only.
+  - Gates passed: EN no-ai-slop edit + detect; ZH 3-model draft → Kimi merge → qu-ai-wei → lieflat → Codex + DeepSeek
+    → Kimi "可以发布" (deltas re-read). Anti-AI design audit: Codex + finish-gate agent on both sites, fixes applied.
+  - Previews: https://gesedge-preview.rskrny.workers.dev/ and https://huanqiao-preview.rskrny.workers.dev/ (noindex).
+- **Live (unchanged):** gesedge.com = Worker `gesedge`, pushes to `main` auto-deploy. huanqiao.gesedge.com = Worker
+  `huanqiao`, deploy by hand after merge: `node scripts/build.mjs zh` then `npx wrangler deploy -c wrangler.huanqiao.jsonc`.
+- Chinese strings: `src/zh/copy.ts` (facts in its header). Contact = Ryan's personal WeChat QR. `SAMPLE_READY = false`.
+- US outreach plan still awaiting Ryan's go: `../business/us-outreach-plan-2026-10-10.md`.
 
 ## Next actions
-0. PartnerStack: Ryan logs in at dash.partnerstack.com in the Paseo browser; then browse programs and rank the best fits.
-1. Ryan: check gesedge.com on a real iPhone and in WeChat (untested; the poster is the flat logo if autoplay fails).
-2. Ryan decides: delete Vercel project `gesedge` (old site still public at gesedge.vercel.app); drop the dormant GES
-   Supabase tables (declined at the prompt; exported to `../business/supabase-export-2026-10-08/`); delete Worker
-   `ges-refboard`; rename services (Codex's idea; names are Ryan-approved, so ask).
-3. **ZH site (we build it; Ryan answers leads first, Kenny joins when needed):** all copy done 2026-10-10 (3-model
-   draft → gates, see DECISIONS), on https://huanqiao-preview.rskrny.workers.dev, form tested end to end. Before
-   launch: WeCom 联系我 QR + 获客链接 (contact page shows 二维码准备中), Kenny reads the preview, production Worker
-   `huanqiao` + custom domain, flip `ZH_LIVE`. Sample report hidden (`SAMPLE_READY=false`) until we make one.
-   Rerun `python scripts/subset-zh.py` after any Chinese text change. curl on Windows mangles Chinese form input:
-   test the form with Playwright.
+1. **Ryan decides:** go live with the repositioning, including the default RMB terms on the China pages (流程梳理
+   ¥9,800 credited, builds from ¥60,000 fixed price, maintenance 15%/year, deployed on the client's server or mainland
+   cloud in the client's name). On "go": merge PR #12 (`gh pr merge 12 --admin`), then the ZH deploy above, then
+   `scripts/qa/smoke.sh` and a WeChat check. Market note: forwarder SaaS costs ¥3k–23k/yr, so builds need a reason
+   SaaS can't do it (agent-office quotes, laycan, heavy overseas email); validate with 3–5 ship-agent/operator calls.
+2. Open items the audits raised but this pass did not change (Ryan's call): no photo of Ryan anywhere; "CTO of C14
+   Space" on /about reads as split attention to two seats; /services/ still mixes software with supplier visits; the
+   ">90%" accuracy line has no published sample basis; a true data/model-provider paragraph for US buyers.
+3. US plan "go" (domain name + postal address), carried from 2026-10-10.
+4. Chinese follow-ups: sample report (`SAMPLE_READY`), 成都寰桥 WeCom QR, mainland speed/ICP (`.ai/research/hosting.md`).
+5. Ryan's small jobs: Gmail filter for website@gesedge.com; check both sites on a real iPhone and in WeChat.
+6. Carried: dormant GES Supabase tables (exported; the cloud project is a frozen fallback until ~2026-10-19 per the New
+   Server project), Worker `ges-refboard`. Vercel project `gesedge` deleted 2026-10-14.
 
 ## Open questions / constraints
-- Repo is PUBLIC: no client names, revenue, Ryan's email, headshots. Client names off until each approves (`name`
-  in `src/en/work.ts`). No About photo yet.
-- The Supabase project also runs the live Bloodline booking system: never delete it. Moving Bloodline and other
-  client sites off Vercel/Supabase is a separate job if Ryan wants it.
-- Emailed form copies aren't auto-deleted at 24 months (KV copies are). Gmail test messages "Smoke test (Claude)"
-  and "KV test (Claude)" are safe to delete.
+- Repo is PUBLIC: no client names, revenue, Ryan's email, headshots, or business plans. Private material lives in
+  `../business/`. Client names stay off until each approves (`name` in `src/en/work.ts`).
+- Unresolved before invoicing any China-side work: how the Wyoming LLC bills work done in China (visa, tax, scope).
+  寰桥's licence excludes import-export and purchasing agency.
+- The Supabase project also runs Bloodline's live booking system: never delete it.
 
 ## Ops gotchas
-- Node/npm from PowerShell; Git Bash for curl/python (`MSYS_NO_PATHCONV=1` for API paths; Python wants `C:/...`).
-  Ryan's proxy: `curl --noproxy "*"`.
-- QA in repo: `scripts/qa/shoot.py` (1440/390 shots), `scripts/qa/media.py <dist|url>` (hero video, reduced motion,
-  pause, H.264), `scripts/qa/smoke.sh` (live). Headless full-page shots show only the video poster and miss lazy
-  images; check those in a scrolled viewport.
-- **Before Ryan sees any page:** anti-AI audit (UI Finish-Gate Reviewer agent + Codex with screenshots + Kimi on
-  copy) and `no-ai-slop` on every new English line. Fix flagged tells; never keep one because it passed before.
-- Lockfile: regenerate on a clean tree only; verify in Docker `node:24` with npm 10.9.2 (`npm ci` + build; `PATH`
-  needs `/c/Program Files/Docker/Docker/resources/bin`). A Windows-only lockfile broke the first prod build.
-- `main` needs 1 review: `gh pr merge --admin`. Rollback: dashboard → gesedge → Deployments.
-- Mail password: `python ../business/ops/rotate_smtp.py` (reads `C:/tmp/abr_tokens.txt`, PM=...; sets all three
-  Workers). www→apex = zone Redirect Rule. Static assets ignore Range → `worker/ranged.js` (`node
-  worker/ranged.test.mjs`). No-slash URLs get 307 unless listed in `src/en/_redirects`.
-- Cloudflare dashboard via Paseo browser (Ryan logs in): `fill`/Ctrl+A miss React inputs; use `browser_evaluate`
-  (native value setter + `input` event), then Save. The wrangler token can't edit Redirect Rules or Builds.
-- Logo animation: `.ai/deliverables/logo-anim/joint_anim.py` (Blender, ~25 min; `--range a,b` partial), then
-  `encode.sh` there → `public/media`.
-- Consults: `codex exec --skip-git-repo-check -s read-only --image a.png,b.png < prompt.md`; if Kimi CLI is out of
-  quota, `../business/ops/ask.py` (SiliconFlow Kimi K2.6 / DeepSeek V4). Qwen3-VL reviews are unreliable.
+- Node/npm/wrangler/lark-cli from PowerShell; Git Bash for curl/python (`curl --noproxy "*"`). Write scripts with the
+  Write tool: Git Bash heredocs broke twice this session.
+- Chinese text: after ANY change rerun `python scripts/subset-zh.py` (font subsets) and rebuild. Test forms with
+  Playwright: curl on Windows turns Chinese input into "????".
+- QA: `scripts/qa/shoot.py` (1440/390; lazy images show blank in full-page shots, check scrolled), `scripts/qa/media.py`,
+  `scripts/qa/smoke.sh` (live EN). Page weight: ZH home ~285 KB compressed at 1440 (budget 300). Copy gate: EN via
+  `no-ai-slop`; ZH via 3-model draft → qu-ai-wei → lieflat-less-ai-tone → Codex + DeepSeek review → Kimi read.
+- `main` needs 1 review: `gh pr merge --admin`. Ask Ryan before merging to `main` (auto-deploys).
+
+- More ops notes (lockfile, Cloudflare dashboard, SMTP rotation, model seats): `.ai/archive/ops-notes.md`.
 
 ## Handoff
-Read `AGENTS.md`, this file, then `DESIGN.md` before any visual or copy work. Start at Next actions.
+Read `AGENTS.md`, this file, then `DESIGN.md` before any visual or copy work. Start at Next actions 1.

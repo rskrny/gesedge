@@ -2,8 +2,8 @@
 import { PREVIEW, CANONICAL, SITE, SAMPLE_READY } from './site';
 
 const PAGES = {
-  en: ['/', '/services/', '/work/', '/about/', '/contact/', '/exporters/', '/privacy/'],
-  zh: ['/', '/audit/', ...(SAMPLE_READY ? ['/sample/'] : []), '/contact/', '/privacy/'],
+  en: ['/', '/services/', '/work/', '/about/', '/contact/', '/china/', '/exporters/', '/privacy/'],
+  zh: ['/', '/cases/', '/audit/', ...(SAMPLE_READY ? ['/sample/'] : []), '/contact/', '/privacy/'],
 };
 
 export const robots = () =>

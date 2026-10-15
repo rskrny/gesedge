@@ -9,7 +9,7 @@ export const work = [
     short: 'US electronics refurbishment group',
     since: 'July 2026',
     image: { src: '/images/work/email-triage.webp', w: 1600, h: 887, alt: 'Executive dashboard of the email triage system, with client data blurred' },
-    home: 'A shared mailbox used to be this team’s to-do list. Now each conversation becomes a ticket with an owner, a status, and a target date, sorted into one of 29 categories. It classifies mail correctly more than 90% of the time, and more than 2,100 automated tests run before any change ships.',
+    home: 'A shared mailbox used to be this team’s to-do list. The staff who sorted it told us it took each of them two to six hours a day. Now each conversation becomes a ticket with an owner, a status, and a target date, sorted into one of 29 categories. It classifies mail correctly more than 90% of the time, and more than 2,100 automated tests run before any change ships.',
     before: 'Requests from one of the group’s business customers arrived in a shared mailbox, and the mailbox was the to-do list. Sorting it took staff two to six hours a day.',
     built: 'A mail desk inside the client’s Microsoft account. It turns each conversation into a ticket with an owner, a status, and a target date, sorts it into one of 29 categories, and routes it. Staff reply from the ticket and sign in with their Microsoft accounts. Each person gets a dashboard, and so do the executives.',
     result: 'It classifies mail correctly more than 90% of the time. We audited about 55 client requests and found one that had been missed, and it shipped the same day. More than 2,100 automated tests run before any change goes live. Automatic replies run in shadow mode until the client switches them on.',

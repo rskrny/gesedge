@@ -1,0 +1,70 @@
+---
+// Copy: ../business/repositioning-2026-10-14/en-copy-edited.md (no-ai-slop edit + detect, 2026-10-14). Decision: DECISIONS.md 2026-10-14.
+// The examples are proposed uses ("can"), never delivered work: the three live systems are US clients (/work/).
+// RMB prices and contract terms are Ryan's to confirm before this goes live. No hreflang pair (Kimi + Codex: the ZH home
+// has a different role), so the language switch goes to the ZH home.
+// Layout: a left-aligned document, like /exporters/ (DESIGN.md §5).
+import Page from '../../shared/layouts/Page.astro';
+import { HOST, HQ } from '../../shared/site';
+
+const examples = [
+  { name: 'Shared inbox and inquiries', body: 'Mail to a shared or sales mailbox can become a ticket with an owner and a deadline, with late tickets flagged. Our <a href="/work/#email-triage">email triage system</a> works this way.' },
+  { name: 'Quotes', body: 'Quote emails can be drafted from your rate sheets, surcharges, validity dates and laycan, then sent to agents or customers once a person approves them. Every quote stays on record.' },
+  { name: 'Bookings and space', body: 'Space, bookings and confirmations can live in one place instead of spreadsheets and email threads, with a log of every change and a warning when two bookings clash.' },
+  { name: 'Document drafts', body: 'The system can draft bills of lading, invoices and packing lists from the booking data and check the required fields. Your operations staff review and issue them. The system never issues a document.' },
+];
+const steps = [
+  { name: 'Workflow review, ¥9,800', body: 'We walk through one workflow and give you a written plan and a fixed price. The fee is credited in full if you go ahead. If a build won’t pay off, we tell you, and you keep the plan.' },
+  { name: 'Build, from ¥60,000', body: 'The price is fixed. The contract sets out the scope and the acceptance tests, and you pay in stages. If the scope changes, we agree the new price first.' },
+  { name: 'Parallel run', body: 'The system runs beside your team for the period set in the contract, and its output is checked against agreed test cases. New requirements are priced separately.' },
+  { name: 'Maintenance, 15% of the build price a year', body: 'The contract states response times and what maintenance covers.' },
+];
+---
+<Page
+  title="For companies in China · 成都寰桥"
+  description="Systems for the email, quotes and shipping documents of forwarders, ship agents and trading companies in China, built by 成都寰桥 in Chengdu. Prices in RMB, with fapiao."
+  path="/china/"
+>
+  <div class="wrap page-head">
+    <h1 class="display h1">Systems for forwarders and trading companies in China</h1>
+    <p class="lede">Our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, offers the same kind of systems to forwarders, ship agents and trading companies in China, where a team spends the day on overseas email, quotes and documents. It signs contracts in Chinese, bills in RMB and issues fapiao.</p>
+    <p class="ctas"><a class="btn" href="/contact/">Contact</a><a class="zh-link" href={HOST.zh + '/contact/'} hreflang="zh-CN">Add us on WeChat →</a></p>
+  </div>
+
+  <section>
+    <div class="wrap doc">
+      <h2 class="display h2 sec-title">What we build</h2>
+      <p>If off-the-shelf forwarding software covers your work, use it. If parts of your work fall outside it, such as overseas email in volume, quotes built on sailings and laycan, or documents that don’t fit its templates, those can be built separately. The examples below use the same approach as the three systems we run for US clients, shown on the <a href="/work/">Work page</a>.</p>
+      <ul class="rows">
+        {examples.map((e) => <li><h3 class="h3">{e.name}</h3><p class="muted" set:html={e.body} /></li>)}
+      </ul>
+      <p class="after">Whether a system can send alerts and approvals through WeCom, Feishu or DingTalk, or read figures from Kingdee or Yonyou, depends on your versions and access. We check that during the workflow review. We don’t build chat apps or replace finance software.</p>
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap doc">
+      <h2 class="display h2 sec-title">How a project runs</h2>
+      <ol class="list">
+        {steps.map((s) => <li><strong>{s.name}.</strong> {s.body}</li>)}
+      </ol>
+
+      <h2 class="h3">Where it runs</h2>
+      <p>The contract says where the system runs, who can access it, who controls the data, and how the source code is handed over. By default it runs on your own server or on an Alibaba Cloud or Tencent Cloud account in your company’s name, and you pay the cloud bill directly. Your business data stays under your control, and any personal information in it is handled under China’s Personal Information Protection Law.</p>
+      <p>If you export to the US and want your English website reviewed, see <a href="/exporters/">For exporters</a>.</p>
+
+      <h2 class="h3">Company</h2>
+      <p>Registered as <span lang="zh-CN">{HQ.name}</span>, Unified Social Credit Code {HQ.uscc}. The company issues fapiao.</p>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .page-head .ctas { margin-top: 36px; align-items: center; }
+  .zh-link { color: var(--ink); text-decoration: none; font-size: 15px; padding: 0 6px; }
+  .zh-link:hover { color: var(--celadon); }
+  .doc h2.h3 { margin: 48px 0 12px; }
+  .list { margin: 0; padding-left: 1.2em; }
+  .list li { margin-bottom: 0.8em; }
+  .list strong { font-weight: 600; }
+</style>

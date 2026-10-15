@@ -1,15 +1,16 @@
 ---
 // Copy: .ai/deliverables/redo-copy-en.md (v3, gated) + the 2026-10-08 anti-AI pass (no-ai-slop gate re-run).
 // Don't edit wording here without re-running the gate. Layout: DESIGN.md §5–6 (no labels, no ordinals, no HUD).
+// 2026-10-14 repositioning (DECISIONS.md): H1 about operations systems only; "Your person in China" moved to /services/;
+// China-side systems on /china/. EN home is not paired with the ZH home (different buyers).
 import Page from '../../shared/layouts/Page.astro';
 import Joint from '../../shared/components/Joint.astro';
 import { BOOKING, EMAIL, CANONICAL, GES } from '../../shared/site';
 import { work, builtFor } from '../work';
 
 const offers = [
-  { name: 'AI operations pilot', body: 'For teams that spend hours a day sorting email, re-keying orders, or chasing status updates. We start with a paid review of one workflow, build one system for it, and run that system beside your team until its output has been checked.', price: ['Review $2,500, credited to the build', 'Builds from $15,000'] },
+  { name: 'AI operations pilot', body: 'We start with a paid review of one workflow, build one system for it, and run that system beside your team until its output has been checked.', price: ['Review $2,500, credited to the build', 'Builds from $15,000'] },
   { name: 'Owner’s dashboard', body: 'One private page that shows what is happening across your business, rebuilt every night from the systems you already use.', price: ['Setup from $3,000', 'then from $750 a month'] },
-  { name: 'Your person in China', body: 'For US companies that buy from Chinese suppliers and need someone on the ground in China. We do desk checks and supplier visits, and write a memo to help you decide. We give advice and never handle goods or money.', price: ['Desk check $750', 'Supplier visit $1,500'] },
 ];
 const steps = [
   { name: 'Review', body: 'We review one workflow for a fee and give you a written plan and a fixed price.' },
@@ -30,20 +31,19 @@ const org = {
 };
 ---
 <Page
-  title="Global Edge Strategies · AI systems for US companies"
-  description="We build AI systems for US companies and English websites for Chinese factories. Run by Ryan Kearney from Chengdu."
+  title="Global Edge Strategies · AI systems for operations teams"
+  description="We build AI systems for teams that spend hours a day on email, order entry and status updates. Run by Ryan Kearney from Chengdu."
   path="/"
-  alt="/"
 >
   <script slot="head" type="application/ld+json" set:html={JSON.stringify(org)} />
 
   <div class="hero">
     <div class="wrap stage">
       <div class="lead">
-        <h1 class="display h1">We build AI systems for US companies and English websites for Chinese factories.</h1>
+        <h1 class="display h1">We build AI systems for teams that spend hours a day sorting email.</h1>
         <p class="lede">Ryan Kearney built every system on this site. Three of them run every day for US clients.</p>
         <p class="ctas"><a class="btn" href={BOOKING}>Book a call</a> <a class="text-link" href="/work/">See the work →</a></p>
-        <p class="aside"><a href="/exporters/">For Chinese factories selling to US buyers →</a></p>
+        <p class="aside"><a href="/china/">For companies in China →</a></p>
       </div>
       <div class="obj"><Joint /></div>
     </div>
@@ -119,33 +119,7 @@ const org = {
   .text-link { align-self: center; color: var(--ink); text-decoration: none; font-size: 15px; padding: 0 6px; }
   .text-link:hover { color: var(--celadon); }
 
-  /* proof band: one real screen, flat, with a plain caption */
-  .proof-grid { display: grid; grid-template-columns: 4fr 8fr; gap: 56px; align-items: center; }
-  .proof-copy h2 { margin: 0 0 12px; }
-  .proof-copy .meta { margin-bottom: 24px; }
-  .shot { margin: 0; }
-  .shot img { width: 100%; border-radius: 6px; box-shadow: 0 0 0 1px var(--line); }
-  .shot figcaption { margin-top: 16px; max-width: 46em; }
-  .also { list-style: none; margin-top: clamp(64px, 7vw, 96px); display: grid; grid-template-columns: 1fr 1fr; gap: 40px; }
-  .also li { border-top: 1px solid var(--line); padding-top: 28px; }
-  .also .meta { margin: 10px 0 14px; }
-  .also p.muted { font-size: 17px; margin: 0; }
-
   .after { margin: 32px 0 0; }
-
-  /* steps: a real sequence, so plain numbers; no rail, no moving dot */
-  .steps { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(4, 1fr); gap: 40px; }
-  .step { font: 600 16px/1 var(--sans); color: var(--celadon); margin: 0 0 16px; font-variant-numeric: tabular-nums; }
-  .steps h3 { margin-bottom: 10px; }
-  .steps p.muted { font-size: 17px; margin: 0; }
-
   .big { font-size: clamp(1.15rem, 1.8vw, 1.5rem); line-height: 1.5; max-width: 34em; }
   .close .btn { margin-top: 8px; }
-
-  @media (max-width: 1100px) { .proof-grid { grid-template-columns: 1fr; gap: 40px; } }
-  @media (max-width: 860px) {
-    .also { grid-template-columns: 1fr; }
-    .steps { grid-template-columns: 1fr 1fr; gap: 32px 24px; }
-  }
-  @media (max-width: 520px) { .steps { grid-template-columns: 1fr; } }
 </style>

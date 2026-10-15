@@ -92,7 +92,8 @@ boxes, cards, shadows, or radii (buttons 2px; screenshots 6px). Asymmetric spans
 - **EN proof:** the real email triage screenshot, flat with a hairline frame (the tilt was dropped 2026-10-08 as
   a stock SaaS move). Work page: real screens of all three systems (booking system = the charter's public
   booking page, captured with Ryan's OK; no customer data).
-- **ZH proof:** a page from the sample audit, in a proof band under the hero once Kenny's sample exists.
+- **ZH proof (2026-10-14):** the same email-triage screen as the English home, in a proof band under the hero, with
+  Chinese case text marked as US clients. /cases/ carries all three screens. (The sample audit page belongs to /audit/.)
 - Real screenshots only, cropped so no client customer data is readable. Ryan's real photo on About.
   Kenny is named, not photographed. No stock photos, no AI-generated people.
 
@@ -113,9 +114,11 @@ No testimonials or quotes unless real and approved. No unverifiable numbers.
 ## 9 · Two sites, two audiences
 
 - **gesedge.com** (English, US businesses, plus `/exporters` for export managers).
-- **huanqiao.gesedge.com** (Simplified Chinese, factories). Not a mirror of the English site.
-- One repo, one build. hreflang only between genuine equivalents (home↔home, exporters↔audit,
-  privacy↔privacy). Self-referencing canonicals. Separate Organization entities, described as
+- **huanqiao.gesedge.com** (Simplified Chinese, 外贸 and 货代 operations teams first, factories' website audit second).
+  Not a mirror of the English site.
+- One repo, one build. hreflang only between genuine equivalents (work↔cases, exporters↔audit,
+  privacy↔privacy). Since 2026-10-14 the two homes have different jobs and are not paired; gesedge.com/china/ is the
+  English page for companies in China. Self-referencing canonicals. Separate Organization entities, described as
   sister companies with one founder (姊妹公司, never 旗下).
 - 寰桥 footer shows the registered address only, the 统一社会信用代码, 可开具发票. No ICP number until
   one is issued.
