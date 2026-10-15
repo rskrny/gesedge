@@ -13,6 +13,22 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Repositioning goes live with Ryan's China terms, after a four-lens go/no-go review
+Date: 2026-10-15 · Status: Accepted (Ryan: "deploy it all, as long as the other agents have properly reviewed the
+content and business plan / feasibility from different angles")
+Context: the 2026-10-14 repositioning was on previews with default RMB terms. Ryan's condition was a multi-angle review.
+Options: deploy as previewed; review the final package first.
+Decision: four seats reviewed the exact pages going live: Codex (unit economics, delivery), Kimi (Chinese forwarder GM),
+DeepSeek (China compliance: licence scope, 广告法, PIPL, ICP/等保/telecom licence), Claude Reality Checker (first 90 days,
+live previews). All four: GO WITH CHANGES. Applied: parallel run bounded by contract and agreed tests; scope changes
+priced in writing first; "data belongs to you" → data under the client's control, personal information handled by the
+client under PIPL; /services/ prepayment line limited to supplier checks and visits. Rejected: Kimi's "因保密协议" line
+(no NDA exists to cite; hiding that clients are American would mislead). ZH deltas re-read by Kimi and DeepSeek.
+Rationale: all seats called the plan feasible as a one-build pilot; the shared biggest risk is fixed-price scope creep
+plus delayed acceptance on the first China build, handled by contract terms before any quote (STATE next action 1).
+Trade-offs: no China proof yet; prices are market-informed defaults, unvalidated by a real buyer.
+Reversal trigger: first China review or build overruns its cap, or no China inquiry within 60 days of outreach.
+
 ## Decision: Reposition both sites around operations systems; 寰桥 sells systems to 外贸/货代 teams, the audit becomes secondary
 Date: 2026-10-14 · Status: Accepted by Claude after Codex + Kimi review; RMB prices and contract terms await Ryan
 Context: Ryan: "offering just English websites for Chinese factories is not really enough"; broaden to more complex
