@@ -3,36 +3,33 @@
      Fields: Status · Next actions · Blockers/Open questions · Active context ·
      Recent changes · Handoff. Drop any field that's empty. -->
 
-## Status (2026-10-15, live-checked ~05:15 UTC)
-- **Repositioning LIVE on both sites** (PR #12 merged as 7d9c0d3; gesedge.com via Workers Builds; huanqiao.gesedge.com
-  deployed by hand, version 01487abb). Both sites sell operations systems (shared inbox → tickets, quotes, document
-  drafts, reports), one workflow at a time. Decision: DECISIONS 2026-10-14 + 2026-10-15. Private record (six-seat
-  roundtable, market research, go-live reviews): `../business/repositioning-2026-10-14/`.
-  - EN: new H1; "Your person in China" only on /services/; **/china/** (RMB offer via 寰桥); /exporters/ kept.
-  - ZH: home = systems for 货代/外贸 teams (proof band, 可以做 examples, 4 steps with prices, terms, closing band);
-    **/cases/**; nav 案例/官网诊断/联系; audit on /audit/ only.
-  - China terms Ryan approved 2026-10-15: 流程梳理 ¥9,800 credited, builds from ¥60,000 fixed price with written
-    scope-change pricing, parallel run bounded by contract, maintenance 15%/yr, client's server or mainland cloud.
-  - Checks: smoke.sh pass; live pages 200, no noindex, no preview links; live screenshots 1440/390 viewed, no
-    overflow, all images load. Not checked: real iPhone, WeChat in-app browser, form delivery (worker unchanged).
+## Status (2026-10-15, live-checked ~07:30 UTC)
+- **LIVE on both sites** (PRs #12 and #13): operations systems for 货代/外贸 teams (ZH home, /cases/, EN /china/) and the
+  **factory offer** (ZH /audit/ nav 海外开发, EN /exporters/): 诊断 ¥2,980 → 启动 ¥19,800 → 海外客户开发 ¥4,800/月 (6个月起,
+  按季预付), no commission-only, first-order bonus only after a licence scope change. GES never checks a supplier 寰桥
+  works for (/services/). Decisions: DECISIONS 2026-10-14 and the two 2026-10-15 entries.
+- **Visa constraint:** Ryan's work permit (B, employer 寰桥) ends 2027-03-30; file renewal by 2027-02-28. 寰桥 needs real
+  contracts/invoices by 2026-12-31 (authorities cross-match tax and social insurance for shell companies).
+- **Contract pack (private):** `../business/contracts-2026-10-15/` (README there): 流程梳理协议, 软件开发合同, 保密协议,
+  工厂服务合同 (Chinese .docx + English references) and the GES→寰桥 intercompany agreement. All reviewed by 2+ models,
+  rendered and checked. Lawyer review before first signature; accountant questions listed in the README.
+- **Prospects (private):** `../business/prospects-2026-10-15/寰桥_首批外联名单_2026-10-15.xlsx` (41 companies: 20 Chengdu/
+  Chongqing forwarders, 21 Sichuan/Chongqing factories, ranked top 15). 企查查 blocks bots and 天眼查 needs login, so only 6
+  registrations are verified.
+- Research record (private): `../business/repositioning-2026-10-14/` (roundtables, market study, legal research rt-legal.md).
 - Deploy paths: gesedge.com = push to `main`. huanqiao.gesedge.com = `node scripts/build.mjs zh` (PREVIEW unset) then
   `npx wrangler deploy -c wrangler.huanqiao.jsonc`. Previews: `PREVIEW=1` + `wrangler.en.jsonc` / `wrangler.zh.jsonc`.
-- Chinese strings: `src/zh/copy.ts`. Contact = Ryan's personal WeChat QR. `SAMPLE_READY = false`.
-- US outreach plan still awaiting Ryan's go: `../business/us-outreach-plan-2026-10-10.md`.
 
 ## Next actions
-1. **Before quoting any China lead** (all four go-live reviewers): one-page ¥9,800 review spec (one workflow, ~3
-   person-days, one revision), a Chinese build contract (scope cap ~20-25 person-days at ¥60k, 30/40/20/10 payments,
-   auto-acceptance after 10 business days, maintenance = corrective only, business hours), an NDA, and a decision on
-   whether China builds may call overseas AI APIs (PIPL). Confirm whether 寰桥 can issue 增值税专用发票.
-2. Validate demand: 3-5 calls with ship agents or operators (forwarder SaaS is ¥3k-23k/yr; our angle is agent-office
-   quotes with laycan, heavy overseas email, non-standard documents). A Chinese one-page sheet + first WeChat reply.
-3. Small fixes: ZH contact consent says messages go to "Ryan 和 Kenny" but the worker mails only Ryan; test a real
-   form send and a phone WeChat add; decide whether /audit/ stays in the nav (it draws on the same hours).
-4. Ryan's call (raised, not changed): photo; "CTO of C14 Space" line; /services/ mixing software and supplier visits;
-   ">90%" sample basis; a US data/AI-provider paragraph; a time limit on the review credit.
-5. Carried: US plan "go" (domain + postal address); sample report; 寰桥 WeCom QR; ICP path; Gmail filter; dormant
-   Supabase tables (frozen fallback until ~2026-10-19); Worker `ges-refboard`.
+1. **Ryan (visa-critical):** take the README's accountant questions to 寰桥's 代理记账 this week; sign the intercompany
+   agreement once cleared so US retainer work is invoiced by 寰桥; file the free online scope change (brokerage line).
+2. Outreach: verify the top-15 registrations (Ryan's 企查查/天眼查 login, ~10 min), then first-contact drafts (Ryan sends).
+   Build a real work sample: an anonymised 诊断 on one prospect factory's public site (also unlocks `SAMPLE_READY`).
+3. Before quoting any China systems lead: use the contract pack; validate demand with 3-5 ship-agent/forwarder calls.
+4. Small fixes: ZH contact consent says "Ryan 和 Kenny" but the worker mails only Ryan; test a real form send and a
+   phone WeChat add.
+5. Ryan's call (raised, not changed): photo; "CTO of C14 Space" line; ">90%" sample basis; US data/AI-provider paragraph.
+6. Carried: US plan "go"; 寰桥 WeCom QR; ICP path; Gmail filter; Supabase tables (fallback until ~2026-10-19); `ges-refboard`.
 
 ## Open questions / constraints
 - Repo is PUBLIC: no client names, revenue, Ryan's email, headshots, or business plans. Private material lives in
