@@ -1,5 +1,6 @@
 ---
-// All text from ../copy.ts. Kimi: registration block high on this page. English equivalent: gesedge.com/exporters/.
+// All text from ../copy.ts (`audit`). 2026-10-15 (DECISIONS.md): the factory page. Three fixed-fee steps (诊断 → 启动 →
+// 海外客户开发), no commission-only model, a first-order bonus only by written agreement. English equivalent: /exporters/.
 import Page from '../../shared/layouts/Page.astro';
 import { HQ } from '../../shared/site';
 import { t } from '../copy';
@@ -12,17 +13,33 @@ const a = t.audit;
     <p class="reg">{HQ.name}，{t.footer.uscc} {HQ.uscc}。{t.footer.fapiao}</p>
     <p class="ctas"><a class="btn" href="/contact/">{t.cta}</a></p>
   </div>
-  <section><div class="wrap doc"><h2 class="h3 sec-title">{a.getTitle}</h2><ul class="list">{a.get.map((g) => <li>{g}</li>)}</ul></div></section>
-  <section><div class="wrap doc"><h2 class="h3 sec-title">{a.priceTitle}</h2><p class="price">{a.price}</p></div></section>
-  <section><div class="wrap doc"><h2 class="h3 sec-title">{a.stepsTitle}</h2><ol class="list">{a.steps.map((s) => <li>{s}</li>)}</ol></div></section>
+  <section>
+    <div class="wrap">
+      <h2 class="display h2 sec-title">{a.offerTitle}</h2>
+      <ol class="steps three">
+        {a.offer.map((s, i) => <li><p class="step">{i + 1}</p><h3 class="h3">{s.name}</h3><p class="muted">{s.body}</p></li>)}
+      </ol>
+    </div>
+  </section>
+  <section>
+    <div class="wrap doc">
+      <h2 class="h3 sub">{a.getTitle}</h2><ul class="list">{a.get.map((g) => <li>{g}</li>)}</ul>
+      <h2 class="h3 sub">{a.monthlyTitle}</h2><ul class="list">{a.monthly.map((g) => <li>{g}</li>)}</ul>
+      <h2 class="h3 sub">{a.factoryTitle}</h2><ul class="list">{a.factory.map((g) => <li>{g}</li>)}</ul>
+      <h2 class="h3 sub">{a.limitsTitle}</h2><ul class="list">{a.limits.map((g) => <li>{g}</li>)}</ul>
+    </div>
+  </section>
   <section><div class="wrap doc"><h2 class="h3 sec-title">{a.faqTitle}</h2><dl class="faq">{a.faq.map((f) => <><dt>{f.q}</dt><dd>{f.a}</dd></>)}</dl></div></section>
 </Page>
 <style>
   .page-head .reg { color: var(--ink); margin-top: 24px; }
   .page-head .ctas { margin-top: 32px; }
+  .steps.three { grid-template-columns: repeat(3, 1fr); }
+  .doc .sub { margin: 40px 0 12px; }
+  .doc .sub:first-child { margin-top: 0; }
   .list { margin: 0; padding-left: 1.2em; }
   .list li { margin-bottom: 0.6em; }
-  .price { font: 400 18px/1.6 var(--sans); border-left: 2px solid var(--celadon); padding-left: 16px; }
   .faq dt { font-weight: 500; margin-top: 18px; }
   .faq dd { margin: 6px 0 0; color: var(--muted); }
+  @media (max-width: 860px) { .steps.three { grid-template-columns: 1fr; } }
 </style>

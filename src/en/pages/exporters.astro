@@ -1,40 +1,45 @@
 ---
-// Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Equivalent page on huanqiao.gesedge.com: /audit/.
-// 2026-10-14: stays as the website-review page; systems for companies in China live on /china/.
+// Copy: ../business/repositioning-2026-10-14/factory-en-draft.md (no-ai-slop edit + detect, 2026-10-15). Equivalent page
+// on huanqiao.gesedge.com: /audit/. Decision: DECISIONS.md 2026-10-15 (factory offer: fixed fees, no commission-only).
 // Layout: a plain document (2026-10-08 anti-AI pass: no labels in a left column).
-// ponytail: "Sample report" button hidden until Kenny's sample audit exists.
 import Page from '../../shared/layouts/Page.astro';
 import { HOST, HQ, ZH_LIVE } from '../../shared/site';
+
+const steps = [
+  { name: 'Website review, ¥2,980', body: 'We go through each page as a US buyer would and put five buyer questions to ChatGPT, Google’s AI Overviews and Perplexity, three times each, with dated screenshots. You get fixes in priority order, in English and Chinese, with a short video walkthrough, five working days after the contract and fapiao. The fee is credited to the setup if you sign within 60 days.' },
+  { name: 'Setup, ¥19,800', body: 'A buyer-ready English website of five to eight pages, English product content, an inquiry log that records where each inquiry came from, and a first list of about 50 target companies. Half is paid at signing and half when the site goes live.' },
+  { name: 'Buyer outreach, ¥4,800 a month', body: 'Six months minimum, billed quarterly in advance. Each month we research at least 25 target companies: the company, the decision-maker’s role, a public contact channel, and why it fits your products. We send English outreach from your company’s own email domain with your written authorization, follow up, and report to you in Chinese. Ad spend, trade fairs and samples are paid by the factory.' },
+];
 ---
 <Page
-  title="Website review for Chinese exporters · 成都寰桥"
-  description="Your factory's website, and how AI assistants describe your company, reviewed from a US buyer's point of view. ¥2,980."
+  title="English websites and buyer outreach for Chinese factories · 成都寰桥"
+  description="For export managers at Chinese factories: a website review from a US buyer's point of view, a buyer-ready English site, and monthly outreach to target companies. Prices in RMB, with fapiao."
   path="/exporters/"
   alt="/audit/"
 >
   <div class="wrap page-head">
-    <h1 class="display h1">Your factory’s website, reviewed from a US buyer’s point of view.</h1>
-    <p class="lede">If you’re an export manager at a Chinese factory, our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your website and checks how AI assistants describe your company.</p>
-    <p class="aside"><a href="/china/">For email, quote and document systems, see our page for companies in China →</a></p>
+    <h1 class="display h1">English websites and buyer outreach for Chinese factories</h1>
+    <p class="lede">If you’re an export manager at a Chinese factory, our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your English website, rebuilds it for overseas buyers, and runs English outreach to companies that fit your products. It bills in RMB and issues fapiao.</p>
     <p class="ctas"><a class="btn" href="/contact/">Contact</a>{ZH_LIVE && <a class="zh-link" href={HOST.zh + '/audit/'} hreflang="zh-CN">Chinese version for your boss →</a>}</p>
   </div>
 
   <section>
     <div class="wrap doc">
-      <h2 class="h3">What you get</h2>
-      <ul class="list">
-        <li>Notes on each page from a buyer’s point of view.</li>
-        <li>An AI snapshot: five buyer questions put to ChatGPT, Google’s AI Overviews, and Perplexity, three times each, with dated screenshots.</li>
-        <li>A list of fixes in priority order.</li>
-        <li>The report in English and Chinese, with a short video walkthrough.</li>
-      </ul>
+      <h2 class="display h2 sec-title">How it works</h2>
+      <ol class="list">
+        {steps.map((s) => <li><strong>{s.name}.</strong> {s.body}</li>)}
+      </ol>
+      <p>A first-order bonus can be agreed in writing for target companies that both sides have registered.</p>
 
-      <h2 class="h3">Price</h2>
-      <p>The review costs ¥2,980 and takes five working days. The full fee is credited to a website build ordered within 60 days.</p>
+      <h2 class="h3">What your factory does</h2>
+      <p>You send product details, photos, specifications, certificates, price ranges, minimum order quantities and lead times within 14 days. You quote within two working days of an inquiry. The owner or export manager joins the kickoff and the monthly review. If materials or quotes are late, outreach pauses and the service period is extended, so paid months are not used up.</p>
 
-      <h2 class="h3">How it works</h2>
-      <p>Add us on WeChat, then a free 15-minute call, then the contract and fapiao. The report is due five working days after that.</p>
-      <p class="muted">We don’t promise inquiries, search rankings, or mentions by AI assistants.</p>
+      <h2 class="h3">What we don’t do</h2>
+      <p>We never handle goods or payments, and we are not an import-export agent. Your factory quotes, sends samples, signs sales contracts, collects payment, exports and handles after-sales. We don’t promise inquiries or orders. Those depend on your product, price, certificates, the market, and how fast you follow up.</p>
+
+      <h2 class="h3">Who it’s for</h2>
+      <p>Manufacturers in Sichuan and Chongqing first, with stable products, the ability to quote and send samples, and the certificates their market requires. We don’t take food, supplements, medical products, cosmetics, children’s products, batteries, chemicals, or products sold only on price.</p>
+      <p>For email, quote and document systems for forwarders and trading companies, see <a href="/china/">our page for companies in China</a>.</p>
 
       <h2 class="h3">Company</h2>
       <p>Registered as <span lang="zh-CN">{HQ.name}</span>, Unified Social Credit Code {HQ.uscc}. The company issues fapiao.</p>
@@ -46,8 +51,8 @@ import { HOST, HQ, ZH_LIVE } from '../../shared/site';
   .page-head .ctas { margin-top: 36px; align-items: center; }
   .zh-link { color: var(--ink); text-decoration: none; font-size: 15px; padding: 0 6px; }
   .zh-link:hover { color: var(--celadon); }
-  .doc h2 { margin: 48px 0 12px; }
-  .doc h2:first-child { margin-top: 0; }
-  .list { margin: 0 0 1em; padding-left: 1.1em; }
-  .list li { margin-bottom: 0.6em; }
+  .doc h2.h3 { margin: 48px 0 12px; }
+  .list { margin: 0 0 1em; padding-left: 1.2em; }
+  .list li { margin-bottom: 0.8em; }
+  .list strong { font-weight: 600; }
 </style>

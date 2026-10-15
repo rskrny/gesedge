@@ -13,6 +13,26 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Factory offer = fixed fees + monthly outreach, never commission-only; 寰桥 revenue first for the visa
+Date: 2026-10-15 · Status: Accepted (Ryan: "use your best judgement"; decision reviewed by Codex + Kimi)
+Context: Ryan proposed English websites for factories paid mostly on commission; he had tried one commission deal and
+the owners did not take it seriously. His work permit (category B, employer 成都寰桥) runs to 2027-03-30, so 寰桥 needs
+contracts and invoices before the renewal file (filed ≥30 days before expiry).
+Options: (a) mostly commission; (b) hybrid with fixed fees; (c) skip factories.
+Decision: (b). Codex, Kimi, DeepSeek, GLM and a sourced market study all rejected (a): long export cycles, weak
+attribution, bypassing is the norm, and it produces no invoices before the renewal. Offer on /audit/ and /exporters/:
+诊断 ¥2,980 (credited within 60 days) → 启动 ¥19,800 (English site 5-8 pages, product content, inquiry log, ~50 target
+companies; 50/50) → 海外客户开发 ¥4,800/month, 6-month minimum, quarterly prepaid (≥25 researched target companies a
+month, outreach from the factory's own email domain under written authority, Chinese monthly report). Optional first-
+order bonus (3% of collected first-order revenue, cap ¥30k per buyer, 12-month tail, written buyer register) only after
+寰桥's licence scope covers it. Pauses caused by the factory extend the service period. Never: handle goods or money,
+promise inquiries, outreach in Ryan's personal name. GES never vets a supplier that 寰桥 works for (on /services/).
+Targets: Sichuan/Chongqing manufacturers (崇州 furniture, tools, machinery, farm machinery, non-safety motorcycle parts);
+not food, medical, cosmetics, children's products, batteries, chemicals or commodity goods.
+Rationale: fixed fees create invoices now and test the owner's seriousness; the bonus keeps the upside Ryan wanted.
+Trade-offs: higher upfront price than commission-only pitches; success fee waits on a scope change.
+Reversal trigger: no paid factory setup by 2026-12-31, or factories consistently refuse prepayment.
+
 ## Decision: Repositioning goes live with Ryan's China terms, after a four-lens go/no-go review
 Date: 2026-10-15 · Status: Accepted (Ryan: "deploy it all, as long as the other agents have properly reviewed the
 content and business plan / feasibility from different angles")
