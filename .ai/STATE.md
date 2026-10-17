@@ -25,6 +25,9 @@
   is planned to go to a Wise Business account in GES's name (Wise refuses USD details to US businesses with a China address).
   If Ryan does that work in Chengdu, the GES→寰桥 intercompany agreement can carry it so 寰桥 invoices GES (real revenue for
   the 2026-12-31 substance check). Detail: `Desktop/Weavecraft/.ai/DECISIONS.md` and `.ai/research/2026-10-17-payments/`.
+- **2026-10-17:** Wyoming register (wyobiz, live): GES Active, Standing Tax Good, RA Good, filing 2024-001458123. Registered
+  agent Northwest: renew by 2026-11-30 ($50, $100 in December). Company papers copied (originals untouched) to
+  `../GES documents/` with INDEX.md (formation, EIN, governance, BofA, tax, contracts).
 
 ## Next actions
 1. **Ryan (visa-critical):** take the README's accountant questions to 寰桥's 代理记账 this week; sign the intercompany
