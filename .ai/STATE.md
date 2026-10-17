@@ -20,6 +20,12 @@
 - Deploy paths: gesedge.com = push to `main`. huanqiao.gesedge.com = `node scripts/build.mjs zh` (PREVIEW unset) then
   `npx wrangler deploy -c wrangler.huanqiao.jsonc`. Previews: `PREVIEW=1` + `wrangler.en.jsonc` / `wrangler.zh.jsonc`.
 
+- **2026-10-17, from the Weavecraft project:** WeaveCraft Digital (weavecraft.digital, Ryan + Kenny, JP/TW shop websites) now
+  operates as a GES studio with 寰桥 as sister company, replacing C-14 (Weavecraft PR #5, awaiting Kenny's merge). Client money
+  is planned to go to a Wise Business account in GES's name (Wise refuses USD details to US businesses with a China address).
+  If Ryan does that work in Chengdu, the GES→寰桥 intercompany agreement can carry it so 寰桥 invoices GES (real revenue for
+  the 2026-12-31 substance check). Detail: `Desktop/Weavecraft/.ai/DECISIONS.md` and `.ai/research/2026-10-17-payments/`.
+
 ## Next actions
 1. **Ryan (visa-critical):** take the README's accountant questions to 寰桥's 代理记账 this week; sign the intercompany
    agreement once cleared so US retainer work is invoiced by 寰桥; file the free online scope change (brokerage line).
