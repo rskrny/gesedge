@@ -2,9 +2,10 @@
 // (run_worker_first covers /api/* and /media/*). POST /api/contact emails the message to Ryan through Purelymail
 // (his existing mail host) as website@gesedge.com and keeps a copy in Workers KV (MESSAGES). No other vendors.
 // Works without JavaScript: the form posts here and gets a 303.
-// ponytail: honeypot + same-origin + size limits only. Add Turnstile or a rate-limit binding if spam shows up.
+// Spam defence: honeypot, same-origin, size limits and the known-bot rule in spam.js.
 import { connect } from 'cloudflare:sockets';
 import { ranged } from './ranged.js';
+import { isBot } from './spam.js';
 
 const LIMITS = { name: 100, email: 200, company: 200, contact: 100, site: 300, message: 4000 };
 
@@ -38,6 +39,7 @@ async function contact(request, env, url) {
 
   const valid = row.name && row.message && (zh ? row.email && form.get('consent') : /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(row.email));
   if (!valid) return go('/contact/error/');
+  if (isBot(row) && await store(env, row, 'spam')) return go('/contact/sent/'); // no email; if the copy fails, mail it
 
   const [stored, mailed] = await Promise.all([store(env, row), mail(env, row, zh)]);
   return go(stored || mailed ? '/contact/sent/' : '/contact/error/');
@@ -46,9 +48,9 @@ async function contact(request, env, url) {
 // The copy in KV is the fallback if mail fails. It expires after 730 days: the privacy notice promises deletion at
 // 24 months. Read with `npx wrangler kv key list --binding MESSAGES -c <config>` (add --remote).
 const KEEP_SECONDS = 730 * 24 * 60 * 60;
-async function store(env, row) {
+async function store(env, row, folder = row.service) {
   try {
-    const key = `${row.service}/${new Date().toISOString()}-${crypto.randomUUID().slice(0, 8)}`;
+    const key = `${folder}/${new Date().toISOString()}-${crypto.randomUUID().slice(0, 8)}`;
     await env.MESSAGES.put(key, JSON.stringify({ ...row, at: new Date().toISOString() }), { expirationTtl: KEEP_SECONDS });
     return true;
   } catch { return false; }
