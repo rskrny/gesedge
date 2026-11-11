@@ -38,8 +38,8 @@
   Fix built, NOT yet on production (uncommitted, tested on preview): `worker/spam.js` bot rule (KV `spam/`, no email), Workers
   logs on (`observability` in both prod configs). Monday digest now has a WEBSITE FORM section (`../business/manager/reminders/digest.py`, live).
   Still needed from Ryan: go to deploy, and a Gmail filter "never send to Spam" for website@gesedge.com.
-  Status 2026-11-10: still NOT deployed and NOT committed. Uncommitted on branch redo/site: worker/index.js, worker/spam.js,
-  worker/spam.test.mjs, wrangler.jsonc, wrangler.huanqiao.jsonc (observability), .ai docs. Preview gesedge-preview runs the new
+  Status 2026-11-11: committed locally on redo/site (29ecba8: worker/index.js, worker/spam.js, worker/spam.test.mjs,
+  both prod wrangler configs), NOT pushed, NOT deployed. Preview gesedge-preview runs the new
   worker (tested 11-07). Deploy = PR to main (auto-deploys gesedge.com) plus `npx wrangler deploy -c wrangler.huanqiao.jsonc`,
   only with Ryan's go. Whether Ryan created the Gmail filter is unknown (the prefilled filter tab was opened on the Mac 11-07).
   Business, tax and visa work from 11-07 to 11-10 is recorded in ../.ai/STATE.md (not in this public repo).
@@ -50,7 +50,8 @@
 2. Outreach: verify the top-15 registrations (Ryan's 企查查/天眼查 login, ~10 min), then first-contact drafts (Ryan sends).
    Build a real work sample: an anonymised 诊断 on one prospect factory's public site (also unlocks `SAMPLE_READY`).
 3. Before quoting any China systems lead: use the contract pack; validate demand with 3-5 ship-agent/forwarder calls.
-4. Small fixes: ZH contact consent says "Ryan 和 Kenny" but the worker mails only Ryan; test a phone WeChat add.
+4. Small fixes: test a phone WeChat add. (The ZH consent naming "Ryan 和 Kenny" stays: it covers Ryan forwarding a lead
+   to Kenny when he joins, which the copy promises. Not a defect, 2026-11-11.)
 5. Ryan's call (raised, not changed): photo; "CTO of C14 Space" line; ">90%" sample basis; US data/AI-provider paragraph.
 6. Carried: US plan "go"; 寰桥 WeCom QR; ICP path; Gmail filter; Supabase tables (fallback until ~2026-10-19); `ges-refboard`.
 
