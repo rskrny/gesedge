@@ -42,11 +42,12 @@
   both prod wrangler configs), NOT pushed, NOT deployed. Preview gesedge-preview runs the new
   worker (tested 11-07). Deploy = PR to main (auto-deploys gesedge.com) plus `npx wrangler deploy -c wrangler.huanqiao.jsonc`,
   only with Ryan's go. Whether Ryan created the Gmail filter is unknown (the prefilled filter tab was opened on the Mac 11-07).
-  Business, tax and visa work from 11-07 to 11-10 is recorded in ../.ai/STATE.md (not in this public repo).
+  Business, tax and visa work from 11-07 to 11-13 is recorded in ../.ai/STATE.md (not in this public repo). Website deploy
+  is parked by Ryan until the 寰桥 payment and bank items settle (11-11).
 
 ## Next actions
-1. **Ryan (visa-critical):** take the README's accountant questions to 寰桥's 代理记账 this week; sign the intercompany
-   agreement once cleared so US retainer work is invoiced by 寰桥; file the free online scope change (brokerage line).
+1. **Visa, tax and bank work (private):** run from `../.ai/STATE.md` "Next session starts here" (closed 2026-11-13). The
+   bookkeeper and the bank have the questions; the intercompany agreement v2 is unsigned; the scope change fee is asked.
 2. Outreach: verify the top-15 registrations (Ryan's 企查查/天眼查 login, ~10 min), then first-contact drafts (Ryan sends).
    Build a real work sample: an anonymised 诊断 on one prospect factory's public site (also unlocks `SAMPLE_READY`).
 3. Before quoting any China systems lead: use the contract pack; validate demand with 3-5 ship-agent/forwarder calls.
