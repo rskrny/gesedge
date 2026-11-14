@@ -13,6 +13,15 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Import operations positioning on previews, with proposed service boundaries
+Date: 2026-11-15 · Status: Accepted for preview only
+Context: The approved builder brief calls for email, order and shipment-status systems for US importers and distributors buying from Asia, with China supplier support visible alongside them.
+Options: Revise the existing pages or rebuild their layout.
+Decision: Keep the existing design and proof, revise copy and context links, add a company website offer, remove unsupported accuracy and sales test-count claims, and show factory fee arithmetic. New recurring and website scope commitments are visibly proposed and listed in CHANGES.md.
+Rationale: The existing layout supports the offer and keeps the change reviewable.
+Trade-offs: The service boundaries and the two unpublished factory policies still need Ryan's confirmation. No production rollout is authorized.
+Reversal trigger: Ryan changes the target or the proposed terms during preview review.
+
 ## Decision: Factory offer = fixed fees + monthly outreach, never commission-only; 寰桥 revenue first for the visa
 Date: 2026-10-15 · Status: Accepted (Ryan: "use your best judgement"; decision reviewed by Codex + Kimi)
 Context: Ryan proposed English websites for factories paid mostly on commission; he had tried one commission deal and

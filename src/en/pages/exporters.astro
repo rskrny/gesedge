@@ -3,7 +3,7 @@
 // on huanqiao.gesedge.com: /audit/. Decision: DECISIONS.md 2026-10-15 (factory offer: fixed fees, no commission-only).
 // Layout: a plain document (2026-10-08 anti-AI pass: no labels in a left column).
 import Page from '../../shared/layouts/Page.astro';
-import { HOST, HQ, ZH_LIVE } from '../../shared/site';
+import { HOST, HQ, ZH_LIVE, EMAIL } from '../../shared/site';
 
 const steps = [
   { name: 'Website review, ¥2,980', body: 'We go through each page as a US buyer would and put five buyer questions to ChatGPT, Google’s AI Overviews and Perplexity, three times each, with dated screenshots. You get fixes in priority order, in English and Chinese, with a short video walkthrough, five working days after the contract and fapiao. The fee is credited to the setup if you sign within 60 days.' },
@@ -20,7 +20,8 @@ const steps = [
   <div class="wrap page-head">
     <h1 class="display h1">English websites and buyer outreach for Chinese factories</h1>
     <p class="lede">If you’re an export manager at a Chinese factory, our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your English website, rebuilds it for overseas buyers, and runs English outreach to companies that fit your products. It bills in RMB and issues fapiao.</p>
-    <p class="ctas"><a class="btn" href="/contact/">Contact</a>{ZH_LIVE && <a class="zh-link" href={HOST.zh + '/audit/'} hreflang="zh-CN">Chinese version for your boss →</a>}</p>
+    <p class="ctas"><a class="btn" href={HOST.zh + '/contact/'}>Contact Huanqiao</a>{ZH_LIVE && <a class="zh-link" href={HOST.zh + '/audit/'} hreflang="zh-CN">Read in Chinese →</a>}</p>
+    <p class="aside"><a class="email-link" href={`mailto:${EMAIL}`}>Email Ryan in English →</a></p>
   </div>
 
   <section>
@@ -29,6 +30,7 @@ const steps = [
       <ol class="list">
         {steps.map((s) => <li><strong>{s.name}.</strong> {s.body}</li>)}
       </ol>
+      <p class="price">Setup costs ¥19,800. Minimum outreach costs 6 × ¥4,800 = ¥28,800. The combined fee is ¥48,600. Outreach is paid at ¥14,400 per quarter in advance.</p>
       <p>A first-order bonus can be agreed in writing for target companies that both sides have registered.</p>
 
       <h2 class="h3">What your factory does</h2>
@@ -49,6 +51,7 @@ const steps = [
 
 <style>
   .page-head .ctas { margin-top: 36px; align-items: center; }
+  .page-head .email-link { color: var(--celadon); text-decoration: underline; display: inline-flex; align-items: center; min-height: 44px; }
   .zh-link { color: var(--ink); text-decoration: none; font-size: 15px; padding: 0 6px; }
   .zh-link:hover { color: var(--celadon); }
   .doc h2.h3 { margin: 48px 0 12px; }
