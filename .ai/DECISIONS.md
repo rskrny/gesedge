@@ -13,6 +13,15 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Finalize approved service terms on previews
+Date: 2026-11-15 · Status: Accepted for preview only
+Context: Ryan approved CHANGES.md items 1–7 as written and kept factory policy items 8 and 9 unanswered.
+Options: Retain proposal labels or present the approved terms as final.
+Decision: Remove proposal framing from English home and services copy, record items 1–7 under the dated confirmation heading, and refresh both previews. Leave factory policies unchanged.
+Rationale: The published terms should reflect Ryan's approval without changing their prices or boundaries.
+Trade-offs: Production still needs a separate go. The deploy plan stays outside the public repository at C:/tmp/sitefix/DEPLOY_PLAN.md.
+Reversal trigger: Ryan changes an approved term.
+
 ## Decision: Import operations positioning on previews, with proposed service boundaries
 Date: 2026-11-15 · Status: Accepted for preview only
 Context: The approved builder brief calls for email, order and shipment-status systems for US importers and distributors buying from Asia, with China supplier support visible alongside them.

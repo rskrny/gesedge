@@ -42,3 +42,5 @@
 - 2026-11-07 · No site changes. Private business records, compliance register and handoff set up in the parent folder, outside this repo.
 - 2026-11-07 · Form audit: 14 outside messages, 0 real leads, most in Gmail Spam, 2 undelivered. Bot rule and Workers logs built and proven on preview (DeepSeek review fixed 2 defects), production waits for Ryan. Digest reports form copies.
 - 2026-11-10 · Parked. Form bot filter and Workers logs still undeployed and uncommitted (see STATE). Business, tax and visa work lives in the parent folder.
+
+- 2026-11-15 — Ryan approved CHANGES.md terms 1–7. Removed proposal framing, refreshed both previews, passed builds, Worker tests, links/noindex, 4 fresh page/width renders and 26 visible-text clicks. Factory policy items 8–9 stay unanswered. Production deploy plan is C:/tmp/sitefix/DEPLOY_PLAN.md. Nothing pushed or published to production.

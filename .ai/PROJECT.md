@@ -29,7 +29,7 @@ work and advanced-but-performant visuals — without being heavy enough to crash
   owns HuanQiao site ideas with Ryan. (Is Kenny = Shiying? Unconfirmed; ask Ryan.)
 - **Primary audience (2026-11-15 preview):** US importers and distributors buying from Asia, with teams of about
   10 to 100 people. Email, orders and shipment status lead the systems offer, with China supplier support visible
-  alongside it. Email triage remains the principal proof. Recurring scope proposals are in `CHANGES.md`.
+  alongside it. Email triage remains the principal proof. Approved recurring terms are in `CHANGES.md`.
 - **Register amendment (2026-07-06, Ryan):** the site EXPERIENCE is optimized for the
   awards/peers/press register (igloo-tier judgment), not brochure clarity. SMB conversion
   remains the business goal but is earned through demonstrated capability. See DESIGN.md §1.

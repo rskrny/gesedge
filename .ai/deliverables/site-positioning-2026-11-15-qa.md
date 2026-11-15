@@ -1,8 +1,28 @@
 # Positioning preview QA, 2026-11-15 China time
 
-PASS for the scoped preview change. Production was not deployed. New service boundaries remain proposals pending Ryan's confirmation in CHANGES.md.
+PASS for the scoped preview change. Production was not deployed. Ryan approved CHANGES.md terms 1–7 on 2026-11-15. The approval follow-up below supersedes the original proposal framing. Items 8 and 9 remain unanswered.
 
 ## Build and source checks
+
+### Approval follow-up
+
+Ryan approved CHANGES.md items 1–7 as written. Only proposal framing changed in English home and services copy. No Chinese sentence, price, boundary or commitment changed. Items 8 and 9 remain under Needs Ryan's confirmation without new policy.
+
+- Both preview builds rerun: PASS, English 11 pages and Chinese 9 pages.
+- Both Worker test files rerun: PASS, 2 passed, 0 failed, 0 skipped.
+- All 20 built HTML pages rechecked for local links, assets, fragments and noindex: PASS.
+- Newly captured home and services pages at 390 and 1440: PASS, 4 new page/width checks. Previous captures of unchanged pages were retained in the 40-entry aggregate, not rerun. All 4 new full-page screenshots and support-link landing screenshots were visually inspected.
+- Visible-text browser clicks rerun: PASS, 22 original checks plus 4 checks for the renamed See support terms links, 26 total. All support clicks land on /services/#support and show Monthly support terms. Eight new before/after support-link screenshots were saved.
+- Deployed English home, services and Chinese home: HTTP 200 and X-Robots-Tag noindex, nofollow. No proposal framing remains in their responses.
+- Existing smoke script rerun against the English preview: normal pages/assets 200, unknown route 404, expected redirects, security/noindex headers and media Range 206. Output inspected. No failures.
+- English no-ai-slop edit and final detect: PASS against the skill and eval.md. Minimal edits remove approval qualifiers and preserve complete prose. No new banned patterns or factual claims. Independent fidelity review: PASS in C:/tmp/sitefix/approved-fidelity-review.md.
+- Contact-form Worker files and production configs remain byte-identical to 29ecba8. Main checkout remains on redo/site.
+- Preview Worker versions: English 5a030c1c-66b8-4486-8436-6c004c0a0597, Chinese 68bbf351-4465-4870-afea-8df06e48840e.
+- Production deploy plan written outside the public repo: C:/tmp/sitefix/DEPLOY_PLAN.md. It includes future branch push, PR and merge, English Workers Builds, Chinese manual deploy, rollback, live checks and one real marked TEST form submission. No push, PR, merge, production configuration command or form submission was performed.
+
+Raw follow-up logs use the approved- prefix in C:/tmp/sitefix/. Screenshots remain in C:/tmp/sitefix/shots/.
+
+### Original preview validation
 
 - `PREVIEW=1 node scripts/build.mjs en`: PASS, 11 pages.
 - `PREVIEW=1 node scripts/build.mjs zh`: PASS, 9 pages.
