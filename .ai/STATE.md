@@ -1,7 +1,16 @@
 # Project State
 <!-- Cold-start handoff. Keep under ~600 words. Website work only. -->
 
-## Status, 2026-11-15 China time
+## LIVE, 2026-11-15 (supersedes the preview-only note below)
+
+Published on Ryan's go: PR #14 merged into main (`3a2cf7e`). gesedge.com Worker 869172d3 -> 290476f9, huanqiao Worker
+9758700a -> 011fac28 (the "before" IDs are the rollback). Live re-check: new EN h1 "AI systems for your email, orders and
+shipment status.", the ¥48,600 line on huanqiao /audit/, no noindex. One TEST form message was accepted (KV + Gmail).
+The contact-form bot filter (29ecba8) is live with it. The main checkout `redo/site` was fast-forwarded to main. Open:
+factory policy items 8 and 9 (setup standalone, first-order bonus) are unanswered and unpublished; the Gmail never-spam
+filter for website@ is not set yet. Business, social and tax work lives in the parent folder `../.ai/STATE.md`.
+
+## Earlier status, 2026-11-15 China time (preview stage)
 
 The approved positioning changes are built and deployed to previews only on branch `site/positioning-2026-11` in `C:/Users/rskrn/Desktop/gesedge-wt-sitefix`. The branch starts from local `redo/site` at `2bb955c`. The main checkout remains on `redo/site`. Nothing was pushed or merged, and production was not deployed.
 
