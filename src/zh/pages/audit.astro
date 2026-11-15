@@ -19,6 +19,7 @@ const a = t.audit;
       <ol class="steps three">
         {a.offer.map((s, i) => <li><p class="step">{i + 1}</p><h3 class="h3">{s.name}</h3><p class="muted">{s.body}</p></li>)}
       </ol>
+      <p class="price after">{a.minimum}</p>
     </div>
   </section>
   <section>

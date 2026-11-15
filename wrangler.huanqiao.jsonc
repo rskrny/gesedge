@@ -16,6 +16,7 @@
     "not_found_handling": "404-page",
     "run_worker_first": ["/api/*", "/media/*"]
   },
+  "observability": { "enabled": true },
   "kv_namespaces": [{ "binding": "MESSAGES", "id": "8088904e8657425b87704057e4676785" }],
   "vars": {
     "SITE": "zh",
