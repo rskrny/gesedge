@@ -64,7 +64,7 @@ const steps = [
         {steps.map((s, i) => (
           <li>
             <img src={`/lab/media/${s.img}`} width="96" height="96" alt={`Joint ${s.state}`} loading="lazy" />
-            <p class="step">{i + 1}</p>
+            <p class="mini-num">{i + 1}</p>
             <div><h3 class="h3">{s.name}</h3><p class="meta">Joint {s.state}, {kb(s.img)} KB.</p></div>
           </li>
         ))}
@@ -87,6 +87,7 @@ const steps = [
     padding: 16px 0; border-top: 1px solid var(--line); }
   .mini li:last-child { border-bottom: 1px solid var(--line); }
   .mini img { width: 96px; height: 96px; }
+  .mini-num { margin: 0; font-family: var(--display); font-size: 1.6rem; line-height: 1; color: var(--celadon); }
   .mini h3 { margin: 0 0 4px; }
   .mini .meta { margin: 0; }
   @media (max-width: 860px) {
