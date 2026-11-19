@@ -3,9 +3,14 @@
 // The examples are proposed uses ("can"), never delivered work: the three live systems are US clients (/work/).
 // RMB prices and contract terms are Ryan's to confirm before this goes live. No hreflang pair (Kimi + Codex: the ZH home
 // has a different role), so the language switch goes to the ZH home.
-// Layout: a left-aligned document, like /exporters/ (DESIGN.md §5).
+// Layout: a left-aligned document with one figure, the email triage screen the page refers to (2026-11-19 readiness
+// review: the right half was empty at 1440). Text at a 66ch measure.
 import Page from '../../shared/layouts/Page.astro';
 import { HOST, HQ } from '../../shared/site';
+import Shot from '../../shared/components/Shot.astro';
+import Steps from '../../shared/components/Steps.astro';
+import { work } from '../work';
+const triage = work[0];
 
 const examples = [
   { name: 'Shared inbox and inquiries', body: 'Mail to a shared or sales mailbox can become a ticket with an owner and a deadline, with late tickets flagged. Our <a href="/work/#email-triage">email triage system</a> works this way.' },
@@ -32,29 +37,40 @@ const steps = [
   </div>
 
   <section>
-    <div class="wrap doc">
+    <div class="wrap build">
+      <div class="doc">
       <h2 class="display h2 sec-title">What we build</h2>
       <p>If off-the-shelf forwarding software covers your work, use it. If parts of your work fall outside it, such as overseas email in volume, quotes built on sailings and laycan, or documents that don’t fit its templates, those can be built separately. The examples below use the same approach as the three systems we run for US clients, shown on the <a href="/work/">Work page</a>.</p>
       <ul class="rows">
         {examples.map((e) => <li><h3 class="h3">{e.name}</h3><p class="muted" set:html={e.body} /></li>)}
       </ul>
       <p class="after">Whether a system can send alerts and approvals through WeCom, Feishu or DingTalk, or read figures from Kingdee or Yonyou, depends on your versions and access. We check that during the workflow review. We don’t build chat apps or replace finance software.</p>
+      </div>
+      <figure class="shot side">
+        <Shot image={triage.image} alt={triage.image.alt} lazy />
+        <figcaption class="meta">The executive dashboard of the email triage system we run for a US client. Each ticket shows as on track, at risk or overdue against its target date.</figcaption>
+      </figure>
     </div>
   </section>
 
   <section>
-    <div class="wrap doc">
+    <div class="wrap">
       <h2 class="display h2 sec-title">How a project runs</h2>
-      <ol class="list">
-        {steps.map((s) => <li><strong>{s.name}.</strong> {s.body}</li>)}
-      </ol>
+      <Steps items={steps} />
+    </div>
+  </section>
 
+  <section>
+    <div class="wrap terms">
+      <div class="doc">
       <h2 class="h3">Where it runs</h2>
       <p>The contract says where the system runs, who can access it, who controls the data, and how the source code is handed over. By default it runs on your own server or on an Alibaba Cloud or Tencent Cloud account in your company’s name, and you pay the cloud bill directly. Your business data stays under your control, and any personal information in it is handled under China’s Personal Information Protection Law.</p>
       <p>If you run a factory and want an English website and outreach to overseas buyers, see <a href="/exporters/">For exporters</a>.</p>
-
+      </div>
+      <div class="doc">
       <h2 class="h3">Company</h2>
       <p>Registered as <span lang="zh-CN">{HQ.name}</span>, Unified Social Credit Code {HQ.uscc}. The company issues fapiao.</p>
+      </div>
     </div>
   </section>
 </Page>
@@ -63,8 +79,12 @@ const steps = [
   .page-head .ctas { margin-top: 36px; align-items: center; }
   .zh-link { color: var(--ink); text-decoration: none; font-size: 15px; padding: 0 6px; }
   .zh-link:hover { color: var(--celadon); }
-  .doc h2.h3 { margin: 48px 0 12px; }
-  .list { margin: 0; padding-left: 1.2em; }
-  .list li { margin-bottom: 0.8em; }
-  .list strong { font-weight: 600; }
+  .build { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 40px 64px; align-items: start; }
+  .side { position: sticky; top: 32px; margin-top: 88px; }
+  .terms { display: grid; grid-template-columns: minmax(0, 8fr) minmax(0, 4fr); gap: 32px 64px; }
+  .terms h2.h3 { margin: 0 0 12px; }
+  @media (max-width: 1100px) {
+    .build, .terms { grid-template-columns: 1fr; }
+    .side { position: static; margin-top: 0; }
+  }
 </style>

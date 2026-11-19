@@ -1,15 +1,29 @@
 ---
 // Copy: ../business/repositioning-2026-10-14/factory-en-draft.md (no-ai-slop edit + detect, 2026-10-15). Equivalent page
 // on huanqiao.gesedge.com: /audit/. Decision: DECISIONS.md 2026-10-15 (factory offer: fixed fees, no commission-only).
-// Layout: a plain document (2026-10-08 anti-AI pass: no labels in a left column).
+// Layout: steps as a numbered ledger, one diagram of who does what, then the terms as prose in two columns at a 66ch
+// measure (2026-11-19 readiness review). No labels in a left column.
 import Page from '../../shared/layouts/Page.astro';
 import { HOST, HQ, ZH_LIVE, EMAIL } from '../../shared/site';
+import Steps from '../../shared/components/Steps.astro';
+import Flow from '../../shared/components/Flow.astro';
 
 const steps = [
   { name: 'Website review, ¥2,980', body: 'We go through each page as a US buyer would and put five buyer questions to ChatGPT, Google’s AI Overviews and Perplexity, three times each, with dated screenshots. You get fixes in priority order, in English and Chinese, with a short video walkthrough, five working days after the contract and fapiao. The fee is credited to the setup if you sign within 60 days.' },
   { name: 'Setup, ¥19,800', body: 'A buyer-ready English website of five to eight pages, English product content, an inquiry log that records where each inquiry came from, and a first list of about 50 target companies. Half is paid at signing and half when the site goes live.' },
   { name: 'Buyer outreach, ¥4,800 a month', body: 'Six months minimum, billed quarterly in advance. Each month we research at least 25 target companies: the company, the decision-maker’s role, a public contact channel, and why it fits your products. We send English outreach from your company’s own email domain with your written authorization, follow up, and report to you in Chinese. Ad spend, trade fairs and samples are paid by the factory.' },
 ];
+const flow = {
+  caption: 'We send the outreach and log each inquiry. Your factory handles everything from the quote onward.',
+  lanes: ['成都寰桥', 'Your factory'] as [string, string],
+  steps: [
+    { lane: 0 as const, text: 'We research companies that fit your products. You approve the list in writing.' },
+    { lane: 0 as const, text: 'We send English outreach from your factory’s email domain and follow up.' },
+    { lane: 0 as const, text: 'A buyer replies or asks through your website. The inquiry log records where it came from and when.' },
+    { lane: 1 as const, text: 'Your factory quotes within two working days.' },
+    { lane: 1 as const, text: 'Your factory sends samples, signs the contract, collects payment and exports.' },
+  ],
+};
 ---
 <Page
   title="English websites and buyer outreach for Chinese factories · 成都寰桥"
@@ -25,26 +39,40 @@ const steps = [
   </div>
 
   <section>
-    <div class="wrap doc">
+    <div class="wrap">
       <h2 class="display h2 sec-title">How it works</h2>
-      <ol class="list">
-        {steps.map((s) => <li><strong>{s.name}.</strong> {s.body}</li>)}
-      </ol>
-      <p class="price">Setup costs ¥19,800. Minimum outreach costs 6 × ¥4,800 = ¥28,800. The combined fee is ¥48,600. Outreach is paid at ¥14,400 per quarter in advance.</p>
-      <p>A first-order bonus can be agreed in writing for target companies that both sides have registered.</p>
+      <Steps items={steps} />
+      <div class="doc after">
+        <p class="price">Setup costs ¥19,800. Minimum outreach costs 6 × ¥4,800 = ¥28,800. The combined fee is ¥48,600. Outreach is paid at ¥14,400 per quarter in advance.</p>
+        <p>A first-order bonus can be agreed in writing for target companies that both sides have registered.</p>
+      </div>
+    </div>
+  </section>
 
+  <section class="flow-band">
+    <div class="wrap">
+      <Flow {...flow} />
+    </div>
+  </section>
+
+  <section>
+    <div class="wrap terms">
+      <div class="doc">
       <h2 class="h3">What your factory does</h2>
       <p>You send product details, photos, specifications, certificates, price ranges, minimum order quantities and lead times within 14 days. You quote within two working days of an inquiry. The owner or export manager joins the kickoff and the monthly review. If materials or quotes are late, outreach pauses and the service period is extended, so paid months are not used up.</p>
 
       <h2 class="h3">What we don’t do</h2>
       <p>We never handle goods or payments, and we are not an import-export agent. Your factory quotes, sends samples, signs sales contracts, collects payment, exports and handles after-sales. We don’t promise inquiries or orders. Those depend on your product, price, certificates, the market, and how fast you follow up.</p>
 
+      </div>
+      <div class="doc">
       <h2 class="h3">Who it’s for</h2>
       <p>Manufacturers in Sichuan and Chongqing first, with stable products, the ability to quote and send samples, and the certificates their market requires. We don’t take food, supplements, medical products, cosmetics, children’s products, batteries, chemicals, or products sold only on price.</p>
       <p>For email, quote and document systems for forwarders and trading companies, see <a href="/china/">our page for companies in China</a>.</p>
 
       <h2 class="h3">Company</h2>
       <p>Registered as <span lang="zh-CN">{HQ.name}</span>, Unified Social Credit Code {HQ.uscc}. The company issues fapiao.</p>
+      </div>
     </div>
   </section>
 </Page>
@@ -54,8 +82,9 @@ const steps = [
   .page-head .email-link { color: var(--celadon); text-decoration: underline; display: inline-flex; align-items: center; min-height: 44px; }
   .zh-link { color: var(--ink); text-decoration: none; font-size: 15px; padding: 0 6px; }
   .zh-link:hover { color: var(--celadon); }
-  .doc h2.h3 { margin: 48px 0 12px; }
-  .list { margin: 0 0 1em; padding-left: 1.2em; }
-  .list li { margin-bottom: 0.8em; }
-  .list strong { font-weight: 600; }
+  .flow-band { padding: clamp(48px, 5vw, 72px) 0; }
+  .terms { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: 32px 64px; align-items: start; }
+  .terms h2.h3 { margin: 40px 0 12px; }
+  .terms .doc > h2.h3:first-child { margin-top: 0; }
+  @media (max-width: 1100px) { .terms { grid-template-columns: 1fr; } }
 </style>

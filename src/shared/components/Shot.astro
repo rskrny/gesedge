@@ -1,0 +1,16 @@
+---
+// One screen in a figure: the readable crop on wide screens, a tighter crop on phones (≤600px), so the
+// interface stays legible at 390 px while client data stays blurred. Flat, hairline frame (DESIGN.md §5–6).
+interface Img { src: string; w: number; h: number }
+interface Props {
+  image: Img & { narrow?: Img };
+  alt: string;
+  lazy?: boolean;
+}
+const { image, alt, lazy = false } = Astro.props;
+const load = lazy ? { loading: 'lazy' as const, decoding: 'async' as const } : { fetchpriority: 'high' as const };
+---
+<picture>
+  {image.narrow && <source media="(max-width: 600px)" srcset={image.narrow.src} width={image.narrow.w} height={image.narrow.h} />}
+  <img src={image.src} alt={alt} width={image.w} height={image.h} {...load} />
+</picture>

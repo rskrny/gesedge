@@ -5,13 +5,16 @@
 // China-side systems on /china/. EN home is not paired with the ZH home (different buyers).
 import Page from '../../shared/layouts/Page.astro';
 import Joint from '../../shared/components/Joint.astro';
+import Shot from '../../shared/components/Shot.astro';
+import Steps from '../../shared/components/Steps.astro';
+import Snapshot from '../components/Snapshot.astro';
 import { BOOKING, EMAIL, CANONICAL, GES } from '../../shared/site';
 import { work, builtFor } from '../work';
 
 const offers = [
   { name: 'AI operations pilot', body: 'Start with one workflow: sorting customer email, entering orders, or gathering shipment updates. We review it, build a system for it, and check its output beside your team.', price: ['Review $2,500, credited to the build', 'Builds from $15,000'] },
   { name: 'China supplier support', body: 'Ryan is based in Chengdu. Get a written supplier check or a visit in the Chengdu–Chongqing area, with findings in English.', price: ['Desk check $750', 'Supplier visit $1,500'] },
-  { name: 'Owner’s dashboard', body: 'One private page that shows what is happening across your business, rebuilt every night from the systems you already use.', price: ['Setup from $3,000', 'then from $750 a month'] },
+  { name: 'Owner’s dashboard', body: 'A private page that pulls open orders and shipments in transit from the systems you already use, rebuilt every night.', price: ['Setup from $3,000', 'then from $750 a month'] },
 ];
 const steps = [
   { name: 'Review', body: 'We review one workflow for a fee and give you a written plan and a fixed price.' },
@@ -42,7 +45,7 @@ const org = {
     <div class="wrap stage">
       <div class="lead">
         <h1 class="display h1">AI systems for your email, orders and shipment status.</h1>
-        <p class="lede">For US importers and distributors buying from Asia. We build around the work your team does every day. Based in Chengdu, Ryan also checks and visits Chinese suppliers.</p>
+        <p class="lede">For US importers and distributors buying from Asia. Based in Chengdu, Ryan also checks and visits Chinese suppliers.</p>
         <p class="ctas"><a class="btn" href={BOOKING}>Book a call</a> <a class="text-link" href="/work/">See the work →</a></p>
         <p class="aside"><a href="/services/#china">China supplier support and prices →</a></p>
       </div>
@@ -59,7 +62,7 @@ const org = {
         <p><a href={`/work/#${lead.id}`}>More on the work →</a></p>
       </div>
       <figure class="shot">
-        <img src={lead.image.src} alt={lead.image.alt} width={lead.image.w} height={lead.image.h} fetchpriority="high" />
+        <Shot image={lead.image} alt={lead.image.alt} />
         <figcaption class="meta">On the executive dashboard, each ticket shows as on track, at risk, or overdue against its target date. The system sorts mail into 29 categories.</figcaption>
       </figure>
     </div>
@@ -72,7 +75,7 @@ const org = {
 
   <section id="services">
     <div class="wrap">
-      <h2 class="display h2 sec-title">Start with the work that takes your team’s time.</h2>
+      <h2 class="display h2 sec-title">Three ways to start</h2>
       <ul class="ledger">
         {offers.map((o) => (
           <li>
@@ -86,14 +89,14 @@ const org = {
     </div>
   </section>
 
-  <section>
+  <section id="snapshot" class="snap-band">
+    <Snapshot />
+  </section>
+
+  <section class="steps-band">
     <div class="wrap">
       <h2 class="display h2 sec-title">How a project runs</h2>
-      <ol class="steps">
-        {steps.map((s, i) => (
-          <li><p class="step">{i + 1}</p><h3 class="h3">{s.name}</h3><p class="muted">{s.body}</p></li>
-        ))}
-      </ol>
+      <Steps items={steps} />
     </div>
   </section>
 
@@ -117,7 +120,8 @@ const org = {
 </Page>
 
 <style>
-  .text-link { align-self: center; color: var(--ink); text-decoration: none; font-size: 15px; padding: 0 6px; }
+  .text-link { display: inline-flex; align-items: center; min-height: 44px; color: var(--ink); text-decoration: none; font-size: 15px; padding: 0 6px; }
+  .steps-band { padding-top: clamp(56px, 6vw, 88px); }
   .text-link:hover { color: var(--celadon); }
 
   .after { margin: 32px 0 0; }

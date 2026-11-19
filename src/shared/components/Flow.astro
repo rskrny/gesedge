@@ -1,0 +1,51 @@
+---
+// Who does what in the factory outreach offer (/exporters/ and /audit/): two lanes, the steps in order.
+// A plain diagram of the real process in the site's own identity: hairlines, one accent, text as HTML.
+// Each step is a full sentence with its subject, so the list still reads correctly on phones and with CSS off.
+interface Props {
+  caption: string;
+  lanes: [string, string]; // [us, the factory]
+  steps: { lane: 0 | 1; text: string }[];
+}
+const { caption, lanes, steps } = Astro.props;
+---
+<figure class="flow">
+  <div class="flow-grid" style={`--n:${steps.length}`}>
+    <p class="lane-name l0" aria-hidden="true">{lanes[0]}</p>
+    <p class="lane-name l1" aria-hidden="true">{lanes[1]}</p>
+    <ol>
+      {steps.map((s, i) => (
+        <li class={`l${s.lane}`} style={`--c:${i + 1}`}><span class="n" aria-hidden="true">{i + 1}</span>{s.text}</li>
+      ))}
+    </ol>
+  </div>
+  <figcaption class="meta">{caption}</figcaption>
+</figure>
+
+<style>
+  .flow { margin: 0; }
+  .flow-grid { display: grid; grid-template-columns: 9rem minmax(0, 1fr); grid-template-rows: 1fr 1fr;
+    border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .lane-name { grid-column: 1; margin: 0; padding: 22px 16px 22px 0; font-weight: 600; font-size: 15px; color: var(--ink); }
+  .lane-name.l0 { grid-row: 1; }
+  .lane-name.l1 { grid-row: 2; border-top: 1px solid var(--line); }
+  .flow-grid ol { grid-column: 2; grid-row: 1 / span 2; margin: 0; padding: 0; list-style: none; display: grid;
+    grid-template-columns: repeat(var(--n), minmax(0, 1fr)); grid-template-rows: 1fr 1fr; }
+  li { grid-column: var(--c); padding: 22px 20px 26px 0; font-size: 15px; line-height: 1.5; color: var(--muted); }
+  li.l0 { grid-row: 1; }
+  li.l1 { grid-row: 2; }
+  /* the hairline between the lanes */
+  .flow-grid ol { position: relative; }
+  .flow-grid ol::before { content: ''; position: absolute; left: 0; right: 0; top: 50%; border-top: 1px solid var(--line); }
+  .n { display: block; margin-bottom: 8px; font-weight: 600; color: var(--celadon); font-variant-numeric: tabular-nums; }
+  li.l1 .n { color: var(--ash); }
+  .flow figcaption { margin-top: 14px; }
+  @media (max-width: 860px) {
+    .flow-grid { display: block; border-bottom: 0; }
+    .lane-name { display: none; }
+    .flow-grid ol { display: block; }
+    .flow-grid ol::before { content: none; }
+    li { display: grid; grid-template-columns: 2rem 1fr; padding: 16px 0; border-bottom: 1px solid var(--line); }
+    .n { margin: 0; }
+  }
+</style>

@@ -3,12 +3,13 @@
 // Layout: a price list. Title and headline price on one line, details in two columns. No ordinals, no labels.
 import Page from '../../shared/layouts/Page.astro';
 import { BOOKING } from '../../shared/site';
+import Snapshot from '../components/Snapshot.astro';
 
 const faq = [
   { q: 'Do you work with companies outside the US?', a: 'These services are for US companies. Companies in China work with our sister company, <span lang="zh-CN">成都寰桥</span>, which offers the same kind of systems and bills in RMB. See <a href="/china/">For companies in China</a>.' },
   { q: 'Where does my data go?', a: 'Before a build starts, the contract says where the system runs, who can access it, how it is backed up, and how it is handed over if you stop working with us.' },
   { q: 'Who builds the systems?', a: 'Ryan Kearney, with Zhu Shiying on new builds.' },
-  { q: 'Which AI models do you use?', a: 'Whichever fits the job and your data rules. Model and hosting costs are billed at cost.' },
+  { q: 'Which AI models do you use?', a: 'We choose the model during the review, based on the task and on where your data is allowed to go. Model and hosting costs are billed at cost.' },
   { q: 'How do I pay?', a: 'By invoice, in US dollars. Builds are half upfront. Supplier checks and visits in China are paid in advance.' },
   { q: 'What if the review shows a build won’t pay off?', a: 'We tell you, and you keep the plan.' },
 ];
@@ -89,6 +90,7 @@ const faq = [
           <p class="meta">Travel and other third-party costs are billed at cost.</p>
         </div>
       </div>
+      <Snapshot variant="services" />
     </div>
   </section>
 

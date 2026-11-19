@@ -1,0 +1,23 @@
+---
+// A real sequence as a numbered ledger (DESIGN.md §5: plain 1–4, no grid of equal columns). A step name written
+// "Name, fee" (or "名称，费用") shows the fee as a note on the right. The copy itself is unchanged.
+interface Props { items: { name: string; body: string }[] }
+const { items } = Astro.props;
+const split = (name: string) => {
+  const m = name.match(/^(.+?)(?:, |，)(.+)$/);
+  return m ? { title: m[1], fee: m[2] } : { title: name, fee: '' };
+};
+---
+<ol class="steps">
+  {items.map((s, i) => {
+    const { title, fee } = split(s.name);
+    return (
+      <li>
+        <p class="step" aria-hidden="true">{i + 1}</p>
+        <h3 class="h3">{title}</h3>
+        {fee && <p class="price fee">{fee}</p>}
+        <p class="muted">{s.body}</p>
+      </li>
+    );
+  })}
+</ol>
