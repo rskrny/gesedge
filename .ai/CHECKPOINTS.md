@@ -2,6 +2,7 @@
 <!-- Append-only history. One dated line per substantial unit of work. Newest on
      top. Not loaded by default — STATE.md holds current truth. -->
 
+- 2026-11-19 — Site readiness review before outreach (five model seats, Lighthouse, a 62-rule slop detector, 22 screenshots). Verdict NOT READY against the bar set beforehand: works, names the right customer, fails on ban-list layout hits, five copy lines, the phone header and a missing About photo. No site change made. Result in the private folder. Stale DESIGN.md section numbers in AGENTS.md corrected (8 and 11).
 - 2026-11-19 — Framework upgraded to v2.4.
 - 2026-11-19 — Project audit and cleanup on Ryan's go. Both live sites re-checked (200, sitemaps, redirects, no noindex). STATE.md rewritten: it still said production was not deployed. 14 stale local branches, 5 worktrees and 1 stash removed after a full backup bundle in the parent folder, local main reset to origin/main. Release runbook copied to `.ai/runbooks/release.md`. April DEVELOPMENT_LOG.md archived. PROJECT.md stack and identity lines corrected. No site code or copy changed.
 - 2026-11-15 — Published approved source 86a4302 via PR #14, merge 3a2cf7e. English Workers Builds and Chinese manual deploy completed. Live HTTP/render/click/media checks pass. Exactly one TEST form submission accepted, saved in production KV and delivered to Gmail Inbox. Runtime log streaming unavailable. Main checkout stays on redo/site. (Line recovered on 2026-11-19 from commit 4d74c3b, which sat on a local branch only.)

@@ -1,7 +1,7 @@
 # Project State
 <!-- Cold-start handoff. Keep within the state budget (600 words unless PROJECT.md sets `State budget: <n> words`). Status only: the routing table lives in AGENTS.md, and history and logs go to CHECKPOINTS.md or .ai/archive/. Fields, in order: Last updated · Status · Next actions · Backlog · Blockers / Open questions · Active context · Recent changes · Handoff. Drop any empty field except Last updated, Status, Next actions, and Handoff. When Backlog passes ~10 items, move it to .ai/BACKLOG.md and leave a one-line pointer. Re-read this file immediately before rewriting it — merge, never clobber. Only the orchestrating session writes this file. -->
 
-Last updated: 2026-11-19 by Claude (Fable 5.2), project audit and cleanup
+Last updated: 2026-11-19 by Claude (Fable 5.2), project audit, cleanup and site readiness review
 
 ## Status
 LIVE since 2026-11-15. PR #14 merged into main (`3a2cf7e`) on Ryan's go. gesedge.com Worker 869172d3 -> 290476f9,
@@ -17,6 +17,9 @@ progress.
 2. On Ryan's answer: publish factory policy items 8 and 9 (setup bought alone, first-order bonus). See `CHANGES.md`.
 3. On Ryan's decision: change the product-type exclusion on /audit/ (`src/zh/copy.ts` line 176, food is among the
    excluded types). Never edit that line without his go.
+4. On Ryan's go: apply the fix list from the 2026-11-19 readiness review. Verdict NOT READY against the bar: works and
+   names the right customer, fails on ban-list layout hits, five copy lines, the phone header and no photo on About.
+   Result and evidence: `../.ai/research/2026-11-19-site-readiness/SYNTHESIS.md`.
 
 ## Blockers / Open questions
 - The personal WeChat QR stays until a company QR exists. The sample audit stays hidden until it exists.
@@ -43,4 +46,4 @@ progress.
   fix/huanqiao-chinese-name, rebuild/astro-immersive, redo/site, site/positioning-2026-11.
 
 ## Handoff
-Nothing is running. All three Next actions wait on Ryan.
+Nothing is running. All four Next actions wait on Ryan.

@@ -172,7 +172,7 @@ If gstack skills aren't working, run `cd .claude/skills/gstack && ./setup` to bu
 ## Project: writing rules (anti-AI-slop)
 
 All published writing (blog posts, website copy, case studies, social posts) must follow these
-rules, PLUS the voice law and kill list in root `DESIGN.md` (§10, §13) — notably: no
+rules, PLUS the voice law and kill list in root `DESIGN.md` (§8, §11) — notably: no
 italic-emphasis words in headlines, no uniform card grids, no client names (GES's own ventures
 exempt), no always-on bloom, no third typeface or hue.
 
