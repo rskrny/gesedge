@@ -29,7 +29,13 @@ const label = SITE === 'zh' ? { pause: t.pause, play: t.play } : { pause: 'Pause
     const button = box.querySelector<HTMLButtonElement>('.toggle')!;
     if (matchMedia('(prefers-reduced-motion: reduce)').matches) continue;
     button.hidden = false;
-    button.addEventListener('click', () => {
+    const still = box.querySelector<HTMLImageElement>('.still')!;
+    button.addEventListener('click', async () => {
+      // load and decode the still frame before the swap, so the hero never shows an empty box
+      if (!box.classList.contains('paused')) {
+        still.loading = 'eager';
+        await still.decode().catch(() => {});
+      }
       const paused = box.classList.toggle('paused');
       button.classList.toggle('paused', paused);
       button.setAttribute('aria-label', paused ? button.dataset.play! : button.dataset.pause!);
