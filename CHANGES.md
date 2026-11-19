@@ -1,6 +1,6 @@
-# Website preview changes
+# Website changes
 
-This branch is for preview review. It has not been pushed or deployed to production.
+Ryan approved publication on 2026-11-15. PR #14 merged approved head 86a4302 into main as 3a2cf7e. Both production sites are deployed and live-checked. Release evidence is in .ai/deliverables/site-positioning-2026-11-15-qa.md.
 
 - Repositioned the English home and services page for US importers and distributors buying from Asia.
 - Kept email triage as the main proof and added supplier support to the home page.

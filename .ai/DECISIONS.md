@@ -13,6 +13,15 @@ Trade-offs:
 Reversal trigger:
 -->
 
+## Decision: Publish the approved positioning release
+Date: 2026-11-15 · Status: Accepted and deployed
+Context: Ryan explicitly authorized publication of approved head 86a4302.
+Options: Continue preview review or publish through the existing production paths.
+Decision: Push only site/positioning-2026-11, merge PR #14 into main with a merge commit, let Workers Builds deploy English, then manually deploy the merged Chinese build with PREVIEW unset. Record rollback versions and verify both live sites plus exactly one TEST form submission.
+Rationale: The approved terms and page changes passed preview validation and Ryan gave the production go.
+Trade-offs: Builds API settings returned 403. Repository config, the successful main build and actual live content/indexing checks verified the deployment path. Existing GitHub administrator privileges were used for the owner-approved merge because the one-review policy prevents self-review. No policy was changed and no failed check was bypassed. Runtime log streaming was unavailable, so no clean-log claim is made.
+Reversal trigger: A live release check fails. Recorded previous Worker versions are in STATE.md and the external deploy plan.
+
 ## Decision: Finalize approved service terms on previews
 Date: 2026-11-15 · Status: Accepted for preview only
 Context: Ryan approved CHANGES.md items 1–7 as written and kept factory policy items 8 and 9 unanswered.

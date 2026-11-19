@@ -1,41 +1,46 @@
 # Project State
-<!-- Cold-start handoff. Keep under ~600 words. Website work only. -->
+<!-- Cold-start handoff. Keep within the state budget (600 words unless PROJECT.md sets `State budget: <n> words`). Status only: the routing table lives in AGENTS.md, and history and logs go to CHECKPOINTS.md or .ai/archive/. Fields, in order: Last updated · Status · Next actions · Backlog · Blockers / Open questions · Active context · Recent changes · Handoff. Drop any empty field except Last updated, Status, Next actions, and Handoff. When Backlog passes ~10 items, move it to .ai/BACKLOG.md and leave a one-line pointer. Re-read this file immediately before rewriting it — merge, never clobber. Only the orchestrating session writes this file. -->
 
-## LIVE, 2026-11-15 (supersedes the preview-only note below)
+Last updated: 2026-11-19 by Claude (Fable 5.2), project audit and cleanup
 
-Published on Ryan's go: PR #14 merged into main (`3a2cf7e`). gesedge.com Worker 869172d3 -> 290476f9, huanqiao Worker
-9758700a -> 011fac28 (the "before" IDs are the rollback). Live re-check: new EN h1 "AI systems for your email, orders and
-shipment status.", the ¥48,600 line on huanqiao /audit/, no noindex. One TEST form message was accepted (KV + Gmail).
-The contact-form bot filter (29ecba8) is live with it. The main checkout `redo/site` was fast-forwarded to main. Open:
-factory policy items 8 and 9 (setup standalone, first-order bonus) are unanswered and unpublished; the Gmail never-spam
-filter for website@ is not set yet. Business, social and tax work lives in the parent folder `../.ai/STATE.md`.
+## Status
+LIVE since 2026-11-15. PR #14 merged into main (`3a2cf7e`) on Ryan's go. gesedge.com Worker 869172d3 -> 290476f9,
+huanqiao Worker 9758700a -> 011fac28. The "before" IDs are the rollback. Live re-check 2026-11-19 over HTTP: both sites
+200, English h1 "AI systems for your email, orders and shipment status.", the ¥48,600 line on huanqiao /audit/, no
+noindex, both `sitemap.xml` 200, www redirects to the apex. The preview Workers (gesedge-preview and huanqiao-preview
+on rskrny.workers.dev) are up and carry noindex. Contact-form bot filter 29ecba8 is live. No website work is in
+progress.
 
-## Earlier status, 2026-11-15 China time (preview stage)
+## Next actions
+1. Gmail never-spam filter for website@: Ryan in Gmail, or an agent with his go. The 11-07 form audit found most form
+   mail in Spam. A dated reminder sits in the parent register.
+2. On Ryan's answer: publish factory policy items 8 and 9 (setup bought alone, first-order bonus). See `CHANGES.md`.
+3. On Ryan's decision: change the product-type exclusion on /audit/ (`src/zh/copy.ts` line 176, food is among the
+   excluded types). Never edit that line without his go.
 
-The approved positioning changes are built and deployed to previews only on branch `site/positioning-2026-11` in `C:/Users/rskrn/Desktop/gesedge-wt-sitefix`. The branch starts from local `redo/site` at `2bb955c`. The main checkout remains on `redo/site`. Nothing was pushed or merged, and production was not deployed.
+## Blockers / Open questions
+- The personal WeChat QR stays until a company QR exists. The sample audit stays hidden until it exists.
+- Delivery inside mainland China (ICP filing, speed from inside China) was never settled: DECISIONS 2026-10-05 and
+  `.ai/research/hosting.md`.
+- Reversal trigger still running: no paid factory setup by 2026-12-31 (DECISIONS 2026-10-15).
 
-Previews:
-- https://gesedge-preview.rskrny.workers.dev
-- https://huanqiao-preview.rskrny.workers.dev
+## Active context
+- The checkout is on `redo/site`: origin/main plus local docs commits, not pushed. Local `main` equals origin/main.
+  `main` auto-deploys gesedge.com on push, the Chinese site is a manual deploy, and every release needs Ryan's separate
+  go. Steps: `.ai/runbooks/release.md`.
+- This repo is public: no private business plans, no unapproved client identities. Business work belongs to the parent
+  folder (AGENTS.md, "Business work started from this folder").
+- Release QA record: `.ai/deliverables/site-positioning-2026-11-15-qa.md`. Raw evidence and screenshots are in
+  `C:/tmp/sitefix/`, a temp folder.
 
-The English home and services page now address US importers and distributors buying from Asia. Email triage remains the main proof. China supplier support is visible on the home page. Services adds a company website offer with a fixed quote after a 30-minute call.
+## Recent changes
+- 2026-11-19 cleanup. Framework upgraded to v2.4, old AGENTS.md kept in `.ai/archive/`. 14 stale local branches, 5
+  worktrees and 1 stash removed after a full backup (`../archive/gesedge-git-backup-2026-11-19.bundle`), local `main`
+  reset to origin/main. The release-record commit 4d74c3b was salvaged from the deleted positioning branch. The April
+  `DEVELOPMENT_LOG.md` moved to `.ai/archive/`. PROJECT.md stack and identity lines corrected. Dead caches removed
+  (`.next`, `.vercel`, `.dual-graph`).
+- Remote branches on GitHub were not touched: chore/cloudflare-workers, claude/elegant-bartik,
+  fix/huanqiao-chinese-name, rebuild/astro-immersive, redo/site, site/positioning-2026-11.
 
-The unsupported classification percentage and sales test counts were removed from English and Chinese case copy. Both factory pages show setup ¥19,800, minimum outreach ¥28,800, combined ¥48,600 and quarterly outreach prepayment ¥14,400. Cross-site audience, language and factory contact links preserve the intended buyer context. The exporter English email option is a visible underlined link.
-
-Ryan approved CHANGES.md terms 1–7 as written on 2026-11-15. Home and services copy now presents those support, supplier-retainer and website terms as final. CHANGES.md records the approval. Items 8 and 9 remain unanswered. No standalone setup policy or bonus terms were added.
-
-## Validation
-
-Both preview builds pass. Both existing Worker test files pass, with no skips. All 20 built pages pass local link, anchor and preview noindex checks. All 40 page/width captures pass at 390 and 1440 pixels, with no overflow or missing images. Primary changed pages and all page folds were visually inspected. All 22 visible-text action checks pass. Fourteen before/after action screenshot pairs are saved. Hero playback, reduced motion, pause and H.264 fallbacks pass on both previews.
-
-After approval, both builds, Worker tests and all 20 built-page link/noindex checks were rerun. Four fresh home/services renders were visually inspected, and all 26 visible-text clicks passed, including the renamed support links. Live preview response noindex checks passed. Preview versions: EN 5a030c1c-66b8-4486-8436-6c004c0a0597, ZH 68bbf351-4465-4870-afea-8df06e48840e.
-
-English no-ai-slop edit and detect passed, followed by independent fidelity review. Every changed Chinese value was reviewed via the requested DeepSeek Flash command, with qu-ai-wei and lieflat checks. Detail: `.ai/deliverables/site-positioning-2026-11-15-qa.md`. Raw evidence and screenshots: `C:/tmp/sitefix/` and `C:/tmp/sitefix/shots/`.
-
-Contact-form fix `29ecba8` is an ancestor and its Worker files and production configs remain byte-identical. Preview builds use `PREVIEW=1`, `wrangler.en.jsonc` and `wrangler.zh.jsonc`. Deploy staging runs outside the repo to avoid Wrangler changing package files.
-
-## Next action and constraints
-
-Production requires Ryan's separate explicit go. `C:/tmp/sitefix/DEPLOY_PLAN.md` gives the future feature-branch push, PR into main, English automatic build, Chinese manual deploy, rollback and marked TEST form-submission checks. None of those release actions were run. `main` auto-deploys gesedge.com. Both production sites remain unchanged.
-
-The public repo must contain no private business plans or unapproved client identities. Business administration belongs in the parent folder's `.ai/STATE.md`. Existing sample audit remains hidden until it exists. The personal WeChat QR remains in place pending a company QR. The Gmail never-spam filter status is unverified.
+## Handoff
+Nothing is running. All three Next actions wait on Ryan.

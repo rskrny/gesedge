@@ -90,3 +90,28 @@ Raw logs, independent review outputs, JSON checks and screenshots are under `C:/
 - Chinese preview: https://huanqiao-preview.rskrny.workers.dev, Worker version `651e10cf-e9ab-45b9-a1c0-74e4ec3871c9`.
 
 Both were deployed using copies of the preview configs in a staging folder without package.json. No production config was executed. No branch was pushed or merged.
+
+
+## Production release, 2026-11-15
+
+PASS for the direct live release checks. Approved source 86a4302 merged through PR https://github.com/rskrny/gesedge/pull/14 as 3a2cf7e382d0563c2983bee984025c282cb69478. Only the feature branch was pushed. No force push, redo/site push, branch-policy edit or manual English deploy was used. The existing administrator exception allowed the owner-approved merge through the one-review policy. No status checks were configured on the feature PR. Workers Builds reported success on the merged main SHA.
+
+Versions before → after, all at 100% traffic:
+- gesedge: 869172d3-b59f-446e-96c7-f8785259d688 → 290476f9-fdbf-4511-9cc7-6cf08b0d1c0d.
+- huanqiao: 9758700a-d27f-4bc3-a4d7-f81cb917a679 → 011fac28-6b16-4b99-8fea-953e2b429749.
+
+English deployed through Workers Builds. Chinese was built with PREVIEW unset from the merged SHA in a fresh worktree, passed its nine-page link/assets/noindex checks and both Worker test files, then deployed with wrangler.huanqiao.jsonc from package-less staging. Package and lockfiles stayed unchanged.
+
+Live results:
+- 33 HTTP checks passed across both domains, including ordinary/status/error routes, canonical destinations, no workers.dev links, indexing, robots/sitemap assets, www redirects and media ranges. Normal production pages have no noindex. Intentional status/sample/error pages retain it.
+- All seven changed-body pages were freshly rendered at 390×900 and 1440×900. All 14 checks passed with no overflow or missing images. All 14 full-page screenshots were viewed.
+- All 26 visible-text click checks passed, including support anchors, website booking destination and cross-site audience, language and exporter contact destinations. No booking was created. The mailto action was intercepted before opening a mail client.
+- Both sites' hero playback advances at both widths. Pause works, reduced motion uses the still without a video request, and both H.264 fallbacks decode.
+- Chinese contact QR decoded successfully. Consent is required and starts unticked. No Chinese form was submitted.
+- Exactly one English form submission used name TEST release 2026-11-15 and message TEST, please ignore. Recorded POST /api/contact/ returned 303, followed by GET /contact/sent/ 200. The matching record was read in production KV. Its notification was read in the matching Gmail thread and had the INBOX label. No Gmail filter was changed.
+
+The form checker initially reported accepted=false because it expected the page title Message sent as the H1. Source src/en/pages/contact/sent.astro uses Thanks. Recorded output was: landed=https://gesedge.com/contact/sent/, h1=Thanks., post_303_observed=true, submissions_attempted=1. The assertion was corrected from source and the existing evidence, without another submission. A preliminary QR probe ran before image decode, then the awaited decode confirmed it loaded. Neither was a site defect. One shell quoting error in a predeploy checker was corrected by using a script file before the Chinese upload.
+
+Visibility limits: Builds settings API returned 403. Repository config explicitly names main and wrangler.jsonc, and the actual merged-SHA build succeeded. Both live sites were verified independently. Worker log streaming yielded no session output in two bounded attempts, including a direct cached Wrangler invocation. No clean-log claim is made. The Gmail connector required reauthentication, but the existing local authorized read path verified the test notification. No site check failed and no rollback was performed.
+
+Raw production evidence and screenshots are outside the public repo at C:/tmp/sitefix/production/. Previous/current versions, merge metadata and the executed deploy plan are under C:/tmp/sitefix/. Main checkout remains clean on redo/site.
