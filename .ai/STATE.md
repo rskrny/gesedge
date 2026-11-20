@@ -15,8 +15,8 @@ progress.
 1. Gmail never-spam filter for website@: Ryan in Gmail, or an agent with his go. The 11-07 form audit found most form
    mail in Spam. A dated reminder sits in the parent register.
 2. On Ryan's answer: publish factory policy items 8 and 9 (setup bought alone, first-order bonus). See `CHANGES.md`.
-3. On Ryan's decision: change the product-type exclusion on /audit/ (`src/zh/copy.ts` line 176, food is among the
-   excluded types). Never edit that line without his go.
+3. DONE 2026-11-20 on Ryan's go: food removed from the exclusion line (ZH /audit/ FAQ and EN /exporters/), 保健食品 stays
+   out. Commit 13220b3, fonts subset rebuilt, both previews redeployed and checked over HTTP. Live only on his go.
 4. On Ryan's go: apply the fix list from the 2026-11-19 readiness review. Verdict NOT READY against the bar: works and
    names the right customer, fails on ban-list layout hits, five copy lines, the phone header and no photo on About.
    Result and evidence: `../.ai/research/2026-11-19-site-readiness/SYNTHESIS.md`.
