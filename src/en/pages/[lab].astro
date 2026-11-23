@@ -1,0 +1,98 @@
+---
+// /lab/: a private study of dovetail variations for Ryan to compare (2026-11-19). PREVIEW only: getStaticPaths
+// returns nothing in a production build, so no page is generated, and the media in lab/media are copied into the
+// build only when PREVIEW=1 (scripts/build.mjs). Not linked from any page and not in the sitemap.
+// Renders: lab/README.md. Each loop is an animated AVIF, so it plays without a tap.
+import { statSync } from 'node:fs';
+import Page from '../../shared/layouts/Page.astro';
+import { PREVIEW } from '../../shared/site';
+
+export function getStaticPaths() {
+  return PREVIEW ? [{ params: { lab: 'lab' } }] : [];
+}
+
+const kb = (f: string) => Math.round(statSync(`lab/media/${f}`).size / 1024);
+const variants = [
+  { n: 1, name: 'Slide', file: '1-slide.avif', secs: 8,
+    what: 'Today’s hero motion, as the reference. The mark turns to three quarters and the tail slides out and back.',
+    use: 'It stays in the hero, as now.' },
+  { n: 2, name: 'Meet', file: '2-meet.avif', secs: 6,
+    what: 'The two pieces start apart, travel in along the depth of the joint, lock, hold, and part again.',
+    use: 'It would go in the hero if the message should be two sides coming together.' },
+  { n: 3, name: 'Turntable', file: '3-turntable.avif', secs: 8,
+    what: 'The locked joint turns one slow full turn, like an object on a stand, with one small slide halfway round.',
+    use: 'It would suit the About page or the closing band, where the object is looked at more than read.' },
+  { n: 4, name: 'Pair', file: '4-pair.avif', secs: 7,
+    what: 'The tail nudges forward, the socket leans toward it in answer, the tail slides home and the socket takes the weight.',
+    use: 'It would go in the hero if the site should have more character. The motion comes from timing and easing alone, on rigid pieces.' },
+];
+const steps = [
+  { name: 'Review', img: 'step-1.webp', state: 'apart' },
+  { name: 'Build', img: 'step-2.webp', state: 'sliding in' },
+  { name: 'Shadow mode', img: 'step-3.webp', state: 'locked' },
+  { name: 'Support', img: 'step-4.webp', state: 'the flat mark' },
+];
+---
+<Page title="Dovetail study · preview" description="A private study of dovetail animations." path="/lab/" noindex>
+  <div class="wrap page-head">
+    <h1 class="display h1">Dovetail study</h1>
+    <p class="lede">A private study for choosing the hero animation. It is on the preview only, not linked from the site and not indexed. Answer by number.</p>
+  </div>
+
+  <section>
+    <ol class="wrap variants">
+      {variants.map((v) => (
+        <li>
+          <div class="loop"><img src={`/lab/media/${v.file}`} width="480" height="480" alt={`Variation ${v.n}, ${v.name}`} loading="lazy" /></div>
+          <div class="about">
+            <p class="num">{v.n}</p>
+            <h2 class="h3">{v.name}</h2>
+            <p>{v.what}</p>
+            <p class="meta">{v.secs} second loop, {kb(v.file)} KB, animated AVIF at 480 px.</p>
+            <p class="meta">{v.use}</p>
+          </div>
+        </li>
+      ))}
+    </ol>
+  </section>
+
+  <section>
+    <div class="wrap">
+      <h2 class="display h2 sec-title">A small version beside the steps</h2>
+      <p class="measure">One idea for using the joint outside the hero: a 96 px still of the joint beside each step of “How a project runs”, one state per step. This is a study, not a proposal for every page.</p>
+      <ol class="mini">
+        {steps.map((s, i) => (
+          <li>
+            <img src={`/lab/media/${s.img}`} width="96" height="96" alt={`Joint ${s.state}`} loading="lazy" />
+            <p class="mini-num">{i + 1}</p>
+            <div><h3 class="h3">{s.name}</h3><p class="meta">Joint {s.state}, {kb(s.img)} KB.</p></div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </section>
+</Page>
+
+<style>
+  .variants { list-style: none; margin: 0 auto; display: grid; gap: 0; }
+  .variants > li { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: 24px 56px; align-items: center;
+    padding: 40px 0; border-top: 1px solid var(--line); }
+  .variants > li:last-child { border-bottom: 1px solid var(--line); }
+  .loop img { width: 100%; max-width: 420px; height: auto; mix-blend-mode: lighten; }
+  .num { font-family: var(--display); font-size: clamp(2rem, 3vw, 2.6rem); line-height: 1; color: var(--celadon); margin: 0 0 12px; }
+  .about h2 { margin: 0 0 12px; }
+  .about .meta { margin: 0 0 6px; }
+  .mini { list-style: none; margin: 32px 0 0; padding: 0; max-width: 760px; }
+  .mini li { display: grid; grid-template-columns: 96px 2.5rem minmax(0, 1fr); gap: 20px; align-items: center;
+    padding: 16px 0; border-top: 1px solid var(--line); }
+  .mini li:last-child { border-bottom: 1px solid var(--line); }
+  .mini img { width: 96px; height: 96px; }
+  .mini-num { margin: 0; font-family: var(--display); font-size: 1.6rem; line-height: 1; color: var(--celadon); }
+  .mini h3 { margin: 0 0 4px; }
+  .mini .meta { margin: 0; }
+  @media (max-width: 860px) {
+    .variants > li { grid-template-columns: 1fr; }
+    .mini li { grid-template-columns: 72px 2rem minmax(0, 1fr); gap: 12px; }
+    .mini img { width: 72px; height: 72px; }
+  }
+</style>

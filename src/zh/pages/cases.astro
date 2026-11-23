@@ -4,6 +4,7 @@
 import Page from '../../shared/layouts/Page.astro';
 import { work } from '../../en/work';
 import { t } from '../copy';
+import Shot from '../../shared/components/Shot.astro';
 const c = t.cases;
 ---
 <Page title={c.title} description={c.description} path="/cases/" alt="/work/">
@@ -20,7 +21,7 @@ const c = t.cases;
           <p class="meta">{it.meta}</p>
         </header>
         <figure class="shot">
-          <img src={work[i].image.src} alt={it.alt} width={work[i].image.w} height={work[i].image.h} loading="lazy" decoding="async" />
+          <Shot image={work[i].image} alt={it.alt} lazy />
         </figure>
         <div class={`case-body ${it.before ? 'three' : 'two'}`}>
           {it.before && <div><h3 class="label">{c.labels.before}</h3><p>{it.before}</p></div>}

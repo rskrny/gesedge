@@ -26,7 +26,7 @@ work and advanced-but-performant visuals — without being heavy enough to crash
 - **Operators:** Ryan Kearney (owner; business + frontend/vibecoding) and **Shiying**
   (developer; strongest in Python, backend/API integration, and the server).
   **Kenny** (developer, Chengdu; GitHub `kawasakiakasei`, write access invited 2026-10-05) —
-  owns HuanQiao site ideas with Ryan. (Is Kenny = Shiying? Unconfirmed; ask Ryan.)
+  owns HuanQiao site ideas with Ryan. (Kenny and Shiying are the same person: Ryan, 2026-10-06.)
 - **Primary audience (2026-11-15 preview):** US importers and distributors buying from Asia, with teams of about
   10 to 100 people. Email, orders and shipment status lead the systems offer, with China supplier support visible
   alongside it. Email triage remains the principal proof. Approved recurring terms are in `CHANGES.md`.
@@ -68,11 +68,13 @@ work and advanced-but-performant visuals — without being heavy enough to crash
 - **Hosting (live 2026-10-08):** Cloudflare Workers (static assets + a small Worker for the form and media).
   Form copies in Workers KV, mail via Purelymail. **No Supabase, no Vercel** (Ryan, 2026-10-08: done with both).
   Long-term idea of an own mini server via Cloudflare Tunnel: `.ai/research/hosting.md`.
-- **Frontend:** **Astro + React islands** (React Three Fiber + GSAP for 3D/motion). Ryan + AI build
-  it; the developer owns server/backend. Toolchain: `.ai/research/build-toolchain.md`.
-- **Identity/design:** all-dark, light text, tasteful animated gradients (@paper-design/shaders),
-  immersive (Igloo-grade). Mark = "Beam" world-bridge (`.ai/research/logo-marks.md`). Type = best FREE
-  (grotesk + mono + Alibaba PuHuiTi 3.0 for ZH). Design rules + anti-patterns: `.ai/experts/ui-design-review.md`.
+- **Frontend:** Astro static build, two sites from one repo (`npm run build:en`, `npm run build:zh`). No React, three
+  or GSAP: the 3D direction was shelved (DECISIONS 2026-10-06). Ryan + AI build it; the developer owns server/backend.
+  The June toolchain notes in `.ai/research/build-toolchain.md` describe the shelved stack.
+- **Identity/design:** the Dovetail identity (DECISIONS 2026-10-06). Root `DESIGN.md` is the binding source for type,
+  colour, motion and voice. The earlier dark immersive direction and the "Beam" mark are retired
+  (`.ai/archive/DESIGN-crossing-2026-07.md`). Review checklist: `.ai/experts/ui-design-review.md`.
+  (Corrected 2026-11-19: this bullet and the one above still described the shelved plan.)
 - **Performance:** advanced visuals are fine, but engineer for the visitor's device —
   lazy-load heavy assets, fallbacks for weak devices. "Impressive" must not mean "crashes."
 - **v1 scope excludes:** on-site AI and e-commerce/PDF sales (deferred).

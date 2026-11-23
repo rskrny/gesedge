@@ -4,26 +4,25 @@
 // anonymous. Examples are "可以做", never delivered work. No hreflang pair (no English page with the same role).
 import Page from '../../shared/layouts/Page.astro';
 import Joint from '../../shared/components/Joint.astro';
-import { CANONICAL, HQ, EMAIL } from '../../shared/site';
+import Shot from '../../shared/components/Shot.astro';
+import Steps from '../../shared/components/Steps.astro';
+import { CANONICAL } from '../../shared/site';
+import { hqOrg, siteZh, service, graph } from '../../shared/schema';
 import { work } from '../../en/work';
 import { t } from '../copy';
 const h = t.home;
 const lead = work[0];
-const org = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: HQ.name,
-  alternateName: HQ.latin,
-  url: CANONICAL.zh,
-  logo: CANONICAL.zh + '/share.png',
-  email: EMAIL,
-  taxID: HQ.uscc,
-  founder: { '@type': 'Person', name: 'Ryan Kearney' },
-  address: { '@type': 'PostalAddress', streetAddress: HQ.address, addressLocality: '成都', addressCountry: 'CN' },
-};
+const [review, build] = h.steps;
 ---
 <Page title={h.title} description={h.description} path="/">
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(org)} />
+  <script slot="head" type="application/ld+json" set:html={graph(
+    hqOrg,
+    siteZh,
+    service({ name: h.h1, url: CANONICAL.zh + '/', provider: 'hq', area: 'CN', description: h.description, offers: [
+      { name: review.name, currency: 'CNY', price: 9800 },
+      { name: build.name, currency: 'CNY', minPrice: 60000 },
+    ] }),
+  )} />
   <div class="hero">
     <div class="wrap stage">
       <div class="lead">
@@ -45,7 +44,7 @@ const org = {
         <p><a href="/cases/">{h.casesLink} →</a></p>
       </div>
       <figure class="shot">
-        <img src={lead.image.src} alt={t.cases.items[0].alt} width={lead.image.w} height={lead.image.h} fetchpriority="high" />
+        <Shot image={lead.image} alt={t.cases.items[0].alt} />
         <figcaption class="meta">{h.proofCaption}</figcaption>
       </figure>
     </div>
@@ -68,9 +67,7 @@ const org = {
   <section>
     <div class="wrap">
       <h2 class="display h2 sec-title">{h.stepsTitle}</h2>
-      <ol class="steps">
-        {h.steps.map((s, i) => <li><p class="step">{i + 1}</p><h3 class="h3">{s.name}</h3><p class="muted">{s.body}</p></li>)}
-      </ol>
+      <Steps items={h.steps} />
     </div>
   </section>
 

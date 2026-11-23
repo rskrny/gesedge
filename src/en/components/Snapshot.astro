@@ -1,0 +1,50 @@
+---
+// The free supplier snapshot that Ryan's outreach message offers (2026-11-19 readiness review, fix 3).
+// The sample is built from a real snapshot: every company name, sub-country location and source URL is replaced and
+// every figure and date is changed, outside this public repo. Only the finished images were copied in.
+// Copy: no-ai-slop edit + detect, 2026-11-19. Never mention a screen recording here: none exists.
+import { EMAIL } from '../../shared/site';
+interface Props { variant?: 'home' | 'services' }
+const { variant = 'home' } = Astro.props;
+const ask = `mailto:${EMAIL}?subject=${encodeURIComponent('Supplier snapshot')}`;
+const full = '/images/snapshot/supplier-snapshot-full.webp';
+---
+<div class={`${variant === 'home' ? 'wrap ' : ''}snap ${variant}`}>
+  <div class="snap-copy">
+    {variant === 'home'
+      ? <h2 class="display h2">A free supplier snapshot</h2>
+      : <h3 class="h3">Free supplier snapshot</h3>}
+    {variant === 'home'
+      ? <p>Send us your company name. We read the public US sea-freight records of your imports and send back one page: the suppliers that appear most often, how many other US buyers the leading ones ship to, and three checks for your import team. It costs nothing.</p>
+      : <p>Before you pay for a desk check, ask for a free one-page snapshot of your own suppliers, read from public US sea-freight records.</p>}
+    <p class="muted">Public records miss air freight and confidential filings, and they cannot show prices, quality or current orders.</p>
+    <p><a class="ask" href={ask}>Ask for yours at {EMAIL} →</a></p>
+  </div>
+  <figure class="snap-fig">
+    <a href={full} class="snap-img">
+      <picture>
+        <source media="(max-width: 600px)" srcset="/images/snapshot/supplier-snapshot-narrow.webp" width="720" height="1282" />
+        <img src="/images/snapshot/supplier-snapshot-top.webp" width="1224" height="983" loading="lazy" decoding="async"
+          alt="Top of a sample supplier snapshot: a plain summary, then a table of seven suppliers labelled A to G with their country, record count and latest date seen" />
+      </picture>
+    </a>
+    <figcaption class="meta">This is a sample snapshot, with the company names removed and every figure changed. <a href={full}>Open the full page</a></figcaption>
+  </figure>
+</div>
+
+<style>
+  .snap { display: grid; grid-template-columns: 5fr 7fr; gap: 40px 64px; align-items: start; }
+  .snap-copy h2 { margin: 0 0 24px; }
+  .snap-copy h3 { margin: 0 0 12px; }
+  .snap.home .snap-copy p:first-of-type { font-size: clamp(1.1rem, 1.5vw, 1.25rem); line-height: 1.55; }
+  .snap.services { margin-top: 56px; padding-top: 40px; border-top: 1px solid var(--line); }
+  .snap.services .snap-fig { max-width: 640px; }
+  .snap-fig { margin: 0; }
+  .snap-img { display: block; }
+  .snap-img img { width: 100%; height: auto; border-radius: 6px; box-shadow: 0 0 0 1px var(--line); }
+  .snap-fig figcaption { margin-top: 14px; }
+  .ask { display: inline-flex; align-items: center; min-height: 44px; }
+  @media (max-width: 860px) {
+    .snap { grid-template-columns: 1fr; }
+  }
+</style>

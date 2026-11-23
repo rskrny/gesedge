@@ -2,11 +2,25 @@
 // All text from ../copy.ts (`audit`). 2026-10-15 (DECISIONS.md): the factory page. Three fixed-fee steps (诊断 → 启动 →
 // 海外客户开发), no commission-only model, a first-order bonus only by written agreement. English equivalent: /exporters/.
 import Page from '../../shared/layouts/Page.astro';
-import { HQ } from '../../shared/site';
+import { HQ, CANONICAL } from '../../shared/site';
+import { service, faqPage, graph } from '../../shared/schema';
 import { t } from '../copy';
+import Steps from '../../shared/components/Steps.astro';
+import Flow from '../../shared/components/Flow.astro';
 const a = t.audit;
+const [review, setup, outreach] = a.offer;
+// 2026-11-19 readiness review: three steps as a numbered ledger, one diagram of who does what, lists in two columns.
+const flow = { caption: a.flowCaption, lanes: a.flowLanes as [string, string], steps: a.flow.map((text, i) => ({ lane: (i < 3 ? 0 : 1) as 0 | 1, text })) };
 ---
 <Page title={a.title} description={a.description} path="/audit/" alt="/exporters/">
+  <script slot="head" type="application/ld+json" set:html={graph(
+    service({ name: a.h1, url: CANONICAL.zh + '/audit/', provider: 'hq', area: 'CN', description: a.description, offers: [
+      { name: review.name, currency: 'CNY', price: 2980 },
+      { name: setup.name, currency: 'CNY', price: 19800 },
+      { name: outreach.name, currency: 'CNY', price: 4800, perMonth: true },
+    ] }),
+    faqPage(a.faq),
+  )} />
   <div class="wrap page-head">
     <h1 class="display h1">{a.h1}</h1>
     <p class="lede">{a.lede}</p>
@@ -16,18 +30,23 @@ const a = t.audit;
   <section>
     <div class="wrap">
       <h2 class="display h2 sec-title">{a.offerTitle}</h2>
-      <ol class="steps three">
-        {a.offer.map((s, i) => <li><p class="step">{i + 1}</p><h3 class="h3">{s.name}</h3><p class="muted">{s.body}</p></li>)}
-      </ol>
-      <p class="price after">{a.minimum}</p>
+      <Steps items={a.offer} />
+      <p class="price after measure">{a.minimum}</p>
     </div>
   </section>
+  <section class="flow-band">
+    <div class="wrap"><Flow {...flow} /></div>
+  </section>
   <section>
-    <div class="wrap doc">
-      <h2 class="h3 sub">{a.getTitle}</h2><ul class="list">{a.get.map((g) => <li>{g}</li>)}</ul>
-      <h2 class="h3 sub">{a.monthlyTitle}</h2><ul class="list">{a.monthly.map((g) => <li>{g}</li>)}</ul>
-      <h2 class="h3 sub">{a.factoryTitle}</h2><ul class="list">{a.factory.map((g) => <li>{g}</li>)}</ul>
-      <h2 class="h3 sub">{a.limitsTitle}</h2><ul class="list">{a.limits.map((g) => <li>{g}</li>)}</ul>
+    <div class="wrap cols">
+      <div class="doc">
+        <h2 class="h3 sub">{a.getTitle}</h2><ul class="list">{a.get.map((g) => <li>{g}</li>)}</ul>
+        <h2 class="h3 sub">{a.monthlyTitle}</h2><ul class="list">{a.monthly.map((g) => <li>{g}</li>)}</ul>
+      </div>
+      <div class="doc">
+        <h2 class="h3 sub">{a.factoryTitle}</h2><ul class="list">{a.factory.map((g) => <li>{g}</li>)}</ul>
+        <h2 class="h3 sub">{a.limitsTitle}</h2><ul class="list">{a.limits.map((g) => <li>{g}</li>)}</ul>
+      </div>
     </div>
   </section>
   <section><div class="wrap doc"><h2 class="h3 sec-title">{a.faqTitle}</h2><dl class="faq">{a.faq.map((f) => <><dt>{f.q}</dt><dd>{f.a}</dd></>)}</dl></div></section>
@@ -35,12 +54,13 @@ const a = t.audit;
 <style>
   .page-head .reg { color: var(--ink); margin-top: 24px; }
   .page-head .ctas { margin-top: 32px; }
-  .steps.three { grid-template-columns: repeat(3, 1fr); }
+  .flow-band { padding: clamp(48px, 5vw, 72px) 0; }
+  .cols { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 32px 72px; align-items: start; }
   .doc .sub { margin: 40px 0 12px; }
   .doc .sub:first-child { margin-top: 0; }
   .list { margin: 0; padding-left: 1.2em; }
   .list li { margin-bottom: 0.6em; }
   .faq dt { font-weight: 500; margin-top: 18px; }
   .faq dd { margin: 6px 0 0; color: var(--muted); }
-  @media (max-width: 860px) { .steps.three { grid-template-columns: 1fr; } }
+  @media (max-width: 1100px) { .cols { grid-template-columns: 1fr; } .cols .doc + .doc .sub:first-child { margin-top: 40px; } }
 </style>

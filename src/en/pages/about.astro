@@ -1,31 +1,26 @@
 ---
 // Copy: .ai/deliverables/redo-copy-en.md (v3, gated). Everglory + C14 lines approved by Ryan 2026-10-07.
 // 2026-10-08 anti-AI pass: bios rewritten as prose, "Two companies, one founder" and the coordinates line removed.
-// ponytail: no photo yet. Ryan's headshot (private copy in ../business/redo-assets-private/headshots) goes
-// here as a compressed AVIF/WebP once he picks one.
+// Photo (DESIGN.md §6): "New Headshot.jpg" from the private headshots folder, cropped to 4:5 only, no retouching,
+// metadata stripped (2026-11-19). To swap it, replace public/images/about/ryan-400.webp and ryan-800.webp.
 import Page from '../../shared/layouts/Page.astro';
 import { GES, HQ } from '../../shared/site';
-
-const person = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Ryan Kearney',
-  jobTitle: 'Founder',
-  worksFor: { '@type': 'Organization', name: GES.name },
-  homeLocation: { '@type': 'Place', name: 'Chengdu, China' },
-  alumniOf: [{ '@type': 'CollegeOrUniversity', name: 'Massachusetts Maritime Academy' }, { '@type': 'CollegeOrUniversity', name: 'Sichuan University' }],
-};
+import { ryan, graph } from '../../shared/schema';
 ---
 <Page
-  title="About · Global Edge Strategies"
+  title="About Ryan Kearney · Global Edge Strategies"
   description="Ryan Kearney, an American in Chengdu, runs Global Edge Strategies and its sister company 成都寰桥."
   path="/about/"
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
+  <script slot="head" type="application/ld+json" set:html={graph(ryan)} />
   <div class="wrap page-head"><h1 class="display h1">About</h1></div>
 
   <section>
     <div class="wrap people">
+      <figure class="photo">
+        <img src="/images/about/ryan-400.webp" srcset="/images/about/ryan-400.webp 400w, /images/about/ryan-800.webp 800w"
+          sizes="(max-width: 860px) 240px, 22vw" width="400" height="500" alt="Ryan Kearney" fetchpriority="high" />
+      </figure>
       <div class="ryan">
         <h2 class="h3">Ryan Kearney</h2>
         <p class="bio">Ryan is an American who lives in Chengdu. After a B.S. at Massachusetts Maritime Academy, he coordinated import operations at Everglory Logistics, a freight forwarder and customs broker in Boston, from 2021 to 2022. He has an MBA from Sichuan University. He started Global Edge Strategies in 2024 and builds its systems himself, and he is CTO of C14 Space, the UK company that makes ShopMyRoom.</p>
@@ -47,9 +42,16 @@ const person = {
 </Page>
 
 <style>
-  .people { display: grid; grid-template-columns: 7fr 5fr; gap: 40px 72px; align-items: start; }
+  .people { display: grid; grid-template-columns: 3fr 5fr 4fr; gap: 40px 56px; align-items: start; }
+  .photo { margin: 0; }
+  .photo img { width: 100%; height: auto; border-radius: 6px; }
+  .kenny { padding-top: clamp(0px, 8vw, 120px); }
   .people h2 { margin-bottom: 14px; }
   .bio { font-size: clamp(1.1rem, 1.6vw, 1.3rem); line-height: 1.55; }
   .doc strong { font-weight: 600; }
-  @media (max-width: 860px) { .people { grid-template-columns: 1fr; } }
+  @media (max-width: 860px) {
+    .people { grid-template-columns: 1fr; }
+    .photo { max-width: 240px; }
+    .kenny { padding-top: 0; }
+  }
 </style>

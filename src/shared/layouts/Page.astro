@@ -36,6 +36,9 @@ const here = (href: string) => path.startsWith(href);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Baidu: responsive page, and no mobile transcoding (ziyuan.baidu.com articleinfo?id=1285, documentinfo?id=156). */}
+    {zh && <meta name="applicable-device" content="pc,mobile" />}
+    {zh && <meta http-equiv="Cache-Control" content="no-transform" />}
     <title>{title}</title>
     <meta name="description" content={description} />
     {(PREVIEW || noindex) && <meta name="robots" content="noindex, nofollow" />}
@@ -69,9 +72,11 @@ const here = (href: string) => path.startsWith(href);
       <nav aria-label={zh ? t.nav.label : 'Main'}>
         <ul>
           {nav.map((n) => <li><a href={n.href} aria-current={here(n.href) ? 'page' : undefined}>{n.label}</a></li>)}
-          {ZH_LIVE && <li><a href={switchLink.href} hreflang={switchLink.hreflang} lang={switchLink.lang}>{switchLink.label}</a></li>}
         </ul>
       </nav>
+      {/* The other site sits beside the call button, out of the nav, so on phones the nav fits one row and nothing
+          sits alone above the H1 (2026-11-19 readiness review). */}
+      {ZH_LIVE && <a class="switch" href={switchLink.href} hreflang={switchLink.hreflang} lang={switchLink.lang}>{switchLink.label}</a>}
       {zh ? <a class="btn" href="/contact/">{t.cta}</a> : <a class="btn" href={BOOKING}>Book a call</a>}
     </header>
     <main id="main">
@@ -102,20 +107,23 @@ const here = (href: string) => path.startsWith(href);
 
 <style>
   .site-head { display: flex; align-items: center; gap: 40px; min-height: 88px; }
-  .site-head .home { display: flex; color: inherit; }
+  .site-head .home { display: flex; align-items: center; min-height: 44px; color: inherit; }
   .site-head nav { margin-left: auto; }
   .site-head ul { display: flex; gap: 30px; list-style: none; margin: 0; padding: 0; }
-  .site-head nav a { color: var(--muted); text-decoration: none; font-size: 15px; }
-  .site-head nav a:hover, .site-head nav a[aria-current='page'] { color: var(--ink); }
-  .site-head .btn { padding: 11px 18px; font-size: 14px; }
+  .site-head nav a, .site-head .switch { display: inline-flex; align-items: center; justify-content: center; min-height: 44px; min-width: 44px;
+    color: var(--muted); text-decoration: none; font-size: 15px; }
+  .site-head nav a:hover, .site-head nav a[aria-current='page'], .site-head .switch:hover { color: var(--ink); }
+  .site-head .switch { margin-left: -10px; }
+  .site-head .btn { padding: 11px 18px; font-size: 14px; min-height: 44px; }
   .site-foot { padding-top: 56px; padding-bottom: 56px; border-top: 1px solid var(--line); }
   .small { font-size: 14px; color: var(--muted); }
   .small p { margin-bottom: 0.8em; }
   .foot-links { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
   @media (max-width: 860px) {
-    .site-head { flex-wrap: wrap; gap: 14px 16px; min-height: 0; padding-top: 18px; padding-bottom: 18px; }
+    .site-head { flex-wrap: wrap; gap: 4px 16px; min-height: 0; padding-top: 12px; padding-bottom: 6px; }
     .site-head nav { order: 3; width: 100%; margin-left: 0; }
-    .site-head ul { gap: 20px; flex-wrap: wrap; }
-    .site-head .btn { margin-left: auto; padding: 10px 14px; }
+    .site-head ul { gap: 4px 22px; flex-wrap: wrap; }
+    .site-head .switch { margin-left: auto; }
+    .site-head .btn { padding: 10px 14px; }
   }
 </style>
