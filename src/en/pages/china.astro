@@ -6,11 +6,15 @@
 // Layout: a left-aligned document with one figure, the email triage screen the page refers to (2026-11-19 readiness
 // review: the right half was empty at 1440). Text at a 66ch measure.
 import Page from '../../shared/layouts/Page.astro';
-import { HOST, HQ } from '../../shared/site';
+import { HOST, HQ, CANONICAL } from '../../shared/site';
+import { service, graph } from '../../shared/schema';
 import Shot from '../../shared/components/Shot.astro';
 import Steps from '../../shared/components/Steps.astro';
 import { work } from '../work';
 const triage = work[0];
+// Heading and description are also used in the structured data, so keep them in one place.
+const h1 = 'Systems for forwarders and trading companies in China';
+const description = 'Systems for the email, quotes and shipping documents of forwarders, ship agents and trading companies in China, built by 成都寰桥 in Chengdu. Prices in RMB, with fapiao.';
 
 const examples = [
   { name: 'Shared inbox and inquiries', body: 'Mail to a shared or sales mailbox can become a ticket with an owner and a deadline, with late tickets flagged. Our <a href="/work/#email-triage">email triage system</a> works this way.' },
@@ -26,12 +30,18 @@ const steps = [
 ];
 ---
 <Page
-  title="For companies in China · 成都寰桥"
-  description="Systems for the email, quotes and shipping documents of forwarders, ship agents and trading companies in China, built by 成都寰桥 in Chengdu. Prices in RMB, with fapiao."
+  title="Systems for forwarders and trading companies in China · 成都寰桥"
+  description={description}
   path="/china/"
 >
+  <script slot="head" type="application/ld+json" set:html={graph(
+    service({ name: h1, url: CANONICAL.en + '/china/', provider: 'hq', area: 'CN', description, offers: [
+      { name: 'Workflow review', currency: 'CNY', price: 9800 },
+      { name: 'Build', currency: 'CNY', minPrice: 60000 },
+    ] }),
+  )} />
   <div class="wrap page-head">
-    <h1 class="display h1">Systems for forwarders and trading companies in China</h1>
+    <h1 class="display h1">{h1}</h1>
     <p class="lede">Our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, offers the same kind of systems to forwarders, ship agents and trading companies in China, where a team spends the day on overseas email, quotes and documents. It signs contracts in Chinese, bills in RMB and issues fapiao.</p>
     <p class="ctas"><a class="btn" href="/contact/">Contact</a><a class="zh-link" href={HOST.zh + '/contact/'} hreflang="zh-CN">Add us on WeChat →</a></p>
   </div>

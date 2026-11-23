@@ -2,7 +2,8 @@
 // Copy: .ai/deliverables/redo-copy-en.md (v3, gated) + 2026-10-08 anti-AI pass (fragments rewritten, gate re-run).
 // Layout: a price list. Title and headline price on one line, details in two columns. No ordinals, no labels.
 import Page from '../../shared/layouts/Page.astro';
-import { BOOKING } from '../../shared/site';
+import { BOOKING, CANONICAL } from '../../shared/site';
+import { service, faqPage, graph } from '../../shared/schema';
 import Snapshot from '../components/Snapshot.astro';
 
 const faq = [
@@ -19,6 +20,26 @@ const faq = [
   description="AI systems for US importers and distributors buying from Asia, China supplier support, dashboards and company websites. Prices and support scope."
   path="/services/"
 >
+  <script slot="head" type="application/ld+json" set:html={graph(
+    service({ name: 'AI operations pilot', url: CANONICAL.en + '/services/#ai-operations', provider: 'ges', area: 'US', offers: [
+      { name: 'Workflow review', currency: 'USD', price: 2500 },
+      { name: 'Build', currency: 'USD', minPrice: 15000 },
+      { name: 'Monitoring', currency: 'USD', price: 750, perMonth: true },
+      { name: 'Monitoring and improvements', currency: 'USD', price: 1500, perMonth: true },
+    ] }),
+    service({ name: 'Owner’s dashboard', url: CANONICAL.en + '/services/#dashboards', provider: 'ges', area: 'US', offers: [
+      { name: 'Setup', currency: 'USD', minPrice: 3000 },
+      { name: 'Reports and monitoring', currency: 'USD', minPrice: 750, perMonth: true },
+    ] }),
+    service({ name: 'Your person in China', url: CANONICAL.en + '/services/#china', provider: 'ges', area: 'US', offers: [
+      { name: 'Desk check', currency: 'USD', price: 750 },
+      { name: 'Supplier visit', currency: 'USD', price: 1500 },
+      { name: 'Other regions', currency: 'USD', minPrice: 2500 },
+      { name: 'Retainer', currency: 'USD', minPrice: 1500, perMonth: true },
+    ] }),
+    service({ name: 'Company website', url: CANONICAL.en + '/services/#websites', provider: 'ges', area: 'US' }),
+    faqPage(faq),
+  )} />
   <div class="wrap page-head">
     <h1 class="display h1">Services and prices</h1>
     <p class="lede">These services are for US importers and distributors buying from Asia, with teams of about 10 to 100 people. Start with email, order entry or shipment status, or get help checking a Chinese supplier. We agree the scope and price before work starts. Prices are in US dollars.</p>

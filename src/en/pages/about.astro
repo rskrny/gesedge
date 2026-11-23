@@ -5,23 +5,14 @@
 // metadata stripped (2026-11-19). To swap it, replace public/images/about/ryan-400.webp and ryan-800.webp.
 import Page from '../../shared/layouts/Page.astro';
 import { GES, HQ } from '../../shared/site';
-
-const person = {
-  '@context': 'https://schema.org',
-  '@type': 'Person',
-  name: 'Ryan Kearney',
-  jobTitle: 'Founder',
-  worksFor: { '@type': 'Organization', name: GES.name },
-  homeLocation: { '@type': 'Place', name: 'Chengdu, China' },
-  alumniOf: [{ '@type': 'CollegeOrUniversity', name: 'Massachusetts Maritime Academy' }, { '@type': 'CollegeOrUniversity', name: 'Sichuan University' }],
-};
+import { ryan, graph } from '../../shared/schema';
 ---
 <Page
-  title="About · Global Edge Strategies"
+  title="About Ryan Kearney · Global Edge Strategies"
   description="Ryan Kearney, an American in Chengdu, runs Global Edge Strategies and its sister company 成都寰桥."
   path="/about/"
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(person)} />
+  <script slot="head" type="application/ld+json" set:html={graph(ryan)} />
   <div class="wrap page-head"><h1 class="display h1">About</h1></div>
 
   <section>

@@ -6,26 +6,23 @@ import Page from '../../shared/layouts/Page.astro';
 import Joint from '../../shared/components/Joint.astro';
 import Shot from '../../shared/components/Shot.astro';
 import Steps from '../../shared/components/Steps.astro';
-import { CANONICAL, HQ, EMAIL } from '../../shared/site';
+import { CANONICAL } from '../../shared/site';
+import { hqOrg, siteZh, service, graph } from '../../shared/schema';
 import { work } from '../../en/work';
 import { t } from '../copy';
 const h = t.home;
 const lead = work[0];
-const org = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: HQ.name,
-  alternateName: HQ.latin,
-  url: CANONICAL.zh,
-  logo: CANONICAL.zh + '/share.png',
-  email: EMAIL,
-  taxID: HQ.uscc,
-  founder: { '@type': 'Person', name: 'Ryan Kearney' },
-  address: { '@type': 'PostalAddress', streetAddress: HQ.address, addressLocality: '成都', addressCountry: 'CN' },
-};
+const [review, build] = h.steps;
 ---
 <Page title={h.title} description={h.description} path="/">
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(org)} />
+  <script slot="head" type="application/ld+json" set:html={graph(
+    hqOrg,
+    siteZh,
+    service({ name: h.h1, url: CANONICAL.zh + '/', provider: 'hq', area: 'CN', description: h.description, offers: [
+      { name: review.name, currency: 'CNY', price: 9800 },
+      { name: build.name, currency: 'CNY', minPrice: 60000 },
+    ] }),
+  )} />
   <div class="hero">
     <div class="wrap stage">
       <div class="lead">

@@ -8,7 +8,8 @@ import Joint from '../../shared/components/Joint.astro';
 import Shot from '../../shared/components/Shot.astro';
 import Steps from '../../shared/components/Steps.astro';
 import Snapshot from '../components/Snapshot.astro';
-import { BOOKING, EMAIL, CANONICAL, GES } from '../../shared/site';
+import { BOOKING, EMAIL } from '../../shared/site';
+import { gesOrg, siteEn, graph } from '../../shared/schema';
 import { work, builtFor } from '../work';
 
 const offers = [
@@ -23,23 +24,13 @@ const steps = [
   { name: 'Support', body: 'Monitoring starts at $750 a month. See the support scope and response times on the services page.' },
 ];
 const [lead, ...rest] = work;
-const org = {
-  '@context': 'https://schema.org',
-  '@type': 'Organization',
-  name: GES.name,
-  url: CANONICAL.en,
-  email: EMAIL,
-  logo: CANONICAL.en + '/share.png',
-  founder: { '@type': 'Person', name: 'Ryan Kearney' },
-  address: { '@type': 'PostalAddress', addressRegion: 'WY', addressCountry: 'US' },
-};
 ---
 <Page
   title="Global Edge Strategies · AI systems for US importers and distributors"
   description="AI systems for email, orders and shipment status at US importers and distributors buying from Asia. China supplier checks and visits from Chengdu."
   path="/"
 >
-  <script slot="head" type="application/ld+json" set:html={JSON.stringify(org)} />
+  <script slot="head" type="application/ld+json" set:html={graph(gesOrg, siteEn)} />
 
   <div class="hero">
     <div class="wrap stage">

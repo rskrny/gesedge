@@ -36,6 +36,9 @@ const here = (href: string) => path.startsWith(href);
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    {/* Baidu: responsive page, and no mobile transcoding (ziyuan.baidu.com articleinfo?id=1285, documentinfo?id=156). */}
+    {zh && <meta name="applicable-device" content="pc,mobile" />}
+    {zh && <meta http-equiv="Cache-Control" content="no-transform" />}
     <title>{title}</title>
     <meta name="description" content={description} />
     {(PREVIEW || noindex) && <meta name="robots" content="noindex, nofollow" />}

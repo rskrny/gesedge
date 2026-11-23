@@ -4,9 +4,14 @@
 // Layout: steps as a numbered ledger, one diagram of who does what, then the terms as prose in two columns at a 66ch
 // measure (2026-11-19 readiness review). No labels in a left column.
 import Page from '../../shared/layouts/Page.astro';
-import { HOST, HQ, ZH_LIVE, EMAIL } from '../../shared/site';
+import { HOST, HQ, ZH_LIVE, EMAIL, CANONICAL } from '../../shared/site';
+import { service, graph } from '../../shared/schema';
 import Steps from '../../shared/components/Steps.astro';
 import Flow from '../../shared/components/Flow.astro';
+
+// Heading and description are also used in the structured data, so keep them in one place.
+const h1 = 'English websites and buyer outreach for Chinese factories';
+const description = "For export managers at Chinese factories: a website review from a US buyer's point of view, a buyer-ready English site, and monthly outreach to target companies. Prices in RMB, with fapiao.";
 
 const steps = [
   { name: 'Website review, ¥2,980', body: 'We go through each page as a US buyer would and put five buyer questions to ChatGPT, Google’s AI Overviews and Perplexity, three times each, with dated screenshots. You get fixes in priority order, in English and Chinese, with a short video walkthrough, five working days after the contract and fapiao. The fee is credited to the setup if you sign within 60 days.' },
@@ -27,12 +32,19 @@ const flow = {
 ---
 <Page
   title="English websites and buyer outreach for Chinese factories · 成都寰桥"
-  description="For export managers at Chinese factories: a website review from a US buyer's point of view, a buyer-ready English site, and monthly outreach to target companies. Prices in RMB, with fapiao."
+  description={description}
   path="/exporters/"
   alt="/audit/"
 >
+  <script slot="head" type="application/ld+json" set:html={graph(
+    service({ name: h1, url: CANONICAL.en + '/exporters/', provider: 'hq', area: 'CN', description, offers: [
+      { name: 'Website review', currency: 'CNY', price: 2980 },
+      { name: 'Setup', currency: 'CNY', price: 19800 },
+      { name: 'Buyer outreach', currency: 'CNY', price: 4800, perMonth: true },
+    ] }),
+  )} />
   <div class="wrap page-head">
-    <h1 class="display h1">English websites and buyer outreach for Chinese factories</h1>
+    <h1 class="display h1">{h1}</h1>
     <p class="lede">If you’re an export manager at a Chinese factory, our sister company in Chengdu, <span lang="zh-CN">成都寰桥</span>, reviews your English website, rebuilds it for overseas buyers, and runs English outreach to companies that fit your products. It bills in RMB and issues fapiao.</p>
     <p class="ctas"><a class="btn" href={HOST.zh + '/contact/'}>Contact Huanqiao</a>{ZH_LIVE && <a class="zh-link" href={HOST.zh + '/audit/'} hreflang="zh-CN">Read in Chinese →</a>}</p>
     <p class="aside"><a class="email-link" href={`mailto:${EMAIL}`}>Email Ryan in English →</a></p>

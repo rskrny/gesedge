@@ -2,15 +2,25 @@
 // All text from ../copy.ts (`audit`). 2026-10-15 (DECISIONS.md): the factory page. Three fixed-fee steps (诊断 → 启动 →
 // 海外客户开发), no commission-only model, a first-order bonus only by written agreement. English equivalent: /exporters/.
 import Page from '../../shared/layouts/Page.astro';
-import { HQ } from '../../shared/site';
+import { HQ, CANONICAL } from '../../shared/site';
+import { service, faqPage, graph } from '../../shared/schema';
 import { t } from '../copy';
 import Steps from '../../shared/components/Steps.astro';
 import Flow from '../../shared/components/Flow.astro';
 const a = t.audit;
+const [review, setup, outreach] = a.offer;
 // 2026-11-19 readiness review: three steps as a numbered ledger, one diagram of who does what, lists in two columns.
 const flow = { caption: a.flowCaption, lanes: a.flowLanes as [string, string], steps: a.flow.map((text, i) => ({ lane: (i < 3 ? 0 : 1) as 0 | 1, text })) };
 ---
 <Page title={a.title} description={a.description} path="/audit/" alt="/exporters/">
+  <script slot="head" type="application/ld+json" set:html={graph(
+    service({ name: a.h1, url: CANONICAL.zh + '/audit/', provider: 'hq', area: 'CN', description: a.description, offers: [
+      { name: review.name, currency: 'CNY', price: 2980 },
+      { name: setup.name, currency: 'CNY', price: 19800 },
+      { name: outreach.name, currency: 'CNY', price: 4800, perMonth: true },
+    ] }),
+    faqPage(a.faq),
+  )} />
   <div class="wrap page-head">
     <h1 class="display h1">{a.h1}</h1>
     <p class="lede">{a.lede}</p>
